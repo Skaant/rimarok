@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
     "gatsby": "^4.15.2",
     "gatsby-plugin-react-helmet": "^5.15.0",
     "gatsby-plugin-sass": "^5.15.1",
