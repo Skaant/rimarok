@@ -29,3 +29,20 @@
 // @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+@font-face {
+  font-family: $font-rubik;
+  src: url("../static/fonts/Rubik-Regular.ttf");
+}
+
+.font-rubik {
+  font-family: $font-rubik;
+}
+
+@font-face {
+  font-family: $font-slab;
+  src: url("../static/fonts/RobotoSlab-Light.ttf");
+}
+
+.font-slab {
+  font-family: $font-slab;
+}
