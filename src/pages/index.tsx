@@ -6,7 +6,7 @@ const Accueil = () => {
   return (
     <Layout
       head={{
-        pageTitle: "Moins égal plus",
+        title: "Moins égal plus",
       }}
     >
       <>

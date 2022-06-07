@@ -7,9 +7,9 @@ type LayoutProps = {
     /**
      * Only the page title;
      *  site title will be added for a final shape of
-     *  `{pageTitle} - {WEBSITE_DATA.TITLE}`.
+     *  `{title} - {WEBSITE_DATA.TITLE}`.
      */
-    pageTitle: string;
+    title: string;
     /**
      * If set, includes
      *  `<meta name="robots" content="noindex" />`.
@@ -19,12 +19,12 @@ type LayoutProps = {
   children: ReactElement;
 };
 
-function Layout({ head: { pageTitle, noIndex }, children }: LayoutProps) {
+function Layout({ head: { title, noIndex }, children }: LayoutProps) {
   return (
     <>
       <Helmet>
         <title>
-          {pageTitle} - {WEBSITE_DATA.TITLE}
+          {title} - {WEBSITE_DATA.TITLE}
         </title>
         {noIndex && <meta name="robots" content="noindex" />}
       </Helmet>
