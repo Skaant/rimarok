@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/Layout";
+import Quote from "../components/Quote";
 import "../styles/global.scss";
 
 const Accueil = () => {
