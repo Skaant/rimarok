@@ -4,6 +4,7 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+@import "./variables";
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
@@ -29,3 +30,21 @@
 
 // 8. Add additional custom code here
 @import "./components/layout";
+
+@font-face {
+  font-family: $font-rubik;
+  src: url("../static/fonts/Rubik-Regular.ttf");
+}
+
+.font-rubik {
+  font-family: $font-rubik;
+}
+
+@font-face {
+  font-family: $font-slab;
+  src: url("../static/fonts/RobotoSlab-Light.ttf");
+}
+
+.font-slab {
+  font-family: $font-slab;
+}
