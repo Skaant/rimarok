@@ -10,6 +10,7 @@ type LayoutProps = {
      *  `{title} - {WEBSITE_DATA.TITLE}`.
      */
     title: string;
+    description?: string;
     /**
      * If set, includes
      *  `<meta name="robots" content="noindex" />`.
@@ -19,13 +20,17 @@ type LayoutProps = {
   children: ReactElement;
 };
 
-function Layout({ head: { title, noIndex }, children }: LayoutProps) {
+function Layout({
+  head: { title, description, noIndex },
+  children,
+}: LayoutProps) {
   return (
     <>
       <Helmet>
         <title>
           {title} - {WEBSITE_DATA.TITLE}
         </title>
+        {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
       </Helmet>
       <div className="container-fluid">{children}</div>
