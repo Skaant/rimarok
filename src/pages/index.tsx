@@ -4,7 +4,11 @@ import "../styles/global.scss";
 
 const Accueil = () => {
   return (
-    <Layout>
+    <Layout
+      head={{
+        pageTitle: "Moins égal plus",
+      }}
+    >
       <>
         <h1>Moins égal plus</h1>
         <p>RIMAROK, ingénierie web et eco-conception</p>
