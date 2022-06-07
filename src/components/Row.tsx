@@ -9,7 +9,7 @@ type RowProps = {
 function Row({ backgroundColor, children }: RowProps) {
   return (
     <div className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""}`}>
-      {children}
+      <div className="col-12 col-sm-10 col-md-8 col-lg-6">{children}</div>
     </div>
   );
 }
