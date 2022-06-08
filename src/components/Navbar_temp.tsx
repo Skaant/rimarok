@@ -1,9 +1,9 @@
 import * as React from "react";
 import WEBSITE_DATA from "../data/website";
 
-type NavBarProps = {};
+type NavbarProps = {};
 
-function NavBar({}: NavBarProps) {
+function Navbar({}: NavbarProps) {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -64,4 +64,4 @@ function NavBar({}: NavBarProps) {
   );
 }
 
-export default NavBar;
+export default Navbar;
