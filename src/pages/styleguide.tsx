@@ -78,41 +78,41 @@ const Styleguide = () => {
             </p>
           </>
         </Row>
+        <Row>
+          <>
+            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
+              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}
+            </h2>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h2
+              id={
+                STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id
+              }
+            >
+              {
+                STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS]
+                  .title
+              }
+            </h2>
+            <p>Permet la navigation entre les sections d'une page.</p>
+          </>
+        </Row>
+        <Row>
+          <>
+            <TableOfContents
+              contents={{
+                demo: {
+                  id: "demo",
+                  title: "Démonstration",
+                },
+              }}
+            />
+          </>
+        </Row>
       </>
-      <Row>
-        <>
-          <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
-            {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}
-          </h2>
-        </>
-      </Row>
-      <Row>
-        <>
-          <h2
-            id={
-              STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id
-            }
-          >
-            {
-              STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS]
-                .title
-            }
-          </h2>
-          <p>Permet la navigation entre les sections d'une page.</p>
-        </>
-      </Row>
-      <Row>
-        <>
-          <TableOfContents
-            contents={{
-              demo: {
-                id: "demo",
-                title: "Démonstration",
-              },
-            }}
-          />
-        </>
-      </Row>
     </Layout>
   );
 };
