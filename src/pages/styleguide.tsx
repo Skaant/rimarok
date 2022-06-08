@@ -54,8 +54,8 @@ const Styleguide = () => {
               Le composant <i>Row</i> décrit une section de page.
             </p>
             <p>
-              Il est ensuite décliné par tous les autres composants sections,
-              tels que CTA, Carousel.
+              Il est ensuite décliné par tous les autres composants sections, tels que CTA,
+              Carousel.
             </p>
           </>
         </Row>
@@ -87,15 +87,44 @@ const Styleguide = () => {
         </Row>
         <Row>
           <>
-            <h2
-              id={
-                STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id
-              }
-            >
-              {
-                STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS]
-                  .title
-              }
+            <h3>Citation simple</h3>
+            <p>(Sans légende)</p>
+            <Quote displayHeading={6}>
+              <>Ceci est une citation, juste une citation</>
+            </Quote>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h3>Citation simple</h3>
+            <p>(Pas de source, mais un auteur)</p>
+            <Quote displayHeading={6} legend={{ author: "Auteur optionnel" }}>
+              <>Ceci est une citation, juste une citation</>
+            </Quote>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h3>Citation simple</h3>
+            <p>(Source, mais pas d'auteur)</p>
+            <Quote displayHeading={6} legend={{ source: "Source optionnelle" }}>
+              <>Ceci est une citation, juste une citation</>
+            </Quote>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h3>Citation simple</h3>
+            <p>(Source et auteur)</p>
+            <Quote displayHeading={6} legend={{ source: "Source optionnelle", author:"Auteur optionnel"}}>
+              <>Ceci est une citation, juste une citation</>
+            </Quote>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id}>
+              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].title}
             </h2>
             <p>Permet la navigation entre les sections d'une page.</p>
           </>
