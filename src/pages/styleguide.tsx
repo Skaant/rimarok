@@ -37,11 +37,80 @@ const Styleguide = () => {
         title: STYLEGUIDE_TITLE,
       }}
     >
-      <Row backgroundColor={COLORS.SUN}>
+      <>
+        <Row backgroundColor={COLORS.SUN}>
+          <>
+            <h1>{STYLEGUIDE_TITLE}</h1>
+            <p>Démonstration des composants du site.</p>
+            <TableOfContents contents={STYLEGUIDE_HEADERS_DATA} />
+          </>
+        </Row>
+        <Row>
+          <>
+            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].id}>
+              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].title}
+            </h2>
+            <p>
+              Le composant <i>Row</i> décrit une section de page.
+            </p>
+            <p>
+              Il est ensuite décliné par tous les autres composants sections,
+              tels que CTA, Carousel.
+            </p>
+          </>
+        </Row>
+        <Row>
+          <>
+            <h3>Variations de couleur</h3>
+          </>
+        </Row>
+        <Row backgroundColor={COLORS.ABYSS}>
+          <>
+            <p>
+              Couleur <i>abyss</i>
+            </p>
+          </>
+        </Row>
+        <Row backgroundColor={COLORS.FLOWER}>
+          <>
+            <p>
+              Couleur <i>flower</i>
+            </p>
+          </>
+        </Row>
+      </>
+      <Row>
         <>
-          <h1>{STYLEGUIDE_TITLE}</h1>
-          <p>Démonstration des composants du site.</p>
-          <TableOfContents contents={STYLEGUIDE_HEADERS_DATA} />
+          <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
+            {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}
+          </h2>
+        </>
+      </Row>
+      <Row>
+        <>
+          <h2
+            id={
+              STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id
+            }
+          >
+            {
+              STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS]
+                .title
+            }
+          </h2>
+          <p>Permet la navigation entre les sections d'une page.</p>
+        </>
+      </Row>
+      <Row>
+        <>
+          <TableOfContents
+            contents={{
+              demo: {
+                id: "demo",
+                title: "Démonstration",
+              },
+            }}
+          />
         </>
       </Row>
     </Layout>
