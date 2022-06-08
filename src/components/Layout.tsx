@@ -33,7 +33,7 @@ function Layout({
         {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
       </Helmet>
-      <div className="container-fluid">{children}</div>
+      <div className="container-fluid px-0">{children}</div>
     </>
   );
 }
