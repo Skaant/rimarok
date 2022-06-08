@@ -30,6 +30,11 @@
 
 // 8. Add additional custom code here
 @import "./components/row";
+@import "./components/quote";
+
+body {
+  font-family: $font-rubik;
+}
 
 @font-face {
   font-family: $font-rubik;
