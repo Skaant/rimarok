@@ -3,11 +3,9 @@ import Layout from "../components/Layout";
 import Quote from "../components/Quote";
 import TableOfContents from "../components/TableOfContents";
 import type Header from "../types/Header";
-import NavBar from "../components/NavBar";
 import "../styles/global.scss";
 
 const Accueil = () => {
-  
   const STYLEGUIDE_HEADERS: Header[] = [
     {
       id: "row",
