@@ -10,7 +10,7 @@ function TableOfContents({ contents }: TableOfContentsProps) {
     <ul>
       {contents.map(({ id, title }) => (
         <li>
-          <a href={id}>{title}</a>
+          <a href={`#${id}`}>{title}</a>
         </li>
       ))}
     </ul>
