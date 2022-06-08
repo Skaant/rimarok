@@ -9,22 +9,28 @@ import { COLORS } from "../data/colors";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
-const STYLEGUIDE_HEADERS: Header[] = [
-  {
+enum STYLEGUIDE_HEADERS {
+  ROW = "ROW",
+  TABLE_OF_CONTENTS = "TABLE_OF_CONTENTS",
+  QUOTE = "QUOTE",
+}
+
+const STYLEGUIDE_HEADERS_DATA: { [header in STYLEGUIDE_HEADERS]: Header } = {
+  ROW: {
     id: "row",
     title: "Row",
   },
-  {
+  TABLE_OF_CONTENTS: {
     id: "table-of-contents",
     title: "Table of contents",
   },
-  {
+  QUOTE: {
     id: "quote",
     title: "Quote",
   },
-];
+};
 
-const Accueil = () => {
+const Styleguide = () => {
   return (
     <Layout
       head={{
@@ -35,11 +41,11 @@ const Accueil = () => {
         <>
           <h1>{STYLEGUIDE_TITLE}</h1>
           <p>Démonstration des composants du site.</p>
-          <TableOfContents contents={STYLEGUIDE_HEADERS} />
+          <TableOfContents contents={STYLEGUIDE_HEADERS_DATA} />
         </>
       </Row>
     </Layout>
   );
 };
 
-export default Accueil;
+export default Styleguide;
