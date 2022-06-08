@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import Header from "../types/Header";
 
@@ -10,7 +11,7 @@ function TableOfContents({ contents }: TableOfContentsProps) {
     <ul>
       {contents.map(({ id, title }) => (
         <li>
-          <a href={`#${id}`}>{title}</a>
+          <Link to={`#${id}`}>{title}</Link>
         </li>
       ))}
     </ul>
