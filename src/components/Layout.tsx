@@ -33,6 +33,7 @@ function Layout({
         </title>
         {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
+        <script src="/script.js" defer={true}></script>
       </Helmet>
       <Navbar />
       <div className="container-fluid">{children}</div>
