@@ -36,7 +36,7 @@ function Layout({
         <script src="/script.js" defer={true}></script>
       </Helmet>
       <Navbar />
-      <div className="container-fluid">{children}</div>
+      <div className="container-fluid px-0">{children}</div>
     </>
   );
 }

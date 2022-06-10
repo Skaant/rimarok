@@ -11,7 +11,7 @@
 2.  **Start development server**
 
     ```shell
-    npm run develop
+    npm start
     ```
 
 3.  **Open the website live preview**
