@@ -45,11 +45,9 @@ const Styleguide = () => {
             <TableOfContents contents={STYLEGUIDE_HEADERS_DATA} />
           </>
         </Row>
-        <Row>
+        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].id}>
           <>
-            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].id}>
-              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].title}
-            </h2>
+            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].title}</h2>
             <p>
               Le composant <i>Row</i> décrit une section de page.
             </p>
@@ -78,11 +76,9 @@ const Styleguide = () => {
             </p>
           </>
         </Row>
-        <Row>
+        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
           <>
-            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
-              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}
-            </h2>
+            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}</h2>
           </>
         </Row>
         <Row>
@@ -116,16 +112,17 @@ const Styleguide = () => {
           <>
             <h3>Citation simple</h3>
             <p>(Source et auteur)</p>
-            <Quote displayHeading={6} legend={{ source: "Source optionnelle", author:"Auteur optionnel"}}>
+            <Quote
+              displayHeading={6}
+              legend={{ source: "Source optionnelle", author: "Auteur optionnel" }}
+            >
               <>Ceci est une citation, juste une citation</>
             </Quote>
           </>
         </Row>
-        <Row>
+        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id}>
           <>
-            <h2 id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id}>
-              {STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].title}
-            </h2>
+            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].title}</h2>
             <p>Permet la navigation entre les sections d'une page.</p>
           </>
         </Row>
