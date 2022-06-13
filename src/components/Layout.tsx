@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import WEBSITE_DATA from "../data/website";
+import Navbar from "./Navbar";
 
 type LayoutProps = {
   head: {
@@ -32,7 +33,9 @@ function Layout({
         </title>
         {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
+        <script src="/script.js" defer={true}></script>
       </Helmet>
+      <Navbar />
       <div className="container-fluid px-0">{children}</div>
     </>
   );
