@@ -1,25 +1,26 @@
 import * as React from "react";
 import Layout from "../components/Layout";
-import type Header from "../types/Header";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import "../styles/global.scss";
 import Quote from "../components/Quote";
+import { PAGES, PAGES_DATA } from "../data/pages";
+import WEBSITE_DATA from "../data/website";
 
-const ACCUEIL_TITLE = "Construire un internet durable";
+const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
 const Accueil = () => {
   return (
     <Layout
       head={{
-        title: ACCUEIL_TITLE,
+        title,
       }}
     >
       <>
         <Row backgroundColor={COLORS.FLOWER}>
           <>
-            <h1>{ACCUEIL_TITLE}</h1>
-            <p>RIMAROK, ingénierie web et eco-conception</p>
+            <h1>{title}</h1>
+            <p>{WEBSITE_DATA.TITLE}</p>
           </>
         </Row>
         <Row>
