@@ -1,19 +1,16 @@
 import * as React from "react";
-import Row from "./Row";
-import { COLORS } from "../data/colors";
 
-type FullScreenTitleProps = {};
+type FullScreenTitleProps = {
+  title: string;
+  subtitle: string;
+};
 
-function FullScreenTitle({}: FullScreenTitleProps) {
+function FullScreenTitle({ title, subtitle }: FullScreenTitleProps) {
   return (
-    <Row backgroundColor={COLORS.FLOWER}>
-      <div className="container-fluid vh-100">
-        <div className="w-100 vh-100 d-flex flex-column justify-content-center align-items-center">
-          <h1 className="font-slab">RIMAROK</h1>
-          <p>Ingénierie web et éco-conception</p>
-        </div>
-      </div>
-    </Row>
+    <div className="w-100 vh-100 d-flex flex-column justify-content-center align-items-center text-center p-4">
+      <h1 className="main-title">{title}</h1>
+      <p className="sub-title h4">{subtitle}</p>
+    </div>
   );
 }
 
