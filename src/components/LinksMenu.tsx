@@ -11,17 +11,17 @@ function LinksMenu({ buttons }: LinksMenuProps) {
     <Row>
       <div>
         <>
-          {buttons.map((button) => {
+          {buttons.map((button, index) =>
             button.internal ? (
-              <Link to={button.link} className="btn btn-primary mx-2" role="button">
+              <Link to={button.link} key={index} className="btn btn-primary mx-2" role="button">
                 {button.label}
               </Link>
             ) : (
-              <a href={button.link} className="btn btn-primary mx-2" role="button">
+              <a href={button.link} key={index} className="btn btn-primary mx-2" role="button">
                 {button.label}
               </a>
-            );
-          })}
+            )
+          )}
         </>
       </div>
     </Row>
