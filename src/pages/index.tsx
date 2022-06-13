@@ -17,13 +17,23 @@ const Accueil = () => {
       }}
     >
       <>
-        <Row backgroundColor={COLORS.FLOWER}>
+        <Row
+          header={{
+            level: 1,
+            content: title,
+          }}
+          backgroundColor={COLORS.FLOWER}
+        >
           <>
-            <h1>{title}</h1>
             <p>{WEBSITE_DATA.TITLE}</p>
           </>
         </Row>
-        <Row>
+        <Row
+          header={{
+            level: 2,
+            content: "Performance et économies",
+          }}
+        >
           <>
             <Quote displayHeading={4}>
               <>
@@ -56,6 +66,12 @@ const Accueil = () => {
                 durable
               </b>
               .
+            </p>
+            <p>
+              À la rencontre de ces deux sujets naît une{" "}
+              <b>puissante efficience</b>, rencontre de{" "}
+              <b>motifs de conception</b> éprouvés et d'un objectif d'
+              <b>économie maximale</b> (ressources informatiques et finance).
             </p>
             <div /** @todo Buttons menu */>
               <button>Expertise full-stack JavaScript</button>
