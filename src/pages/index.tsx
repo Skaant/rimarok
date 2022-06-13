@@ -5,32 +5,19 @@ import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import "../styles/global.scss";
 
-const Accueil = () => {
-  const STYLEGUIDE_HEADERS: Header[] = [
-    {
-      id: "row",
-      title: "Row",
-    },
-    {
-      id: "table-of-contents",
-      title: "Table of contents",
-    },
-    {
-      id: "quote",
-      title: "Quote",
-    },
-  ];
+const ACCUEIL_TITLE = "Construire un internet durable";
 
+const Accueil = () => {
   return (
     <Layout
       head={{
-        title: "Moins égal plus",
+        title: ACCUEIL_TITLE,
       }}
     >
       <>
         <Row backgroundColor={COLORS.FLOWER}>
           <>
-            <h1>Moins égal plus</h1>
+            <h1>{ACCUEIL_TITLE}</h1>
             <p>RIMAROK, ingénierie web et eco-conception</p>
           </>
         </Row>
