@@ -18,17 +18,8 @@ const Accueil = () => {
       }}
     >
       <>
-        <FullScreenTitle />
-        <Row
-          header={{
-            level: 1,
-            content: title,
-          }}
-          backgroundColor={COLORS.FLOWER}
-        >
-          <>
-            <p>{WEBSITE_DATA.TITLE}</p>
-          </>
+        <Row backgroundColor={COLORS.FLOWER}>
+          <FullScreenTitle title={title} subtitle={WEBSITE_DATA.TITLE} />
         </Row>
         <Row
           header={{
