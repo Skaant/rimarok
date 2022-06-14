@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { COLORS } from "../data/colors";
 
-type RowProps = {
+export type RowProps = {
   id?: string;
   header?: {
     level: 1 | 2 | 3;
@@ -9,19 +9,24 @@ type RowProps = {
   };
   backgroundColor?: COLORS;
   col?: string;
+  colClassName?: string;
   children: ReactElement;
 };
 
 function Row({
   id,
-  col = "col-12 col-sm-10 col-md-8 col-lg-6",
   header,
   backgroundColor,
+  col = "col-12 col-sm-10 col-md-8 col-lg-6",
+  colClassName,
   children,
 }: RowProps) {
   return (
-    <div id={id} className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""}`}>
-      <div className={col}>
+    <div
+      id={id}
+      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""}`}
+    >
+      <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {header &&
           (header.level === 1 ? (
             <h1>{header.content}</h1>
