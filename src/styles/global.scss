@@ -36,6 +36,7 @@
 // 8. Add additional custom code here
 @import "./components/row";
 @import "./components/quote";
+@import "./components/fullScreenTitle";
 
 body {
   font-family: $font-rubik;
@@ -56,5 +57,14 @@ body {
 }
 
 .font-slab {
+  font-family: $font-slab;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-slab;
 }
