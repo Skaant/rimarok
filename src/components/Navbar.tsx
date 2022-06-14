@@ -5,7 +5,7 @@ type NavbarProps = {};
 
 function Navbar({}: NavbarProps) {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           {WEBSITE_DATA.BRAND_NAME}
