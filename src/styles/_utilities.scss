@@ -12,11 +12,12 @@ $selected-utilities-name:
   ("color", true) // https://getbootstrap.com/docs/5.2/utilities/display/
   ("display", true) // https://getbootstrap.com/docs/5.2/utilities/flex/
   ("flex-direction", true) ("align-items", true) ("align-content", true)
-  ("order", true) // https://getbootstrap.com/docs/5.2/utilities/opacity/
+  ("justify-content", true) ("order", true)
+  // https://getbootstrap.com/docs/5.2/utilities/opacity/
   ("opacity", true) // https://getbootstrap.com/docs/5.2/utilities/position/
   ("position", true) // https://getbootstrap.com/docs/5.2/utilities/shadows/
   ("shadow", true) // https://getbootstrap.com/docs/5.2/utilities/sizing/
-  ("width", true) ("height", true)
+  ("width", true) ("height", true) ("viewport-height", true)
   // https://getbootstrap.com/docs/5.2/utilities/spacing/
   ("margin", true) ("margin-x", true) ("margin-y", true) ("margin-top", true)
   ("margin-end", true) ("margin-bottom", true) ("margin-start", true)
