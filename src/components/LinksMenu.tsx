@@ -3,22 +3,22 @@ import * as React from "react";
 import Row from "./Row";
 
 type LinksMenuProps = {
-  buttons: { link: string; internal?: boolean; label: string }[];
+  links: { link: string; internal?: boolean; label: string }[];
 };
 
-function LinksMenu({ buttons }: LinksMenuProps) {
+function LinksMenu({ links }: LinksMenuProps) {
   return (
     <Row>
       <div>
         <>
-          {buttons.map((button, index) =>
-            button.internal ? (
-              <Link to={button.link} key={index} className="btn btn-primary mx-2" role="button">
-                {button.label}
+          {links.map((item, index) =>
+            item.internal ? (
+              <Link to={item.link} key={index} className="btn btn-primary mx-2" role="button">
+                {item.label}
               </Link>
             ) : (
-              <a href={button.link} key={index} className="btn btn-primary mx-2" role="button">
-                {button.label}
+              <a href={item.link} key={index} className="btn btn-primary mx-2" role="button">
+                {item.label}
               </a>
             )
           )}
