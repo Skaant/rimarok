@@ -2,8 +2,10 @@ import { Link } from "gatsby";
 import * as React from "react";
 import Row from "./Row";
 
+export type LinksMenuItem = { link: string; internal?: boolean; label: string };
+
 type LinksMenuProps = {
-  links: { link: string; internal?: boolean; label: string }[];
+  links: LinksMenuItem[];
 };
 
 function LinksMenu({ links }: LinksMenuProps) {
