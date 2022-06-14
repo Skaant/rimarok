@@ -1,10 +1,10 @@
-import * as React from "react";
+import React, { ReactElement } from "react";
 
 type CarouselProps = {
-  contents: string[];
+  childrens: ReactElement[];
 };
 
-function Carousel({ contents }: CarouselProps) {
+function Carousel({ childrens }: CarouselProps) {
   return (
     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
       <div className="carousel-indicators">
@@ -30,14 +30,14 @@ function Carousel({ contents }: CarouselProps) {
         ></button>
       </div>
       <div className="carousel-inner">
-        {contents.map((content, index) =>
+        {childrens.map((children, index) =>
           index === 0 ? (
             <div key={index} className="carousel-item active">
-              <p className="d-block w-100 vh-100 text-center">{content}</p>
+              {children}
             </div>
           ) : (
             <div key={index} className="carousel-item">
-              <p className="d-block w-100 vh-100 text-center">{content}</p>
+              {children}
             </div>
           )
         )}
