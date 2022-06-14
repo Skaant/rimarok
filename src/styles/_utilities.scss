@@ -1,0 +1,19 @@
+@use "sass:map";
+
+// Enable some utilities instead of all by default
+
+// List default $utilities map props name to enable
+$selected-utilities-name: "padding" "padding-x" "padding-y" "padding-top"
+  "padding-bottom" "padding-start" "padding-end";
+
+$new-utilities: ();
+
+@each $selected-utility in $selected-utilities-name {
+  $new-utilities: map.set(
+    $new-utilities,
+    $selected-utility,
+    map.get($utilities, $selected-utility)
+  );
+}
+
+$utilities: $new-utilities;

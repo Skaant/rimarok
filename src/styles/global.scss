@@ -29,6 +29,7 @@
 @import "../../node_modules/bootstrap/scss/navbar";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "./utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
