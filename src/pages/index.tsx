@@ -18,7 +18,7 @@ const Accueil = () => {
       }}
     >
       <>
-        <Row backgroundColor={COLORS.FLOWER}>
+        <Row backgroundColor={COLORS.FLOWER} col="col-12">
           <FullScreenTitle title={title} subtitle={WEBSITE_DATA.TITLE} />
         </Row>
         <Row
