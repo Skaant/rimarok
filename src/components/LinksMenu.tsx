@@ -18,16 +18,7 @@ function LinksMenu({ links }: LinksMenuProps) {
     <div className="mb-4">
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
-          link.startsWith("http") ? (
-            <a
-              href={link}
-              key={index}
-              className={`btn btn-primary m-2 bg-${color}`}
-              role="button"
-            >
-              {label}
-            </a>
-          ) : (
+          link.startsWith("/") ? (
             <Link
               to={link}
               key={index}
@@ -36,6 +27,15 @@ function LinksMenu({ links }: LinksMenuProps) {
             >
               {label}
             </Link>
+          ) : (
+            <a
+              href={link}
+              key={index}
+              className={`btn btn-primary m-2 bg-${color}`}
+              role="button"
+            >
+              {label}
+            </a>
           )
         )}
       </>
