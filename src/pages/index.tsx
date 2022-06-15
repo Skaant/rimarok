@@ -1,12 +1,13 @@
 import * as React from "react";
+import FullScreenTitle from "../components/FullScreenTitle";
 import Layout from "../components/Layout";
-import Row from "../components/Row";
-import { COLORS } from "../data/colors";
 import "../styles/global.scss";
 import Quote from "../components/Quote";
 import { PAGES, PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 import LinksMenu from "../components/LinksMenu";
+import Row from "../components/Row";
+import { COLORS } from "../data/colors";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -18,17 +19,11 @@ const Accueil = () => {
       }}
     >
       <>
-        <Row
-          header={{
-            level: 1,
-            content: title,
-          }}
+        <FullScreenTitle
+          title={title}
+          subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
-        >
-          <>
-            <p>{WEBSITE_DATA.TITLE}</p>
-          </>
-        </Row>
+        />
         <Row
           header={{
             level: 2,
