@@ -117,7 +117,7 @@ const Accueil = () => {
             />
           </>
         </Row>
-        <Row backgroundColor={COLORS.ABYSS}>
+        <Row backgroundColor={COLORS.ABYSS} colClassName="text-white">
           <>
             <Carousel
               childrens={[
