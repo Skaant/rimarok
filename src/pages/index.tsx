@@ -6,6 +6,7 @@ import "../styles/global.scss";
 import Quote from "../components/Quote";
 import { PAGES, PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
+import Carousel from "../components/Carousel";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -100,6 +101,55 @@ const Accueil = () => {
             <div /** @todo Buttons menu */>
               <button>Entrer en contact</button>
             </div>
+          </>
+        </Row>
+        <Row backgroundColor={COLORS.ABYSS}>
+          <>
+            <Carousel
+              childrens={[
+                <>
+                  <h3>MOBILIS PRO / MEDIARTIS</h3>
+                  <p>
+                    <i>Juin 2021 - aujourd'hui</i>
+                  </p>
+                  <p>
+                    Bientôt un an de missions cumulées sur le projet novateur
+                    MEDIARTIS.
+                  </p>
+                  <p>
+                    J'interviens pour étendre les fonctionnalités du produit,
+                    sous un angle totalement full-stack (Nest TS / Vue) :
+                  </p>
+                  <ul>
+                    <li>Stockage de données RGPD,</li>
+                    <li>
+                      Transition d'un système de rôles à un système de
+                      permissions,
+                    </li>
+                    <li>Ouverture du produit à un usage comme API externe,</li>
+                    <li>Tests unitaires et e2e,</li>
+                    <li>Mises à jour d'environnement et de sécurité ...</li>
+                  </ul>
+                </>,
+                <>
+                  <h3>AGENCE NOUNOURS / CREST JAZZ</h3>
+                  <p>
+                    <i>Septembre 2021 - Février 2022</i>
+                  </p>
+                  <p>
+                    Intégration d'un WordPress et développement du thème du
+                    nouveau site de l'association et festival Crest Jazz.
+                  </p>
+                  <p>Détails de la stack :</p>
+                  <ul>
+                    <li>GitHub Actions (CD),</li>
+                    <li>Webpack front : SCSS / JS,</li>
+                    <li>Racine Bootstrap, généreusement customisé,</li>
+                    <li>PHP + ACF.</li>
+                  </ul>
+                </>,
+              ]}
+            />
           </>
         </Row>
       </>
