@@ -1,12 +1,14 @@
 import * as React from "react";
+import FullScreenTitle from "../components/FullScreenTitle";
 import Layout from "../components/Layout";
-import Row from "../components/Row";
-import { COLORS } from "../data/colors";
 import "../styles/global.scss";
 import Quote from "../components/Quote";
 import { PAGES, PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 import Carousel from "../components/Carousel";
+import LinksMenu from "../components/LinksMenu";
+import Row from "../components/Row";
+import { COLORS } from "../data/colors";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -18,17 +20,11 @@ const Accueil = () => {
       }}
     >
       <>
-        <Row
-          header={{
-            level: 1,
-            content: title,
-          }}
+        <FullScreenTitle
+          title={title}
+          subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
-        >
-          <>
-            <p>{WEBSITE_DATA.TITLE}</p>
-          </>
-        </Row>
+        />
         <Row
           header={{
             level: 2,
@@ -52,9 +48,14 @@ const Accueil = () => {
               </b>
               .
             </p>
-            <div /** @todo Buttons menu */>
-              <button>Découvrir ma prestation</button>
-            </div>
+            <LinksMenu
+              links={[
+                {
+                  label: "Découvrir ma prestation",
+                  link: PAGES_DATA[PAGES.PRESTATION].path,
+                },
+              ]}
+            />
             <p>
               Depuis, <b>j’exerce toujours la même activité</b>, en recherchant
               les projets les plus intéressants et les équipes les plus
@@ -74,10 +75,18 @@ const Accueil = () => {
               <b>motifs de conception</b> éprouvés et d'un objectif d'
               <b>économie maximale</b> (ressources informatiques et finance).
             </p>
-            <div /** @todo Buttons menu */>
-              <button>Expertise full-stack JavaScript</button>
-              <button>Bonnes pratiques d'éco-conception</button>
-            </div>
+            <LinksMenu
+              links={[
+                {
+                  label: "Expertise full-stack JavaScript",
+                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+                },
+                {
+                  label: "Bonnes pratiques d'éco-conception",
+                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+                },
+              ]}
+            />
             <p>J’ai une personnalité créative, vaillante et sociale.</p>
             <p>On a dit de moi :</p>
             <Quote
@@ -98,9 +107,14 @@ const Accueil = () => {
                 </p>
               </>
             </Quote>
-            <div /** @todo Buttons menu */>
-              <button>Entrer en contact</button>
-            </div>
+            <LinksMenu
+              links={[
+                {
+                  label: "Entrer en contact",
+                  link: PAGES_DATA[PAGES.PRESTATION].path,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row backgroundColor={COLORS.ABYSS}>

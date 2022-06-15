@@ -28,13 +28,17 @@
 @import "../../node_modules/bootstrap/scss/dropdown";
 @import "../../node_modules/bootstrap/scss/navbar";
 @import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/buttons";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @Skaant: first we import custom utilities overrides
+@import "./utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
 @import "./components/row";
 @import "./components/quote";
+@import "./components/fullScreenTitle";
 
 body {
   font-family: $font-rubik;
@@ -55,5 +59,14 @@ body {
 }
 
 .font-slab {
+  font-family: $font-slab;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-slab;
 }
