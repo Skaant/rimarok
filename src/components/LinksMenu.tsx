@@ -15,14 +15,14 @@ type LinksMenuProps = {
 
 function LinksMenu({ links }: LinksMenuProps) {
   return (
-    <div>
+    <div className="mb-4">
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
           link.startsWith("http") ? (
             <a
               href={link}
               key={index}
-              className={`btn btn-primary mx-2 bg-${color}`}
+              className={`btn btn-primary m-2 bg-${color}`}
               role="button"
             >
               {label}
@@ -31,7 +31,7 @@ function LinksMenu({ links }: LinksMenuProps) {
             <Link
               to={link}
               key={index}
-              className={`btn btn-primary mx-2 bg-${color}`}
+              className={`btn btn-primary m-2 bg-${color}`}
               role="button"
             >
               {label}
