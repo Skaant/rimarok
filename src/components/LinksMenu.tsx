@@ -5,7 +5,6 @@ import Row from "./Row";
 
 export type LinksMenuItem = {
   link: string;
-  internal?: boolean;
   label: string;
   color?: COLORS;
 };
@@ -18,17 +17,8 @@ function LinksMenu({ links }: LinksMenuProps) {
   return (
     <div>
       <>
-        {links.map(({ link, internal, label, color = COLORS.FLOWER }, index) =>
-          internal ? (
-            <Link
-              to={link}
-              key={index}
-              className={`btn btn-primary mx-2 bg-${color}`}
-              role="button"
-            >
-              {label}
-            </Link>
-          ) : (
+        {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
+          link.startsWith("http") ? (
             <a
               href={link}
               key={index}
@@ -37,6 +27,15 @@ function LinksMenu({ links }: LinksMenuProps) {
             >
               {label}
             </a>
+          ) : (
+            <Link
+              to={link}
+              key={index}
+              className={`btn btn-primary mx-2 bg-${color}`}
+              role="button"
+            >
+              {label}
+            </Link>
           )
         )}
       </>
