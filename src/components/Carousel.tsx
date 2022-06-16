@@ -1,47 +1,34 @@
 import React, { ReactElement } from "react";
+import { COLORS } from "../data/colors";
 
 type CarouselProps = {
   id: string;
-  childrens: ReactElement[];
+  controlsColor?: COLORS;
+  children: string[];
 };
 
-function Carousel({ childrens, id }: CarouselProps) {
+function Carousel({ children, id }: CarouselProps) {
+  console.log(children);
   return (
     <div id={id} className="carousel slide" data-bs-ride="true">
       <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target={`#${id}`}
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target={`#${id}`}
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target={`#${id}`}
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+        {children?.map((child, index) => (
+          <button
+            type="button"
+            data-bs-target={`#${id}`}
+            data-bs-slide-to={index}
+            className={index === 0 ? "active" : ""}
+            aria-current={index === 0 ? "true" : "false"}
+            aria-label={`Slide ${index + 1}`}
+          ></button>
+        ))}
       </div>
       <div className="carousel-inner">
-        {childrens.map((children, index) =>
-          index === 0 ? (
-            <div key={index} className="carousel-item active">
-              {children}
-            </div>
-          ) : (
-            <div key={index} className="carousel-item">
-              {children}
-            </div>
-          )
-        )}
+        {children?.map((child, index) => (
+          <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            {child}
+          </div>
+        ))}
       </div>
       <button
         className="carousel-control-prev"
