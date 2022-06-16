@@ -1,16 +1,17 @@
 import React, { ReactElement } from "react";
 
 type CarouselProps = {
+  id: string;
   childrens: ReactElement[];
 };
 
-function Carousel({ childrens }: CarouselProps) {
+function Carousel({ childrens, id }: CarouselProps) {
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
+    <div id={id} className="carousel slide" data-bs-ride="true">
       <div className="carousel-indicators">
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target={`#${id}`}
           data-bs-slide-to="0"
           className="active"
           aria-current="true"
@@ -18,13 +19,13 @@ function Carousel({ childrens }: CarouselProps) {
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target={`#${id}`}
           data-bs-slide-to="1"
           aria-label="Slide 2"
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target={`#${id}`}
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
@@ -45,7 +46,7 @@ function Carousel({ childrens }: CarouselProps) {
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target={`#${id}`}
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,7 +55,7 @@ function Carousel({ childrens }: CarouselProps) {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target={`#${id}`}
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
