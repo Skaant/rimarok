@@ -7,11 +7,11 @@ type BadgesListProps = {
 
 function BadgesList({ badges }: BadgesListProps) {
   return (
-    <span className="d-inline">
+    <span>
       <>
-        {badges.map((badge, index) => (
-          <span key={index} style={{ backgroundColor: badge.color }} className="badge rounded-pill">
-            {badge.label}
+        {badges.map(({ label, color }, index) => (
+          <span key={index} className={`badge rounded-pill bg-${color} me-2`}>
+            {label}
           </span>
         ))}
       </>
