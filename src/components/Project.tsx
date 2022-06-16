@@ -16,8 +16,8 @@ function Project({ title, date, children }: ProjectProps) {
     <div className="card w-50">
       <div className="card-body d-flex flex-column">
         <h3 className="card-title order-1">{title}</h3>
-        <p className="card-text order-0">
-          <BadgesList badges={[{ label: "Test", color: COLORS.SUN }]} />
+        <p className="card-text order-0 d-flex justify-content-sm-between align-items-end flex-sm-row flex-column">
+          {/* Ajouter badges ici */}
           {date}
         </p>
         {children}
