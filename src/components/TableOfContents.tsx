@@ -1,9 +1,9 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import Header from "../types/Header";
+import Section from "../types/Section";
 
 type TableOfContentsProps = {
-  contents: { [key: string]: Header };
+  contents: { [key: string]: Section };
 };
 
 function TableOfContents({ contents }: TableOfContentsProps) {
