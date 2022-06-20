@@ -3,11 +3,17 @@ import { COLORS } from "../data/colors";
 
 type CarouselProps = {
   id: string;
+  textColor?: COLORS;
   controlsColor?: COLORS;
   children: ReactElement[];
 };
 
-function Carousel({ children, id, controlsColor }: CarouselProps) {
+function Carousel({
+  children,
+  id,
+  textColor = COLORS.BLACK,
+  controlsColor = COLORS.BLACK,
+}: CarouselProps) {
   return (
     <div id={id} className="carousel slide">
       <div className="carousel-indicators">
@@ -22,7 +28,7 @@ function Carousel({ children, id, controlsColor }: CarouselProps) {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner text-center pb-5">
+      <div className={`carousel-inner text-center pb-5 text-${textColor}`}>
         {children?.map((child, index) => (
           <div
             key={index}
