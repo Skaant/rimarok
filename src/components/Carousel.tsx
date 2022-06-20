@@ -7,7 +7,7 @@ type CarouselProps = {
   children: ReactElement[];
 };
 
-function Carousel({ children, id }: CarouselProps) {
+function Carousel({ children, id, controlsColor }: CarouselProps) {
   console.log(children);
   return (
     <div id={id} style={{ height: 100 }} className="carousel slide">
@@ -31,7 +31,7 @@ function Carousel({ children, id }: CarouselProps) {
         ))}
       </div>
       <button
-        className="carousel-control-prev d-flex align-items-end pb-2"
+        className={`carousel-control-prev d-flex align-items-end pb-2 text-${controlsColor}`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="prev"
@@ -41,7 +41,7 @@ function Carousel({ children, id }: CarouselProps) {
         </span>
       </button>
       <button
-        className="carousel-control-next d-flex align-items-end pb-2"
+        className={`carousel-control-next d-flex align-items-end pb-2 text-${controlsColor}`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="next"
