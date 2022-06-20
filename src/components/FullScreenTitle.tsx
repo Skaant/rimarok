@@ -5,7 +5,7 @@ type FullScreenTitleProps = Pick<RowProps, "backgroundColor"> & {
   title: string;
   subtitle: string;
   height?: "100vh" | "60vh";
-  titleSize: "normal" | "big";
+  titleSize?: "normal" | "big";
 };
 
 function FullScreenTitle({
@@ -13,7 +13,7 @@ function FullScreenTitle({
   title,
   subtitle,
   height = "60vh",
-  titleSize,
+  titleSize = "normal",
 }: FullScreenTitleProps) {
   return (
     <Row
