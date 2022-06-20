@@ -1,3 +1,4 @@
+import { Page, PageProps } from "gatsby";
 import React from "react";
 import FullScreenTitle from "../components/FullScreenTitle";
 import Layout from "../components/Layout";
@@ -5,7 +6,9 @@ import { Motif } from "../types/Motif";
 
 export type MotifTemplateProps = Pick<Motif, "name">;
 
-function MotifTemplate({ name }: MotifTemplateProps) {
+function MotifTemplate({
+  pageContext: { name },
+}: PageProps<undefined, MotifTemplateProps>) {
   return (
     <Layout head={{ title: name }}>
       <>
