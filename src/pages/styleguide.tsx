@@ -6,6 +6,7 @@ import type Section from "../types/Section";
 import "../styles/global.scss";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
+import FullScreenTitle from "../components/FullScreenTitle";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -38,13 +39,11 @@ const Styleguide = () => {
       }}
     >
       <>
-        <Row backgroundColor={COLORS.SUN}>
-          <>
-            <h1>{STYLEGUIDE_TITLE}</h1>
-            <p>Démonstration des composants du site.</p>
-            <TableOfContents contents={STYLEGUIDE_SECTIONS_DATA} />
-          </>
-        </Row>
+        <FullScreenTitle
+          title={STYLEGUIDE_TITLE}
+          subtitle="Galerie des composants du site"
+          backgroundColor={COLORS.SUN}
+        />
         <Row id={STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].id}>
           <>
             <h2>{STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].title}</h2>
