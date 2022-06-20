@@ -8,9 +8,8 @@ type CarouselProps = {
 };
 
 function Carousel({ children, id, controlsColor }: CarouselProps) {
-  console.log(children);
   return (
-    <div id={id} style={{ height: 100 }} className="carousel slide">
+    <div id={id} className="carousel slide">
       <div className="carousel-indicators">
         {children?.map((child, index) => (
           <button
@@ -23,9 +22,9 @@ function Carousel({ children, id, controlsColor }: CarouselProps) {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner text-center p-2">
+      <div className="carousel-inner text-center pb-5">
         {children?.map((child, index) => (
-          <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+          <div key={index} className={`carousel-item p-5 ${index === 0 ? "active" : ""}`}>
             {child}
           </div>
         ))}
