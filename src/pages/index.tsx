@@ -35,18 +35,14 @@ const Accueil = () => {
             <Quote displayHeading={4}>
               <>
                 <p>
-                  Internet est un espace d’émancipation et de liberté, il
-                  devrait d’abord être soutenable et inclusif.
+                  Internet est un espace d’émancipation et de liberté, il devrait d’abord être
+                  soutenable et inclusif.
                 </p>
               </>
             </Quote>
             <p>
-              À 23 ans, <b>en 2016</b>, mon Master Informatique et Gestion
-              d’Entreprise en poche,{" "}
-              <b>
-                j’ai commencé l’activité de développeur web comme indépendant
-              </b>
-              .
+              À 23 ans, <b>en 2016</b>, mon Master Informatique et Gestion d’Entreprise en poche,{" "}
+              <b>j’ai commencé l’activité de développeur web comme indépendant</b>.
             </p>
             <LinksMenu
               links={[
@@ -57,21 +53,15 @@ const Accueil = () => {
               ]}
             />
             <p>
-              Depuis, <b>j’exerce toujours la même activité</b>, en recherchant
-              les projets les plus intéressants et les équipes les plus
-              bienveillantes.
+              Depuis, <b>j’exerce toujours la même activité</b>, en recherchant les projets les plus
+              intéressants et les équipes les plus bienveillantes.
             </p>
             <p>
               Spécialisé <b>full-stack JavaScript</b>, j'ai aussi développé ma{" "}
-              <b>
-                sensibilité au sujet de l’éco-conception et de l’informatique
-                durable
-              </b>
-              .
+              <b>sensibilité au sujet de l’éco-conception et de l’informatique durable</b>.
             </p>
             <p>
-              À la rencontre de ces deux sujets naît une{" "}
-              <b>puissante efficience</b>, rencontre de{" "}
+              À la rencontre de ces deux sujets naît une <b>puissante efficience</b>, rencontre de{" "}
               <b>motifs de conception</b> éprouvés et d'un objectif d'
               <b>économie maximale</b> (ressources informatiques et finance).
             </p>
@@ -92,18 +82,15 @@ const Accueil = () => {
             <Quote
               displayHeading={6}
               legend={{
-                author:
-                  "Laurent Gaveau, chef du pôle applicatif à l'Université de Reims",
+                author: "Laurent Gaveau, chef du pôle applicatif à l'Université de Reims",
               }}
             >
               <>
                 <p>
-                  Autonome, volontaire et dynamique, Romaric Ruga dispose
-                  d’excellentes compétences organisationnelles, techniques et
-                  relationnelles. Il maitrise les langages de programmation,
-                  s’est approprié rapidement notre Système d’Informations et
-                  s’est intégré parfaitement dans l’équipe et dans son contexte
-                  professionnel.
+                  Autonome, volontaire et dynamique, Romaric Ruga dispose d’excellentes compétences
+                  organisationnelles, techniques et relationnelles. Il maitrise les langages de
+                  programmation, s’est approprié rapidement notre Système d’Informations et s’est
+                  intégré parfaitement dans l’équipe et dans son contexte professionnel.
                 </p>
               </>
             </Quote>
@@ -120,26 +107,21 @@ const Accueil = () => {
         <Row backgroundColor={COLORS.ABYSS} colClassName="text-white">
           <>
             <Carousel
-              childrens={[
+              id="changeThisID" // Change this ID /!\
+              children={[
                 <>
                   <h3>MOBILIS PRO / MEDIARTIS</h3>
                   <p>
                     <i>Juin 2021 - aujourd'hui</i>
                   </p>
+                  <p>Bientôt un an de missions cumulées sur le projet novateur MEDIARTIS.</p>
                   <p>
-                    Bientôt un an de missions cumulées sur le projet novateur
-                    MEDIARTIS.
-                  </p>
-                  <p>
-                    J'interviens pour étendre les fonctionnalités du produit,
-                    sous un angle totalement full-stack (Nest TS / Vue) :
+                    J'interviens pour étendre les fonctionnalités du produit, sous un angle
+                    totalement full-stack (Nest TS / Vue) :
                   </p>
                   <ul>
                     <li>Stockage de données RGPD,</li>
-                    <li>
-                      Transition d'un système de rôles à un système de
-                      permissions,
-                    </li>
+                    <li>Transition d'un système de rôles à un système de permissions,</li>
                     <li>Ouverture du produit à un usage comme API externe,</li>
                     <li>Tests unitaires et e2e,</li>
                     <li>Mises à jour d'environnement et de sécurité ...</li>
@@ -151,8 +133,8 @@ const Accueil = () => {
                     <i>Septembre 2021 - Février 2022</i>
                   </p>
                   <p>
-                    Intégration d'un WordPress et développement du thème du
-                    nouveau site de l'association et festival Crest Jazz.
+                    Intégration d'un WordPress et développement du thème du nouveau site de
+                    l'association et festival Crest Jazz.
                   </p>
                   <p>Détails de la stack :</p>
                   <ul>
