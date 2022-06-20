@@ -11,16 +11,23 @@ type ProjectProps = {
   children: ReactElement;
 };
 
-function Project({ title, date, children }: ProjectProps) {
+function Project({ title, scope, tags, date, children }: ProjectProps) {
   return (
-    <div className="card w-50">
-      <div className="card-body d-flex flex-column">
+    <div className="card">
+      <div className="card-body d-flex flex-column text-start">
         <h3 className="card-title order-1">{title}</h3>
-        <p className="card-text order-0 d-flex justify-content-sm-between align-items-end flex-sm-row flex-column">
-          {/* <BadgesList badges={[{ label: "test", color: COLORS.ABYSS }]} /> */}
+        <p className="card-text order-0 d-flex justify-content-sm-between align-items-end flex-sm-row flex-column text-start">
+          {
+            <BadgesList
+              badges={[scope, ...(tags || [])].map((value, index) => ({
+                color: index ? COLORS.MIST : COLORS.FLOWER,
+                label: value,
+              }))}
+            />
+          }
           <span className="me-2">{date}</span>
         </p>
-        {children}
+        <div className="order-2">{children}</div>
         {/* <LinksMenu
           links={[
             {
