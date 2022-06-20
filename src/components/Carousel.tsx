@@ -24,7 +24,10 @@ function Carousel({ children, id, controlsColor }: CarouselProps) {
       </div>
       <div className="carousel-inner text-center pb-5">
         {children?.map((child, index) => (
-          <div key={index} className={`carousel-item p-5 ${index === 0 ? "active" : ""}`}>
+          <div
+            key={index}
+            className={`carousel-item p-5 ${index === 0 ? "active" : ""}`}
+          >
             {child}
           </div>
         ))}
