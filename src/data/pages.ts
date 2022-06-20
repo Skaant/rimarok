@@ -26,36 +26,36 @@ export const PAGES_DATA: { [page in PAGES]: PageData } = {
   PRESTATION: {
     id: "prestation",
     path: "/prestation",
-    title: "",
+    title: "Prestation",
   },
   PRESTATION_INGENIERIE_WEB: {
     id: "ingenierie-web",
     path: "/prestation/ingenierie-web",
-    title: "",
+    title: "Ingénierie web",
   },
   PRESTATION_ECO_CONCEPTION: {
     id: "eco-conception",
     path: "/prestation/eco-conception",
-    title: "",
+    title: "Éco-conception",
   },
   MOTIFS: {
     id: "motifs",
     path: "/motifs",
-    title: "",
+    title: "Motifs",
   },
   BLOG: {
     id: "blog",
     path: "/blog",
-    title: "",
+    title: "Blog",
   },
   STYLEGUIDE: {
     id: "styleguide",
     path: "/styleguide",
-    title: "",
+    title: "Styleguide",
   },
   MENTIONS_LEGALES: {
     id: "mentions-legales",
     path: "/mentions-legales",
-    title: "",
+    title: "Mentions légales",
   },
 };

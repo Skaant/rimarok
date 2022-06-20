@@ -2,20 +2,20 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import Quote from "../components/Quote";
 import TableOfContents from "../components/TableOfContents";
-import type Header from "../types/Header";
+import type Section from "../types/Section";
 import "../styles/global.scss";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
-enum STYLEGUIDE_HEADERS {
+enum STYLEGUIDE_SECTIONS {
   ROW = "ROW",
   TABLE_OF_CONTENTS = "TABLE_OF_CONTENTS",
   QUOTE = "QUOTE",
 }
 
-const STYLEGUIDE_HEADERS_DATA: { [header in STYLEGUIDE_HEADERS]: Header } = {
+const STYLEGUIDE_SECTIONS_DATA: { [header in STYLEGUIDE_SECTIONS]: Section } = {
   ROW: {
     id: "row",
     title: "Row",
@@ -42,18 +42,18 @@ const Styleguide = () => {
           <>
             <h1>{STYLEGUIDE_TITLE}</h1>
             <p>Démonstration des composants du site.</p>
-            <TableOfContents contents={STYLEGUIDE_HEADERS_DATA} />
+            <TableOfContents contents={STYLEGUIDE_SECTIONS_DATA} />
           </>
         </Row>
-        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].id}>
+        <Row id={STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].id}>
           <>
-            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.ROW].title}</h2>
+            <h2>{STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].title}</h2>
             <p>
               Le composant <i>Row</i> décrit une section de page.
             </p>
             <p>
-              Il est ensuite décliné par tous les autres composants sections, tels que CTA,
-              Carousel.
+              Il est ensuite décliné par tous les autres composants sections,
+              tels que CTA, Carousel.
             </p>
           </>
         </Row>
@@ -76,9 +76,9 @@ const Styleguide = () => {
             </p>
           </>
         </Row>
-        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].id}>
+        <Row id={STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.QUOTE].id}>
           <>
-            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.QUOTE].title}</h2>
+            <h2>{STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.QUOTE].title}</h2>
           </>
         </Row>
         <Row>
@@ -114,15 +114,27 @@ const Styleguide = () => {
             <p>(Source et auteur)</p>
             <Quote
               displayHeading={6}
-              legend={{ source: "Source optionnelle", author: "Auteur optionnel" }}
+              legend={{
+                source: "Source optionnelle",
+                author: "Auteur optionnel",
+              }}
             >
               <>Ceci est une citation, juste une citation</>
             </Quote>
           </>
         </Row>
-        <Row id={STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].id}>
+        <Row
+          id={
+            STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS].id
+          }
+        >
           <>
-            <h2>{STYLEGUIDE_HEADERS_DATA[STYLEGUIDE_HEADERS.TABLE_OF_CONTENTS].title}</h2>
+            <h2>
+              {
+                STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS]
+                  .title
+              }
+            </h2>
             <p>Permet la navigation entre les sections d'une page.</p>
           </>
         </Row>
