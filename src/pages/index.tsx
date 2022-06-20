@@ -24,6 +24,8 @@ const Accueil = () => {
           title={title}
           subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
+          height={"100vh"}
+          titleSize={"big"}
         />
         <Row
           header={{

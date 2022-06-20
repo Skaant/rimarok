@@ -1,5 +1,9 @@
-.main-title {
+.big {
   @include font-size(60px);
+}
+
+.normal {
+  @include font-size(50px);
 }
 
 .sub-title {

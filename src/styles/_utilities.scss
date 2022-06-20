@@ -51,4 +51,20 @@ $new-utilities: ();
   );
 }
 
+$new-utilities: map-merge(
+  $new-utilities,
+  (
+    "viewport-height":
+      map-merge(
+        map-get($utilities, "viewport-height"),
+        (
+          values: (
+            100: 100vh,
+            60: 60vh,
+          ),
+        )
+      ),
+  )
+);
+
 $utilities: $new-utilities;
