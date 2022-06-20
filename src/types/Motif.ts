@@ -1,9 +1,12 @@
 import { MOTIFS } from "../data/motifs";
 
 export type Motif = {
-  id?: MOTIFS;
+  id: MOTIFS;
   name: string;
   summary?: string;
+  /**
+   * RELATIONS
+   */
   closeTo?: MOTIFS[];
   /** Parents/context */
   parents?: MOTIFS[];
