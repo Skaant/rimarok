@@ -20,7 +20,7 @@ jobs:
           node-version: "16"
           cache: "npm"
 
-      - run: npm run i
+      - run: npm i
       - run: npm run build
       - run: npm run build:apps
 
