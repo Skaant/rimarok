@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import WEBSITE_DATA from "../data/website";
 
@@ -7,9 +8,9 @@ function Navbar({}: NavbarProps) {
   return (
     <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           {WEBSITE_DATA.BRAND_NAME}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,38 +25,38 @@ function Navbar({}: NavbarProps) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Prestations
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="#">
                     Ingénierie web
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="#">
                     Eco-conception
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link className="nav-link active" to="#">
                 Motifs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 Blog
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
