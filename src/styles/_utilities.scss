@@ -8,7 +8,8 @@
 $selected-utilities-name:
 // https://getbootstrap.com/docs/5.2/utilities/background/
   ("background-color", true)
-  // https://getbootstrap.com/docs/5.2/utilities/colors/
+  // https://getbootstrap.com/docs/5.2/utilities/borders/
+  ("rounded", true) // https://getbootstrap.com/docs/5.2/utilities/colors/
   ("color", true) // https://getbootstrap.com/docs/5.2/utilities/display/
   ("display", false) // https://getbootstrap.com/docs/5.2/utilities/flex/
   ("flex-direction", true) ("align-items", true) ("align-content", true)
