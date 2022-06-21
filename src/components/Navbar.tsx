@@ -1,10 +1,20 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import { COLORS } from "../data/colors";
+import { PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 
 type NavbarProps = {};
 
 function Navbar({}: NavbarProps) {
+  const dropdownArray = [
+    PAGES_DATA.PRESTATION,
+    PAGES_DATA.PRESTATION_INGENIERIE_WEB,
+    PAGES_DATA.PRESTATION_ECO_CONCEPTION,
+  ];
+
+  const navArray = [PAGES_DATA.MOTIFS, PAGES_DATA.BLOG];
+
   return (
     <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
       <div className="container-fluid">
@@ -25,39 +35,54 @@ function Navbar({}: NavbarProps) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
             <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
+              <div
+                className={`nav-link dropdown-toggle text-${COLORS.LAGOON}`}
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Prestations
-              </Link>
+                Mes offres
+              </div>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <Link className="dropdown-item" to="#">
-                    Ingénierie web
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="#">
-                    Eco-conception
-                  </Link>
-                </li>
+                {dropdownArray.map(({ title, path }, index) => {
+                  return path.match(/\/.*\//) ? (
+                    <li>
+                      <Link
+                        key={index}
+                        className={`dropdown-item text-${COLORS.LAGOON}`}
+                        to={path}
+                      >
+                        ◆ {title}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link
+                        key={index}
+                        className={`dropdown-item text-${COLORS.LAGOON}`}
+                        to={path}
+                      >
+                        <b>{title}</b>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="#">
-                Motifs
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                Blog
-              </Link>
-            </li>
+            {navArray.map(({ title, path }, index) => {
+              return (
+                <li className="nav-item">
+                  <Link
+                    key={index}
+                    className={`nav-link active text-${COLORS.LAGOON}`}
+                    to={path}
+                  >
+                    {title}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
