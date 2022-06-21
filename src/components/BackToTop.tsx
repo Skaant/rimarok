@@ -7,7 +7,11 @@ type BackToTopProps = {
   textColor?: COLORS;
 };
 
-function BackToTop({ isFixed = true, backgroundColor, textColor }: BackToTopProps) {
+function BackToTop({
+  isFixed = true,
+  backgroundColor = COLORS.LAGOON,
+  textColor = COLORS.WHITE,
+}: BackToTopProps) {
   return (
     <button
       type="button"
