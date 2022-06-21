@@ -6,16 +6,16 @@ if (topButton) {
   });
 
   window.addEventListener("scroll", () => {
-    window.scrollY < 200 && topButton.classList.contains("d-none")
-      ? ""
-      : window.scrollY < 200 && topButton.classList.contains("d-block")
-      ? topButton.classList.add("d-none") & topButton.classList.remove("d-block")
-      : "";
-
-    window.scrollY > 200 && topButton.classList.contains("d-block")
-      ? ""
-      : window.scrollY > 200 && topButton.classList.contains("d-none")
-      ? topButton.classList.add("d-block") & topButton.classList.remove("d-none")
-      : "";
+    if (window.scrollY < 200) {
+      if (topButton.classList.contains("d-block")) {
+        topButton.classList.add("d-none");
+        topButton.classList.remove("d-block");
+      }
+    } else {
+      if (topButton.classList.contains("d-none")) {
+        topButton.classList.add("d-block");
+        topButton.classList.remove("d-none");
+      }
+    }
   });
 }
