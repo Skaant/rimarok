@@ -17,8 +17,12 @@ function Navbar({}: NavbarProps) {
 
   return (
     <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+      <div className="container-fluid d-flex align-items-center">
+        <Link
+          className="navbar-brand font-slab"
+          style={{ fontSize: "24px" }}
+          to="/"
+        >
           {WEBSITE_DATA.BRAND_NAME}
         </Link>
         <button
@@ -33,7 +37,7 @@ function Navbar({}: NavbarProps) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+          <ul className="navbar-nav me-auto mb-lg-0 w-100 justify-content-end">
             <li className="nav-item dropdown">
               <div
                 className={`nav-link dropdown-toggle text-${COLORS.LAGOON}`}
