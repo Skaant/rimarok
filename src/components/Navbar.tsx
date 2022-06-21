@@ -50,24 +50,14 @@ function Navbar({}: NavbarProps) {
               </div>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {dropdownArray.map(({ title, path }, index) => {
-                  return path.match(/\/.*\//) ? (
+                  return (
                     <li>
                       <Link
                         key={index}
                         className={`dropdown-item text-${COLORS.LAGOON}`}
                         to={path}
                       >
-                        ◆ {title}
-                      </Link>
-                    </li>
-                  ) : (
-                    <li>
-                      <Link
-                        key={index}
-                        className={`dropdown-item text-${COLORS.LAGOON}`}
-                        to={path}
-                      >
-                        <b>{title}</b>
+                        {path.match(/\/.*\//) ? `◆ ${title}` : <b>{title}</b>}
                       </Link>
                     </li>
                   );
