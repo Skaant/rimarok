@@ -8,6 +8,7 @@ import WEBSITE_DATA from "../data/website";
 import LinksMenu from "../components/LinksMenu";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
+import Footer from "../components/Footer";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -116,6 +117,7 @@ const Accueil = () => {
             />
           </>
         </Row>
+        <Footer />
       </>
     </Layout>
   );
