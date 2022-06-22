@@ -43,11 +43,11 @@ const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
     id: "quote",
     title: "Quote",
   },
-  LINKSMENU: {
+  LINKS_MENU: {
     id: "links-menu",
     title: "Links menu",
   },
-  BADGESLIST: {
+  BADGES_LIST: {
     id: "badges-list",
     title: "Badges list",
   },
@@ -55,7 +55,7 @@ const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
     id: "project",
     title: "Project",
   },
-  BACKTOTOP: {
+  BACK_TO_TOP: {
     id: "back-to-top",
     title: "Back to top",
   },
@@ -211,10 +211,13 @@ const Styleguide = () => {
             />
           </>
         </Row>
-        <Row id={STYLEGUIDE_SECTIONS.LINKSMENU.id}>
+        <Row id={STYLEGUIDE_SECTIONS.LINKS_MENU.id}>
           <>
-            <h2>{STYLEGUIDE_SECTIONS.LINKSMENU.title}</h2>
-            <p>Permet la naviguation interne et externe au moyen d'une liste de liens. </p>
+            <h2>{STYLEGUIDE_SECTIONS.LINKS_MENU.title}</h2>
+            <p>
+              Permet la naviguation interne et externe au moyen d'une liste de
+              liens.
+            </p>
           </>
         </Row>
         <Row>
