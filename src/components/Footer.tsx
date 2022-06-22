@@ -55,8 +55,14 @@ function Footer({}: FooterProps) {
           <li className="h3 py-2">{WEBSITE_DATA.BRAND_NAME}</li>
           <li className="py-2">
             Site conçu par Romaric Ruga et{" "}
-            <a href="https://eljie.fr/">Lucile Joan</a>, développé par Romaric
-            Ruga et <a href="https://timjeanmart.be/">Tim Jeanmart</a>.
+            <a href="https://eljie.fr/" className="text-lagoon">
+              Lucile Joan
+            </a>
+            , développé par Romaric Ruga et{" "}
+            <a href="https://timjeanmart.be/" className="text-lagoon">
+              Tim Jeanmart
+            </a>
+            .
           </li>
           <LinksMenu
             links={[
