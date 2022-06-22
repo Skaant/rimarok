@@ -52,10 +52,11 @@ function Footer({}: FooterProps) {
           })}
         </ul>
         <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
-          <li className="py-2">{WEBSITE_DATA.BRAND_NAME}</li>
+          <li className="h3 py-2">{WEBSITE_DATA.BRAND_NAME}</li>
           <li className="py-2">
-            Site conçu par Romaric Ruga et Lucile Joan, développé par Romaric
-            Ruga et Tim Jeanmart.
+            Site conçu par Romaric Ruga et{" "}
+            <a href="https://eljie.fr/">Lucile Joan</a>, développé par Romaric
+            Ruga et <a href="https://timjeanmart.be/">Tim Jeanmart</a>.
           </li>
           <LinksMenu
             links={[
