@@ -11,8 +11,6 @@ function Footer({}: FooterProps) {
   const pagesArray = [
     PAGES_DATA.ACCUEIL,
     PAGES_DATA.PRESTATION,
-    PAGES_DATA.PRESTATION_INGENIERIE_WEB,
-    PAGES_DATA.PRESTATION_ECO_CONCEPTION,
     PAGES_DATA.MOTIFS,
     PAGES_DATA.BLOG,
   ];
@@ -24,14 +22,31 @@ function Footer({}: FooterProps) {
           {pagesArray.map(({ title, path }, index) => {
             return (
               <li className="py-1" key={index}>
-                <Link
-                  className={`text-white pb-2 ${
-                    path.match(/\/.*\//) ? "ps-3" : ""
-                  }`}
-                  to={path}
-                >
+                <Link className="text-white pb-2" to={path}>
                   {title}
                 </Link>
+                {path.includes("prestation") ? (
+                  <ul className="list-unstyled">
+                    <li className="py-1 pt-2" key={index}>
+                      <Link
+                        className="text-white ps-3"
+                        to={PAGES_DATA.PRESTATION_INGENIERIE_WEB.path}
+                      >
+                        {PAGES_DATA.PRESTATION_INGENIERIE_WEB.title}
+                      </Link>
+                    </li>
+                    <li className="py-1 pt-2" key={index}>
+                      <Link
+                        className="text-white ps-3"
+                        to={PAGES_DATA.PRESTATION_ECO_CONCEPTION.path}
+                      >
+                        {PAGES_DATA.PRESTATION_ECO_CONCEPTION.title}
+                      </Link>
+                    </li>
+                  </ul>
+                ) : (
+                  ""
+                )}
               </li>
             );
           })}
