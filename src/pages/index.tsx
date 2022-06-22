@@ -9,6 +9,7 @@ import Carousel from "../components/Carousel";
 import LinksMenu from "../components/LinksMenu";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
+import Footer from "../components/Footer";
 import Project from "../components/Project";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
