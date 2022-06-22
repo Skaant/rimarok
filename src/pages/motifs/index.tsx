@@ -1,6 +1,7 @@
 import React from "react";
 import FullScreenTitle from "../../components/FullScreenTitle";
 import Layout from "../../components/Layout";
+import MotifsList from "../../components/MotifsList";
 import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import Section from "../../types/Section";
@@ -79,7 +80,9 @@ function Motifs() {
             content: MOTIFS_SECTIONS.LISTE.title,
           }}
         >
-          <></>
+          <>
+            <MotifsList />
+          </>
         </Row>
         <Row
           id={MOTIFS_SECTIONS.HISTORIQUE.id}
