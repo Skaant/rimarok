@@ -260,6 +260,31 @@ const Styleguide = () => {
             <div>Contenu du projet</div>
           </Project>
         </Row>
+        <Row id={STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.title}</h2>
+            <p>
+              Affiche le titre et le sous-titre de la page sous la forme d'une bannière, étendue
+              sur l'intégralité de la largeur de la page.
+            </p>
+          </>
+        </Row>
+        <>
+          <FullScreenTitle
+            backgroundColor={COLORS.SUN}
+            title="Ceci est un titre"
+            subtitle="Ceci est un sous-titre"
+            height="60vh"
+            titleSize="normal"
+          />
+          <FullScreenTitle
+            backgroundColor={COLORS.LAGOON}
+            title="Ceci est un titre"
+            subtitle="Ceci est un sous-titre"
+            height="100vh"
+            titleSize="big"
+          />
+        </>
       </>
     </Layout>
   );
