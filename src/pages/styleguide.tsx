@@ -9,6 +9,7 @@ import { COLORS } from "../data/colors";
 import FullScreenTitle from "../components/FullScreenTitle";
 import { Link } from "gatsby";
 import LinksMenu from "../components/LinksMenu";
+import BadgesList from "../components/BadgesList";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -225,6 +226,20 @@ const Styleguide = () => {
             links={[
               { link: "#", label: "Link 1", color: COLORS.FLOWER },
               { link: "#", label: "Link 2", color: COLORS.FLOWER },
+            ]}
+          />
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.BADGES_LIST.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.BADGES_LIST.title}</h2>
+            <p>Affiche une liste inline de badges pilules.</p>
+          </>
+        </Row>
+        <Row>
+          <BadgesList
+            badges={[
+              { label: "Badge 1", color: COLORS.FLOWER },
+              { label: "Badge 2", color: COLORS.MIST },
             ]}
           />
         </Row>
