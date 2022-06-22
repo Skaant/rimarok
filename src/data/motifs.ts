@@ -1,3 +1,5 @@
+import { Motif } from "../types/Motif";
+
 export enum MOTIFS {
   MOTIF = "MOTIF",
   INSTANCE = "INSTANCE",
@@ -63,3 +65,11 @@ export enum MOTIFS {
   ROLE = "ROLE",
   FRAMEWORK = "FRAMEWORK",
 }
+
+export const MOTIFS_DATA: { [key in MOTIFS]?: Motif } = {
+  ID: {
+    id: MOTIFS.ID,
+    summary:
+      "Clé unique permettant d'identifier une instance d'un objet/d'un motif",
+  },
+};
