@@ -31,7 +31,7 @@ const PRESTATION_ECO_CONCEPTION_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-export function IngenierieWeb() {
+function EcoConception() {
   return (
     <Layout
       head={{
@@ -41,7 +41,7 @@ export function IngenierieWeb() {
       <>
         <FullScreenTitle
           title={title}
-          subtitle="Ce que signifie être full-stack"
+          subtitle="Réduire l'impact des applicatifs web"
         />
         <Row
           id={PRESTATION_ECO_CONCEPTION_SECTIONS.INTRO_PAGE.id}
@@ -92,3 +92,5 @@ export function IngenierieWeb() {
     </Layout>
   );
 }
+
+export default EcoConception;
