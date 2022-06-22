@@ -1,7 +1,7 @@
 .blockquote {
-  background-color: #ffcc33;
+  background-color: $light_mist;
   color: rgb(63, 63, 63);
-  box-shadow: -25px 0px 0px 0px #eebe2e;
+  box-shadow: -25px 0px 0px 0px $mist;
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -10,6 +10,6 @@
 }
 
 .legend {
-    display: flex;
-    justify-content: right;
+  display: flex;
+  justify-content: right;
 }

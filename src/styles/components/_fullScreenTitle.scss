@@ -1,7 +1,14 @@
-.main-title {
-  @include font-size(60px);
-}
-
-.sub-title {
-  @include font-size(32px);
+#full-screen-title {
+  h1 {
+    margin-top: 12vh;
+    &.big {
+      @include font-size(60px);
+    }
+    &.normal {
+      @include font-size(50px);
+    }
+  }
+  .sub-title {
+    @include font-size(32px);
+  }
 }

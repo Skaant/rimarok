@@ -8,14 +8,16 @@
 $selected-utilities-name:
 // https://getbootstrap.com/docs/5.2/utilities/background/
   ("background-color", true)
-  // https://getbootstrap.com/docs/5.2/utilities/colors/
+  // https://getbootstrap.com/docs/5.2/utilities/borders/
+  ("rounded", true) // https://getbootstrap.com/docs/5.2/utilities/colors/
   ("color", true) // https://getbootstrap.com/docs/5.2/utilities/display/
   ("display", true) // https://getbootstrap.com/docs/5.2/utilities/flex/
   ("flex-direction", false) ("align-items", true) ("align-content", true)
   ("justify-content", true) ("order", true)
   // https://getbootstrap.com/docs/5.2/utilities/opacity/
   ("opacity", true) // https://getbootstrap.com/docs/5.2/utilities/position/
-  ("position", true) // https://getbootstrap.com/docs/5.2/utilities/shadows/
+  ("position", true) ("bottom", true) ("end", true)
+  // https://getbootstrap.com/docs/5.2/utilities/shadows/
   ("shadow", true) // https://getbootstrap.com/docs/5.2/utilities/sizing/
   ("width", true) ("height", true) ("viewport-height", true)
   // https://getbootstrap.com/docs/5.2/utilities/spacing/
@@ -50,5 +52,21 @@ $new-utilities: ();
     )
   );
 }
+
+$new-utilities: map-merge(
+  $new-utilities,
+  (
+    "viewport-height":
+      map-merge(
+        map-get($utilities, "viewport-height"),
+        (
+          values: (
+            100: 100vh,
+            60: 60vh,
+          ),
+        )
+      ),
+  )
+);
 
 $utilities: $new-utilities;

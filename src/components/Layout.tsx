@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import WEBSITE_DATA from "../data/website";
+import BackToTop from "./BackToTop";
 import Navbar from "./Navbar";
 
 type LayoutProps = {
@@ -36,6 +37,7 @@ function Layout({
         <script src="/script.js" defer={true}></script>
       </Helmet>
       <Navbar />
+      <BackToTop />
       <div className="container-fluid px-0">{children}</div>
     </>
   );
