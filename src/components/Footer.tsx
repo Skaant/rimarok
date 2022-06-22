@@ -17,8 +17,8 @@ function Footer({}: FooterProps) {
 
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
-      <div className="d-flex justify-content-center flex-sm-column flex-row text-white">
-        <ul className="list-unstyled p-5 col-xl-4">
+      <div className="d-flex justify-content-center flex-md-row flex-column text-white">
+        <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
           {pagesArray.map(({ title, path }, index) => {
             return (
               <li className="py-1" key={index}>
@@ -51,7 +51,7 @@ function Footer({}: FooterProps) {
             );
           })}
         </ul>
-        <ul className="list-unstyled p-5 col-xl-4">
+        <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
           <li className="py-2">{WEBSITE_DATA.BRAND_NAME}</li>
           <li className="py-2">
             Site conçu par Romaric Ruga et Lucile Joan, développé par Romaric
