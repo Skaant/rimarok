@@ -18,11 +18,7 @@ function Navbar({}: NavbarProps) {
   return (
     <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
       <div className="container-fluid d-flex align-items-center">
-        <Link
-          className="navbar-brand font-slab"
-          style={{ fontSize: "24px" }}
-          to="/"
-        >
+        <Link className="navbar-brand font-slab" to="/">
           {WEBSITE_DATA.BRAND_NAME}
         </Link>
         <button
