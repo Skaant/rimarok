@@ -10,6 +10,7 @@ import FullScreenTitle from "../components/FullScreenTitle";
 import { Link } from "gatsby";
 import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
+import Project from "../components/Project";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -242,6 +243,22 @@ const Styleguide = () => {
               { label: "Badge 2", color: COLORS.MIST },
             ]}
           />
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.PROJECT.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.PROJECT.title}</h2>
+            <p>Project est un élément enfant du composant Carousel.</p>
+          </>
+        </Row>
+        <Row>
+          <Project
+            title="Titre du projet"
+            scope="full-stack"
+            tags={["tag 1", "tag 2"]}
+            date="22 juin 2022"
+          >
+            <div>Contenu du projet</div>
+          </Project>
         </Row>
       </>
     </Layout>
