@@ -1,3 +1,8 @@
 .row {
   justify-content: center;
+  @each $color in (lagoon abyss) {
+    &.bg-#{$color} {
+      color: $white;
+    }
+  }
 }
