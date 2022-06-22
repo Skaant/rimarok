@@ -41,6 +41,7 @@
 @import "./components/row";
 @import "./components/quote";
 @import "./components/fullScreenTitle";
+@import "./components/links-menu";
 
 body {
   font-family: $font-rubik;
@@ -71,4 +72,8 @@ h4,
 h5,
 h6 {
   font-family: $font-slab;
+}
+
+a {
+  text-decoration: none;
 }

@@ -36,7 +36,7 @@ const MOTIFS_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-export function Motifs() {
+function Motifs() {
   return (
     <Layout
       head={{
@@ -103,3 +103,5 @@ export function Motifs() {
     </Layout>
   );
 }
+
+export default Motifs;

@@ -1,3 +1,5 @@
+import { Motif } from "../types/Motif";
+
 export enum MOTIFS {
   MOTIF = "MOTIF",
   INSTANCE = "INSTANCE",
@@ -13,6 +15,9 @@ export enum MOTIFS {
   REFERENCE = "REFERENCE",
   VARIABLE = "VARIABLE",
   JS_REFERENCE = "JS_REFERENCE",
+  SCOPE = "SCOPE",
+  JS_SCOPE = "JS_SCOPE",
+  CAST = "CAST",
   /** Aliases : WHILE, EACH */
   FOR = "FOR",
   IF = "IF",
@@ -55,7 +60,16 @@ export enum MOTIFS {
   USER = "USER",
   TOKEN = "TOKEN",
   DATABASE = "DATABASE",
+  QUERY = "QUERY",
   PERMISSION = "PERMISSION",
   ROLE = "ROLE",
   FRAMEWORK = "FRAMEWORK",
 }
+
+export const MOTIFS_DATA: { [key in MOTIFS]?: Motif } = {
+  ID: {
+    id: MOTIFS.ID,
+    summary:
+      "Clé unique permettant d'identifier une instance d'un objet/d'un motif",
+  },
+};

@@ -31,7 +31,7 @@ const PRESTATION_INGENIERIE_WEB_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-export function IngenierieWeb() {
+function IngenierieWeb() {
   return (
     <Layout
       head={{
@@ -94,3 +94,5 @@ export function IngenierieWeb() {
     </Layout>
   );
 }
+
+export default IngenierieWeb;
