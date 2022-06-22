@@ -8,6 +8,8 @@ export type RowProps = {
     content: string;
   };
   backgroundColor?: COLORS;
+  paddingY?: 0 | 2 | 3 | 5;
+  className?: string;
   col?: string;
   colClassName?: string;
   children: ReactElement;
@@ -17,6 +19,8 @@ function Row({
   id,
   header,
   backgroundColor,
+  paddingY = 3,
+  className,
   col = "col-12 col-sm-10 col-md-8 col-lg-6",
   colClassName,
   children,
@@ -24,16 +28,18 @@ function Row({
   return (
     <div
       id={id}
-      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""}`}
+      className={`row ${
+        backgroundColor ? `bg-${backgroundColor}` : ""
+      } py-${paddingY}${className ? ` ${className}` : ""}`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {header &&
           (header.level === 1 ? (
             <h1>{header.content}</h1>
           ) : header.level === 2 ? (
-            <h2>{header.content}</h2>
+            <h2 className="my-4">{header.content}</h2>
           ) : (
-            <h3>{header.content}</h3>
+            <h3 className="my-3">{header.content}</h3>
           ))}
         {children}
       </div>

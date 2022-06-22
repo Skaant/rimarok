@@ -23,6 +23,7 @@ function FullScreenTitle({
         height === "60vh" ? "vh-60" : "vh-100"
       } d-flex flex-column justify-content-center align-items-center text-center p-4`}
       backgroundColor={backgroundColor}
+      paddingY={0}
     >
       <>
         <h1 className={titleSize}>{title}</h1>
