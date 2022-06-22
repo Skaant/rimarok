@@ -19,7 +19,7 @@ const BLOG_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-export function Blog() {
+function Blog() {
   return (
     <Layout
       head={{
@@ -29,7 +29,7 @@ export function Blog() {
       <>
         <FullScreenTitle
           title={title}
-          subtitle="Ce que signifie être full-stack"
+          subtitle="Réflexions et recherches sur le développement"
         />
         <Row
           id={BLOG_SECTIONS.INTRO_PAGE.id}
@@ -41,37 +41,10 @@ export function Blog() {
           <></>
         </Row>
         <Row
-          id={BLOG_SECTIONS.VALEURS.id}
+          id={BLOG_SECTIONS.LISTE.id}
           header={{
             level: 2,
-            content: BLOG_SECTIONS.VALEURS.title,
-          }}
-        >
-          <></>
-        </Row>
-        <Row
-          id={BLOG_SECTIONS.AXES_TRAVAIL.id}
-          header={{
-            level: 2,
-            content: BLOG_SECTIONS.AXES_TRAVAIL.title,
-          }}
-        >
-          <></>
-        </Row>
-        <Row
-          id={BLOG_SECTIONS.BONNES_PRATIQUES.id}
-          header={{
-            level: 2,
-            content: BLOG_SECTIONS.BONNES_PRATIQUES.title,
-          }}
-        >
-          <></>
-        </Row>
-        <Row
-          id={BLOG_SECTIONS.EXEMPLE_SITE.id}
-          header={{
-            level: 2,
-            content: BLOG_SECTIONS.EXEMPLE_SITE.title,
+            content: BLOG_SECTIONS.LISTE.title,
           }}
         >
           <></>
@@ -80,3 +53,5 @@ export function Blog() {
     </Layout>
   );
 }
+
+export default Blog;
