@@ -7,20 +7,33 @@ import "../styles/global.scss";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import FullScreenTitle from "../components/FullScreenTitle";
+import { Link } from "gatsby";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
-enum STYLEGUIDE_SECTIONS {
-  ROW = "ROW",
-  TABLE_OF_CONTENTS = "TABLE_OF_CONTENTS",
-  QUOTE = "QUOTE",
-}
-
-const STYLEGUIDE_SECTIONS_DATA: { [header in STYLEGUIDE_SECTIONS]: Section } = {
+const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
+  LAYOUT: {
+    id: "layout",
+    title: "Layout",
+  },
+  /* Row-sized */
   ROW: {
     id: "row",
     title: "Row",
   },
+  FULL_SIZE_TITLE: {
+    id: "full-size-title",
+    title: "Full size title",
+  },
+  MOTIFS_LIST: {
+    id: "motifs-list",
+    title: "Motifs list",
+  },
+  ARTICLES_LIST: {
+    id: "articles-list",
+    title: "Articles list",
+  },
+  /* Row content-sized */
   TABLE_OF_CONTENTS: {
     id: "table-of-contents",
     title: "Table of contents",
@@ -42,17 +55,58 @@ const Styleguide = () => {
         <FullScreenTitle
           title={STYLEGUIDE_TITLE}
           subtitle="Galerie des composants du site"
-          backgroundColor={COLORS.SUN}
+          backgroundColor={COLORS.LAGOON}
         />
-        <Row id={STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].id}>
+        <Row
+          header={{
+            level: 2,
+            content: "Liste des composants",
+          }}
+          className="mt-5"
+        >
           <>
-            <h2>{STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.ROW].title}</h2>
+            <TableOfContents
+              contents={STYLEGUIDE_SECTIONS}
+              linkClassName="font-slab"
+            />
+          </>
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.LAYOUT.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.LAYOUT.title}</h2>
+          </>
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.ROW.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.ROW.title}</h2>
             <p>
-              Le composant <i>Row</i> décrit une section de page.
+              Le composant <span className="font-slab">Row</span> décrit une{" "}
+              <b>section de page</b> .
             </p>
             <p>
-              Il est ensuite décliné par tous les autres composants sections,
-              tels que CTA, Carousel.
+              Une page est faite d'
+              <b>
+                une série de <span className="font-slab">Row</span>
+              </b>
+              , les uns en dessous des autres.
+            </p>
+            <p>
+              Le composant peut ensuite être{" "}
+              <b>décliné en d'autres composants de section</b>, tels que{" "}
+              <Link
+                to={`#${STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.id}`}
+                className="font-slab"
+              >
+                {STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.title}
+              </Link>
+              ,{" "}
+              <Link
+                to={`#${STYLEGUIDE_SECTIONS.ARTICLES_LIST.id}`}
+                className="font-slab"
+              >
+                {STYLEGUIDE_SECTIONS.ARTICLES_LIST.title}
+              </Link>
+              .
             </p>
           </>
         </Row>
@@ -75,9 +129,9 @@ const Styleguide = () => {
             </p>
           </>
         </Row>
-        <Row id={STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.QUOTE].id}>
+        <Row id={STYLEGUIDE_SECTIONS.QUOTE.id}>
           <>
-            <h2>{STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.QUOTE].title}</h2>
+            <h2>{STYLEGUIDE_SECTIONS.QUOTE.title}</h2>
           </>
         </Row>
         <Row>
@@ -122,18 +176,9 @@ const Styleguide = () => {
             </Quote>
           </>
         </Row>
-        <Row
-          id={
-            STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS].id
-          }
-        >
+        <Row id={STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS.id}>
           <>
-            <h2>
-              {
-                STYLEGUIDE_SECTIONS_DATA[STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS]
-                  .title
-              }
-            </h2>
+            <h2>{STYLEGUIDE_SECTIONS.TABLE_OF_CONTENTS.title}</h2>
             <p>Permet la navigation entre les sections d'une page.</p>
           </>
         </Row>
