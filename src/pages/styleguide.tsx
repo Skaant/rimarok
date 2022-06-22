@@ -8,6 +8,7 @@ import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import FullScreenTitle from "../components/FullScreenTitle";
 import { Link } from "gatsby";
+import LinksMenu from "../components/LinksMenu";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -209,6 +210,20 @@ const Styleguide = () => {
               }}
             />
           </>
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.LINKSMENU.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.LINKSMENU.title}</h2>
+            <p>Permet la naviguation interne et externe au moyen d'une liste de liens. </p>
+          </>
+        </Row>
+        <Row>
+          <LinksMenu
+            links={[
+              { link: "#", label: "Link 1", color: COLORS.FLOWER },
+              { link: "#", label: "Link 2", color: COLORS.FLOWER },
+            ]}
+          />
         </Row>
       </>
     </Layout>
