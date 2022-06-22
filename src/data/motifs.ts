@@ -13,6 +13,9 @@ export enum MOTIFS {
   REFERENCE = "REFERENCE",
   VARIABLE = "VARIABLE",
   JS_REFERENCE = "JS_REFERENCE",
+  SCOPE = "SCOPE",
+  JS_SCOPE = "JS_SCOPE",
+  CAST = "CAST",
   /** Aliases : WHILE, EACH */
   FOR = "FOR",
   IF = "IF",
@@ -55,6 +58,7 @@ export enum MOTIFS {
   USER = "USER",
   TOKEN = "TOKEN",
   DATABASE = "DATABASE",
+  QUERY = "QUERY",
   PERMISSION = "PERMISSION",
   ROLE = "ROLE",
   FRAMEWORK = "FRAMEWORK",

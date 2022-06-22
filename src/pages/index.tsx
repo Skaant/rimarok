@@ -65,7 +65,8 @@ const Accueil = () => {
               bienveillantes.
             </p>
             <p>
-              Spécialisé <b>full-stack JavaScript</b>, j'ai aussi développé ma{" "}
+              Spécialisé <b>full-stack JavaScript</b> (et passionné par ce que
+              l'on peut faire sur internet), j'ai aussi développé ma{" "}
               <b>
                 sensibilité au sujet de l’éco-conception et de l’informatique
                 durable
@@ -74,9 +75,10 @@ const Accueil = () => {
             </p>
             <p>
               À la rencontre de ces deux sujets naît une{" "}
-              <b>puissante efficience</b>, rencontre de{" "}
+              <b>puissante efficience</b>, l'union de{" "}
               <b>motifs de conception</b> éprouvés et d'un objectif d'
-              <b>économie maximale</b> (ressources informatiques et finance).
+              <b>économie maximale</b> (ressources informatiques et
+              financières).
             </p>
             <LinksMenu
               links={[
