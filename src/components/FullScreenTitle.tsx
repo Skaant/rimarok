@@ -17,6 +17,7 @@ function FullScreenTitle({
 }: FullScreenTitleProps) {
   return (
     <Row
+      id="full-screen-title"
       col="col-12"
       colClassName={`${
         height === "60vh" ? "vh-60" : "vh-100"
