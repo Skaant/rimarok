@@ -11,6 +11,7 @@ import { Link } from "gatsby";
 import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
 import Project from "../components/Project";
+import BackToTop from "../components/BackToTop";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -264,8 +265,8 @@ const Styleguide = () => {
           <>
             <h2>{STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.title}</h2>
             <p>
-              Affiche le titre et le sous-titre de la page sous la forme d'une bannière, étendue
-              sur l'intégralité de la largeur de la page.
+              Affiche le titre et le sous-titre de la page sous la forme d'une
+              bannière, étendue sur l'intégralité de la largeur de la page.
             </p>
           </>
         </Row>
@@ -285,6 +286,22 @@ const Styleguide = () => {
             titleSize="big"
           />
         </>
+        <Row id={STYLEGUIDE_SECTIONS.BACK_TO_TOP.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.BACK_TO_TOP.title}</h2>
+            <p>
+              Affiche un bouton cliquable permettant de revenir en haut de la
+              page.
+            </p>
+          </>
+        </Row>
+        <Row>
+          <BackToTop
+            isFixed={false}
+            backgroundColor={COLORS.LAGOON}
+            textColor={COLORS.WHITE}
+          />
+        </Row>
       </>
     </Layout>
   );
