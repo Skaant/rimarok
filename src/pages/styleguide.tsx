@@ -42,6 +42,22 @@ const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
     id: "quote",
     title: "Quote",
   },
+  LINKSMENU: {
+    id: "links-menu",
+    title: "Links menu",
+  },
+  BADGESLIST: {
+    id: "badges-list",
+    title: "Badges list",
+  },
+  PROJECT: {
+    id: "project",
+    title: "Project",
+  },
+  BACKTOTOP: {
+    id: "back-to-top",
+    title: "Back to top",
+  },
 };
 
 const Styleguide = () => {
