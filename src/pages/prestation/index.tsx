@@ -9,7 +9,7 @@ import Section from "../../types/Section";
 const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
 
-const PRESTATION_SECTIONS: { [key: string]: Section } = {
+export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
     id: "besoin-d-un-coup-de-pouce",
     title: "Quand un projet a besoin d'un coup de pouce",
@@ -18,9 +18,9 @@ const PRESTATION_SECTIONS: { [key: string]: Section } = {
     id: "une-personnalite-d'abord",
     title: "Une personnalité d'abord",
   },
-  SAVOIR_FAIRE: {
-    id: "mon-savoir-faire",
-    title: "Mon savoir-faire",
+  SAVOIR_FAIRE_ET_TECHNOLOGIES: {
+    id: "mon-savoir-faire-et-technologies",
+    title: "Mon savoir-faire, et technologies",
   },
   TARIF: {
     id: "un-tarif-unique",
