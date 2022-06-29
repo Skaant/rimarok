@@ -28,18 +28,18 @@ function Carousel({
           ></button>
         ))}
       </div>
-      <div className={`carousel-inner text-center pb-5 text-${textColor}`}>
+      <div className={`carousel-inner text-center py-4 text-${textColor}`}>
         {children?.map((child, index) => (
           <div
             key={index}
-            className={`carousel-item p-5 ${index === 0 ? "active" : ""}`}
+            className={`carousel-item pt-4 pb-5 ${index === 0 ? "active" : ""}`}
           >
             {child}
           </div>
         ))}
       </div>
       <button
-        className={`carousel-control-prev d-flex align-items-end pb-2 text-${controlsColor}`}
+        className={`carousel-control-prev d-flex align-items-start pt-3 text-${controlsColor}`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="prev"
@@ -49,7 +49,7 @@ function Carousel({
         </span>
       </button>
       <button
-        className={`carousel-control-next d-flex align-items-end pb-2 text-${controlsColor}`}
+        className={`carousel-control-next d-flex align-items-start pt-3 text-${controlsColor}`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="next"
