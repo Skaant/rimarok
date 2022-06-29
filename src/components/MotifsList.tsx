@@ -9,11 +9,11 @@ function MotifsList({}: MotifsListProps) {
     <div className="row">
       {Object.entries(MOTIFS).map((motif) => {
         return (
-          <div className="m-5 col-xl-3 col-md-6 col-sm-12 text-center">
+          <div className="my-5 col-xl-3 col-md-6 col-sm-12 text-center">
             <h3>{motif[0]}</h3>
-            <p>Summary</p>
+            {/* {summary ? <p>Summary</p> : ""} */}
             <div>
-              <Link to="">Page </Link>
+              <Link to={motif[0]}>Page {motif[0]}</Link>
             </div>
           </div>
         );
