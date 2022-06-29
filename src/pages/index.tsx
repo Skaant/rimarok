@@ -167,7 +167,6 @@ const Accueil = () => {
             <p>Voici une sélection de mes expériences les plus pertinentes :</p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
-              controlsColor={COLORS.WHITE}
               children={[
                 <MediartisProject />,
                 <CrestJazzProject />,
@@ -258,7 +257,6 @@ const Accueil = () => {
             </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}_carousel`}
-              controlsColor={COLORS.WHITE}
               children={[<RimarokProject />, <HighbsBokProject />]}
             />
           </>
