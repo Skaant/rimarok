@@ -70,7 +70,10 @@ const Accueil = () => {
           titleSize={"big"}
         />
         <Row backgroundColor={COLORS.FLOWER}>
-          <TableOfContents contents={ACCUEIL_SECTIONS} />
+          <TableOfContents
+            contents={ACCUEIL_SECTIONS}
+            linkClassName="bg-white rounded-pill px-2"
+          />
         </Row>
         <Row
           id={ACCUEIL_SECTIONS.INTRO_SITE.id}
@@ -105,7 +108,7 @@ const Accueil = () => {
                 {
                   label: "Découvrir ma prestation",
                   link: PAGES_DATA[PAGES.PRESTATION].path,
-                  color: COLORS.LAGOON,
+                  color: COLORS.MIST,
                 },
               ]}
             />
