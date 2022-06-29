@@ -19,7 +19,7 @@ function Row({
   id,
   header,
   backgroundColor,
-  paddingY = 3,
+  paddingY,
   className,
   col = "col-12 col-sm-10 col-md-8 col-lg-6",
   colClassName,
@@ -28,9 +28,9 @@ function Row({
   return (
     <div
       id={id}
-      className={`row ${
-        backgroundColor ? `bg-${backgroundColor}` : ""
-      } py-${paddingY}${className ? ` ${className}` : ""}`}
+      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""} p-3${
+        paddingY ? ` py-${paddingY}` : ""
+      }${className ? ` ${className}` : ""}`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {header &&
