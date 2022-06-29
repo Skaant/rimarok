@@ -1,14 +1,14 @@
 import * as React from "react";
 import { ARTICLES_DATA } from "../data/articles";
+import TagsDateHeader from "./TagsDateHeader";
 
-type ArticlesListProps = {};
-
-function ArticlesList({}: ArticlesListProps) {
+function ArticlesList() {
   return (
-    <ul className="list-group list-group-flush">
-      {ARTICLES_DATA.map(({ id, title, description, date }, index) => {
+    <ul className="list-group list-group-flush p-0">
+      {ARTICLES_DATA.map(({ title, description, date, tags }, index) => {
         return (
-          <li key={index} className="list-group-item">
+          <li key={index} className="list-group-item list-unstyled my-5">
+            <TagsDateHeader date={date} tags={tags} />
             <h3>{title}</h3>
             {description ? <p>{description.substring(0, 150) + "..."}</p> : ""}
           </li>
