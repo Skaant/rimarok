@@ -4,6 +4,7 @@ import { PAGES_DATA } from "../data/pages";
 import { Link } from "gatsby";
 import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
+import { ARTICLES_DATA } from "../data/articles";
 
 type FooterProps = {};
 
@@ -14,6 +15,12 @@ function Footer({}: FooterProps) {
     PAGES_DATA.MOTIFS,
     PAGES_DATA.BLOG,
   ];
+
+  ARTICLES_DATA.sort(function (a, b) {
+    const newA = a.date.split("/").reverse().join("");
+    const newB = b.date.split("/").reverse().join("");
+    return newB.localeCompare(newA);
+  });
 
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
@@ -43,6 +50,18 @@ function Footer({}: FooterProps) {
                         {PAGES_DATA.PRESTATION_ECO_CONCEPTION.title}
                       </Link>
                     </li>
+                  </ul>
+                ) : path.includes("blog") ? (
+                  <ul className="list-unstyled">
+                    {ARTICLES_DATA.slice(0, 5).map(({ title }) => {
+                      return (
+                        <li className="py-1 pt-2" key={index}>
+                          <Link className="text-white ps-3" to={title}>
+                            {title}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 ) : (
                   ""
