@@ -122,10 +122,10 @@ function Prestation() {
           </>
         </Row>
         <Row
-          id={PRESTATION_SECTIONS.SAVOIR_FAIRE.id}
+          id={PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.id}
           header={{
             level: 2,
-            content: PRESTATION_SECTIONS.SAVOIR_FAIRE.title,
+            content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
         >
           <></>
@@ -134,7 +134,7 @@ function Prestation() {
           id={PRESTATION_SECTIONS.TARIF.id}
           header={{
             level: 2,
-            content: PRESTATION_SECTIONS.SAVOIR_FAIRE.title,
+            content: PRESTATION_SECTIONS.TARIF.title,
           }}
         >
           <>
