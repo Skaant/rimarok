@@ -10,7 +10,15 @@ function ArticlesList() {
           <li key={index} className="list-group-item list-unstyled my-5">
             <TagsDateHeader date={date} tags={tags} />
             <h3>{title}</h3>
-            {description ? <p>{description.substring(0, 150) + "..."}</p> : ""}
+            {description ? (
+              <p>
+                {description.length > 150
+                  ? description.substring(0, 150) + "..."
+                  : description}
+              </p>
+            ) : (
+              ""
+            )}
           </li>
         );
       })}
