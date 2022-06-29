@@ -3,6 +3,12 @@ import { ARTICLES_DATA } from "../data/articles";
 import TagsDateHeader from "./TagsDateHeader";
 
 function ArticlesList() {
+  ARTICLES_DATA.sort(function (a, b) {
+    const newA = a.date.split("/").reverse().join("");
+    const newB = b.date.split("/").reverse().join("");
+    return newB.localeCompare(newA);
+  });
+
   return (
     <ul className="list-group list-group-flush p-0">
       {ARTICLES_DATA.map(({ title, description, date, tags }, index) => {
