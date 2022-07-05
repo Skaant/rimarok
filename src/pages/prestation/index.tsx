@@ -1,34 +1,43 @@
 import { Link } from "gatsby";
 import React from "react";
+import { ACCUEIL_SECTIONS } from "..";
+import MediartisProject from "../../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
+import Carousel from "../../components/Carousel";
 import FullScreenTitle from "../../components/FullScreenTitle";
+import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
+import LinksMenu from "../../components/LinksMenu";
 import Row from "../../components/Row";
+import { COLORS } from "../../data/colors";
 import { PAGES, PAGES_DATA } from "../../data/pages";
+import WEBSITE_DATA from "../../data/website";
 import Section from "../../types/Section";
+import { PRESTATION_ECO_CONCEPTION_SECTIONS } from "./eco-conception";
+import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
 
 const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
 
 export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
-    id: "besoin-d-un-coup-de-pouce",
-    title: "Quand un projet a besoin d'un coup de pouce",
+    id: "intervention-ponctuelle-ou-longue-duree",
+    title: "Intervention ponctuelle ou longue durée",
   },
   PERSONNALITE: {
     id: "une-personnalite-d'abord",
     title: "Une personnalité d'abord",
   },
+  CONTACT: {
+    id: "entrer-en-contact",
+    title: "Entrer en contact",
+  },
   SAVOIR_FAIRE_ET_TECHNOLOGIES: {
-    id: "mon-savoir-faire-et-technologies",
-    title: "Mon savoir-faire, et technologies",
+    id: "savoir-faire-et-technologies",
+    title: "Savoir-faire et technologies",
   },
   TARIF: {
     id: "un-tarif-unique",
     title: "Un tarif unique",
-  },
-  CONTACT: {
-    id: "contact",
-    title: "Pour entrer en contact",
   },
   WEB_HOLISTIQUE: {
     id: "une-vision-holistique-de-l-informatique",
@@ -43,7 +52,7 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     id: "travailler-ensemble",
     title: "Travailler ensemble",
   },
-  /** CTA blog */
+  /** CTAs site */
   ALLER_PLUS_LOIN: {
     id: "aller-plus-loin",
     title: "Aller plus loin",
@@ -61,6 +70,7 @@ function Prestation() {
         <FullScreenTitle
           title={title}
           subtitle="La pièce manquante du puzzle"
+          backgroundColor={COLORS.LAGOON}
         />
         <Row
           id={PRESTATION_SECTIONS.INTRO_PAGE.id}
@@ -71,13 +81,13 @@ function Prestation() {
         >
           <>
             <p>
-              Start-ups, PME, DSI ... vous souhaitez{" "}
-              <b>accélerer le développement</b> de l'un de vos projets
-              applicatifs ?
+              Je travaille principalement en renfort d'équipes, quelques
+              semaines ou quelques mois, pour soutenir le développement de gros
+              projets applicatifs.
             </p>
             <p>
-              Mon rôle, <b>en tant qu'indépendant</b>, c'est de venir{" "}
-              <b>compléter ponctuellement vos équipes de développement web</b>.
+              Des petites missions pour ajouter une fonctionnalité ou installer
+              un script d'automatisation m'intéressent aussi.
             </p>
             <p>
               J'interviens en <b>full-remote</b>, jusqu'à <b>4 jours/semaine</b>
@@ -85,13 +95,15 @@ function Prestation() {
             </p>
             <p>
               Mon expertise mêle{" "}
-              <Link to={PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path}>
-                {PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title}
-              </Link>
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                lowercase={true}
+              />{" "}
               et{" "}
-              <Link to={PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path}>
-                {PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].title}
-              </Link>
+              <InternalLink
+                page={PAGES.PRESTATION_ECO_CONCEPTION}
+                lowercase={true}
+              />
             </p>
           </>
         </Row>
@@ -101,19 +113,40 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.PERSONNALITE.title,
           }}
+          backgroundColor={COLORS.SUN}
         >
           <>
             <p>
               Je suis <b>un individu</b>, pas un portefeuille de compétences.
             </p>
             <p>
-              En plus de mes septs années de pratiques professionnelles, c'est
-              ma curiosité et ma créativité qui ont forgé mon expertise dans le
-              domaine du développement web.
+              En plus de mes bientôt huit années de pratique{" "}
+              <InternalLink
+                page={PAGES.ACCUEIL}
+                section={ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS}
+                altTitle="professionnelle"
+              />{" "}
+              et{" "}
+              <InternalLink
+                page={PAGES.ACCUEIL}
+                section={ACCUEIL_SECTIONS.PROJETS_PERSONNELS}
+                altTitle="personnelle"
+              />
+              , c'est ma curiosité et ma créativité qui ont forgé mon expertise
+              dans le domaine du développement web.
             </p>
             <p>
               J'aime questionner et comprendre, aborder les problématiques
               autrement et chercher des solutions plus simples.
+            </p>
+            <p>
+              Cette recherche s'est fusionné avec mon appétance pour la sobriété
+              technologique et, naturellement, l'
+              <InternalLink
+                page={PAGES.PRESTATION_ECO_CONCEPTION}
+                lowercase={true}
+              />
+              .
             </p>
             <p>
               Enfin, je communique clairement et c'est dans des équipes
@@ -127,8 +160,46 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
+          backgroundColor={COLORS.FLOWER}
         >
-          <></>
+          <>
+            <p>
+              Full-stack signifie être à l'aise sur les
+              <InternalLink
+                page={PAGES.PRESTATION}
+                section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
+                lowercase={true}
+              />{" "}
+              : front, back et base-de-données.
+            </p>
+            <p>
+              Sur mes différentes missions j'ai été amené à travailler dans des
+              ecosystèmes et avec des frameworks variés, mais mon expertise se
+              situe principalement sur les technos suivantes :
+            </p>
+            <ul>
+              <li>JS / Node / TypeScript,</li>
+              <li>React,</li>
+              <li>SCSS / Bootstrap,</li>
+              <li>Express,</li>
+              <li>SQL / Mongo,</li>
+              <li>GitHub.</li>
+            </ul>
+            <p>Je me débrouille également bien sur :</p>
+            <ul>
+              <li>Vue / Angular,</li>
+              <li>Nest,</li>
+              <li>PHP / Wordpress.</li>
+            </ul>
+            <p>
+              Mais tout ceci ne serait pas grand chose sans une compréhension
+              profonde de ce qu'est l'
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                lowercase={true}
+              />
+            </p>
+          </>
         </Row>
         <Row
           id={PRESTATION_SECTIONS.TARIF.id}
@@ -136,10 +207,17 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
+          backgroundColor={COLORS.ABYSS}
         >
           <>
             <p>Une prestation, un tarif :</p>
             <p className="display-1">420€/jour HT</p>
+            <p>
+              <i>
+                Si vous ne pouvez pas récupérer la TVA, je suis exempté en
+                Octobre jusqu'à Avril généralement.
+              </i>
+            </p>
           </>
         </Row>
         <Row
@@ -149,7 +227,33 @@ function Prestation() {
             content: PRESTATION_SECTIONS.CONTACT.title,
           }}
         >
-          <></>
+          <>
+            <p>Pour discuter ensemble, je vous propose plusieurs solutions :</p>
+            <LinksMenu
+              links={[
+                {
+                  link: WEBSITE_DATA.CALENDLY_LINK,
+                  label: "Prendre un premier RDV sur Calendly",
+                  color: COLORS.SUN,
+                },
+                {
+                  link: "{mail}",
+                  label: "M'envoyer un mail sympa",
+                  color: COLORS.SUN,
+                },
+                {
+                  link: "{telephone}",
+                  label: "Un petit SMS pour vous présenter",
+                  color: COLORS.SUN,
+                },
+                {
+                  link: WEBSITE_DATA.LINKEDIN_LINK,
+                  label: "Un message sur Lik'dine",
+                  color: COLORS.SUN,
+                },
+              ]}
+            />
+          </>
         </Row>
         <Row
           id={PRESTATION_SECTIONS.WEB_HOLISTIQUE.id}
@@ -157,8 +261,38 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.WEB_HOLISTIQUE.title,
           }}
+          backgroundColor={COLORS.MIST}
         >
-          <></>
+          <>
+            <p>
+              Le monde est un système dont les éléments sont interreliés et
+              interdépendants.
+            </p>
+            <p>
+              Pourquoi concevoir un sous-système qui ne dispose pas des mêmes
+              propriétés, ou qui communique mal avec les autres éléments qui
+              constituent son environnement ?
+            </p>
+            <p>Je suis à l'écoute des nouveautés et investigue l'existant.</p>
+            <p>
+              Combien coûtera le produit à développer est une des premières
+              questions à se poser.
+            </p>
+            <p>
+              La réponse ne peut être envisagée sans inclure, en plus de la
+              dimension financière, les aspects humains et environnementaux.
+            </p>
+            <LinksMenu
+              links={[
+                {
+                  link: `${PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION]}#${
+                    PRESTATION_ECO_CONCEPTION_SECTIONS.VALEURS.id
+                  }`,
+                  label: "Mes valeurs",
+                },
+              ]}
+            />
+          </>
         </Row>
         <Row
           id={PRESTATION_SECTIONS.REALISATIONS.id}
@@ -167,7 +301,24 @@ function Prestation() {
             content: PRESTATION_SECTIONS.REALISATIONS.title,
           }}
         >
-          <></>
+          <>
+            <p>
+              Retrouvez, comme présenté en page d'
+              <InternalLink page={PAGES.ACCUEIL} lowercase={true} />, mes
+              principales réalisations, professionnelles et personnelles :
+            </p>
+            <Carousel
+              id={`${PRESTATION_SECTIONS.REALISATIONS.id}#carousel`}
+              children={[<MediartisProject />]}
+            />
+            <p>
+              Plus de projets et de stats sur{" "}
+              <a href={WEBSITE_DATA.GITHUB_LINK} target="_blank">
+                mon profil Github
+              </a>
+              .
+            </p>
+          </>
         </Row>
         <Row
           id={PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id}
@@ -175,8 +326,24 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
           }}
+          backgroundColor={COLORS.FLOWER}
         >
-          <></>
+          <>
+            <p>Je ne suis pas un défonce-man.</p>
+            <p>
+              J'aime le travail en cela qu'il est un{" "}
+              <b>processus qui m'accomplit</b> et qu'il{" "}
+              <b>me connecte aux autres</b>.
+            </p>
+            <p>
+              Votre environnement est sain, vous avez juste la bonne dose de
+              stress, votre projet n'était pas à livrer hier ?
+            </p>
+            <p>
+              <b>Je souhaite déjà vous connaître</b> et savoir comment nous
+              pourrions <b>travailler ensemble</b>.
+            </p>
+          </>
         </Row>
         <Row
           id={PRESTATION_SECTIONS.ALLER_PLUS_LOIN.id}
@@ -184,8 +351,32 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.ALLER_PLUS_LOIN.title,
           }}
+          backgroundColor={COLORS.SUN}
         >
-          <></>
+          <>
+            <p>
+              Lorsqu'on pratique longtemps un sujet, des motifs apparaissent et
+              cette pratique devient <i>un langage de motifs</i>.
+            </p>
+            <p>
+              En codant, des idées, activables ou juste philosophiques, me
+              viennent et j'apprécie les partager.
+            </p>
+            <LinksMenu
+              links={[
+                {
+                  link: PAGES_DATA[PAGES.MOTIFS].path,
+                  label: "En apprendre plus sur les motifs",
+                  color: COLORS.WHITE,
+                },
+                {
+                  link: PAGES_DATA[PAGES.BLOG].path,
+                  label: "Consulter les articles du blog",
+                  color: COLORS.WHITE,
+                },
+              ]}
+            />
+          </>
         </Row>
       </>
     </Layout>
