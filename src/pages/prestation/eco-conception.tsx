@@ -8,7 +8,7 @@ import Section from "../../types/Section";
 const PAGE_ID = PAGES.PRESTATION_ECO_CONCEPTION;
 const { title } = PAGES_DATA[PAGE_ID];
 
-const PRESTATION_ECO_CONCEPTION_SECTIONS: { [key: string]: Section } = {
+export const PRESTATION_ECO_CONCEPTION_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
     id: "c-est-quoi-eco",
     title: 'C\'est quoi "éco" ?',
