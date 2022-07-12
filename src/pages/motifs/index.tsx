@@ -2,6 +2,7 @@ import React from "react";
 import FullScreenTitle from "../../components/FullScreenTitle";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
+import MotifsList from "../../components/MotifsList";
 import Quote from "../../components/Quote";
 import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
@@ -194,6 +195,7 @@ function Motifs() {
               Cette liste est <i>forcément</i> non-exhaustive, et je vous incite
               fortement <InternalLink section={MOTIFS_SECTIONS.CONTRIBUER} />.
             </p>
+            <MotifsList />
           </>
         </Row>
         <Row
