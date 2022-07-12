@@ -8,6 +8,10 @@ import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import FullScreenTitle from "../components/FullScreenTitle";
 import { Link } from "gatsby";
+import LinksMenu from "../components/LinksMenu";
+import BadgesList from "../components/BadgesList";
+import Project from "../components/Project";
+import BackToTop from "../components/BackToTop";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
@@ -41,6 +45,22 @@ const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
   QUOTE: {
     id: "quote",
     title: "Quote",
+  },
+  LINKS_MENU: {
+    id: "links-menu",
+    title: "Links menu",
+  },
+  BADGES_LIST: {
+    id: "badges-list",
+    title: "Badges list",
+  },
+  PROJECT: {
+    id: "project",
+    title: "Project",
+  },
+  BACK_TO_TOP: {
+    id: "back-to-top",
+    title: "Back to top",
   },
 };
 
@@ -193,6 +213,94 @@ const Styleguide = () => {
               }}
             />
           </>
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.LINKS_MENU.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.LINKS_MENU.title}</h2>
+            <p>
+              Permet la naviguation interne et externe au moyen d'une liste de
+              liens.
+            </p>
+          </>
+        </Row>
+        <Row>
+          <LinksMenu
+            links={[
+              { link: "#", label: "Link 1", color: COLORS.FLOWER },
+              { link: "#", label: "Link 2", color: COLORS.FLOWER },
+            ]}
+          />
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.BADGES_LIST.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.BADGES_LIST.title}</h2>
+            <p>Affiche une liste inline de badges pilules.</p>
+          </>
+        </Row>
+        <Row>
+          <BadgesList
+            badges={[
+              { label: "Badge 1", color: COLORS.FLOWER },
+              { label: "Badge 2", color: COLORS.MIST },
+            ]}
+          />
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.PROJECT.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.PROJECT.title}</h2>
+            <p>Project est un élément enfant du composant Carousel.</p>
+          </>
+        </Row>
+        <Row>
+          <Project
+            title="Titre du projet"
+            scope="full-stack"
+            tags={["tag 1", "tag 2"]}
+            date="22 juin 2022"
+          >
+            <div>Contenu du projet</div>
+          </Project>
+        </Row>
+        <Row id={STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.FULL_SIZE_TITLE.title}</h2>
+            <p>
+              Affiche le titre et le sous-titre de la page sous la forme d'une
+              bannière, étendue sur l'intégralité de la largeur de la page.
+            </p>
+          </>
+        </Row>
+        <>
+          <FullScreenTitle
+            backgroundColor={COLORS.SUN}
+            title="Ceci est un titre"
+            subtitle="Ceci est un sous-titre"
+            height="60vh"
+            titleSize="normal"
+          />
+          <FullScreenTitle
+            backgroundColor={COLORS.LAGOON}
+            title="Ceci est un titre"
+            subtitle="Ceci est un sous-titre"
+            height="100vh"
+            titleSize="big"
+          />
+        </>
+        <Row id={STYLEGUIDE_SECTIONS.BACK_TO_TOP.id}>
+          <>
+            <h2>{STYLEGUIDE_SECTIONS.BACK_TO_TOP.title}</h2>
+            <p>
+              Affiche un bouton cliquable permettant de revenir en haut de la
+              page.
+            </p>
+          </>
+        </Row>
+        <Row>
+          <BackToTop
+            isFixed={false}
+            backgroundColor={COLORS.LAGOON}
+            textColor={COLORS.WHITE}
+          />
         </Row>
       </>
     </Layout>
