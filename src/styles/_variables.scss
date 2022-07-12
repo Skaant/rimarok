@@ -6,6 +6,8 @@ $sun: #ffb703;
 $flower: #fb8500;
 $light_mist: #d3f1ff;
 $light_sun: #fcebc3;
+// Not themed colors
+$grey: #888;
 
 $theme-colors: (
   mist: $mist,
@@ -20,6 +22,18 @@ $theme-colors: (
 // FONTS
 $font-rubik: "Rubik-400";
 $font-slab: "Roboto-Slab-300";
+
+$display-font-sizes: (
+  1: 3rem,
+  2: 2.5rem,
+  3: 2rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+) !default;
+
+// NAVBAR
+$navbar-brand-font-size: 1.5rem;
 
 // GRID
 $grid-gutter-width: 0;

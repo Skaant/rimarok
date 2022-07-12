@@ -15,7 +15,7 @@ type LinksMenuProps = {
 
 function LinksMenu({ links }: LinksMenuProps) {
   return (
-    <div className="mb-4">
+    <div className="links-menu mb-4">
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
           link.startsWith("/") ? (
@@ -33,6 +33,7 @@ function LinksMenu({ links }: LinksMenuProps) {
               key={index}
               className={`btn btn-primary m-2 bg-${color}`}
               role="button"
+              target="_blank"
             >
               {label}
             </a>
