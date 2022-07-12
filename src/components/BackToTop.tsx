@@ -15,8 +15,7 @@ function BackToTop({
   return (
     <button
       type="button"
-      id="top-button"
-      className={`btn rounded-circle border-0 ${
+      className={`top-button btn rounded-circle border-0 ${
         isFixed
           ? "position-fixed d-none m-5 bottom-0 end-0"
           : "position-relative d-block"
