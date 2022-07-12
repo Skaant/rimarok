@@ -4,7 +4,7 @@ import { PAGES, PAGES_DATA } from "../data/pages";
 import Section from "../types/Section";
 
 type InternalLinkProps = {
-  page: PAGES;
+  page?: PAGES;
   section?: Section;
   altTitle?: string;
   lowercase?: true;
@@ -16,10 +16,19 @@ function InternalLink({
   altTitle,
   lowercase,
 }: InternalLinkProps) {
-  const { path, title } = PAGES_DATA[page];
   return (
-    <Link to={`${path}${section ? `#${section.id}` : ""}`}>
-      {altTitle || (section ? section.title : title).toLowerCase()}
+    <Link
+      to={`${page ? `${PAGES_DATA[page].path}` : ""}${
+        section ? `#${section.id}` : ""
+      }`}
+    >
+      {altTitle ||
+        (section
+          ? section.title
+          : page
+          ? PAGES_DATA[page].title
+          : ""
+        ).toLowerCase()}
     </Link>
   );
 }
