@@ -1,7 +1,20 @@
 import { Link } from "gatsby";
 import React from "react";
 import { ACCUEIL_SECTIONS } from "..";
+import RimarokProject from "../../components/accueil/projets-personnels/1-rimarok";
+import HighbsBokProject from "../../components/accueil/projets-personnels/2-highbs-bok";
+import ImrokProject from "../../components/accueil/projets-personnels/3-imrok";
+import TheExpansProject from "../../components/accueil/projets-personnels/4-the-expans";
+import PermaDataProject from "../../components/accueil/projets-personnels/5-perma-data";
+import PokeTeamProject from "../../components/accueil/projets-personnels/6-poke-team";
 import MediartisProject from "../../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
+import CrestJazzProject from "../../components/accueil/projets-professionnels/2-nounours-crest-jazz";
+import CasseDuSiecleProject from "../../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
+import HygieProject from "../../components/accueil/projets-professionnels/4-hygie";
+import OmerProject from "../../components/accueil/projets-professionnels/5-urca-omer";
+import TalentsAffinityProject from "../../components/accueil/projets-professionnels/6-fresh-pigments-talents-affinity";
+import CdietProject from "../../components/accueil/projets-professionnels/7-winnov-cdiet";
+import DcbrainProject from "../../components/accueil/projets-professionnels/8-dcbrain";
 import Carousel from "../../components/Carousel";
 import FullScreenTitle from "../../components/FullScreenTitle";
 import InternalLink from "../../components/InternalLink";
@@ -11,6 +24,7 @@ import Row from "../../components/Row";
 import { COLORS } from "../../data/colors";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
+import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
 import { PRESTATION_ECO_CONCEPTION_SECTIONS } from "./eco-conception";
 import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
@@ -28,7 +42,7 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Une personnalité d'abord",
   },
   CONTACT: {
-    id: "entrer-en-contact",
+    id: "contact",
     title: "Entrer en contact",
   },
   SAVOIR_FAIRE_ET_TECHNOLOGIES: {
@@ -90,21 +104,29 @@ function Prestation() {
               un script d'automatisation m'intéressent aussi.
             </p>
             <p>
+              Le refactoring et les tests m'attirent beaucoup, car j'aime
+              améliorer les choses.
+            </p>
+            <p>
               J'interviens en <b>full-remote</b>, jusqu'à <b>4 jours/semaine</b>
               sur des projets <b>front, back et full-stack JavaScript</b>.
             </p>
             <p>
-              Mon expertise mêle{" "}
-              <InternalLink
-                page={PAGES.PRESTATION_INGENIERIE_WEB}
-                lowercase={true}
-              />{" "}
-              et{" "}
-              <InternalLink
-                page={PAGES.PRESTATION_ECO_CONCEPTION}
-                lowercase={true}
-              />
+              En parallèle de mes compétences techniques, je suis amical et
+              communique de façon claire et concise.
             </p>
+            <LinksMenu
+              links={[
+                {
+                  link: getInternalLink(PAGES.PRESTATION_INGENIERIE_WEB),
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
+                },
+                {
+                  link: getInternalLink(PAGES.PRESTATION_ECO_CONCEPTION),
+                  label: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].title,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
@@ -117,7 +139,8 @@ function Prestation() {
         >
           <>
             <p>
-              Je suis <b>un individu</b>, pas un portefeuille de compétences.
+              Je suis <b>un individu</b>, pas juste un portefeuille de
+              compétences.
             </p>
             <p>
               En plus de mes bientôt huit années de pratique{" "}
@@ -149,8 +172,8 @@ function Prestation() {
               .
             </p>
             <p>
-              Enfin, je communique clairement et c'est dans des équipes
-              bienveillantes et dynamiques que je m'épanouis le plus.
+              Enfin, c'est dans des équipes bienveillantes et dynamiques que je
+              m'épanouis le plus.
             </p>
           </>
         </Row>
@@ -164,7 +187,7 @@ function Prestation() {
         >
           <>
             <p>
-              Full-stack signifie être à l'aise sur les
+              Full-stack signifie être à l'aise sur{" "}
               <InternalLink
                 page={PAGES.PRESTATION}
                 section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
@@ -173,9 +196,9 @@ function Prestation() {
               : front, back et base-de-données.
             </p>
             <p>
-              Sur mes différentes missions j'ai été amené à travailler dans des
-              ecosystèmes et avec des frameworks variés, mais mon expertise se
-              situe principalement sur les technos suivantes :
+              Lors de mes différentes missions j'ai été amené à travailler dans
+              des ecosystèmes et avec des frameworks variés, mais mon expertise
+              se situe principalement sur les technos suivantes :
             </p>
             <ul>
               <li>JS / Node / TypeScript,</li>
@@ -304,12 +327,31 @@ function Prestation() {
           <>
             <p>
               Retrouvez, comme présenté en page d'
-              <InternalLink page={PAGES.ACCUEIL} lowercase={true} />, mes
-              principales réalisations, professionnelles et personnelles :
+              <InternalLink
+                page={PAGES.ACCUEIL}
+                lowercase={true}
+                altTitle="accueil"
+              />
+              , mes principales réalisations, professionnelles et personnelles :
             </p>
             <Carousel
               id={`${PRESTATION_SECTIONS.REALISATIONS.id}#carousel`}
-              children={[<MediartisProject />]}
+              children={[
+                <MediartisProject />,
+                <RimarokProject />,
+                <CrestJazzProject />,
+                <HighbsBokProject />,
+                <TheExpansProject />,
+                <CasseDuSiecleProject />,
+                <ImrokProject />,
+                <HygieProject />,
+                <PermaDataProject />,
+                <OmerProject />,
+                <PokeTeamProject />,
+                <DcbrainProject />,
+                <CdietProject />,
+                <TalentsAffinityProject />,
+              ]}
             />
             <p>
               Plus de projets et de stats sur{" "}
