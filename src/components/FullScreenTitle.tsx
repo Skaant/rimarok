@@ -17,7 +17,7 @@ function FullScreenTitle({
     <Row
       id="full-screen-title"
       col="col-12"
-      colClassName="60vh d-flex flex-column justify-content-center align-items-center text-center p-4"
+      colClassName="vh-60 d-flex flex-column justify-content-center align-items-center text-center p-4"
       backgroundColor={backgroundColor}
       paddingY={0}
     >
