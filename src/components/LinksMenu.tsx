@@ -33,6 +33,7 @@ function LinksMenu({ links }: LinksMenuProps) {
               key={index}
               className={`btn btn-primary m-2 bg-${color}`}
               role="button"
+              target="_blank"
             >
               {label}
             </a>

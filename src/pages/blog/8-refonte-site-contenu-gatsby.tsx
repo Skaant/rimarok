@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 import Row from "../../components/Row";
 import { ARTICLES_DATA } from "../../data/articles";
 
-const { title, description } = ARTICLES_DATA[8];
+const { title, description } = ARTICLES_DATA[7];
 
 function Article8() {
   return (
