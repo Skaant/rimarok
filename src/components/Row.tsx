@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { COLORS } from "../data/colors";
+import BadgesList from "./BadgesList";
 
 export type RowProps = {
   id?: string;
@@ -7,6 +8,7 @@ export type RowProps = {
     level: 1 | 2 | 3;
     content: string;
   };
+  tags?: string[];
   backgroundColor?: COLORS;
   paddingY?: 0 | 2 | 3 | 5;
   className?: string;
@@ -18,6 +20,7 @@ export type RowProps = {
 function Row({
   id,
   header,
+  tags,
   backgroundColor,
   paddingY,
   className,
@@ -33,6 +36,18 @@ function Row({
       }${className ? ` ${className}` : ""}`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
+        {tags ? (
+          <BadgesList
+            badges={
+              [
+                // { label: tags[0], color: COLORS.FLOWER },
+                // { label: tags[1], color: COLORS.MIST },
+              ]
+            }
+          />
+        ) : (
+          ""
+        )}
         {header &&
           (header.level === 1 ? (
             <h1>{header.content}</h1>
