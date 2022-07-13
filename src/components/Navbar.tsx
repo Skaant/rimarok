@@ -16,7 +16,10 @@ function Navbar({}: NavbarProps) {
   const navArray = [PAGES_DATA.MOTIFS, PAGES_DATA.BLOG];
 
   return (
-    <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
+    <nav
+      className="navbar navbar-expand-lg position-fixed w-100 bg-white"
+      style={{ zIndex: 1 }}
+    >
       <div className="container-fluid d-flex align-items-center px-3">
         <Link className="navbar-brand font-slab" to="/">
           {WEBSITE_DATA.BRAND_NAME}
@@ -44,7 +47,10 @@ function Navbar({}: NavbarProps) {
               >
                 Mes offres
               </div>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul
+                className="dropdown-menu mb-2"
+                aria-labelledby="navbarDropdown"
+              >
                 {dropdownArray.map(({ title, path }, index) => {
                   return (
                     <li>
