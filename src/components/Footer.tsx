@@ -16,15 +16,19 @@ function Footer({}: FooterProps) {
     PAGES_DATA.BLOG,
   ];
 
-  ARTICLES_DATA.sort(function (a, b) {
-    const newA = a.date.split("/").reverse().join("");
-    const newB = b.date.split("/").reverse().join("");
-    return newB.localeCompare(newA);
+  const ARTICLES_DATA_COPY = ARTICLES_DATA.slice();
+
+  ARTICLES_DATA_COPY.sort(function (article1, article2) {
+    return article2.date
+      .split("/")
+      .reverse()
+      .join("")
+      .localeCompare(article1.date.split("/").reverse().join(""));
   });
 
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
-      <div className="d-flex justify-content-center flex-md-row flex-column text-white">
+      <div className="d-flex justify-content-center flex-md-row flex-column-reverse text-white">
         <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
           {pagesArray.map(({ title, path }, index) => {
             return (
@@ -34,17 +38,17 @@ function Footer({}: FooterProps) {
                 </Link>
                 {path.includes("prestation") ? (
                   <ul className="list-unstyled">
-                    <li className="py-1 pt-2" key={index}>
+                    <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white ps-3"
+                        className="text-white"
                         to={PAGES_DATA.PRESTATION_INGENIERIE_WEB.path}
                       >
                         {PAGES_DATA.PRESTATION_INGENIERIE_WEB.title}
                       </Link>
                     </li>
-                    <li className="py-1 pt-2" key={index}>
+                    <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white ps-3"
+                        className="text-white"
                         to={PAGES_DATA.PRESTATION_ECO_CONCEPTION.path}
                       >
                         {PAGES_DATA.PRESTATION_ECO_CONCEPTION.title}
@@ -53,10 +57,10 @@ function Footer({}: FooterProps) {
                   </ul>
                 ) : path.includes("blog") ? (
                   <ul className="list-unstyled">
-                    {ARTICLES_DATA.slice(0, 5).map(({ title }) => {
+                    {ARTICLES_DATA_COPY.slice(0, 5).map(({ title }) => {
                       return (
-                        <li className="py-1 pt-2" key={index}>
-                          <Link className="text-white ps-3" to={title}>
+                        <li className="py-1 pt-2 ps-3" key={index}>
+                          <Link className="text-white" to={title}>
                             {title}
                           </Link>
                         </li>
