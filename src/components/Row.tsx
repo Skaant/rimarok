@@ -28,7 +28,7 @@ function Row({
   return (
     <div
       id={id}
-      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""} p-3${
+      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""} px-3 py-5${
         paddingY ? ` py-${paddingY}` : ""
       }${className ? ` ${className}` : ""}`}
     >
