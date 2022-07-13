@@ -26,6 +26,9 @@ import HighbsBokProject from "../components/accueil/projets-personnels/2-highbs-
 import ImrokProject from "../components/accueil/projets-personnels/3-imrok";
 import getInternalLink from "../helpers/getInternalLink";
 import TheExpansProject from "../components/accueil/projets-personnels/4-the-expans";
+import MotifsJsProject from "../components/accueil/projets-personnels/5-motifs-js";
+import PermaDataProject from "../components/accueil/projets-personnels/6-perma-data";
+import PokeTeamProject from "../components/accueil/projets-personnels/7-poke-team";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -303,6 +306,9 @@ const Accueil = () => {
                 <HighbsBokProject />,
                 <ImrokProject />,
                 <TheExpansProject />,
+                <MotifsJsProject />,
+                <PermaDataProject />,
+                <PokeTeamProject />,
               ]}
             />
           </>

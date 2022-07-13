@@ -5,8 +5,9 @@ import RimarokProject from "../../components/accueil/projets-personnels/1-rimaro
 import HighbsBokProject from "../../components/accueil/projets-personnels/2-highbs-bok";
 import ImrokProject from "../../components/accueil/projets-personnels/3-imrok";
 import TheExpansProject from "../../components/accueil/projets-personnels/4-the-expans";
-import PermaDataProject from "../../components/accueil/projets-personnels/5-perma-data";
-import PokeTeamProject from "../../components/accueil/projets-personnels/6-poke-team";
+import MotifsJsProject from "../../components/accueil/projets-personnels/5-motifs-js";
+import PermaDataProject from "../../components/accueil/projets-personnels/6-perma-data";
+import PokeTeamProject from "../../components/accueil/projets-personnels/7-poke-team";
 import MediartisProject from "../../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
 import CrestJazzProject from "../../components/accueil/projets-professionnels/2-nounours-crest-jazz";
 import CasseDuSiecleProject from "../../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
@@ -346,6 +347,7 @@ function Prestation() {
                 <ImrokProject />,
                 <HygieProject />,
                 <PermaDataProject />,
+                <MotifsJsProject />,
                 <OmerProject />,
                 <PokeTeamProject />,
                 <DcbrainProject />,
