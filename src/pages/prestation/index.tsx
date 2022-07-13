@@ -16,7 +16,7 @@ import TalentsAffinityProject from "../../components/accueil/projets-professionn
 import CdietProject from "../../components/accueil/projets-professionnels/7-winnov-cdiet";
 import DcbrainProject from "../../components/accueil/projets-professionnels/8-dcbrain";
 import Carousel from "../../components/Carousel";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
 import LinksMenu from "../../components/LinksMenu";
@@ -81,10 +81,11 @@ function Prestation() {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle="La pièce manquante du puzzle"
           backgroundColor={COLORS.LAGOON}
+          contents={PRESTATION_SECTIONS}
         />
         <Row
           id={PRESTATION_SECTIONS.INTRO_PAGE.id}

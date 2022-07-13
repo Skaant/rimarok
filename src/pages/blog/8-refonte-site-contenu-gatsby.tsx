@@ -1,5 +1,5 @@
 import React from "react";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import Row from "../../components/Row";
 import { ARTICLES_DATA } from "../../data/articles";
@@ -15,7 +15,7 @@ function Article8() {
       }}
     >
       <>
-        <FullScreenTitle title={title} subtitle={""} />
+        <PageHeader title={title} subtitle={""}/>
       </>
     </Layout>
   );

@@ -1,6 +1,6 @@
 import { Page, PageProps } from "gatsby";
 import React from "react";
-import FullScreenTitle from "../components/FullScreenTitle";
+import PageHeader from "../components/PageHeader";
 import Layout from "../components/Layout";
 import { Motif } from "../types/Motif";
 
@@ -12,7 +12,7 @@ function MotifTemplate({
   return (
     <Layout head={{ title: name }}>
       <>
-        <FullScreenTitle title={name} subtitle={"Un motif"} />
+        <PageHeader title={name} subtitle={"Un motif"} />
       </>
     </Layout>
   );

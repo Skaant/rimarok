@@ -1,6 +1,6 @@
 import React from "react";
 import { PRESTATION_SECTIONS } from ".";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import LinksMenu from "../../components/LinksMenu";
 import Quote from "../../components/Quote";
@@ -43,9 +43,10 @@ function IngenierieWeb() {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle="Ce que signifie être full-stack"
+          contents={PRESTATION_INGENIERIE_WEB_SECTIONS}
         />
         <Row
           id={PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.id}

@@ -1,6 +1,6 @@
 import React from "react";
 import { PRESTATION_SECTIONS } from ".";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import Quote from "../../components/Quote";
 import Row from "../../components/Row";
@@ -42,9 +42,10 @@ function EcoConception() {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle="Réduire l'impact des applicatifs web"
+          contents={PRESTATION_ECO_CONCEPTION_SECTIONS}
         />
         <Row
           id={PRESTATION_ECO_CONCEPTION_SECTIONS.INTRO_PAGE.id}

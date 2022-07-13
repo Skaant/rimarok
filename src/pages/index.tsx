@@ -1,5 +1,5 @@
 import * as React from "react";
-import FullScreenTitle from "../components/FullScreenTitle";
+import PageHeader from "../components/PageHeader";
 import Layout from "../components/Layout";
 import "../styles/global.scss";
 import Quote from "../components/Quote";
@@ -64,11 +64,12 @@ const Accueil = () => {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
           titleSize={"big"}
+          contents={ACCUEIL_SECTIONS}
         />
         <Row backgroundColor={COLORS.FLOWER}>
           <LinksMenu

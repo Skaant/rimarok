@@ -1,5 +1,5 @@
 import React from "react";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
@@ -27,9 +27,10 @@ function Blog() {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle="Réflexions et recherches sur le développement"
+          contents={BLOG_SECTIONS}
         />
         <Row
           id={BLOG_SECTIONS.INTRO_PAGE.id}

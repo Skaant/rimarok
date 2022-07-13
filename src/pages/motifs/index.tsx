@@ -1,5 +1,5 @@
 import React from "react";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
 import MotifsList from "../../components/MotifsList";
@@ -45,7 +45,11 @@ function Motifs() {
       }}
     >
       <>
-        <FullScreenTitle title={title} subtitle="Un langage de conception" />
+        <PageHeader
+          title={title}
+          subtitle="Un langage de conception"
+          contents={MOTIFS_SECTIONS}
+        />
         <Row
           id={MOTIFS_SECTIONS.INTRO_PAGE.id}
           header={{
