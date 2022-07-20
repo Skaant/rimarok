@@ -73,14 +73,17 @@ const Accueil = () => {
           backgroundColor={COLORS.FLOWER}
           titleSize={"big"}
         />
-        <Row backgroundColor={COLORS.FLOWER}>
+        <Row backgroundColor={COLORS.FLOWER} className="pt-0 pb-5">
           <LinksMenu
             links={Object.entries(PAGES_DATA)
               .filter(
                 ([key]) =>
-                  ![PAGES.ACCUEIL, PAGES.MENTIONS_LEGALES].includes(
-                    key as PAGES
-                  )
+                  ![
+                    PAGES.ACCUEIL,
+                    PAGES.MOTIFS,
+                    PAGES.STYLEGUIDE,
+                    PAGES.MENTIONS_LEGALES,
+                  ].includes(key as PAGES)
               )
               .map(([key, { path, title }]) => ({
                 link: path,
