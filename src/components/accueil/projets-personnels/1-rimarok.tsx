@@ -7,9 +7,8 @@ function RimarokProject() {
   return (
     <Project
       title="RIMAROK.com"
-      scope="full-stack"
+      scope="front-end"
       tags={[
-        "nest",
         "gatsby",
         "typescript",
         "bootstrap",

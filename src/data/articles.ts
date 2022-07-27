@@ -2,7 +2,7 @@ import { Article } from "../types/Article";
 
 export const ARTICLES_DATA: Article[] = [
   {
-    id: "1",
+    id: "1-motifs-js-publier-un-module-npm",
     title: "motifs-js : Publier un module npm",
     date: "05/01/2021",
     tags: ["dev", "npm", "motifs-js"],

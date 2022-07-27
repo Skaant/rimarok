@@ -7,9 +7,8 @@ function HighbsBokProject() {
   return (
     <Project
       title="HIGHBS-BOK.art"
-      scope="full-stack"
+      scope="front-end"
       tags={[
-        "nest",
         "gatsby",
         "typescript",
         "bootstrap",
