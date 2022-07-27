@@ -1,5 +1,6 @@
 import React from "react";
 import { COLORS } from "../../../data/colors";
+import getArticleLink from "../../../helpers/getArticleLink";
 import LinksMenu from "../../LinksMenu";
 import Project from "../../Project";
 
@@ -54,12 +55,17 @@ function MotifsJsProject() {
         <LinksMenu
           links={[
             {
+              link: getArticleLink(0),
+              label: "Blog : publication du module npm de motifs-js",
+              color: COLORS.LAGOON,
+            },
+            {
               link: "https://motifs-js-website-imrok.vercel.app/",
-              label: "le site de documentation motifs-js",
+              label: "Le site de documentation motifs-js",
             },
             {
               link: "https://github.com/Skaant/motifs-js",
-              label: "le repo motifs-js sur Github",
+              label: "Le repo motifs-js sur Github",
               color: COLORS.MIST,
             },
           ]}
