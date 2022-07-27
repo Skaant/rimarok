@@ -15,7 +15,7 @@ type LinksMenuProps = {
 
 function LinksMenu({ links }: LinksMenuProps) {
   return (
-    <div className="links-menu mb-4">
+    <div className="links-menu my-4">
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
           link.startsWith("/") ? (
