@@ -4,6 +4,7 @@ import { PAGES, PAGES_DATA } from "../data/pages";
 import { Link } from "gatsby";
 import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
+import { ARTICLES_DATA } from "../data/articles";
 import getInternalLink from "../helpers/getInternalLink";
 import { PRESTATION_SECTIONS } from "../pages/prestation";
 
@@ -26,22 +27,45 @@ function Footer() {
                 </Link>
                 {path.includes("prestation") ? (
                   <ul className="list-unstyled">
-                    <li className="py-1 pt-2" key={index}>
+                    <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white ps-3"
+                        className="text-white"
                         to={PAGES_DATA.PRESTATION_INGENIERIE_WEB.path}
                       >
                         {PAGES_DATA.PRESTATION_INGENIERIE_WEB.title}
                       </Link>
                     </li>
-                    <li className="py-1 pt-2" key={index}>
+                    <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white ps-3"
+                        className="text-white"
                         to={PAGES_DATA.PRESTATION_ECO_CONCEPTION.path}
                       >
                         {PAGES_DATA.PRESTATION_ECO_CONCEPTION.title}
                       </Link>
                     </li>
+                  </ul>
+                ) : path.includes("blog") ? (
+                  <ul className="list-unstyled">
+                    {ARTICLES_DATA.slice()
+                      .sort(function (article1, article2) {
+                        return article2.date
+                          .split("/")
+                          .reverse()
+                          .join("")
+                          .localeCompare(
+                            article1.date.split("/").reverse().join("")
+                          );
+                      })
+                      .slice(0, 5)
+                      .map(({ title }) => {
+                        return (
+                          <li className="py-1 pt-2 ps-3" key={index}>
+                            <Link className="text-white" to={title}>
+                              {title}
+                            </Link>
+                          </li>
+                        );
+                      })}
                   </ul>
                 ) : (
                   ""
