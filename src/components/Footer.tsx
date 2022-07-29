@@ -1,21 +1,24 @@
 import * as React from "react";
 import { COLORS } from "../data/colors";
-import { PAGES_DATA } from "../data/pages";
+import { PAGES, PAGES_DATA } from "../data/pages";
 import { Link } from "gatsby";
 import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
 import { ARTICLES_DATA } from "../data/articles";
+import getInternalLink from "../helpers/getInternalLink";
+import { PRESTATION_SECTIONS } from "../pages/prestation";
 
 function Footer() {
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
-      <div className="d-flex justify-content-center flex-md-row flex-column-reverse text-white">
+      <div className="d-flex justify-content-center flex-md-row flex-column text-white">
         <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
           {[
             PAGES_DATA.ACCUEIL,
             PAGES_DATA.PRESTATION,
             PAGES_DATA.MOTIFS,
             PAGES_DATA.BLOG,
+            PAGES_DATA.STYLEGUIDE,
           ].map(({ title, path }, index) => {
             return (
               <li className="py-1" key={index}>
@@ -86,10 +89,17 @@ function Footer() {
           </li>
           <LinksMenu
             links={[
-              { link: "#", label: "Contact" },
+              {
+                link: getInternalLink(
+                  PAGES.PRESTATION,
+                  PRESTATION_SECTIONS.CONTACT
+                ),
+                label: "Contact",
+              },
               {
                 link: PAGES_DATA.MENTIONS_LEGALES.path,
                 label: PAGES_DATA.MENTIONS_LEGALES.title,
+                color: COLORS.LAGOON,
               },
             ]}
           />

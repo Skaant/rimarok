@@ -9,7 +9,6 @@ import Carousel from "../components/Carousel";
 import LinksMenu from "../components/LinksMenu";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
-import Project from "../components/Project";
 import Section from "../types/Section";
 import TableOfContents from "../components/TableOfContents";
 import { PRESTATION_SECTIONS } from "./prestation";
@@ -24,10 +23,16 @@ import CdietProject from "../components/accueil/projets-professionnels/7-winnov-
 import DcbrainProject from "../components/accueil/projets-professionnels/8-dcbrain";
 import RimarokProject from "../components/accueil/projets-personnels/1-rimarok";
 import HighbsBokProject from "../components/accueil/projets-personnels/2-highbs-bok";
+import ImrokProject from "../components/accueil/projets-personnels/3-imrok";
+import getInternalLink from "../helpers/getInternalLink";
+import TheExpansProject from "../components/accueil/projets-personnels/4-the-expans";
+import MotifsJsProject from "../components/accueil/projets-personnels/5-motifs-js";
+import PermaDataProject from "../components/accueil/projets-personnels/6-perma-data";
+import PokeTeamProject from "../components/accueil/projets-personnels/7-poke-team";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
-const ACCUEIL_SECTIONS: { [key: string]: Section } = {
+export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
     id: "economies-et-performance",
     title: "Économies et performance",
@@ -48,9 +53,9 @@ const ACCUEIL_SECTIONS: { [key: string]: Section } = {
     id: "projets-personnels",
     title: "Projets personnels",
   },
-  DISCUTER_PROJET: {
-    id: "discuter-de-votre-projet",
-    title: "Discuter de votre projet",
+  COLLABORATION: {
+    id: "vers-une-collaboration-future",
+    title: "Vers une collaboration future",
   },
 };
 
@@ -66,14 +71,49 @@ const Accueil = () => {
           title={title}
           subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
-          height={"100vh"}
           titleSize={"big"}
         />
-        <Row backgroundColor={COLORS.FLOWER}>
-          <TableOfContents
-            contents={ACCUEIL_SECTIONS}
-            linkClassName="bg-white rounded-pill px-2"
+        <Row backgroundColor={COLORS.FLOWER} className="pt-0 pb-5">
+          <LinksMenu
+            links={Object.entries(PAGES_DATA)
+              .filter(
+                ([key]) =>
+                  ![
+                    PAGES.ACCUEIL,
+                    PAGES.MOTIFS,
+                    PAGES.STYLEGUIDE,
+                    PAGES.MENTIONS_LEGALES,
+                  ].includes(key as PAGES)
+              )
+              .map(([key, { path, title }]) => ({
+                link: path,
+                label: title,
+                color: [
+                  PAGES.PRESTATION_INGENIERIE_WEB,
+                  PAGES.PRESTATION_ECO_CONCEPTION,
+                ].includes(key as PAGES)
+                  ? COLORS.MIST
+                  : COLORS.WHITE,
+              }))}
           />
+        </Row>
+        <Row
+          header={{
+            level: 2,
+            content: "Accueil",
+          }}
+        >
+          <>
+            <p>
+              Bonjour, je m'appelle Romaric Ruga et vous êtes sur mon site
+              professionnel de développement web.
+            </p>
+            <p>
+              Laissez-moi vous décrire ma prestation ainsi que ma vision sur
+              l'informatique.
+            </p>
+            <TableOfContents contents={ACCUEIL_SECTIONS} />
+          </>
         </Row>
         <Row
           id={ACCUEIL_SECTIONS.INTRO_SITE.id}
@@ -84,6 +124,12 @@ const Accueil = () => {
           backgroundColor={COLORS.FLOWER}
         >
           <>
+            <Quote displayHeading={4}>
+              <>
+                Internet devrait servir à résoudre des problèmes, pas en créer
+                de nouveaux.
+              </>
+            </Quote>
             <p>
               Les usages de l'informatique créent des{" "}
               <b>besoins exponentiels</b> en infrastructure matérielle et en
@@ -167,6 +213,7 @@ const Accueil = () => {
             <p>Voici une sélection de mes expériences les plus pertinentes :</p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
+              controlsColor={COLORS.WHITE}
               children={[
                 <MediartisProject />,
                 <CrestJazzProject />,
@@ -257,26 +304,44 @@ const Accueil = () => {
             </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}_carousel`}
-              children={[<RimarokProject />, <HighbsBokProject />]}
+              children={[
+                <RimarokProject />,
+                <HighbsBokProject />,
+                <ImrokProject />,
+                <TheExpansProject />,
+                <MotifsJsProject />,
+                <PermaDataProject />,
+                <PokeTeamProject />,
+              ]}
             />
           </>
         </Row>
-        <Row>
+        <Row
+          id={ACCUEIL_SECTIONS.COLLABORATION.id}
+          header={{
+            level: 2,
+            content: ACCUEIL_SECTIONS.COLLABORATION.title,
+          }}
+        >
           <>
             <p>
               Sommes-nous faits pour{" "}
               <Link
-                to={`${PAGES_DATA[PAGES.PRESTATION]}#${
+                to={`${PAGES_DATA[PAGES.PRESTATION].path}#${
                   PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id
                 }`}
-              >{`${PAGES_DATA[PAGES.PRESTATION]}#${
-                PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title
-              }`}</Link>
+              >
+                travailler ensemble
+              </Link>
               ?
             </p>
             <p>
               J'aime les <b>projets qui ont du sens</b>, à la technique bien
               huilée et où ma <b>créativité</b> peut s'exprimer.
+            </p>
+            <p>
+              Vous pourriez aimer mon <b>expertise</b> sur la stack JavaScript
+              moderne, mon <b>esprit analytique</b> et ma <b>bonne humeur</b>.
             </p>
             <p>
               PME, start-ups, pôle applicatif ...{" "}
@@ -289,10 +354,11 @@ const Accueil = () => {
             <LinksMenu
               links={[
                 {
-                  link: `${PAGES_DATA[PAGES.PRESTATION]}#${
-                    PRESTATION_SECTIONS.CONTACT.id
-                  }`,
-                  label: "Entrer en contact",
+                  link: getInternalLink(
+                    PAGES.PRESTATION,
+                    PRESTATION_SECTIONS.CONTACT
+                  ),
+                  label: PRESTATION_SECTIONS.CONTACT.title,
                 },
               ]}
             />
