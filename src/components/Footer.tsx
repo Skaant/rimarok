@@ -6,31 +6,17 @@ import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
 import { ARTICLES_DATA } from "../data/articles";
 
-type FooterProps = {};
-
-function Footer({}: FooterProps) {
-  const pagesArray = [
-    PAGES_DATA.ACCUEIL,
-    PAGES_DATA.PRESTATION,
-    PAGES_DATA.MOTIFS,
-    PAGES_DATA.BLOG,
-  ];
-
-  const ARTICLES_DATA_COPY = ARTICLES_DATA.slice();
-
-  ARTICLES_DATA_COPY.sort(function (article1, article2) {
-    return article2.date
-      .split("/")
-      .reverse()
-      .join("")
-      .localeCompare(article1.date.split("/").reverse().join(""));
-  });
-
+function Footer() {
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
       <div className="d-flex justify-content-center flex-md-row flex-column-reverse text-white">
         <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
-          {pagesArray.map(({ title, path }, index) => {
+          {[
+            PAGES_DATA.ACCUEIL,
+            PAGES_DATA.PRESTATION,
+            PAGES_DATA.MOTIFS,
+            PAGES_DATA.BLOG,
+          ].map(({ title, path }, index) => {
             return (
               <li className="py-1" key={index}>
                 <Link className="text-white pb-2" to={path}>
@@ -57,15 +43,26 @@ function Footer({}: FooterProps) {
                   </ul>
                 ) : path.includes("blog") ? (
                   <ul className="list-unstyled">
-                    {ARTICLES_DATA_COPY.slice(0, 5).map(({ title }) => {
-                      return (
-                        <li className="py-1 pt-2 ps-3" key={index}>
-                          <Link className="text-white" to={title}>
-                            {title}
-                          </Link>
-                        </li>
-                      );
-                    })}
+                    {ARTICLES_DATA.slice()
+                      .sort(function (article1, article2) {
+                        return article2.date
+                          .split("/")
+                          .reverse()
+                          .join("")
+                          .localeCompare(
+                            article1.date.split("/").reverse().join("")
+                          );
+                      })
+                      .slice(0, 5)
+                      .map(({ title }) => {
+                        return (
+                          <li className="py-1 pt-2 ps-3" key={index}>
+                            <Link className="text-white" to={title}>
+                              {title}
+                            </Link>
+                          </li>
+                        );
+                      })}
                   </ul>
                 ) : (
                   ""
