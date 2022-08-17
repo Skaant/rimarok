@@ -13,6 +13,7 @@ function Footer({}: FooterProps) {
     PAGES_DATA.PRESTATION,
     PAGES_DATA.MOTIFS,
     PAGES_DATA.BLOG,
+    PAGES_DATA.STYLEGUIDE,
   ];
 
   return (
