@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import { COLORS } from "../data/colors";
-import Row from "./Row";
 
 export type LinksMenuItem = {
   link: string;
@@ -9,7 +8,7 @@ export type LinksMenuItem = {
   color?: COLORS;
 };
 
-type LinksMenuProps = {
+export type LinksMenuProps = {
   links: LinksMenuItem[];
 };
 

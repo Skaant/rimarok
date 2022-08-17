@@ -4,8 +4,12 @@ $lagoon: #219ebc;
 $abyss: #023047;
 $sun: #ffb703;
 $flower: #fb8500;
+// Green olive ;)
+$greeve: #86a84b;
+$light_greeve: #c5f9b7;
 $light_mist: #d3f1ff;
 $light_sun: #fcebc3;
+$dark_greeve: #575a47;
 // Not themed colors
 $grey: #888;
 
@@ -15,8 +19,11 @@ $theme-colors: (
   abyss: $abyss,
   sun: $sun,
   flower: $flower,
+  greeve: $greeve,
+  light_greeve: $light_greeve,
   light_mist: $light_mist,
   light_sun: $light_sun,
+  dark_greeve: $dark_greeve,
 );
 
 // FONTS
