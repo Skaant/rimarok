@@ -28,6 +28,7 @@ import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
 import { PRESTATION_ECO_CONCEPTION_SECTIONS } from "./eco-conception";
 import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
+import getPageName from "../../helpers/getPageName";
 
 const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -85,7 +86,20 @@ function Prestation() {
           title={title}
           subtitle="La pièce manquante du puzzle"
           backgroundColor={COLORS.LAGOON}
-          contents={PRESTATION_SECTIONS}
+          linksMenu={{
+            links: [
+              PAGES.PRESTATION_ECO_CONCEPTION,
+              PAGES.PRESTATION_INGENIERIE_WEB,
+            ].map((page) => ({
+              link: getInternalLink(page),
+              label: getPageName(page),
+              color: COLORS.FLOWER,
+            })),
+          }}
+          tableOfContents={{
+            contents: PRESTATION_SECTIONS,
+            linkColor: COLORS.LIGHT_MIST,
+          }}
         />
         <Row
           id={PRESTATION_SECTIONS.INTRO_PAGE.id}
@@ -93,6 +107,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.INTRO_PAGE.title,
           }}
+          backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
             <p>
@@ -184,7 +199,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.DARK_GREEVE}
         >
           <>
             <p>
@@ -231,7 +246,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
-          backgroundColor={COLORS.ABYSS}
+          backgroundColor={COLORS.FLOWER}
         >
           <>
             <p>Une prestation, un tarif :</p>

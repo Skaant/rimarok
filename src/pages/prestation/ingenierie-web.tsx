@@ -8,6 +8,7 @@ import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
+import { COLORS } from "../../data/colors";
 
 const PAGE_ID = PAGES.PRESTATION_INGENIERIE_WEB;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -46,7 +47,11 @@ function IngenierieWeb() {
         <PageHeader
           title={title}
           subtitle="Ce que signifie être full-stack"
-          contents={PRESTATION_INGENIERIE_WEB_SECTIONS}
+          tableOfContents={{
+            contents: PRESTATION_INGENIERIE_WEB_SECTIONS,
+            linkColor: COLORS.WHITE,
+          }}
+          backgroundColor={COLORS.LIGHT_MIST}
         />
         <Row
           id={PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.id}
@@ -54,6 +59,7 @@ function IngenierieWeb() {
             level: 2,
             content: PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.title,
           }}
+          backgroundColor={COLORS.LIGHT_GREEVE}
         >
           <>
             <p>La vie est une myriade de flux en constant mouvement.</p>
@@ -80,6 +86,7 @@ function IngenierieWeb() {
             level: 2,
             content: PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK.title,
           }}
+          backgroundColor={COLORS.ABYSS}
         >
           <>
             <Quote displayHeading={3}>
@@ -125,6 +132,7 @@ function IngenierieWeb() {
             content:
               PRESTATION_INGENIERIE_WEB_SECTIONS.SCRIPTS_AUTOMATISATION.title,
           }}
+          backgroundColor={COLORS.MIST}
         >
           <>
             <p>
@@ -155,6 +163,7 @@ function IngenierieWeb() {
             content:
               PRESTATION_INGENIERIE_WEB_SECTIONS.SCIENCE_DES_MOTIFS.title,
           }}
+          backgroundColor={COLORS.DARK_GREEVE}
         >
           <>
             <p>

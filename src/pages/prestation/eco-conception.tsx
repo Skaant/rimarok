@@ -7,6 +7,7 @@ import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
+import { COLORS } from "../../data/colors";
 
 const PAGE_ID = PAGES.PRESTATION_ECO_CONCEPTION;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -45,7 +46,11 @@ function EcoConception() {
         <PageHeader
           title={title}
           subtitle="Réduire l'impact des applicatifs web"
-          contents={PRESTATION_ECO_CONCEPTION_SECTIONS}
+          tableOfContents={{
+            contents: PRESTATION_ECO_CONCEPTION_SECTIONS,
+            linkColor: COLORS.WHITE,
+          }}
+          backgroundColor={COLORS.DARK_GREEVE}
         />
         <Row
           id={PRESTATION_ECO_CONCEPTION_SECTIONS.INTRO_PAGE.id}
@@ -53,6 +58,7 @@ function EcoConception() {
             level: 2,
             content: PRESTATION_ECO_CONCEPTION_SECTIONS.INTRO_PAGE.title,
           }}
+          backgroundColor={COLORS.GREEVE}
         >
           <>
             <p>Éco c'est à la fois économique et écologique.</p>
@@ -93,6 +99,7 @@ function EcoConception() {
             level: 2,
             content: PRESTATION_ECO_CONCEPTION_SECTIONS.VALEURS.title,
           }}
+          backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
             <p>J'aime la simplicité, la sobriété.</p>
@@ -116,6 +123,7 @@ function EcoConception() {
             level: 2,
             content: PRESTATION_ECO_CONCEPTION_SECTIONS.AXES_TRAVAIL.title,
           }}
+          backgroundColor={COLORS.FLOWER}
         >
           <>
             <p>
