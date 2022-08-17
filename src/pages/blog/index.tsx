@@ -1,4 +1,5 @@
 import React from "react";
+import ArticlesList from "../../components/ArticlesList";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import Row from "../../components/Row";
@@ -64,7 +65,9 @@ function Blog() {
             content: BLOG_SECTIONS.LISTE.title,
           }}
         >
-          <></>
+          <>
+            <ArticlesList />
+          </>
         </Row>
       </>
     </Layout>

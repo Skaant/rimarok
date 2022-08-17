@@ -36,6 +36,11 @@ function ImrokProject() {
               label: "le repo IMROK sur Github",
               color: COLORS.MIST,
             },
+            {
+              link: "https://imrok.fr",
+              label: "le site actuel à migrer",
+              color: COLORS.MIST,
+            },
           ]}
         />
       </>
