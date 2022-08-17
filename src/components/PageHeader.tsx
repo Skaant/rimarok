@@ -1,4 +1,5 @@
 import * as React from "react";
+import LinksMenu, { LinksMenuProps } from "./LinksMenu";
 import Row, { RowProps } from "./Row";
 import TableOfContents from "./TableOfContents";
 import { TableOfContentsProps } from "./TableOfContents";
@@ -7,14 +8,17 @@ type PageHeaderProps = Pick<RowProps, "backgroundColor"> & {
   title: string;
   subtitle: string;
   titleSize?: "normal" | "big";
-} & TableOfContentsProps;
+  linksMenu?: LinksMenuProps;
+  tableOfContents?: TableOfContentsProps;
+};
 
 function PageHeader({
   backgroundColor,
   title,
   subtitle,
   titleSize = "normal",
-  contents,
+  linksMenu,
+  tableOfContents,
 }: PageHeaderProps) {
   return (
     <Row
@@ -27,12 +31,15 @@ function PageHeader({
       <>
         <h1 className={titleSize}>{title}</h1>
         <p className="sub-title">{subtitle}</p>
-        <div
-          className="d-flex justify-content-start col-12 col-sm-10 col-md-8 col-lg-6"
-          style={{ marginTop: "8vh" }}
-        >
-          <TableOfContents contents={contents} />
-        </div>
+        {linksMenu && <LinksMenu {...linksMenu} />}
+        {tableOfContents && (
+          <div
+            className="d-flex justify-content-start col-12 col-sm-10 col-md-8 col-lg-6"
+            style={{ marginTop: "8vh" }}
+          >
+            <TableOfContents {...tableOfContents} />
+          </div>
+        )}
       </>
     </Row>
   );
