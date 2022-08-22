@@ -1,6 +1,6 @@
 import React from "react";
-import FullScreenTitle from "../../components/FullScreenTitle";
 import Layout from "../../components/Layout";
+import PageHeader from "../../components/PageHeader";
 import Row from "../../components/Row";
 import { ARTICLES_DATA } from "../../data/articles";
 
@@ -15,7 +15,7 @@ function Article1() {
       }}
     >
       <>
-        <FullScreenTitle title={title} subtitle={""} />
+        <PageHeader title={title} subtitle={""} />
         <Row>
           <>
             <p>L'abstraction est l'une des compétence-clé du programmeur.</p>
