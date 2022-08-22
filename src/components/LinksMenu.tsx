@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import { COLORS } from "../data/colors";
-import Row from "./Row";
 
 export type LinksMenuItem = {
   link: string;
@@ -9,13 +8,13 @@ export type LinksMenuItem = {
   color?: COLORS;
 };
 
-type LinksMenuProps = {
+export type LinksMenuProps = {
   links: LinksMenuItem[];
 };
 
 function LinksMenu({ links }: LinksMenuProps) {
   return (
-    <div className="links-menu mb-4">
+    <div className="links-menu my-4">
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
           link.startsWith("/") ? (

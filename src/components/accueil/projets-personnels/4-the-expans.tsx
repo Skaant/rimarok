@@ -23,8 +23,12 @@ function TheExpansProject() {
         <LinksMenu
           links={[
             {
-              link: "https://github.com/Skaant/imrok-next",
-              label: "le repo IMROK sur Github",
+              link: "https://the-expans.imrok.fr/",
+              label: "L'application THE EXPANS déployée",
+            },
+            {
+              link: "https://github.com/Skaant/the-expans",
+              label: "le repo THE EXPANS sur Github",
               color: COLORS.MIST,
             },
           ]}

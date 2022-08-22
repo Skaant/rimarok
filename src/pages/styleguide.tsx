@@ -6,7 +6,7 @@ import type Section from "../types/Section";
 import "../styles/global.scss";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
-import FullScreenTitle from "../components/FullScreenTitle";
+import PageHeader from "../components/PageHeader";
 import { Link } from "gatsby";
 import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
@@ -72,10 +72,11 @@ const Styleguide = () => {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={STYLEGUIDE_TITLE}
           subtitle="Galerie des composants du site"
           backgroundColor={COLORS.LAGOON}
+          contents={STYLEGUIDE_SECTIONS}
         />
         <Row
           header={{
@@ -271,19 +272,19 @@ const Styleguide = () => {
           </>
         </Row>
         <>
-          <FullScreenTitle
+          <PageHeader
             backgroundColor={COLORS.SUN}
             title="Ceci est un titre"
             subtitle="Ceci est un sous-titre"
-            height="60vh"
             titleSize="normal"
+            contents={STYLEGUIDE_SECTIONS}
           />
-          <FullScreenTitle
+          <PageHeader
             backgroundColor={COLORS.LAGOON}
             title="Ceci est un titre"
             subtitle="Ceci est un sous-titre"
-            height="100vh"
             titleSize="big"
+            contents={STYLEGUIDE_SECTIONS}
           />
         </>
         <Row id={STYLEGUIDE_SECTIONS.BACK_TO_TOP.id}>
