@@ -300,7 +300,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.PROJETS_PERSONNELS.title,
           }}
-          backgroundColor={COLORS.MIST}
+          backgroundColor={COLORS.ROSAM}
         >
           <>
             <p>
@@ -322,6 +322,7 @@ const Accueil = () => {
                 <PermaDataProject />,
                 <PokeTeamProject />,
               ]}
+              controlsColor={COLORS.WHITE}
             />
           </>
         </Row>
@@ -331,7 +332,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.COLLABORATION.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.LIGHT_MIST}
         >
           <>
             <p>
@@ -369,7 +370,7 @@ const Accueil = () => {
                     PRESTATION_SECTIONS.CONTACT
                   ),
                   label: PRESTATION_SECTIONS.CONTACT.title,
-                  color: COLORS.WHITE,
+                  color: COLORS.FLOWER,
                 },
               ]}
             />

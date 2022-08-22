@@ -277,12 +277,12 @@ function Prestation() {
                   color: COLORS.SUN,
                 },
                 {
-                  link: "{mail}",
+                  link: "#",
                   label: "M'envoyer un mail sympa",
                   color: COLORS.SUN,
                 },
                 {
-                  link: "{telephone}",
+                  link: "#",
                   label: "Un petit SMS pour vous présenter",
                   color: COLORS.SUN,
                 },

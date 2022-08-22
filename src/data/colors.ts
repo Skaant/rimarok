@@ -9,6 +9,7 @@ export enum COLORS {
   LIGHT_MIST = "light_mist",
   LIGHT_SUN = "light_sun",
   DARK_GREEVE = "dark_greeve",
+  ROSAM = "rosam",
   /** Bootstrap defaults */
   WHITE = "white",
   BLACK = "black",

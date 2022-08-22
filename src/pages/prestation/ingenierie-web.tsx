@@ -49,7 +49,7 @@ function IngenierieWeb() {
           subtitle="Ce que signifie être full-stack"
           tableOfContents={{
             contents: PRESTATION_INGENIERIE_WEB_SECTIONS,
-            linkColor: COLORS.WHITE,
+            linkColor: COLORS.ABYSS,
           }}
           backgroundColor={COLORS.LIGHT_MIST}
         />
