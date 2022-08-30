@@ -2,7 +2,7 @@ import { Article } from "../types/Article";
 
 export const ARTICLES_DATA: Article[] = [
   {
-    id: "1",
+    id: "1-motifs-js-publier-un-module-npm",
     title: "motifs-js : Publier un module npm",
     date: "05/01/2021",
     tags: ["dev", "npm", "motifs-js"],
@@ -25,6 +25,7 @@ export const ARTICLES_DATA: Article[] = [
       "bazar.imrok.fr",
     ],
     description: "",
+    disabled: true,
   },
   {
     id: "3",
@@ -32,6 +33,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "27/01/2021",
     tags: ["motifs-js", "release notes", "en"],
     description: "",
+    disabled: true,
   },
   {
     id: "4",
@@ -39,6 +41,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "04/02/2021",
     tags: ["developer experience", "réflexions", "futur"],
     description: "",
+    disabled: true,
   },
   {
     id: "5",
@@ -46,6 +49,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "11/02/2021",
     tags: ["rimarok.com", "devops", "CI/CD", "ftp"],
     description: "",
+    disabled: true,
   },
   {
     id: "6",
@@ -55,12 +59,13 @@ export const ARTICLES_DATA: Article[] = [
       "philosophie du code",
       "code joyau",
       "refactoring",
-      "impermanence des chosses",
+      "impermanence des choses",
     ],
     description:
       "Parlons rapidement du code joyau avant " +
       "d'aborder l'impermanence des choses que l'on crée, " +
       "code inclus :P",
+    disabled: true,
   },
   {
     id: "7",
@@ -68,15 +73,17 @@ export const ARTICLES_DATA: Article[] = [
     date: "05/04/2021",
     tags: ["court", "philosophie du code", "langage", "communication", "tests"],
     description: "",
+    disabled: true,
   },
   {
-    id: "refonte-site-contenu-gatsby",
+    id: "8-refonte-site-contenu-gatsby",
     title: "Refonte du site : nouveaux contenus et passage sur GatsbyJS",
-    date: "2022-07-04",
+    date: "04/07/2022",
     tags: ["devblog site", "motifs", "gastby js"],
     description:
       "Accompagné de Tim Jeanmart, développeur web junior, je " +
       "migre mon site internet professionnel vers Gatsby et mets à jour " +
       "son contenu.",
+    disabled: true,
   },
 ];

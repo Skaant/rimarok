@@ -4,8 +4,9 @@ import RimarokProject from "../../components/accueil/projets-personnels/1-rimaro
 import HighbsBokProject from "../../components/accueil/projets-personnels/2-highbs-bok";
 import ImrokProject from "../../components/accueil/projets-personnels/3-imrok";
 import TheExpansProject from "../../components/accueil/projets-personnels/4-the-expans";
-import PermaDataProject from "../../components/accueil/projets-personnels/5-perma-data";
-import PokeTeamProject from "../../components/accueil/projets-personnels/6-poke-team";
+import MotifsJsProject from "../../components/accueil/projets-personnels/5-motifs-js";
+import PermaDataProject from "../../components/accueil/projets-personnels/6-perma-data";
+import PokeTeamProject from "../../components/accueil/projets-personnels/7-poke-team";
 import MediartisProject from "../../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
 import CrestJazzProject from "../../components/accueil/projets-professionnels/2-nounours-crest-jazz";
 import CasseDuSiecleProject from "../../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
@@ -15,7 +16,7 @@ import TalentsAffinityProject from "../../components/accueil/projets-professionn
 import CdietProject from "../../components/accueil/projets-professionnels/7-winnov-cdiet";
 import DcbrainProject from "../../components/accueil/projets-professionnels/8-dcbrain";
 import Carousel from "../../components/Carousel";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
 import LinksMenu from "../../components/LinksMenu";
@@ -27,6 +28,7 @@ import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
 import { PRESTATION_ECO_CONCEPTION_SECTIONS } from "./eco-conception";
 import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
+import getPageName from "../../helpers/getPageName";
 
 const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -80,10 +82,24 @@ function Prestation() {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle="La pièce manquante du puzzle"
           backgroundColor={COLORS.LAGOON}
+          linksMenu={{
+            links: [
+              PAGES.PRESTATION_ECO_CONCEPTION,
+              PAGES.PRESTATION_INGENIERIE_WEB,
+            ].map((page) => ({
+              link: getInternalLink(page),
+              label: getPageName(page),
+              color: COLORS.FLOWER,
+            })),
+          }}
+          tableOfContents={{
+            contents: PRESTATION_SECTIONS,
+            linkColor: COLORS.LIGHT_MIST,
+          }}
         />
         <Row
           id={PRESTATION_SECTIONS.INTRO_PAGE.id}
@@ -92,6 +108,7 @@ function Prestation() {
             content: PRESTATION_SECTIONS.INTRO_PAGE.title,
           }}
           tags={["mission", "contexte", "modalités", "fréquence"]}
+          backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
             <p>
@@ -185,7 +202,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.DARK_GREEVE}
           tags={["expertise", "développement web", "ingénierie"]}
         >
           <>
@@ -233,7 +250,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
-          backgroundColor={COLORS.ABYSS}
+          backgroundColor={COLORS.FLOWER}
           tags={["mission", "rémunération"]}
         >
           <>
@@ -264,12 +281,12 @@ function Prestation() {
                   color: COLORS.SUN,
                 },
                 {
-                  link: "{mail}",
+                  link: "#",
                   label: "M'envoyer un mail sympa",
                   color: COLORS.SUN,
                 },
                 {
-                  link: "{telephone}",
+                  link: "#",
                   label: "Un petit SMS pour vous présenter",
                   color: COLORS.SUN,
                 },
@@ -350,6 +367,7 @@ function Prestation() {
                 <ImrokProject />,
                 <HygieProject />,
                 <PermaDataProject />,
+                <MotifsJsProject />,
                 <OmerProject />,
                 <PokeTeamProject />,
                 <DcbrainProject />,
