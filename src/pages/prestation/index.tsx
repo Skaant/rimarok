@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import React from "react";
 import { ACCUEIL_SECTIONS } from "..";
 import RimarokProject from "../../components/accueil/projets-personnels/1-rimarok";
@@ -108,6 +107,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.INTRO_PAGE.title,
           }}
+          tags={["mission", "contexte", "modalités", "fréquence"]}
           backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
@@ -125,7 +125,8 @@ function Prestation() {
               améliorer les choses.
             </p>
             <p>
-              J'interviens en <b>full-remote</b>, jusqu'à <b>4 jours/semaine</b>
+              J'interviens en <b>100% télétravail</b>, jusqu'à{" "}
+              <b>4 jours/semaine</b>
               sur des projets <b>front, back et full-stack JavaScript</b>.
             </p>
             <p>
@@ -152,6 +153,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.PERSONNALITE.title,
           }}
+          tags={["humain", "curiosité", "sobriété"]}
           backgroundColor={COLORS.SUN}
         >
           <>
@@ -201,6 +203,7 @@ function Prestation() {
             content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
           backgroundColor={COLORS.DARK_GREEVE}
+          tags={["expertise", "développement web", "ingénierie"]}
         >
           <>
             <p>
@@ -248,6 +251,7 @@ function Prestation() {
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
           backgroundColor={COLORS.FLOWER}
+          tags={["mission", "rémunération"]}
         >
           <>
             <p>Une prestation, un tarif :</p>
