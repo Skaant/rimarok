@@ -1,5 +1,5 @@
 import * as React from "react";
-import FullScreenTitle from "../components/FullScreenTitle";
+import PageHeader from "../components/PageHeader";
 import Layout from "../components/Layout";
 import "../styles/global.scss";
 import Quote from "../components/Quote";
@@ -26,6 +26,10 @@ import HighbsBokProject from "../components/accueil/projets-personnels/2-highbs-
 import ImrokProject from "../components/accueil/projets-personnels/3-imrok";
 import getInternalLink from "../helpers/getInternalLink";
 import TheExpansProject from "../components/accueil/projets-personnels/4-the-expans";
+import MotifsJsProject from "../components/accueil/projets-personnels/5-motifs-js";
+import PermaDataProject from "../components/accueil/projets-personnels/6-perma-data";
+import PokeTeamProject from "../components/accueil/projets-personnels/7-poke-team";
+import InternalLink from "../components/InternalLink";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -64,20 +68,21 @@ const Accueil = () => {
       }}
     >
       <>
-        <FullScreenTitle
+        <PageHeader
           title={title}
           subtitle={WEBSITE_DATA.TITLE}
           backgroundColor={COLORS.FLOWER}
           titleSize={"big"}
-        />
-        <Row backgroundColor={COLORS.FLOWER}>
-          <LinksMenu
-            links={Object.entries(PAGES_DATA)
+          linksMenu={{
+            links: Object.entries(PAGES_DATA)
               .filter(
                 ([key]) =>
-                  ![PAGES.ACCUEIL, PAGES.MENTIONS_LEGALES].includes(
-                    key as PAGES
-                  )
+                  ![
+                    PAGES.ACCUEIL,
+                    PAGES.MOTIFS,
+                    PAGES.STYLEGUIDE,
+                    PAGES.MENTIONS_LEGALES,
+                  ].includes(key as PAGES)
               )
               .map(([key, { path, title }]) => ({
                 link: path,
@@ -88,25 +93,33 @@ const Accueil = () => {
                 ].includes(key as PAGES)
                   ? COLORS.MIST
                   : COLORS.WHITE,
-              }))}
-          />
-        </Row>
+              })),
+          }}
+          tableOfContents={{
+            contents: ACCUEIL_SECTIONS,
+            linkColor: COLORS.LIGHT_SUN,
+          }}
+        />
         <Row
           header={{
             level: 2,
             content: "Accueil",
           }}
+          backgroundColor={COLORS.GREEVE}
         >
           <>
             <p>
-              Bonjour, je m'appelle Romaric Ruga et vous êtes sur mon site
-              professionnel de développement web.
+              Bonjour, je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon
+              site <b>professionnel de développement web</b>.
             </p>
             <p>
-              Laissez-moi vous décrire ma prestation ainsi que ma vision sur
-              l'informatique.
+              Laissez-moi vous{" "}
+              <InternalLink
+                page={PAGES.PRESTATION}
+                altTitle={"présenter ma prestation"}
+              />{" "}
+              ainsi que <b>ma vision sur l'informatique</b>.
             </p>
-            <TableOfContents contents={ACCUEIL_SECTIONS} />
           </>
         </Row>
         <Row
@@ -115,7 +128,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_SITE.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.DARK_GREEVE}
         >
           <>
             <Quote displayHeading={4}>
@@ -160,6 +173,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_PAGE.title,
           }}
+          backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
             <p>
@@ -237,6 +251,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.CODE_PHILOSOPHIE.title,
           }}
+          backgroundColor={COLORS.LAGOON}
         >
           <>
             <Quote
@@ -285,7 +300,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.PROJETS_PERSONNELS.title,
           }}
-          backgroundColor={COLORS.SUN}
+          backgroundColor={COLORS.ROSAM}
         >
           <>
             <p>
@@ -303,7 +318,11 @@ const Accueil = () => {
                 <HighbsBokProject />,
                 <ImrokProject />,
                 <TheExpansProject />,
+                <MotifsJsProject />,
+                <PermaDataProject />,
+                <PokeTeamProject />,
               ]}
+              controlsColor={COLORS.WHITE}
             />
           </>
         </Row>
@@ -313,6 +332,7 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.COLLABORATION.title,
           }}
+          backgroundColor={COLORS.LIGHT_MIST}
         >
           <>
             <p>
@@ -350,6 +370,7 @@ const Accueil = () => {
                     PRESTATION_SECTIONS.CONTACT
                   ),
                   label: PRESTATION_SECTIONS.CONTACT.title,
+                  color: COLORS.FLOWER,
                 },
               ]}
             />

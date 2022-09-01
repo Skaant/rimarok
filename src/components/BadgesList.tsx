@@ -3,14 +3,22 @@ import { COLORS } from "../data/colors";
 
 type BadgesListProps = {
   badges: { label: string; color: COLORS }[];
+  className?: string;
 };
 
-function BadgesList({ badges }: BadgesListProps) {
+function BadgesList({ badges, className }: BadgesListProps) {
   return (
-    <span>
+    <span className={className || ""}>
       <>
         {badges.map(({ label, color }, index) => (
-          <span key={index} className={`badge rounded-pill bg-${color} me-2`}>
+          <span
+            key={index}
+            className={`badge rounded-pill bg-${color} text-${
+              [COLORS.FLOWER, COLORS.WHITE].includes(color)
+                ? COLORS.BLACK
+                : COLORS.WHITE
+            } me-2`}
+          >
             {label}
           </span>
         ))}

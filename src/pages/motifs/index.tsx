@@ -1,5 +1,5 @@
 import React from "react";
-import FullScreenTitle from "../../components/FullScreenTitle";
+import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
 import MotifsList from "../../components/MotifsList";
@@ -9,6 +9,7 @@ import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
 import Section from "../../types/Section";
 import { PRESTATION_SECTIONS } from "../prestation";
+import { COLORS } from "../../data/colors";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -45,7 +46,12 @@ function Motifs() {
       }}
     >
       <>
-        <FullScreenTitle title={title} subtitle="Un langage de conception" />
+        <PageHeader
+          title={title}
+          subtitle="Un langage de conception"
+          tableOfContents={{ contents: MOTIFS_SECTIONS }}
+          backgroundColor={COLORS.SUN}
+        />
         <Row
           id={MOTIFS_SECTIONS.INTRO_PAGE.id}
           header={{
