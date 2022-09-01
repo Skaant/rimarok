@@ -7,12 +7,15 @@ type QuoteProps = {
     author?: string;
   };
   children: ReactElement;
+  className?: string;
 };
 
-function Quote({ children, displayHeading, legend }: QuoteProps) {
+function Quote({ children, displayHeading, legend, className }: QuoteProps) {
   return (
-    <blockquote className="blockquote">
-      <div className={`display-${displayHeading} font-slab p-4`}>{children}</div>
+    <blockquote className={`blockquote${className ? ` ${className}` : ""}`}>
+      <div className={`display-${displayHeading} font-slab p-4`}>
+        {children}
+      </div>
       {legend && (legend.source || legend.author) ? (
         <p className="legend pe-4 pb-3">
           - {legend.source}
