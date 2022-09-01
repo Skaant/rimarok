@@ -153,7 +153,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.PERSONNALITE.title,
           }}
-          tags={["humain", "curiosité", "sobriété"]}
+          tags={["humain", "curiosité", "travail d'équipe"]}
           backgroundColor={COLORS.SUN}
         >
           <>
@@ -306,6 +306,7 @@ function Prestation() {
             content: PRESTATION_SECTIONS.WEB_HOLISTIQUE.title,
           }}
           backgroundColor={COLORS.MIST}
+          tags={["calendly", "mail", "sms", "linkedin"]}
         >
           <>
             <p>

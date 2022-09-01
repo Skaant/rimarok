@@ -39,7 +39,7 @@ function Carousel({
         ))}
       </div>
       <button
-        className={`carousel-control-prev d-flex align-items-start pt-3 text-${controlsColor}`}
+        className={`carousel-control-prev d-flex align-items-start pt-3 text-${controlsColor} h-50`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="prev"
@@ -49,7 +49,7 @@ function Carousel({
         </span>
       </button>
       <button
-        className={`carousel-control-next d-flex align-items-start pt-3 text-${controlsColor}`}
+        className={`carousel-control-next d-flex align-items-start pt-3 text-${controlsColor} h-50`}
         type="button"
         data-bs-target={`#${id}`}
         data-bs-slide="next"
