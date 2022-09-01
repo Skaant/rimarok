@@ -131,7 +131,7 @@ const Accueil = () => {
           backgroundColor={COLORS.DARK_GREEVE}
         >
           <>
-            <Quote displayHeading={4}>
+            <Quote displayHeading={4} className={"my-5"}>
               <>
                 Internet devrait servir à résoudre des problèmes, pas en créer
                 de nouveaux.

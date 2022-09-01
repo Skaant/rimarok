@@ -8,7 +8,10 @@ type NavbarProps = {};
 
 function Navbar({}: NavbarProps) {
   return (
-    <nav className="navbar navbar-expand-lg position-fixed w-100 bg-white">
+    <nav
+      className="navbar navbar-expand-lg position-fixed w-100 bg-white"
+      style={{ zIndex: 1 }}
+    >
       <div className="container-fluid d-flex align-items-center px-3">
         <Link className="navbar-brand font-slab" to="/">
           {WEBSITE_DATA.BRAND_NAME}
