@@ -1,6 +1,6 @@
 .row {
   justify-content: center;
-  @each $color in (lagoon abyss) {
+  @each $color in (lagoon abyss dark_greeve rosam) {
     &.bg-#{$color} {
       color: $white;
     }

@@ -24,11 +24,14 @@ function InternalLink({
     >
       {altTitle ||
         (section
-          ? section.title
+          ? lowercase
+            ? section.title.toLowerCase()
+            : section.title
           : page
-          ? PAGES_DATA[page].title
-          : ""
-        ).toLowerCase()}
+          ? lowercase
+            ? PAGES_DATA[page].title.toLowerCase()
+            : PAGES_DATA[page].title
+          : "")}
     </Link>
   );
 }

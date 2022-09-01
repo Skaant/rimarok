@@ -4,4 +4,5 @@ export type Article = {
   title: string;
   tags: string[];
   description?: string;
+  disabled?: true;
 };
