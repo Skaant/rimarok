@@ -35,7 +35,7 @@ function Navbar({}: NavbarProps) {
                   <li className="nav-item">
                     <Link
                       key={index}
-                      className={`nav-link active text-${COLORS.LAGOON}`}
+                      className={`nav-link${"" /** @todo active */}`}
                       to={path}
                     >
                       {title}
