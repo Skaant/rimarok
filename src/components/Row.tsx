@@ -31,9 +31,11 @@ function Row({
   return (
     <div
       id={id}
-      className={`row ${backgroundColor ? `bg-${backgroundColor}` : ""} px-3 py-5${
-        paddingY ? ` py-${paddingY}` : ""
-      }${className ? ` ${className}` : ""}`}
+      className={`row ${
+        backgroundColor ? `bg-${backgroundColor}` : ""
+      } px-3 py-5${paddingY ? ` py-${paddingY}` : ""}${
+        className ? ` ${className}` : ""
+      }`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {tags ? (
@@ -47,7 +49,7 @@ function Row({
             }))}
             className={`d-block ${
               header &&
-              (header.level === 2 ? "mt-4" : header.level === 3 ? "mt-3" : "")
+              (header.level === 2 ? "my-4" : header.level === 3 ? "my-3" : "")
             }`}
           />
         ) : (
