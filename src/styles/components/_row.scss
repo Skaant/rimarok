@@ -1,8 +1,13 @@
 .row {
   justify-content: center;
-  @each $color in (lagoon abyss dark_greeve rosam) {
+  @each $color in (flower abyss) {
     &.bg-#{$color} {
-      color: $white;
+      color: $light;
+    }
+  }
+  @each $color in (flower) {
+    &.bg-#{$color} a {
+      color: $mist;
     }
   }
 }
