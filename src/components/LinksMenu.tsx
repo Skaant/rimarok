@@ -10,18 +10,19 @@ export type LinksMenuItem = {
 
 export type LinksMenuProps = {
   links: LinksMenuItem[];
+  size?: "lg";
 };
 
-function LinksMenu({ links }: LinksMenuProps) {
+function LinksMenu({ links, size }: LinksMenuProps) {
   return (
-    <div className="links-menu my-4">
+    <div className={`links-menu my-4`}>
       <>
         {links.map(({ link, label, color = COLORS.FLOWER }, index) =>
           link.startsWith("/") ? (
             <Link
               to={link}
               key={index}
-              className={`btn btn-primary m-2 bg-${color}`}
+              className={`btn btn-${color} m-2${size ? ` btn-${size}` : ""}`}
               role="button"
             >
               {label}
@@ -30,7 +31,7 @@ function LinksMenu({ links }: LinksMenuProps) {
             <a
               href={link}
               key={index}
-              className={`btn btn-primary m-2 bg-${color}`}
+              className={`btn btn-${color} m-2${size ? ` btn-${size}` : ""}`}
               role="button"
               target="_blank"
             >
