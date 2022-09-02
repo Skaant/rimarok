@@ -5,17 +5,19 @@ import Section from "../types/Section";
 
 export type TableOfContentsProps = {
   contents: { [key: string]: Section };
+  color?: COLORS;
   linkColor?: COLORS;
   linkClassName?: string;
 };
 
 function TableOfContents({
   contents,
+  color,
   linkColor,
   linkClassName,
 }: TableOfContentsProps) {
   return (
-    <ul className="table-of-contents">
+    <ul className={`table-of-contents${color ? ` text-${color}` : ""}`}>
       {Object.values(contents).map(({ id, title }) => (
         <li>
           <Link
