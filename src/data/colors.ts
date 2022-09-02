@@ -5,6 +5,8 @@ export enum COLORS {
   LAGOON = "lagoon",
   ABYSS = "abyss",
   GROUND = "ground",
+  LIGHT = "light",
+  DARK = "dark",
   /** @deprecated */
   GREEVE = "greeve",
   /** @deprecated */
@@ -20,6 +22,4 @@ export enum COLORS {
   /** Bootstrap defaults */
   WHITE = "white",
   BLACK = "black",
-  LIGHT = "light",
-  DARK = "dark",
 }
