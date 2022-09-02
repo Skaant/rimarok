@@ -1,0 +1,12 @@
+.table-of-contents {
+  font-size: $font-size-base * 1.12;
+  li {
+    padding-top: 0.12rem;
+    padding-bottom: 0.12rem;
+  }
+}
+.row.bg-flower .table-of-contents {
+  a {
+    color: $abyss;
+  }
+}
