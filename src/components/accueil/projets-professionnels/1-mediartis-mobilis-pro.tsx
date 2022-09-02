@@ -9,23 +9,28 @@ function MediartisProject() {
       title="Mobilis Pro/ Mediartis"
       scope="full-stack"
       tags={["nest", "typescript", "jest", "e2e", "vue", "bootstrap"]}
-      date="Juin 2021 - aujourd'hui"
+      date="Juin 2021 - Août 2022"
     >
       <>
         <p>
-          Bientôt un an de missions cumulées sur le projet novateur Mediartis,
-          un des deux produits phares de l'entreprise Mobilis Pro.
+          Presque un <b>an cumulé</b> de missions sur le{" "}
+          <b>projet novateur Mediartis</b>, un des deux produits phares de
+          l'entreprise Mobilis Pro.
         </p>
         <p>
-          J'interviens pour étendre les fonctionnalités du produit, sous un
-          angle totalement full-stack (Nest TS / Vue) :
+          J'interviens pour <b>étendre les fonctionnalités</b> du produit, sous
+          un angle <b>totalement full-stack</b> (Nest TS / Vue) :
         </p>
         <ul>
-          <li>Stockage de données RGPD,</li>
+          <li>
+            Stockage de <b>données RGPD</b>,
+          </li>
           <li>Transition d'un système de rôles à un système de permissions,</li>
           <li>Ouverture du produit à un usage comme API externe,</li>
-          <li>Tests unitaires et e2e,</li>
-          <li>Mises à jour d'environnement et de sécurité ...</li>
+          <li>
+            Tests <b>unitaires et e2e</b>,
+          </li>
+          <li>Mises à jour d'environnement et de sécurité.</li>
         </ul>
         <LinksMenu
           links={[
