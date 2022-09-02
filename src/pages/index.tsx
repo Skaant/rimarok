@@ -90,12 +90,14 @@ const Accueil = () => {
                   PAGES.PRESTATION_INGENIERIE_WEB,
                   PAGES.PRESTATION_ECO_CONCEPTION,
                 ].includes(key as PAGES)
-                  ? COLORS.MIST
+                  ? COLORS.LIGHT
                   : COLORS.ABYSS,
               })),
           }}
           tableOfContents={{
             contents: ACCUEIL_SECTIONS,
+            color: COLORS.ABYSS,
+            linkColor: COLORS.LIGHT,
           }}
         />
         <Row
