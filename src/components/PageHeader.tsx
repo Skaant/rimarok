@@ -31,7 +31,7 @@ function PageHeader({
       <>
         <h1 className={titleSize}>{title}</h1>
         <p className="sub-title">{subtitle}</p>
-        {linksMenu && <LinksMenu {...linksMenu} />}
+        {linksMenu && <LinksMenu size="lg" {...linksMenu} />}
         {tableOfContents && (
           <div
             className="d-flex justify-content-start col-12 col-sm-10 col-md-8 col-lg-6"
