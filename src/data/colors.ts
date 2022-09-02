@@ -13,4 +13,6 @@ export enum COLORS {
   /** Bootstrap defaults */
   WHITE = "white",
   BLACK = "black",
+  LIGHT = "light",
+  DARK = "dark",
 }
