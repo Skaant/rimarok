@@ -5,9 +5,4 @@
       color: $light;
     }
   }
-  @each $color in (flower) {
-    &.bg-#{$color} a {
-      color: $mist;
-    }
-  }
 }
