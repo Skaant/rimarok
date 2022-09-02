@@ -6,11 +6,10 @@ import Quote from "../components/Quote";
 import { PAGES, PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 import Carousel from "../components/Carousel";
-import LinksMenu from "../components/LinksMenu";
+import LinksMenu, { LinksMenuItem } from "../components/LinksMenu";
 import Row from "../components/Row";
 import { COLORS } from "../data/colors";
 import Section from "../types/Section";
-import TableOfContents from "../components/TableOfContents";
 import { PRESTATION_SECTIONS } from "./prestation";
 import { Link } from "gatsby";
 import MediartisProject from "../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
@@ -35,8 +34,8 @@ const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
-    id: "economies-et-performance",
-    title: "Économies et performance",
+    id: "performances-et-economies",
+    title: "Performances et économies",
   },
   INTRO_PAGE: {
     id: "full-stack-js-ecologique",
@@ -84,7 +83,7 @@ const Accueil = () => {
                     PAGES.MENTIONS_LEGALES,
                   ].includes(key as PAGES)
               )
-              .map(([key, { path, title }]) => ({
+              .map<LinksMenuItem>(([key, { path, title }]) => ({
                 link: path,
                 label: title,
                 color: [
@@ -92,12 +91,11 @@ const Accueil = () => {
                   PAGES.PRESTATION_ECO_CONCEPTION,
                 ].includes(key as PAGES)
                   ? COLORS.MIST
-                  : COLORS.WHITE,
+                  : COLORS.ABYSS,
               })),
           }}
           tableOfContents={{
             contents: ACCUEIL_SECTIONS,
-            linkColor: COLORS.LIGHT_SUN,
           }}
         />
         <Row
@@ -105,12 +103,16 @@ const Accueil = () => {
             level: 2,
             content: "Accueil",
           }}
-          backgroundColor={COLORS.GREEVE}
+          tags={["développeur web", "indépendant", "à l'écoute"]}
         >
           <>
             <p>
-              Bonjour, je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon
-              site <b>professionnel de développement web</b>.
+              Bonjour, je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
+              <b>site professionnel</b> de <b>développeur web indépendant</b>.
+            </p>
+            <p>
+              Je suis curieux de{" "}
+              <b>découvrir de nouvelles équipes et environnements</b>.
             </p>
             <p>
               Laissez-moi vous{" "}
@@ -118,7 +120,21 @@ const Accueil = () => {
                 page={PAGES.PRESTATION}
                 altTitle={"présenter ma prestation"}
               />{" "}
-              ainsi que <b>ma vision sur l'informatique</b>.
+              ainsi que{" "}
+              <b>
+                ma vision{" "}
+                <InternalLink
+                  page={PAGES.PRESTATION_INGENIERIE_WEB}
+                  altTitle="efficace"
+                />{" "}
+                et{" "}
+                <InternalLink
+                  page={PAGES.PRESTATION_ECO_CONCEPTION}
+                  altTitle="sobre"
+                />{" "}
+                de l'informatique
+              </b>
+              .
             </p>
           </>
         </Row>
@@ -128,13 +144,13 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_SITE.title,
           }}
-          backgroundColor={COLORS.DARK_GREEVE}
+          backgroundColor={COLORS.SUN}
         >
           <>
             <Quote displayHeading={4} className={"my-5"}>
               <>
-                Internet devrait servir à résoudre des problèmes, pas en créer
-                de nouveaux.
+                Internet devrait servir à résoudre des problèmes, tout en
+                minimisant ceux qu'il peut créer.
               </>
             </Quote>
             <p>
@@ -143,9 +159,13 @@ const Accueil = () => {
               puissance de calcul.
             </p>
             <p>
-              Même au sein d'un projet applicatif, l'ajout de nouvelles
-              fonctionnalités multiplie la consommation de ressources (y compris
-              humaine !) au lieu de le réduire par abstraction.
+              Même au sein d'un projet applicatif,{" "}
+              <b>
+                l'ajout de nouvelles fonctionnalités multiplie la consommation
+                de ressources
+              </b>{" "}
+              (y compris humaines) au lieu de le réduire par{" "}
+              <b>généralisation et industrialisation.</b>.
             </p>
             <p>
               Pourtant, une partie de{" "}
@@ -173,7 +193,6 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_PAGE.title,
           }}
-          backgroundColor={COLORS.LIGHT_SUN}
         >
           <>
             <p>
@@ -187,8 +206,9 @@ const Accueil = () => {
               <b>éco-conception logicielle</b>.
             </p>
             <p>
-              Au croisement de ces deux sujets apparaît une puissante
-              efficience, qui accélère les applications et réduit les dépenses .
+              Au croisement de ces deux sujets apparaît une{" "}
+              <b>puissante efficience</b>, qui <b>accélère les applications</b>{" "}
+              et <b>réduit les dépenses</b> .
             </p>
             <LinksMenu
               links={[
@@ -215,8 +235,9 @@ const Accueil = () => {
         >
           <>
             <p>
-              Au long de ma carrière, j'ai privilégié la diversité des
-              contextes, sans perdre de vue la stack JavaScript.
+              Au long de ma carrière, j'ai privilégié la{" "}
+              <b>diversité des contextes</b>, tout en me{" "}
+              <b>spécialisant sur la stack JavaScript</b>.
             </p>
             <p>Voici une sélection de mes expériences les plus pertinentes :</p>
             <Carousel
@@ -233,6 +254,7 @@ const Accueil = () => {
                 <DcbrainProject />,
               ]}
             />
+            <p></p>
             <LinksMenu
               links={[
                 {
