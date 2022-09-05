@@ -4,3 +4,8 @@
 .row.bg-light .links-menu {
   border-left-color: $dark;
 }
+@each $color in ($light) {
+  .bg-#{$color} .row {
+    border-left-color: $dark;
+  }
+}
