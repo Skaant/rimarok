@@ -41,7 +41,10 @@ function Row({
             badges={tags.map((value) => ({
               label: value,
               color:
-                backgroundColor && [COLORS.FLOWER].includes(backgroundColor)
+                backgroundColor &&
+                [COLORS.FLOWER, COLORS.SUN, COLORS.LAGOON].includes(
+                  backgroundColor
+                )
                   ? COLORS.WHITE
                   : COLORS.FLOWER,
             }))}
