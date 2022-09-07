@@ -1,12 +1,17 @@
 .blockquote {
-  background-color: $light_mist;
-  color: rgb(63, 63, 63);
-  box-shadow: -25px 0px 0px 0px $mist;
   width: 80%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-left: 25px;
+  @each $color in (abyss mist ground) {
+    &.bg-#{$color} {
+      box-shadow: -25px 0px 0px 0px rgba(map-get($theme-colors, $color), 0.5);
+    }
+  }
+  &.bg-abyss {
+    color: $light;
+  }
 }
 
 .legend {
