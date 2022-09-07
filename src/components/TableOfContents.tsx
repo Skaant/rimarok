@@ -12,12 +12,11 @@ export type TableOfContentsProps = {
 
 function TableOfContents({
   contents,
-  color,
   linkColor,
   linkClassName,
 }: TableOfContentsProps) {
   return (
-    <ul className={`table-of-contents${color ? ` text-${color}` : ""}`}>
+    <ul className="table-of-contents">
       {Object.values(contents).map(({ id, title }) => (
         <li>
           <Link
