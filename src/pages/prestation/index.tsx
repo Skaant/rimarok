@@ -34,7 +34,11 @@ const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
 
 export const PRESTATION_SECTIONS: { [key: string]: Section } = {
-  INTRO_PAGE: {
+  SAVOIR_FAIRE_ET_TECHNOLOGIES: {
+    id: "savoir-faire-et-technologies",
+    title: "Savoir-faire et technologies",
+  },
+  INTERVENTION: {
     id: "intervention-ponctuelle-ou-longue-duree",
     title: "Intervention ponctuelle ou longue durée",
   },
@@ -45,10 +49,6 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   CONTACT: {
     id: "contact",
     title: "Entrer en contact",
-  },
-  SAVOIR_FAIRE_ET_TECHNOLOGIES: {
-    id: "savoir-faire-et-technologies",
-    title: "Savoir-faire et technologies",
   },
   TARIF: {
     id: "un-tarif-unique",
@@ -69,8 +69,8 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   },
   /** CTAs site */
   ALLER_PLUS_LOIN: {
-    id: "aller-plus-loin",
-    title: "Aller plus loin",
+    id: "plus-loin-sur-le-code",
+    title: "Plus loin sur le code",
   },
 };
 
@@ -93,19 +93,67 @@ function Prestation() {
             ].map((page) => ({
               link: getInternalLink(page),
               label: getPageName(page),
-              color: COLORS.FLOWER,
+              color: COLORS.GROUND,
             })),
           }}
           tableOfContents={{
             contents: PRESTATION_SECTIONS,
-            linkColor: COLORS.LIGHT_MIST,
+            linkColor: COLORS.LIGHT,
           }}
         />
         <Row
-          id={PRESTATION_SECTIONS.INTRO_PAGE.id}
+          id={PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.id}
           header={{
             level: 2,
-            content: PRESTATION_SECTIONS.INTRO_PAGE.title,
+            content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
+          }}
+          backgroundColor={COLORS.LIGHT}
+          tags={["expertise", "développement web", "ingénierie"]}
+        >
+          <>
+            <p>
+              Full-stack signifie être à l'aise sur{" "}
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
+                lowercase={true}
+              />{" "}
+              : front, back et base-de-données.
+            </p>
+            <p>
+              Lors de mes différentes missions j'ai été amené à travailler dans
+              des ecosystèmes et avec des frameworks variés, mais mon expertise
+              se situe principalement sur les technos suivantes :
+            </p>
+            <ul>
+              <li>JS / Node / TypeScript,</li>
+              <li>React,</li>
+              <li>SCSS / Bootstrap,</li>
+              <li>Express,</li>
+              <li>SQL / Mongo,</li>
+              <li>GitHub.</li>
+            </ul>
+            <p>Je me débrouille également bien sur :</p>
+            <ul>
+              <li>Vue / Angular,</li>
+              <li>Nest,</li>
+              <li>PHP / Wordpress.</li>
+            </ul>
+            <p>
+              Mais tout ceci ne serait pas grand chose sans une compréhension
+              profonde de ce qu'est l'
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                lowercase={true}
+              />
+            </p>
+          </>
+        </Row>
+        <Row
+          id={PRESTATION_SECTIONS.INTERVENTION.id}
+          header={{
+            level: 2,
+            content: PRESTATION_SECTIONS.INTERVENTION.title,
           }}
           tags={["mission", "contexte", "modalités", "fréquence"]}
           backgroundColor={COLORS.LIGHT_SUN}
@@ -193,54 +241,6 @@ function Prestation() {
             <p>
               Enfin, c'est dans des équipes bienveillantes et dynamiques que je
               m'épanouis le plus.
-            </p>
-          </>
-        </Row>
-        <Row
-          id={PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
-          }}
-          backgroundColor={COLORS.DARK_GREEVE}
-          tags={["expertise", "développement web", "ingénierie"]}
-        >
-          <>
-            <p>
-              Full-stack signifie être à l'aise sur{" "}
-              <InternalLink
-                page={PAGES.PRESTATION}
-                section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
-                lowercase={true}
-              />{" "}
-              : front, back et base-de-données.
-            </p>
-            <p>
-              Lors de mes différentes missions j'ai été amené à travailler dans
-              des ecosystèmes et avec des frameworks variés, mais mon expertise
-              se situe principalement sur les technos suivantes :
-            </p>
-            <ul>
-              <li>JS / Node / TypeScript,</li>
-              <li>React,</li>
-              <li>SCSS / Bootstrap,</li>
-              <li>Express,</li>
-              <li>SQL / Mongo,</li>
-              <li>GitHub.</li>
-            </ul>
-            <p>Je me débrouille également bien sur :</p>
-            <ul>
-              <li>Vue / Angular,</li>
-              <li>Nest,</li>
-              <li>PHP / Wordpress.</li>
-            </ul>
-            <p>
-              Mais tout ceci ne serait pas grand chose sans une compréhension
-              profonde de ce qu'est l'
-              <InternalLink
-                page={PAGES.PRESTATION_INGENIERIE_WEB}
-                lowercase={true}
-              />
             </p>
           </>
         </Row>
