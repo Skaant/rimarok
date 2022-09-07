@@ -12,23 +12,10 @@ import { COLORS } from "../data/colors";
 import Section from "../types/Section";
 import { PRESTATION_SECTIONS } from "./prestation";
 import { Link } from "gatsby";
-import MediartisProject from "../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
-import CrestJazzProject from "../components/accueil/projets-professionnels/2-nounours-crest-jazz";
-import CasseDuSiecleProject from "../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
-import HygieProject from "../components/accueil/projets-professionnels/4-hygie";
-import OmerProject from "../components/accueil/projets-professionnels/5-urca-omer";
-import TalentsAffinityProject from "../components/accueil/projets-professionnels/6-fresh-pigments-talents-affinity";
-import CdietProject from "../components/accueil/projets-professionnels/7-winnov-cdiet";
-import DcbrainProject from "../components/accueil/projets-professionnels/8-dcbrain";
-import RimarokProject from "../components/accueil/projets-personnels/1-rimarok";
-import HighbsBokProject from "../components/accueil/projets-personnels/2-highbs-bok";
-import ImrokProject from "../components/accueil/projets-personnels/3-imrok";
 import getInternalLink from "../helpers/getInternalLink";
-import TheExpansProject from "../components/accueil/projets-personnels/4-the-expans";
-import MotifsJsProject from "../components/accueil/projets-personnels/5-motifs-js";
-import PermaDataProject from "../components/accueil/projets-personnels/6-perma-data";
-import PokeTeamProject from "../components/accueil/projets-personnels/7-poke-team";
 import InternalLink from "../components/InternalLink";
+import { PERSONAL_PROJECTS } from "../components/_projects/persos";
+import { PROFESSIONAL_PROJECTS } from "../components/_projects/pros";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -265,16 +252,7 @@ const Accueil = () => {
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
               controlsColor={COLORS.WHITE}
-              children={[
-                <MediartisProject />,
-                <CrestJazzProject />,
-                <CasseDuSiecleProject />,
-                <HygieProject />,
-                <OmerProject />,
-                <TalentsAffinityProject />,
-                <CdietProject />,
-                <DcbrainProject />,
-              ]}
+              children={PROFESSIONAL_PROJECTS}
             />
             <p>
               Peut-etre que <b>mon prochain projet est le vôtre</b> ?
@@ -373,15 +351,7 @@ const Accueil = () => {
             </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}_carousel`}
-              children={[
-                <RimarokProject />,
-                <HighbsBokProject />,
-                <ImrokProject />,
-                <TheExpansProject />,
-                <MotifsJsProject />,
-                <PermaDataProject />,
-                <PokeTeamProject />,
-              ]}
+              children={PERSONAL_PROJECTS}
               controlsColor={COLORS.LIGHT}
             />
             <p>
