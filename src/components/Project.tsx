@@ -13,7 +13,7 @@ function Project({ title, scope, tags, date, children }: ProjectProps) {
   return (
     <div className="card">
       <div className="card-body d-flex flex-column text-start">
-        <h3 className="card-title order-1">{title}</h3>
+        <h3 className="card-title order-1 mb-4">{title}</h3>
         <TagsDateHeader
           date={date}
           scope={scope}
