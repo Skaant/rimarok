@@ -373,13 +373,12 @@ const Accueil = () => {
         >
           <>
             <p>
-              Sommes-nous faits pour{" "}
               <Link
                 to={`${PAGES_DATA[PAGES.PRESTATION].path}#${
                   PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id
                 }`}
               >
-                collaborer
+                Sommes-nous faits pour collaborer
               </Link>{" "}
               ?
             </p>
@@ -401,6 +400,14 @@ const Accueil = () => {
             </p>
             <LinksMenu
               links={[
+                {
+                  link: getInternalLink(
+                    PAGES.PRESTATION,
+                    PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE
+                  ),
+                  label: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
+                  color: COLORS.FLOWER,
+                },
                 {
                   link: getInternalLink(
                     PAGES.PRESTATION,
