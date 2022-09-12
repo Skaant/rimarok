@@ -34,7 +34,7 @@ const MOTIFS_SECTIONS: { [key: string]: Section } = {
   /** CTA contact */
   CONTRIBUER: {
     id: "contribuer",
-    title: "Contibuer",
+    title: "Contribuer",
   },
 };
 
@@ -58,6 +58,51 @@ function Motifs() {
             level: 2,
             content: MOTIFS_SECTIONS.INTRO_PAGE.title,
           }}
+          backgroundColor={COLORS.LAGOON}
+          tags={["qualité", "langage", "vivant", "optimisation"]}
+        >
+          <>
+            <p>
+              Christopher Alexander publie à la fin des années 70{" "}
+              <b>trois livres fondateurs</b> d'architecture,{" "}
+              <b>
+                qui résonnent à la perfection pour le développement logiciel
+              </b>
+              .
+            </p>
+            <p>
+              Dans <b>The Timeless Way of Building</b>, il tente de décrire{" "}
+              <b>la qualité</b> qui rend <b>les systèmes vivants harmonieux</b>{" "}
+              : leur capacité à <b>former un langage de motifs</b> cohérent.
+            </p>
+            <p>
+              <b>A Pattern Language</b> est un recueil de problèmes/solutions
+              génériques pour les villes et les bâtiments, mais que le Gang des
+              4 transforma pour des{" "}
+              <b>problématiques cette fois liées à l'informatique</b> dans{" "}
+              <b>
+                Design Patterns: Elements of Reusable Object-Oriented Software
+              </b>
+              .
+            </p>
+            <p>
+              Avec cette vision abstraite, bâtir{" "}
+              <b>une application web fonctionnelle et efficiente</b> c'est :{" "}
+            </p>
+            <p>
+              Solidement <b>identifier les motifs</b> qui la compose et les{" "}
+              <b>imbriquer de façon harmonieuse</b> pour{" "}
+              <b>optimiser les flux de données</b>.
+            </p>
+          </>
+        </Row>
+        <Row
+          id={MOTIFS_SECTIONS.WHAT_IS.id}
+          header={{
+            level: 2,
+            content: MOTIFS_SECTIONS.WHAT_IS.title,
+          }}
+          tags={["répétition", "probleme récurrent", "solution générique"]}
         >
           <>
             <Quote
@@ -66,6 +111,7 @@ function Motifs() {
                 author: "Cristopher Alexander",
                 source: "A Pattern Language",
               }}
+              backgroundColor={COLORS.SUN}
             >
               <>
                 <p>
@@ -78,73 +124,40 @@ function Motifs() {
               </>
             </Quote>
             <p>
-              Christopher Alexander publie à la fin des années 70 deux livres
-              fondateurs d'architecture, mais qui résonnent à la perfection pour
-              le développement logiciel.
+              Dans son sens courant, un motif est{" "}
+              <b>un ensemble de propriétés qui se répètent</b> (occurences) dans
+              un groupe d'individus.
             </p>
             <p>
-              Dans <i>The Timeless Way of Building</i>, il tente de décrire la
-              qualité qui rend les systèmes vivants et harmonieux : leur
-              capacité à former un langage de motifs cohérent.
+              Dans le dictionnaire, on lit également : ce qui pousse à agir, ce
+              qui justifie, <b>intention</b> ...
             </p>
             <p>
-              <i>A Pattern Language</i> est un recueil de problèmes/solutions
-              génériques pour les villes et les bâtiments, mais que le Gang des
-              4 transforma pour des problématiques récurrentes cette fois liées
-              à l'informatique dans{" "}
-              <i>
-                Design Patterns: Elements of Reusable Object-Oriented Software
-              </i>
-              .
+              Christopher Alexander les définit comme{" "}
+              <b>un problème récurrent</b>
+              et <b>la solution générique</b> pour y remédier.
             </p>
             <p>
-              Avec cette vision abstraite,{" "}
-              <b>bâtir une application web fonctionnelle et efficiente</b> c'est
-              :{" "}
+              <b>Dans l'informatique,</b> un motif est{" "}
               <b>
-                solidement identifier les motifs qui la compose et les imbriquer
-                de façon harmonieuse pour optimiser le transit des flux de
-                données
-              </b>
+                une structure de fichiers, instructions, données, propriétés
+              </b>{" "}
+              qui répond effectivement à des besoins répétitifs.
+            </p>
+            <p>
+              Certains sont relatifs à des langages de programmation, d'autres à
+              des frameworks mais <b>la majorité des motifs sont transverses</b>
               .
             </p>
-          </>
-        </Row>
-        <Row
-          id={MOTIFS_SECTIONS.WHAT_IS.id}
-          header={{
-            level: 2,
-            content: MOTIFS_SECTIONS.WHAT_IS.title,
-          }}
-        >
-          <>
             <p>
-              Dans le sens qui nous intéresse, un motif est un ensemble de
-              caractères qui se répètent dans un groupe d'entités.
+              <b>Attention</b> à ne pas trop remonter loin dans l'abstraction
+              car sinon
+              <b>
+                vous pourriez tomber des nus en tentant de résoudre l'équation
+              </b>{" "}
+              :
             </p>
-            <p>
-              Toutefois la définition de motif, donne : ce qui pousse à agir, ce
-              qui justifie, intention ...
-            </p>
-            <p>
-              Les motifs de Cristopher Alexander décrivent eux un problème
-              courant et la solution générique pour y remédier.
-            </p>
-            <p>
-              <b>Dans l'informatique,</b> un motif est une structure de
-              [fichiers/instructions/données]* qui répond effectivement à des
-              problématiques récurrentes.
-            </p>
-            <p>
-              Certains motifs sont relatifs à des langages de programmation,
-              d'autres à des frameworks, toutefois la majorité des motifs sont
-              transverses.
-            </p>
-            <p>
-              Attention à ne pas trop remonter loin dans l'abstraction car sinon
-              vous pourriez tomber des nus en tentant de résoudre l'équation :
-            </p>
-            <Quote displayHeading={3}>
+            <Quote displayHeading={3} backgroundColor={COLORS.SUN}>
               <p>Le motif motif est une instance de lui-même.</p>
             </Quote>
           </>
@@ -155,30 +168,36 @@ function Motifs() {
             level: 2,
             content: MOTIFS_SECTIONS.HOW_TO.title,
           }}
+          backgroundColor={COLORS.FLOWER}
+          tags={["implémentation", "contexte", "description"]}
         >
           <>
             <p>
-              Un motif est une idée et ne peut par conséquent être utilisé
-              directement dans le code.
+              <b>Un motif est une idée</b> et ne peut par conséquent être
+              utilisé directement dans le code.
             </p>
             <p>
-              L'<b>implémentation d'un motif</b> dépend du langage, du paradigme
-              et même des humains impliqués dans le projet.
+              L'<b>implémentation d'un motif dépend</b> du langage, du paradigme
+              et, en bonne partie, <b>des humains impliqués</b> dans le projet.
             </p>
             <p>
-              La solution générique proposée pour répondre à un problème
-              récurent peut être identifié ou développé facilement en suivant la
-              description de celui-ci.
+              <b>Dans A Pattern Language</b>, la solution générique proposée
+              pour répondre à un problème peut{" "}
+              <b>être facilement materialisée en suivant la description</b> de
+              celui-ci.
             </p>
             <p>
-              La plupart des motifs apparaissent tout seul et il convient
-              simplement de les reconnaître pour, éventuellement les corriger,
-              mais surtout les connecter.
+              La plupart des <b>motifs apparaissent tout seul</b> et il convient
+              simplement de <b>les reconnaître</b> pour, éventuellement les
+              corriger, mais surtout <b>les connecter</b>.
             </p>
             <p>
-              La difficulté réside réellement là : assembler correctement toutes
-              ces occurences de motifs pour former le plus fluide et élégant{" "}
-              <i>pattern language</i>.
+              La difficulté réside essentiellement là :{" "}
+              <b>
+                assembler correctement toutes ces occurences de motifs pour
+                former le plus fluide et élégant langage de motifs
+              </b>
+              .
             </p>
           </>
         </Row>
@@ -188,15 +207,26 @@ function Motifs() {
             level: 2,
             content: MOTIFS_SECTIONS.LISTE.title,
           }}
+          tags={["répertoire", "work in progress"]}
         >
           <>
             <p>
-              Je présente ici mon propre langage de motifs, fait de ceux que je
-              connais et que je sais mettre en relation.
+              Je présente ici <b>mon propre langage de motifs</b>, fait de{" "}
+              <b>ceux que je connais et que je sais mettre en relation</b>.
             </p>
             <p>
-              Cette liste est <i>forcément</i> non-exhaustive, et je vous incite
-              fortement <InternalLink section={MOTIFS_SECTIONS.CONTRIBUER} />.
+              <b>Dans le temps</b>, j'aimerais beaucoup pouvoir ajouter leur{" "}
+              <b>description</b>, le <b>problème</b> qu'ils adressent et la
+              façon dont ils proposent d'<b>y répondre</b>.
+            </p>
+            <p>
+              Cette liste est <b>forcément non-exhaustive</b>, et je vous incite
+              fortement{" "}
+              <InternalLink
+                section={MOTIFS_SECTIONS.CONTRIBUER}
+                altTitle="à y contribuer"
+              />{" "}
+              :)
             </p>
             <MotifsList />
           </>
@@ -207,27 +237,33 @@ function Motifs() {
             level: 2,
             content: MOTIFS_SECTIONS.CONTRIBUER.title,
           }}
+          tags={["intelligence collective", "contact", "amélioration continue"]}
+          backgroundColor={COLORS.SUN}
         >
           <>
             <p>
-              Pour étendre mon dictionnaire de motifs, vous pouvez{" "}
+              Pour <b>étendre ce dictionnaire de motifs</b>, vous pouvez{" "}
               <InternalLink
                 page={PAGES.PRESTATION}
                 section={PRESTATION_SECTIONS.CONTACT}
                 altTitle="me contacter directement"
               />{" "}
-              ou bien même pourquoi pas
+              ou bien même{" "}
               <a href={WEBSITE_DATA.GITHUB_LINK}>ouvrir une PR sur Github</a>.
             </p>
-            <p>Le langage des motifs est sans fin.</p>
             <p>
-              Il est aussi vaste que l'intersection de tous les contextes et
-              problématiques métiers ...
+              <b>Le langage des motifs est sans</b> (début ni) <b>fin.</b>
+            </p>
+            <p>
+              Il est aussi <b>vaste</b> que l'intersection de{" "}
+              <b>tous les contextes et problématiques métiers</b> :
             </p>
             <Quote displayHeading={5}>
               <p>C'est proprement exponentiel et inconcevable !</p>
             </Quote>
-            <p>Stay tuned</p>
+            <p>
+              Restez <b>connecté</b> !
+            </p>
           </>
         </Row>
       </>
