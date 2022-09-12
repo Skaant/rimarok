@@ -406,7 +406,7 @@ function Prestation() {
         >
           <>
             <p>
-              Lorsqu'on <b>pratique longtemps</b> un sujet,{" "}
+              Lorsque je <b>pratique longtemps</b> un sujet,{" "}
               <b>des motifs apparaissent</b> et pratiquer devient{" "}
               <i>un langage de motifs</i>.
             </p>
