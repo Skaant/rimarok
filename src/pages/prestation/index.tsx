@@ -1,20 +1,20 @@
 import React from "react";
 import { ACCUEIL_SECTIONS } from "..";
-import RimarokProject from "../../components/accueil/projets-personnels/1-rimarok";
-import HighbsBokProject from "../../components/accueil/projets-personnels/2-highbs-bok";
-import ImrokProject from "../../components/accueil/projets-personnels/3-imrok";
-import TheExpansProject from "../../components/accueil/projets-personnels/4-the-expans";
-import MotifsJsProject from "../../components/accueil/projets-personnels/5-motifs-js";
-import PermaDataProject from "../../components/accueil/projets-personnels/6-perma-data";
-import PokeTeamProject from "../../components/accueil/projets-personnels/7-poke-team";
-import MediartisProject from "../../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
-import CrestJazzProject from "../../components/accueil/projets-professionnels/2-nounours-crest-jazz";
-import CasseDuSiecleProject from "../../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
-import HygieProject from "../../components/accueil/projets-professionnels/4-hygie";
-import OmerProject from "../../components/accueil/projets-professionnels/5-urca-omer";
-import TalentsAffinityProject from "../../components/accueil/projets-professionnels/6-fresh-pigments-talents-affinity";
-import CdietProject from "../../components/accueil/projets-professionnels/7-winnov-cdiet";
-import DcbrainProject from "../../components/accueil/projets-professionnels/8-dcbrain";
+import RimarokProject from "../../components/_projects/persos/1-rimarok";
+import HighbsBokProject from "../../components/_projects/persos/2-highbs-bok";
+import ImrokProject from "../../components/_projects/persos/3-imrok";
+import TheExpansProject from "../../components/_projects/persos/4-the-expans";
+import MotifsJsProject from "../../components/_projects/persos/5-motifs-js";
+import PermaDataProject from "../../components/_projects/persos/6-perma-data";
+import PokeTeamProject from "../../components/_projects/persos/7-poke-team";
+import MediartisProject from "../../components/_projects/pros/1-mediartis-mobilis-pro";
+import CrestJazzProject from "../../components/_projects/pros/2-nounours-crest-jazz";
+import CasseDuSiecleProject from "../../components/_projects/pros/3-happy-teams-casse-du-siecle";
+import HygieProject from "../../components/_projects/pros/4-hygie";
+import OmerProject from "../../components/_projects/pros/5-urca-omer";
+import TalentsAffinityProject from "../../components/_projects/pros/6-fresh-pigments-talents-affinity";
+import CdietProject from "../../components/_projects/pros/7-winnov-cdiet";
+import DcbrainProject from "../../components/_projects/pros/8-dcbrain";
 import Carousel from "../../components/Carousel";
 import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
@@ -26,7 +26,6 @@ import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
 import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
-import { PRESTATION_ECO_CONCEPTION_SECTIONS } from "./eco-conception";
 import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
 import getPageName from "../../helpers/getPageName";
 
@@ -53,10 +52,6 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   TARIF: {
     id: "un-tarif-unique",
     title: "Un tarif unique",
-  },
-  WEB_HOLISTIQUE: {
-    id: "une-vision-holistique-de-l-informatique",
-    title: "Une vision holistique de l'informatique",
   },
   REALISATIONS: {
     id: "realisations",
@@ -85,20 +80,20 @@ function Prestation() {
         <PageHeader
           title={title}
           subtitle="La pièce manquante du puzzle"
-          backgroundColor={COLORS.LAGOON}
+          backgroundColor={COLORS.LIGHT}
           linksMenu={{
             links: [
-              PAGES.PRESTATION_ECO_CONCEPTION,
               PAGES.PRESTATION_INGENIERIE_WEB,
-            ].map((page) => ({
+              PAGES.PRESTATION_ECO_CONCEPTION,
+            ].map((page, index) => ({
               link: getInternalLink(page),
               label: getPageName(page),
-              color: COLORS.GROUND,
+              color: index ? COLORS.SUN : COLORS.LAGOON,
             })),
           }}
           tableOfContents={{
             contents: PRESTATION_SECTIONS,
-            linkColor: COLORS.LIGHT,
+            linkColor: COLORS.DARK,
           }}
         />
         <Row
@@ -107,8 +102,8 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
           }}
-          backgroundColor={COLORS.LIGHT}
-          tags={["expertise", "développement web", "ingénierie"]}
+          backgroundColor={COLORS.LAGOON}
+          tags={["expertise", "full-stack", "typescript", "react"]}
         >
           <>
             <p>
@@ -118,34 +113,48 @@ function Prestation() {
                 section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
                 lowercase={true}
               />{" "}
-              : front, back et base-de-données.
+              : front, back et base de données.
             </p>
             <p>
-              Lors de mes différentes missions j'ai été amené à travailler dans
-              des ecosystèmes et avec des frameworks variés, mais mon expertise
-              se situe principalement sur les technos suivantes :
+              Lors de mes missions, j'ai été amené à travailler dans des
+              <b>ecosystèmes</b> et avec des <b>frameworks variés</b>.
+            </p>
+            <p>
+              <b>
+                mon expertise se situe principalement sur les technos suivantes
+              </b>{" "}
+              :
             </p>
             <ul>
-              <li>JS / Node / TypeScript,</li>
-              <li>React,</li>
-              <li>SCSS / Bootstrap,</li>
+              <li>
+                JS / Node / <b>TypeScript</b>,
+              </li>
+              <li>
+                <b>React</b>,
+              </li>
+              <li>
+                SCSS / <b>Bootstrap</b>,
+              </li>
               <li>Express,</li>
               <li>SQL / Mongo,</li>
-              <li>GitHub.</li>
+              <li>
+                <b>GitHub</b>.
+              </li>
             </ul>
-            <p>Je me débrouille également bien sur :</p>
+            <p>J'ai également une certaine expérience sur :</p>
             <ul>
               <li>Vue / Angular,</li>
               <li>Nest,</li>
               <li>PHP / Wordpress.</li>
             </ul>
             <p>
-              Mais tout ceci ne serait pas grand chose sans une compréhension
-              profonde de ce qu'est l'
+              Tout ceci ne serait pas grand chose sans{" "}
+              <b>une compréhension profonde</b> de ce qu'est l'
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
                 lowercase={true}
               />
+              .
             </p>
           </>
         </Row>
@@ -156,26 +165,26 @@ function Prestation() {
             content: PRESTATION_SECTIONS.INTERVENTION.title,
           }}
           tags={["mission", "contexte", "modalités", "fréquence"]}
-          backgroundColor={COLORS.LIGHT_SUN}
+          backgroundColor={COLORS.LIGHT}
         >
           <>
             <p>
-              Je travaille principalement en renfort d'équipes, quelques
-              semaines ou quelques mois, pour soutenir le développement de gros
-              projets applicatifs.
+              Je travaille principalement{" "}
+              <b>en renfort d'équipes, quelques semaines ou quelques mois</b>,
+              pour <b>soutenir le développement de gros projets applicatifs</b>.
             </p>
             <p>
-              Des petites missions pour ajouter une fonctionnalité ou installer
-              un script d'automatisation m'intéressent aussi.
+              <b>Des petites missions</b> pour ajouter une fonctionnalité ou
+              installer un script d'automatisation <b>m'intéressent aussi</b>.
             </p>
             <p>
-              Le refactoring et les tests m'attirent beaucoup, car j'aime
-              améliorer les choses.
+              <b>Le refactoring et les tests</b> m'attirent et j'aime{" "}
+              <b>améliorer les choses</b>.
             </p>
             <p>
               J'interviens en <b>100% télétravail</b>, jusqu'à{" "}
-              <b>4 jours/semaine</b>
-              sur des projets <b>front, back et full-stack JavaScript</b>.
+              <b>4 jours/semaine</b> sur des projets{" "}
+              <b>front, back et full-stack JavaScript</b>.
             </p>
             <p>
               En parallèle de mes compétences techniques, je suis amical et
@@ -201,7 +210,7 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.PERSONNALITE.title,
           }}
-          tags={["humain", "curiosité", "travail d'équipe"]}
+          tags={["humain", "curieux", "travail d'équipe"]}
           backgroundColor={COLORS.SUN}
         >
           <>
@@ -210,7 +219,7 @@ function Prestation() {
               compétences.
             </p>
             <p>
-              En plus de mes bientôt huit années de pratique{" "}
+              En plus de mes bientôt <b>huit années de pratique</b>{" "}
               <InternalLink
                 page={PAGES.ACCUEIL}
                 section={ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS}
@@ -222,16 +231,18 @@ function Prestation() {
                 section={ACCUEIL_SECTIONS.PROJETS_PERSONNELS}
                 altTitle="personnelle"
               />
-              , c'est ma curiosité et ma créativité qui ont forgé mon expertise
-              dans le domaine du développement web.
+              , c'est ma <b>curiosité</b> et ma <b>créativité</b> qui ont
+              faconnées mon <b>expertise</b>
+              dans le domaine du <b>développement web</b>.
             </p>
             <p>
-              J'aime questionner et comprendre, aborder les problématiques
-              autrement et chercher des solutions plus simples.
+              J'aime <b>questionner et comprendre</b>, aborder les
+              problématiques autrement et{" "}
+              <b>trouver des solutions plus simples</b>.
             </p>
             <p>
-              Cette recherche s'est fusionné avec mon appétance pour la sobriété
-              technologique et, naturellement, l'
+              Cette recherche a fusionné avec mon appétance pour la{" "}
+              <b>sobriété technologique et cognitive</b>, ainsi que l'
               <InternalLink
                 page={PAGES.PRESTATION_ECO_CONCEPTION}
                 lowercase={true}
@@ -239,9 +250,18 @@ function Prestation() {
               .
             </p>
             <p>
-              Enfin, c'est dans des équipes bienveillantes et dynamiques que je
-              m'épanouis le plus.
+              Enfin, c'est dans des <b>équipes bienveillantes et dynamiques</b>{" "}
+              que je m'épanouis le plus.
             </p>
+            <LinksMenu
+              links={[
+                {
+                  link: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id,
+                  label: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
+                  color: COLORS.MIST,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
@@ -250,18 +270,12 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.LIGHT}
           tags={["mission", "rémunération"]}
         >
           <>
             <p>Une prestation, un tarif :</p>
             <p className="display-1">420€/jour HT</p>
-            <p>
-              <i>
-                Si vous ne pouvez pas récupérer la TVA, je suis exempté en
-                Octobre jusqu'à Avril généralement.
-              </i>
-            </p>
           </>
         </Row>
         <Row
@@ -270,70 +284,35 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.CONTACT.title,
           }}
+          backgroundColor={COLORS.FLOWER}
+          tags={["calendly", "mail", "sms", "linkedin"]}
         >
           <>
-            <p>Pour discuter ensemble, je vous propose plusieurs solutions :</p>
+            <p>
+              Pour <b>discuter ensemble</b>, je vous propose{" "}
+              <b>plusieurs solutions</b> :
+            </p>
             <LinksMenu
               links={[
                 {
                   link: WEBSITE_DATA.CALENDLY_LINK,
                   label: "Prendre un premier RDV sur Calendly",
-                  color: COLORS.SUN,
+                  color: COLORS.ABYSS,
                 },
                 {
                   link: "#",
                   label: "M'envoyer un mail sympa",
-                  color: COLORS.SUN,
+                  color: COLORS.ABYSS,
                 },
                 {
                   link: "#",
                   label: "Un petit SMS pour vous présenter",
-                  color: COLORS.SUN,
+                  color: COLORS.ABYSS,
                 },
                 {
                   link: WEBSITE_DATA.LINKEDIN_LINK,
                   label: "Un message sur Lik'dine",
-                  color: COLORS.SUN,
-                },
-              ]}
-            />
-          </>
-        </Row>
-        <Row
-          id={PRESTATION_SECTIONS.WEB_HOLISTIQUE.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.WEB_HOLISTIQUE.title,
-          }}
-          backgroundColor={COLORS.MIST}
-          tags={["calendly", "mail", "sms", "linkedin"]}
-        >
-          <>
-            <p>
-              Le monde est un système dont les éléments sont interreliés et
-              interdépendants.
-            </p>
-            <p>
-              Pourquoi concevoir un sous-système qui ne dispose pas des mêmes
-              propriétés, ou qui communique mal avec les autres éléments qui
-              constituent son environnement ?
-            </p>
-            <p>Je suis à l'écoute des nouveautés et investigue l'existant.</p>
-            <p>
-              Combien coûtera le produit à développer est une des premières
-              questions à se poser.
-            </p>
-            <p>
-              La réponse ne peut être envisagée sans inclure, en plus de la
-              dimension financière, les aspects humains et environnementaux.
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: `${PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION]}#${
-                    PRESTATION_ECO_CONCEPTION_SECTIONS.VALEURS.id
-                  }`,
-                  label: "Mes valeurs",
+                  color: COLORS.ABYSS,
                 },
               ]}
             />
@@ -345,6 +324,8 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.REALISATIONS.title,
           }}
+          backgroundColor={COLORS.LIGHT}
+          tags={["expériences", "professionnel", "personnel"]}
         >
           <>
             <p>
@@ -391,22 +372,26 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.LAGOON}
+          tags={["votre environnement", "compatibilité"]}
         >
           <>
-            <p>Je ne suis pas un défonce-man.</p>
             <p>
-              J'aime le travail en cela qu'il est un{" "}
-              <b>processus qui m'accomplit</b> et qu'il{" "}
-              <b>me connecte aux autres</b>.
+              Je ne suis <b>pas</b> un défonce-man.
             </p>
             <p>
-              Votre environnement est sain, vous avez juste la bonne dose de
-              stress, votre projet n'était pas à livrer hier ?
+              J'aime <b>le travail</b> en cela qu'il est un{" "}
+              <b>processus qui m'accomplit</b> et qu'il <b>me connecte</b> aux
+              autres.
+            </p>
+            <p>
+              <b>Votre environnement est sain</b>, vous avez juste la bonne dose
+              de stress, vous prenez des vacances et votre projet n'était pas à
+              livrer hier ?
             </p>
             <p>
               <b>Je souhaite déjà vous connaître</b> et savoir comment nous
-              pourrions <b>travailler ensemble</b>.
+              pourrions <b>collaborer</b> :)
             </p>
           </>
         </Row>
@@ -416,28 +401,30 @@ function Prestation() {
             level: 2,
             content: PRESTATION_SECTIONS.ALLER_PLUS_LOIN.title,
           }}
-          backgroundColor={COLORS.SUN}
+          backgroundColor={COLORS.LIGHT}
+          tags={["meta", "motifs", "blog"]}
         >
           <>
             <p>
-              Lorsqu'on pratique longtemps un sujet, des motifs apparaissent et
-              cette pratique devient <i>un langage de motifs</i>.
+              Lorsqu'on <b>pratique longtemps</b> un sujet,{" "}
+              <b>des motifs apparaissent</b> et pratiquer devient{" "}
+              <i>un langage de motifs</i>.
             </p>
             <p>
-              En codant, des idées, activables ou juste philosophiques, me
-              viennent et j'apprécie les partager.
+              <b>En codant, des idées</b>, activables ou juste philosophiques,{" "}
+              <b>me viennent</b> et j'apprécie les <b>partager</b>.
             </p>
             <LinksMenu
               links={[
                 {
                   link: PAGES_DATA[PAGES.MOTIFS].path,
                   label: "En apprendre plus sur les motifs",
-                  color: COLORS.WHITE,
+                  color: COLORS.FLOWER,
                 },
                 {
                   link: PAGES_DATA[PAGES.BLOG].path,
                   label: "Consulter les articles du blog",
-                  color: COLORS.WHITE,
+                  color: COLORS.FLOWER,
                 },
               ]}
             />
