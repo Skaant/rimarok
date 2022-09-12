@@ -338,7 +338,7 @@ function Prestation() {
               , mes principales réalisations, professionnelles et personnelles :
             </p>
             <Carousel
-              id={`${PRESTATION_SECTIONS.REALISATIONS.id}#carousel`}
+              id={`${PRESTATION_SECTIONS.REALISATIONS.id}_carousel`}
               children={[
                 <MediartisProject />,
                 <RimarokProject />,
