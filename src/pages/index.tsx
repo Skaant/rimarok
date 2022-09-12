@@ -234,7 +234,7 @@ const Accueil = () => {
           }}
           backgroundColor={COLORS.LAGOON}
           colClassName="text-white"
-          tags={["expériences", "mission-type", "votre projet"]}
+          tags={["expériences", "mission-type", "stacks", "votre projet"]}
         >
           <>
             <p>
@@ -295,7 +295,7 @@ const Accueil = () => {
                   Le code, ce n'est pas que du code : c'est un organisme vivant.
                 </p>
               }
-              backgroundColor={COLORS.ABYSS}
+              backgroundColor={COLORS.SUN}
             />
             <p>
               Pour moi, une application est <b>un ecosystème</b> : avec ses
@@ -338,7 +338,7 @@ const Accueil = () => {
             content: ACCUEIL_SECTIONS.PROJETS_PERSONNELS.title,
           }}
           backgroundColor={COLORS.SUN}
-          tags={["ludique", "pratique"]}
+          tags={["expériences", "ludique", "pratique"]}
         >
           <>
             <p>
