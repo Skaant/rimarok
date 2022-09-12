@@ -303,11 +303,13 @@ function Prestation() {
                   link: "#",
                   label: "M'envoyer un mail sympa",
                   color: COLORS.ABYSS,
+                  id: "contact-mail",
                 },
                 {
                   link: "#",
                   label: "Un petit SMS pour vous présenter",
                   color: COLORS.ABYSS,
+                  id: "contact-phone",
                 },
                 {
                   link: WEBSITE_DATA.LINKEDIN_LINK,
