@@ -63,16 +63,8 @@ function EcoConception() {
           <>
             <p>Éco c'est à la fois économique et écologique.</p>
             <p>
-              Bizarrement, quand on considère une application web de{" "}
-              <a
-                href={getInternalLink(
-                  PAGES.PRESTATION,
-                  PRESTATION_SECTIONS.WEB_HOLISTIQUE
-                )}
-              >
-                façon holistique
-              </a>
-              , on se rend compte que <b>moins égal plus</b>.
+              Bizarrement, quand on considère une application web de façon
+              holistique, on se rend compte que <b>moins égal plus</b>.
             </p>
             <Quote displayHeading={1}>
               <p>- = +</p>
