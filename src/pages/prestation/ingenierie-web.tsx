@@ -9,6 +9,7 @@ import { PAGES, PAGES_DATA } from "../../data/pages";
 import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
 import { COLORS } from "../../data/colors";
+import WEBSITE_DATA from "../../data/website";
 
 const PAGE_ID = PAGES.PRESTATION_INGENIERIE_WEB;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -49,9 +50,9 @@ function IngenierieWeb() {
           subtitle="Ce que signifie être full-stack"
           tableOfContents={{
             contents: PRESTATION_INGENIERIE_WEB_SECTIONS,
-            linkColor: COLORS.ABYSS,
+            linkColor: COLORS.LIGHT,
           }}
-          backgroundColor={COLORS.LIGHT_MIST}
+          backgroundColor={COLORS.LAGOON}
         />
         <Row
           id={PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.id}
@@ -59,25 +60,53 @@ function IngenierieWeb() {
             level: 2,
             content: PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.title,
           }}
-          backgroundColor={COLORS.LIGHT_GREEVE}
+          backgroundColor={COLORS.LIGHT}
+          tags={["agilité", "meta", "ci/cd", "refactoring"]}
         >
           <>
-            <p>La vie est une myriade de flux en constant mouvement.</p>
             <p>
-              Construire dans cet environnement en perpétuelle mutation
-              nécessite une grand agilité.
+              La vie est une myriade de flux en <b>constant mouvement</b>.
             </p>
             <p>
-              Ainsi l'application web doit être pensée non comme une fin en soi,
-              mais comme un processus qui vise des objectifs pertinents avec le
-              contexte actuel.
+              <b>Construire dans cet environnement</b> en perpétuelle mutation
+              nécessite <b>une grand agilité</b>.
             </p>
             <p>
-              En plus de concepts primordiaux de développement bien maîtrisés,
-              j'apporte avec moi la puissance de l'intégration et du déploiement
-              continus.
+              L'<b>application web</b> doit être pensée non comme une fin en
+              soi, mais comme un processus qui vise des{" "}
+              <b>objectifs adaptés au contexte actuel</b>.
             </p>
-            <p>Et lorsque le projet devient une jungle, j'ouvre des chemins.</p>
+            <Quote
+              displayHeading={5}
+              legend={{
+                author: "Cristopher Alexander",
+                source: "The Timeless Way of Building",
+              }}
+              backgroundColor={COLORS.SUN}
+            >
+              <>
+                <p>
+                  And when a building has this fire, then it becomes a part of
+                  nature.
+                </p>
+                <p>
+                  Like ocan waves, or blades of grass, its parts are governed by
+                  the endless play of repetition and variety, created in the
+                  presence of the fact that all things pass.
+                </p>
+                <p>This is the quality itself.</p>
+              </>
+            </Quote>
+            <p>
+              En plus de <b>concepts fondamentaux de développement maîtrisés</b>
+              , j'apporte avec moi la puissance de l'
+              <b>intégration et du déploiement continus</b> (CI/CD).
+            </p>
+            <p>
+              Et{" "}
+              <b>lorsque le projet devient une jungle, j'ouvre des chemins</b>{" "}
+              (refactoring).
+            </p>
           </>
         </Row>
         <Row
@@ -86,31 +115,35 @@ function IngenierieWeb() {
             level: 2,
             content: PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK.title,
           }}
-          backgroundColor={COLORS.ABYSS}
+          backgroundColor={COLORS.FLOWER}
+          tags={["polyvalence", "modularité"]}
         >
           <>
-            <Quote displayHeading={3}>
+            <Quote displayHeading={3} backgroundColor={COLORS.ABYSS}>
               <p>Front, back, databases</p>
             </Quote>
             <p>
-              Être <i>full-stack</i> c'est avoir développé sa sensibilité aux
-              enjeux de ces trois composants fondamentaux.
+              Être <b>full-stack</b> c'est avoir développé sa{" "}
+              <b>sensibilité aux enjeux de ces trois composants</b> primordiaux.
             </p>
             <p>
-              Le front doit suivre le travail du designer en minimisant les
-              temps d'attente utilisateur.
+              Le <b>front-end</b> doit suivre le{" "}
+              <b>travail du designer tout en fluidifiant</b> le retour
+              utilisateur.
             </p>
             <p>
-              Le back suit à son tour le front mais constitue la forteresse où
-              tout ce qui est précieux est calculé.
+              Le <b>back-end</b> suit à son tour le front mais constitue la
+              forteresse où
+              <b>tout ce qui est précieux est calculé</b>.
             </p>
             <p>
-              Enfin, la (ou les) base(s) de données conserve(nt) en mémoire le
-              coeur de toutes applications : l'information.
+              Enfin,{" "}
+              <b>la (ou les) base(s) de données conserve(nt) en mémoire</b> le
+              coeur de toute application : <b>l'information</b>.
             </p>
             <p>
-              Généraliste avec une vision critique, je peux intervenir sur ces
-              différents sujets lors de mes prestations.
+              <b>Généraliste expérimenté avec une vision critique</b>, je peux
+              intervenir sur ces différents sujets lors de mes prestations.
             </p>
             <LinksMenu
               links={[
@@ -120,6 +153,7 @@ function IngenierieWeb() {
                     PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES
                   ),
                   label: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
+                  color: COLORS.ABYSS,
                 },
               ]}
             />
@@ -132,27 +166,34 @@ function IngenierieWeb() {
             content:
               PRESTATION_INGENIERIE_WEB_SECTIONS.SCRIPTS_AUTOMATISATION.title,
           }}
-          backgroundColor={COLORS.MIST}
+          backgroundColor={COLORS.LIGHT}
+          tags={["petites missions", "api", "gestion de fichiers", "plugins"]}
         >
           <>
             <p>
               Conjointement ou parallèllement au développement d'applications
-              web, je suis capable de créer des scripts pour automatiser des
-              taches informatiques.
+              web, je suis capable de{" "}
+              <b>créer des scripts pour automatiser des taches informatiques</b>
+              .
             </p>
             <p>
-              De quelques instructions à des routines de plusieurs fichiers, je
-              peux canaliser diverses sources de donner pour obtenir le résultat
-              souhaité.
+              De{" "}
+              <b>quelques instructions à des routines en nombreux fichiers</b>,
+              je peux canaliser <b>diverses sources de données</b> pour obtenir
+              le résultat désiré.
             </p>
             <p>
-              Avec la solution Github Actions, je lance des scripts à des
-              horaires régulies.
+              Avec la solution Github Actions, je permets le{" "}
+              <b>
+                lancement de scripts manuellement ou à des horaires réguliers
+              </b>
+              .
             </p>
             <p>
               L'intégration et le déploiement continu permet aussi ça :
-              répercuter immédiatement les changements apportés pour suivre et
-              s'adapter à votre environnement.
+              <b>répercuter immédiatement les changements</b> apportés pour
+              suivre et
+              <b>s'adapter à votre environnement</b>.
             </p>
           </>
         </Row>
@@ -163,36 +204,53 @@ function IngenierieWeb() {
             content:
               PRESTATION_INGENIERIE_WEB_SECTIONS.SCIENCE_DES_MOTIFS.title,
           }}
-          backgroundColor={COLORS.DARK_GREEVE}
+          backgroundColor={COLORS.SUN}
+          tags={["a pattern language", "flux", "optimisation"]}
         >
           <>
             <p>
-              Vous connaissez sans doute le terme de <i>design pattern</i>, mais
-              savez-vous de qui s'est inspiré le gang des 4 pour élaborer leur
-              recueil de patrons de conception ?
+              Vous connaissez sans doute le terme de <b>design pattern</b>, mais
+              savez-vous <b>de qui s'est inspiré le gang des 4</b> pour élaborer
+              leur
+              <b>recueil de motifs de conception</b> ?
             </p>
             <p>
-              J'ai étudié les motifs tels que décrits dans l'ouvrage
-              <i>A pattern language</i> de Cristopher Alexander, et une
-              révélation m'a frappée :
+              J'ai étudié les motifs tels que décrits dans l'ouvrage{" "}
+              <b>A pattern language</b> de Christopher Alexander, et{" "}
+              <b>une révélation m'a frappé</b> :
             </p>
-            <Quote displayHeading={3}>
-              <p>Tout est motif !</p>
+            <Quote displayHeading={3} backgroundColor={COLORS.MIST}>
+              <p>Tout, tout est motif !</p>
             </Quote>
             <p>
-              À force de coder, les applications deviennent des flux de données
-              qui, au gré des problématiques métiers, s'agrégent durablement ou
-              non en formant
+              À force de coder, les <b>applications</b> deviennent des{" "}
+              <b>flux de données</b>
+              qui, au gré des problématiques métiers, <b>s'agrégent</b>{" "}
+              durablement ou non en formant
               <b>toujours les mêmes motifs</b>.
             </p>
             <p>
-              Développer des applications complexes, certains l'on comparer à
-              constuire des cathédrales.
+              <b>Développer</b> des applications complexes, certains l'on
+              comparé à <b>constuire des cathédrales</b> ...
             </p>
             <p>
-              Personnellement, je n'en ai jamais bâti par contre je trouver
-              qu'une <i>codebase</i> c'est un peu comme un jardin.
+              Personnellement, je n'en ai jamais bâti par contre je trouve qu'
+              <b>une codebase c'est un peu comme une forêt</b> :
             </p>
+            <p>
+              Elle devrait se <b>gérer toute seule</b>, mais on peut en{" "}
+              <b>optimiser les flux pour accéler l'amélioration</b> de ses
+              qualités.
+            </p>
+            <LinksMenu
+              links={[
+                {
+                  link: getInternalLink(PAGES.MOTIFS),
+                  label: "En savoir plus sur les motifs",
+                  color: COLORS.MIST,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
@@ -201,6 +259,7 @@ function IngenierieWeb() {
             level: 2,
             content: PRESTATION_INGENIERIE_WEB_SECTIONS.UNIVERSITE.title,
           }}
+          tags={["diplôme", "alternance", "cv"]}
         >
           <>
             <p>
@@ -228,8 +287,12 @@ function IngenierieWeb() {
             <LinksMenu
               links={[
                 {
+                  link: WEBSITE_DATA.LINKEDIN_LINK,
+                  label: "La suite de mon parcours sur Linked",
+                },
+                {
                   link: getInternalLink(PAGES.ACCUEIL),
-                  label: "Retour à ma prestation",
+                  label: "Ma prestation",
                 },
               ]}
             />
