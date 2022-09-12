@@ -1,0 +1,11 @@
+.row {
+  justify-content: center;
+  @each $color in (flower sun lagoon) {
+    &.bg-#{$color} {
+      color: $light;
+    }
+  }
+  p a {
+    font-weight: bold;
+  }
+}

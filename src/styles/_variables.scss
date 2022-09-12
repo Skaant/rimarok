@@ -1,18 +1,69 @@
 // COLORS
-$mist: #8ecae6;
-$lagoon: #219ebc;
-$abyss: #023047;
-$sun: #ffb703;
-$flower: #fb8500;
+$flower: rgb(226, 94, 60);
+$abyss: rgb(38, 81, 117);
+$sun: rgb(241, 132, 65);
+$mist: rgb(183, 209, 222);
+$lagoon: rgb(51, 188, 220);
+$ground: rgb(226, 190, 176);
+// Bootstrap-based
+$light: #f8f9fa;
+// Bootstrap-based
+$dark: #212529;
+// Green olive ;)
+$greeve: #aeec42;
+$light_greeve: #c5f9b7;
 $light_mist: #d3f1ff;
 $light_sun: #fcebc3;
+$dark_greeve: #575a47;
+$rosam: #c64f53;
+// Not themed colors
+$grey: #888;
 
 $theme-colors: (
+  sun: $sun,
+  flower: $flower,
   mist: $mist,
   lagoon: $lagoon,
   abyss: $abyss,
-  sun: $sun,
-  flower: $flower,
+  ground: $ground,
+  light: $light,
+  dark: $dark,
+  // 6 deprecated
+  greeve: $greeve,
+  light_greeve: $light_greeve,
   light_mist: $light_mist,
   light_sun: $light_sun,
+  dark_greeve: $dark_greeve,
+  rosam: $rosam,
 );
+
+// FONTS
+$font-rubik: "Rubik-400";
+$font-slab: "Roboto-Slab-300";
+
+$display-font-sizes: (
+  1: 3rem,
+  2: 2.5rem,
+  3: 2rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+) !default;
+
+// BODY
+$body-bg: $light;
+$body-color: $dark;
+
+// A
+$link-color: $abyss;
+
+// NAVBAR
+$navbar-brand-font-size: 1.5rem;
+
+// GRID
+$grid-gutter-width: 0;
+
+// BADGE
+$badge-font-weight: normal;
+$badge-padding-y: 0.45em;
+$badge-padding-x: 1em;

@@ -1,0 +1,14 @@
+.table-of-contents {
+  li {
+    padding-top: 0.12rem;
+    padding-bottom: 0.12rem;
+  }
+  a {
+    font-weight: initial;
+  }
+}
+@each $color in (flower sun lagoon) {
+  .row.bg-#{$color} .table-of-contents {
+    color: rgba($light, 0.5);
+  }
+}

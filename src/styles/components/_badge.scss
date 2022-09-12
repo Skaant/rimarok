@@ -1,0 +1,10 @@
+.badge {
+  text-transform: uppercase;
+  cursor: default;
+  margin-bottom: 4px;
+  @each $color in (ground sun) {
+    &.bg-#{$color} {
+      color: $dark;
+    }
+  }
+}

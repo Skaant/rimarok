@@ -1,0 +1,72 @@
+@use "sass:list";
+@use "sass:map";
+
+// Enable some utilities instead of all by default
+
+// List default $utilities map props name to enable
+//  Each entry has the shape ($utility-name, $disable-responsive)
+$selected-utilities-name:
+// https://getbootstrap.com/docs/5.2/utilities/background/
+  ("background-color", true)
+  // https://getbootstrap.com/docs/5.2/utilities/borders/
+  ("rounded", true) // https://getbootstrap.com/docs/5.2/utilities/colors/
+  ("color", true) // https://getbootstrap.com/docs/5.2/utilities/display/
+  ("display", true) // https://getbootstrap.com/docs/5.2/utilities/flex/
+  ("flex-direction", false) ("align-items", true) ("align-content", true)
+  ("justify-content", true) ("order", true)
+  // https://getbootstrap.com/docs/5.2/utilities/opacity/
+  ("opacity", true) // https://getbootstrap.com/docs/5.2/utilities/position/
+  ("position", true) ("bottom", true) ("end", true)
+  // https://getbootstrap.com/docs/5.2/utilities/shadows/
+  ("shadow", true) // https://getbootstrap.com/docs/5.2/utilities/sizing/
+  ("width", true) ("height", true) ("viewport-height", true)
+  // https://getbootstrap.com/docs/5.2/utilities/spacing/
+  ("margin", true) ("margin-x", true) ("margin-y", true) ("margin-top", true)
+  ("margin-end", true) ("margin-bottom", true) ("margin-start", true)
+  ("padding", true) ("padding-x", true) ("padding-y", true)
+  ("padding-top", true) ("padding-bottom", true) ("padding-start", true)
+  ("padding-end", true) // https://getbootstrap.com/docs/5.2/utilities/text/
+  ("text-align", true);
+
+$new-utilities: ();
+
+@function responsive-activation($utility, $disable-responsive) {
+  @if (map-get($utility, "responsive") and $disable-responsive == true) {
+    @return map-merge(
+      $utility,
+      (
+        responsive: false,
+      )
+    );
+  }
+  @return $utility;
+}
+
+@each $utility in $selected-utilities-name {
+  $new-utilities: map.set(
+    $new-utilities,
+    list.nth($utility, 1),
+    responsive-activation(
+      map-get($utilities, list.nth($utility, 1)),
+      list.nth($utility, 2)
+    )
+  );
+}
+
+$new-utilities: map-merge(
+  $new-utilities,
+  (
+    "viewport-height":
+      map-merge(
+        map-get($utilities, "viewport-height"),
+        (
+          values: (
+            100: 100vh,
+            60: 60vh,
+          ),
+        )
+      ),
+  )
+);
+
+$utilities: $new-utilities;

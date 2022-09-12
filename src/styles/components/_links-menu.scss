@@ -1,0 +1,6 @@
+.links-menu {
+  border-left: dotted 4px rgba($light, 0.5);
+}
+.row.bg-light .links-menu {
+  border-left-color: rgba($dark, 0.5);
+}
