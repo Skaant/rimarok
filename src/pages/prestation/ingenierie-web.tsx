@@ -90,8 +90,8 @@ function IngenierieWeb() {
                   nature.
                 </p>
                 <p>
-                  Like ocan waves, or blades of grass, its parts are governed by
-                  the endless play of repetition and variety, created in the
+                  Like ocean waves, or blades of grass, its parts are governed
+                  by the endless play of repetition and variety, created in the
                   presence of the fact that all things pass.
                 </p>
                 <p>This is the quality itself.</p>
@@ -263,32 +263,33 @@ function IngenierieWeb() {
         >
           <>
             <p>
-              À 23 ans, en 2016, je valide mon Master MIAGE (Méthodes
+              À 23 ans, en 2016, je valide mon <b>Master MIAGE</b> (Méthodes
               Informatiques Appliquées à la Gestion d'Entreprise) à l'Université
               de Grenoble.
             </p>
             <p>
-              Durant cette formation en 5 ans, nous avons eu l'occasion
-              d'acquérir une première expérience professionnelle : deux stages
-              de 3 mois et un an d'alternance.
+              Durant cette formation en 5 ans, nous avons acquis une{" "}
+              <b>importante première expérience professionnelle</b> : deux
+              stages de 3 mois et un an d'alternance.
             </p>
             <p>
-              J'ai effectué la mienne dans l'agence Business & Decision à Lyon.
+              J'ai effectué mon <b>alternance</b> dans l'agence Business &
+              Decision à Lyon.
             </p>
             <p>
-              Avec ce parcours, j'apprends les fondements théoriques de
-              l'informatique et travaille sur de nombreux projets très
-              pratiques.
+              Avec ce parcours, j'apprends les{" "}
+              <b>fondements théoriques de l'informatique</b> et travaille sur de
+              nombreux <b>projets pratiques</b>.
             </p>
             <p>
-              Une base solide depuis laquelle j'ai pu prendre mon envol comme
-              développeur web indépendant.
+              Une <b>base solide</b> depuis laquelle j'ai pu prendre{" "}
+              <b>mon envol comme développeur web indépendant</b>.
             </p>
             <LinksMenu
               links={[
                 {
                   link: WEBSITE_DATA.LINKEDIN_LINK,
-                  label: "La suite de mon parcours sur Linked",
+                  label: "La suite de mon parcours sur LinkedIn",
                 },
                 {
                   link: getInternalLink(PAGES.ACCUEIL),
