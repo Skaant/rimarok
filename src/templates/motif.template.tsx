@@ -1,4 +1,4 @@
-import { Page, PageProps } from "gatsby";
+import { PageProps } from "gatsby";
 import React from "react";
 import PageHeader from "../components/PageHeader";
 import Layout from "../components/Layout";
@@ -10,9 +10,9 @@ function MotifTemplate({
   pageContext: { name },
 }: PageProps<undefined, MotifTemplateProps>) {
   return (
-    <Layout head={{ title: name }}>
+    <Layout head={{ title: `Le motif ${name}` }}>
       <>
-        <PageHeader title={name} subtitle={"Un motif"} />
+        <PageHeader title={name} subtitle={"Un motif en cours d'élaboration"} />
       </>
     </Layout>
   );
