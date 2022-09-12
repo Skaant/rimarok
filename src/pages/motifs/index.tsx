@@ -50,7 +50,7 @@ function Motifs() {
           title={title}
           subtitle="Un langage de conception"
           tableOfContents={{ contents: MOTIFS_SECTIONS }}
-          backgroundColor={COLORS.SUN}
+          backgroundColor={COLORS.LIGHT}
         />
         <Row
           id={MOTIFS_SECTIONS.INTRO_PAGE.id}
@@ -64,20 +64,17 @@ function Motifs() {
               displayHeading={5}
               legend={{
                 author: "Cristopher Alexander",
-                source: "The Timeless Way of Building",
+                source: "A Pattern Language",
               }}
             >
               <>
                 <p>
-                  And when a building has this fire, then it becomes a part of
-                  nature.
+                  Each pattern describes a problem which occurs over and over
+                  again in our environment, and then describes the core of the
+                  solution to that problem, in such a way that you can use this
+                  solution a million times over, without ever doing it the same
+                  way twice.
                 </p>
-                <p>
-                  Like ocan waves, or blades of grass, its parts are governed by
-                  the endless play of repetition and variety, created in the
-                  presence of the fact that all things pass.
-                </p>
-                <p>This is the quality itself.</p>
               </>
             </Quote>
             <p>
