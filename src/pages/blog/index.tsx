@@ -33,7 +33,7 @@ function Blog() {
           title={title}
           subtitle="Réflexions et recherches sur le développement"
           tableOfContents={{ contents: BLOG_SECTIONS }}
-          backgroundColor={COLORS.LIGHT_GREEVE}
+          backgroundColor={COLORS.LAGOON}
         />
         <Row
           id={BLOG_SECTIONS.INTRO_PAGE.id}
@@ -41,20 +41,25 @@ function Blog() {
             level: 2,
             content: BLOG_SECTIONS.INTRO_PAGE.title,
           }}
+          tags={["motivation", "partage", "gestion des connaissances"]}
         >
           <>
             <p>
-              Avec l'expérience viennent la connaissance des obstacles et les
-              leviers de réussite.
+              Avec l'expérience viennent la <b>connaissance des obstacles</b> et
+              les
+              <b>leviers de réussite</b>.
             </p>
             <p>
-              Partager mes reflexions c'est un moyen de faire de mon
-              apprentissage permanent quelque chose de valeur.
+              Partager mes reflexions c'est un moyen de{" "}
+              <b>
+                faire de mon apprentissage permanent quelque chose de valeur
+              </b>
+              .
             </p>
             <p>
-              Essai d'une solution, pensées sur l'avenir du développement,
-              réalisation au sujet d'un motif ... voilà ce que vous pourrez
-              trouver sur ce blog.
+              Essai d'une solution, pensées sur le développement, réalisation au
+              sujet d'un motif ... voilà <b>divers sujets</b>que vous trouverez
+              sur ce blog.
             </p>
           </>
         </Row>
@@ -64,8 +69,20 @@ function Blog() {
             level: 2,
             content: BLOG_SECTIONS.LISTE.title,
           }}
+          backgroundColor={COLORS.FLOWER}
+          tags={[
+            "transfert en cours",
+            "réflexions",
+            "actualités",
+            "découvertes",
+          ]}
         >
           <>
+            <p>
+              Une partie des articles mentionnés ici{" "}
+              <b>attendent d'être transféré</b> depuis mon ancien site
+              jusqu'ici.
+            </p>
             <ArticlesList />
           </>
         </Row>
