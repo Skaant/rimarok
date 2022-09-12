@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import { COLORS } from "../data/colors";
 import { PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 
@@ -9,7 +8,7 @@ type NavbarProps = {};
 function Navbar({}: NavbarProps) {
   return (
     <nav
-      className="navbar navbar-expand-lg position-fixed w-100 bg-white"
+      className="navbar navbar-expand-lg position-fixed w-100 bg-light"
       style={{ zIndex: 1 }}
     >
       <div className="container-fluid d-flex align-items-center px-3">
