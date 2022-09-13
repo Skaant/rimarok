@@ -45,7 +45,7 @@ function Row({
                 [COLORS.FLOWER, COLORS.SUN, COLORS.LAGOON].includes(
                   backgroundColor
                 )
-                  ? COLORS.WHITE
+                  ? COLORS.LIGHT
                   : COLORS.FLOWER,
             }))}
             className={`d-block ${

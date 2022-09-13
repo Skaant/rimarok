@@ -49,7 +49,7 @@ function EcoConception() {
           subtitle="Réduire l'impact des applicatifs web"
           tableOfContents={{
             contents: PRESTATION_ECO_CONCEPTION_SECTIONS,
-            linkColor: COLORS.WHITE,
+            linkColor: COLORS.LIGHT,
           }}
           backgroundColor={COLORS.SUN}
         />
