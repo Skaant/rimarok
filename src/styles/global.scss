@@ -64,6 +64,10 @@ body {
   src: url("../static/fonts/RobotoSlab-Light.ttf");
 }
 
+.position-initial {
+  position: initial !important;
+}
+
 .font-slab {
   font-family: $font-slab;
 }
