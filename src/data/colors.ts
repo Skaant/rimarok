@@ -1,9 +1,9 @@
 export enum COLORS {
-  SUN = "sun",
   FLOWER = "flower",
+  ABYSS = "abyss",
+  SUN = "sun",
   MIST = "mist",
   LAGOON = "lagoon",
-  ABYSS = "abyss",
   GROUND = "ground",
   LIGHT = "light",
   DARK = "dark",
