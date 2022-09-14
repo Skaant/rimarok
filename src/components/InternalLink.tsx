@@ -8,6 +8,7 @@ type InternalLinkProps = {
   section?: Section;
   altTitle?: string;
   lowercase?: true;
+  className?: string;
 };
 
 function InternalLink({
@@ -15,12 +16,14 @@ function InternalLink({
   section,
   altTitle,
   lowercase,
+  className,
 }: InternalLinkProps) {
   return (
     <Link
       to={`${page ? `${PAGES_DATA[page].path}` : ""}${
         section ? `#${section.id}` : ""
       }`}
+      className={className}
     >
       {altTitle ||
         (section

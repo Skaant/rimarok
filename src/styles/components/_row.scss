@@ -1,11 +1,18 @@
 .row {
   justify-content: center;
-  @each $color in (flower sun lagoon) {
+  @each $color in (flower sun lagoon dark abyss) {
     &.bg-#{$color} {
       color: $light;
     }
   }
-  p a {
+  p a,
+  li a {
     font-weight: bold;
+  }
+  @each $color in (flower) {
+    &.bg-#{$color} p a,
+    &.bg-#{$color} li a {
+      color: $mist;
+    }
   }
 }

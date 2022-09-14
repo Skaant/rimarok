@@ -33,8 +33,8 @@ function Quote({
       {legend && (legend.source || legend.author) ? (
         <p className="legend pe-4 pb-3">
           - {legend.source}
-          {legend.source && legend.author ? ", " : ""}
-          {legend.author}
+          {legend.source && legend.author ? "," : ""}
+          {legend.author && <i className="ms-1">{legend.author}</i>}
         </p>
       ) : (
         ""

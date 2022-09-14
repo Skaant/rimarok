@@ -251,7 +251,7 @@ const Accueil = () => {
             </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
-              controlsColor={COLORS.WHITE}
+              controlsColor={COLORS.LIGHT}
               children={PROFESSIONAL_PROJECTS}
             />
             <p>

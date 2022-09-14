@@ -3,12 +3,16 @@ import * as React from "react";
 import { PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 
-type NavbarProps = {};
+type NavbarProps = {
+  className?: string;
+};
 
-function Navbar({}: NavbarProps) {
+function Navbar({ className }: NavbarProps) {
   return (
     <nav
-      className="navbar navbar-expand-lg position-fixed w-100 bg-light"
+      className={`navbar navbar-expand-lg position-fixed w-100 bg-light${
+        className ? ` ${className}` : ""
+      }`}
       style={{ zIndex: 1 }}
     >
       <div className="container-fluid d-flex align-items-center px-3">

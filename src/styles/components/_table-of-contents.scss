@@ -12,3 +12,8 @@
     color: rgba($light, 0.5);
   }
 }
+@each $color in (light) {
+  .row.bg-#{$color} .table-of-contents {
+    color: rgba($dark, 0.5);
+  }
+}
