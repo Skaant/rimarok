@@ -12,55 +12,77 @@ import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
 import Project from "../components/Project";
 import BackToTop from "../components/BackToTop";
+import InternalLink from "../components/InternalLink";
 
 const STYLEGUIDE_TITLE = "Styleguide";
 
 const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
+  /** STYLE ELEMENTS */
+  COLORS: {
+    id: "colors",
+    title: "Couleurs",
+  },
+  FONTS: {
+    id: "fonts",
+    title: "Polices",
+  },
+  /** COMPONENTS */
   LAYOUT: {
     id: "layout",
     title: "Layout",
+    fontSlab: true,
   },
   /* Row-sized */
   ROW: {
     id: "row",
     title: "Row",
+    fontSlab: true,
   },
   FULL_SIZE_TITLE: {
     id: "full-size-title",
     title: "Full size title",
+    fontSlab: true,
   },
   MOTIFS_LIST: {
     id: "motifs-list",
     title: "Motifs list",
+    fontSlab: true,
   },
   ARTICLES_LIST: {
     id: "articles-list",
     title: "Articles list",
+    fontSlab: true,
   },
   /* Row content-sized */
   TABLE_OF_CONTENTS: {
     id: "table-of-contents",
     title: "Table of contents",
+    fontSlab: true,
   },
   QUOTE: {
     id: "quote",
     title: "Quote",
+    fontSlab: true,
   },
   LINKS_MENU: {
     id: "links-menu",
     title: "Links menu",
+    fontSlab: true,
   },
   BADGES_LIST: {
     id: "badges-list",
     title: "Badges list",
+    fontSlab: true,
   },
   PROJECT: {
     id: "project",
     title: "Project",
+    fontSlab: true,
   },
   BACK_TO_TOP: {
     id: "back-to-top",
     title: "Back to top",
+    fontSlab: true,
   },
 };
 
@@ -74,24 +96,54 @@ const Styleguide = () => {
       <>
         <PageHeader
           title={STYLEGUIDE_TITLE}
-          subtitle="Galerie des composants du site"
+          subtitle="Éléments de charte graphique et composants du site"
           backgroundColor={COLORS.LAGOON}
-          contents={STYLEGUIDE_SECTIONS}
+          tableOfContents={{ contents: STYLEGUIDE_SECTIONS }}
         />
         <Row
-          header={{
-            level: 2,
-            content: "Liste des composants",
-          }}
-          className="mt-5"
+          id={STYLEGUIDE_SECTIONS.COLORS.id}
+          header={{ content: STYLEGUIDE_SECTIONS.COLORS.title, level: 2 }}
         >
           <>
-            <TableOfContents
-              contents={STYLEGUIDE_SECTIONS}
-              linkClassName="font-slab"
-            />
+            <p>
+              Les couleurs du thème sont organisés en <b>trois couples</b>, avec{" "}
+              <b>une couleur principale</b> (utilisée pour les fonds notamment)
+              et <b>son accent</b> (utilisée pour les boutons) :
+            </p>
+            <ul>
+              <li>
+                <a href={`#${COLORS.FLOWER}`}>FLOWER</a> (principale) et{" "}
+                <a href={`#${COLORS.ABYSS}`}>ABYSS</a> (accent),
+              </li>
+              <li>
+                <a href={`#${COLORS.SUN}`}>SUN</a> (principale) et{" "}
+                <a href={`#${COLORS.MIST}`}>MIST</a> (accent),
+              </li>
+              <li>
+                <a href={`#${COLORS.LAGOON}`}>LAGOON</a> (principale) et{" "}
+                <a href={`#${COLORS.GROUND}`}>GROUND</a> (accent).
+              </li>
+            </ul>
+            <p>
+              Les noms sont inventés et ne correspondent pas à des valeurs
+              standards.
+            </p>
+            <p>
+              En plus de ça il existe <b>deux couleurs techniques</b> : light et
+              dark.
+            </p>
           </>
         </Row>
+        {Object.entries(COLORS).map(([key, value]) => (
+          <Row
+            key={key}
+            id={value}
+            backgroundColor={value}
+            header={{ content: key, level: 3 }}
+          >
+            <>{key}</>
+          </Row>
+        ))}
         <Row id={STYLEGUIDE_SECTIONS.LAYOUT.id}>
           <>
             <h2>{STYLEGUIDE_SECTIONS.LAYOUT.title}</h2>
@@ -297,11 +349,7 @@ const Styleguide = () => {
           </>
         </Row>
         <Row>
-          <BackToTop
-            isFixed={false}
-            backgroundColor={COLORS.LAGOON}
-            textColor={COLORS.WHITE}
-          />
+          <BackToTop isFixed={false} backgroundColor={COLORS.LAGOON} />
         </Row>
       </>
     </Layout>
