@@ -12,23 +12,10 @@ import { COLORS } from "../data/colors";
 import Section from "../types/Section";
 import { PRESTATION_SECTIONS } from "./prestation";
 import { Link } from "gatsby";
-import MediartisProject from "../components/accueil/projets-professionnels/1-mediartis-mobilis-pro";
-import CrestJazzProject from "../components/accueil/projets-professionnels/2-nounours-crest-jazz";
-import CasseDuSiecleProject from "../components/accueil/projets-professionnels/3-happy-teams-casse-du-siecle";
-import HygieProject from "../components/accueil/projets-professionnels/4-hygie";
-import OmerProject from "../components/accueil/projets-professionnels/5-urca-omer";
-import TalentsAffinityProject from "../components/accueil/projets-professionnels/6-fresh-pigments-talents-affinity";
-import CdietProject from "../components/accueil/projets-professionnels/7-winnov-cdiet";
-import DcbrainProject from "../components/accueil/projets-professionnels/8-dcbrain";
-import RimarokProject from "../components/accueil/projets-personnels/1-rimarok";
-import HighbsBokProject from "../components/accueil/projets-personnels/2-highbs-bok";
-import ImrokProject from "../components/accueil/projets-personnels/3-imrok";
 import getInternalLink from "../helpers/getInternalLink";
-import TheExpansProject from "../components/accueil/projets-personnels/4-the-expans";
-import MotifsJsProject from "../components/accueil/projets-personnels/5-motifs-js";
-import PermaDataProject from "../components/accueil/projets-personnels/6-perma-data";
-import PokeTeamProject from "../components/accueil/projets-personnels/7-poke-team";
 import InternalLink from "../components/InternalLink";
+import { PERSONAL_PROJECTS } from "../components/_projects/persos";
+import { PROFESSIONAL_PROJECTS } from "../components/_projects/pros";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -147,9 +134,10 @@ const Accueil = () => {
             content: ACCUEIL_SECTIONS.INTRO_SITE.title,
           }}
           backgroundColor={COLORS.SUN}
+          tags={["optimisation", "sobriété"]}
         >
           <>
-            <Quote displayHeading={4} className={"my-5"}>
+            <Quote displayHeading={4}>
               <>
                 Internet devrait servir à résoudre des problèmes, tout en
                 minimisant ceux qu'il peut créer.
@@ -167,11 +155,15 @@ const Accueil = () => {
                 de ressources
               </b>{" "}
               (y compris humaines) au lieu de le réduire par{" "}
-              <b>généralisation et industrialisation.</b>.
+              <b>généralisation et industrialisation.</b>
             </p>
             <p>
-              Pourtant, une partie de{" "}
-              <b>cette croissance pourrait être endiguée</b>.
+              Pourtant,{" "}
+              <b>cette croissance pourrait et devrait être endiguée</b>.
+            </p>
+            <p>
+              Les programmes conservent des <b>performances optimisées</b>, sans
+              être plus coûteux.
             </p>
             <p>
               Mon intervention en ingénierie web permet d'
@@ -195,17 +187,25 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_PAGE.title,
           }}
+          tags={["parcours", "green-it", "typescript", "react"]}
         >
           <>
             <p>
-              Diplomé d'un <b>Master MIAGE</b> en 2016, j'exerce depuis
-              l'activité de <b>développeur web en tant qu'indépendant</b>.
+              Diplomé d'un <b>Master MIAGE option énergie</b> en 2016, j'exerce
+              depuis l'activité de <b>développeur web en tant qu'indépendant</b>
+              .
             </p>
             <p>
-              Spécialisé dans la <b>full-stack JavaScript</b> (TypeScript, Node,
-              React, Express, Jest mais aussi Nest, Vue, Angular ...), j'ai
-              également développé ma sensibilité à l'
-              <b>éco-conception logicielle</b>.
+              C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
+              <b>Green-IT</b>.
+            </p>
+            <p>
+              Spécialisé dans la <b>full-stack JavaScript</b>{" "}
+              <i>
+                (TypeScript, Node, React, Express, Jest, Nest, Vue, Angular ...)
+              </i>
+              , je mets également en oeuvre des{" "}
+              <b>bonnes pratiques d'éco-conception logicielle</b>.
             </p>
             <p>
               Au croisement de ces deux sujets apparaît une{" "}
@@ -232,38 +232,48 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.title,
           }}
-          backgroundColor={COLORS.ABYSS}
+          backgroundColor={COLORS.LAGOON}
           colClassName="text-white"
+          tags={["expériences", "mission-type", "stacks", "votre projet"]}
         >
           <>
             <p>
-              Au long de ma carrière, j'ai privilégié la{" "}
-              <b>diversité des contextes</b>, tout en me{" "}
-              <b>spécialisant sur la stack JavaScript</b>.
+              C'est la <b>diversité des contextes</b> qui dirige ma carrière
+              professionnelle.
             </p>
-            <p>Voici une sélection de mes expériences les plus pertinentes :</p>
+            <p>
+              Mais le fil rouge est toujours les <b>technos JS et full-stack</b>
+              .
+            </p>
+            <p>
+              Retrouvez ci-dessous une sélection de mes expériences les plus
+              pertinentes :
+            </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
-              controlsColor={COLORS.WHITE}
-              children={[
-                <MediartisProject />,
-                <CrestJazzProject />,
-                <CasseDuSiecleProject />,
-                <HygieProject />,
-                <OmerProject />,
-                <TalentsAffinityProject />,
-                <CdietProject />,
-                <DcbrainProject />,
-              ]}
+              controlsColor={COLORS.LIGHT}
+              children={PROFESSIONAL_PROJECTS}
             />
-            <p></p>
+            <p>
+              Peut-etre que <b>mon prochain projet est le vôtre</b> ?
+            </p>
             <LinksMenu
               links={[
                 {
-                  link: `${PAGES_DATA[PAGES.PRESTATION].path}#${
-                    PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.id
-                  }`,
+                  link: getInternalLink(
+                    PAGES.PRESTATION,
+                    PRESTATION_SECTIONS.CONTACT
+                  ),
+                  label: PRESTATION_SECTIONS.CONTACT.title,
+                  color: COLORS.GROUND,
+                },
+                {
+                  link: getInternalLink(
+                    PAGES.PRESTATION,
+                    PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES
+                  ),
                   label: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
+                  color: COLORS.GROUND,
                 },
               ]}
             />
@@ -275,23 +285,37 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.CODE_PHILOSOPHIE.title,
           }}
-          backgroundColor={COLORS.LAGOON}
+          tags={["meta", "motifs", "fluidité"]}
         >
           <>
             <Quote
               displayHeading={4}
-              children={<p>Le code, ce n'est pas que du code.</p>}
+              children={
+                <p>
+                  Le code, ce n'est pas que du code : c'est un organisme vivant.
+                </p>
+              }
+              backgroundColor={COLORS.SUN}
             />
             <p>
               Pour moi, une application est <b>un ecosystème</b> : avec ses
               flux, ses entités, ses <b>noeuds à résoudre</b>.
             </p>
             <p>
-              De plus, <b>les motifs sont partout dans le code</b>.
+              <b>Les motifs</b>, qui sont partout dans le code,
+              <b>interagissent ensemble en permanence</b> pour former un
+              organisme <b>évolutif</b>.
             </p>
             <p>
               Une <b>bonne conception</b> devient alors juste un{" "}
               <i>langage de motifs</i> qui fonctionne.
+            </p>
+            <p>
+              J'aime avoir des <b>idées</b> autour du développement web.
+            </p>
+            <p>
+              En plus d'un portefeuille de compétences, j'apporte une{" "}
+              <b>vision méta du code</b>.
             </p>
             <LinksMenu
               links={[
@@ -299,17 +323,6 @@ const Accueil = () => {
                   link: PAGES_DATA[PAGES.MOTIFS].path,
                   label: "Plus sur les motifs de conceptions",
                 },
-              ]}
-            />
-            <p>
-              J'aime avoir des <b>idées</b> autour du développement web.
-            </p>
-            <p>
-              Ainsi plus qu'un portefeuille de compétences, j'apporte une{" "}
-              <b>vision méta du code</b>.
-            </p>
-            <LinksMenu
-              links={[
                 {
                   link: PAGES_DATA[PAGES.BLOG].path,
                   label: "Vers mon blog",
@@ -324,30 +337,29 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.PROJETS_PERSONNELS.title,
           }}
-          backgroundColor={COLORS.ROSAM}
+          backgroundColor={COLORS.SUN}
+          tags={["expériences", "ludique", "pratique"]}
         >
           <>
             <p>
-              Je développe régulièrement des <b>outils informatiques</b> pour{" "}
-              <b>répondre à mes problématiques</b> du monde matériel.
+              Je développe régulièrement des <b>outils web</b> pour{" "}
+              <b>répondre à des problématiques pratiques</b>.
             </p>
             <p>
-              Découvrez quelques POC, exemples édifiants de conception
+              Découvrez quelques POC, exemples édifiants de conception{" "}
               <b>sobre et pratique</b> :
             </p>
             <Carousel
               id={`${ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}_carousel`}
-              children={[
-                <RimarokProject />,
-                <HighbsBokProject />,
-                <ImrokProject />,
-                <TheExpansProject />,
-                <MotifsJsProject />,
-                <PermaDataProject />,
-                <PokeTeamProject />,
-              ]}
-              controlsColor={COLORS.WHITE}
+              children={PERSONAL_PROJECTS}
+              controlsColor={COLORS.LIGHT}
             />
+            <p>
+              <b>Coder est un jeu.</b>
+            </p>
+            <p>
+              Allons-nous <b>jouer ensemble</b> ?
+            </p>
           </>
         </Row>
         <Row
@@ -356,18 +368,18 @@ const Accueil = () => {
             level: 2,
             content: ACCUEIL_SECTIONS.COLLABORATION.title,
           }}
-          backgroundColor={COLORS.LIGHT_MIST}
+          backgroundColor={COLORS.LIGHT}
+          tags={["votre projet", "contact", "équipe"]}
         >
           <>
             <p>
-              Sommes-nous faits pour{" "}
               <Link
                 to={`${PAGES_DATA[PAGES.PRESTATION].path}#${
                   PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id
                 }`}
               >
-                travailler ensemble
-              </Link>
+                Sommes-nous faits pour collaborer
+              </Link>{" "}
               ?
             </p>
             <p>
@@ -381,13 +393,21 @@ const Accueil = () => {
             <p>
               PME, start-ups, pôle applicatif ...{" "}
               <b>
-                le développement de votre application JavaScript a besoin d'un
-                coup de pouce
-              </b>
-              quelques semaines ou quelques mois ?
+                le développement de votre application web a besoin d'un coup de
+                pouce
+              </b>{" "}
+              courte, moyenne ou longue durée ?
             </p>
             <LinksMenu
               links={[
+                {
+                  link: getInternalLink(
+                    PAGES.PRESTATION,
+                    PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE
+                  ),
+                  label: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
+                  color: COLORS.FLOWER,
+                },
                 {
                   link: getInternalLink(
                     PAGES.PRESTATION,

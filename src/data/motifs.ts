@@ -1,7 +1,9 @@
 import { Motif } from "../types/Motif";
 
 export enum MOTIFS {
-  MOTIF = "MOTIF",
+  PATTERN = "PATTERNS",
+  /** Alias : pattern language */
+  LANGUAGE = "LANGUAGE",
   INSTANCE = "INSTANCE",
   OBJECT = "OBJECT",
   PROPERTY = "PROPERTY",

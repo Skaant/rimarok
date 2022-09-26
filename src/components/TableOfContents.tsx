@@ -12,19 +12,20 @@ export type TableOfContentsProps = {
 
 function TableOfContents({
   contents,
-  color,
   linkColor,
   linkClassName,
 }: TableOfContentsProps) {
   return (
-    <ul className={`table-of-contents${color ? ` text-${color}` : ""}`}>
-      {Object.values(contents).map(({ id, title }) => (
+    <ul className="table-of-contents">
+      {Object.values(contents).map(({ id, title, fontSlab }) => (
         <li>
           <Link
             to={`#${id}`}
             className={`d-flex justify-content-start${
               linkColor ? ` text-${linkColor}` : ""
-            }${linkClassName ? ` ${linkClassName}` : ""}`}
+            }${linkClassName ? ` ${linkClassName}` : ""}${
+              fontSlab ? ` font-slab` : ""
+            }`}
           >
             {title}
           </Link>

@@ -47,7 +47,8 @@ function Footer() {
                 ) : path.includes("blog") ? (
                   <ul className="list-unstyled">
                     {ARTICLES_DATA.slice()
-                      .sort(function (article1, article2) {
+                      .filter(({ disabled }) => !disabled)
+                      .sort((article1, article2) => {
                         return article2.date
                           .split("/")
                           .reverse()

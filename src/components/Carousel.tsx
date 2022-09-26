@@ -11,8 +11,8 @@ type CarouselProps = {
 function Carousel({
   children,
   id,
-  textColor = COLORS.BLACK,
-  controlsColor = COLORS.BLACK,
+  textColor = COLORS.DARK,
+  controlsColor = COLORS.DARK,
 }: CarouselProps) {
   return (
     <div id={id} className="carousel slide">

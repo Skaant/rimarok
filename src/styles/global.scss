@@ -44,6 +44,7 @@
 @import "./components/links-menu";
 @import "./components/badge";
 @import "./components/table-of-contents";
+@import "./fixes/btn";
 
 body {
   font-family: $font-rubik;
@@ -63,6 +64,10 @@ body {
   src: url("../static/fonts/RobotoSlab-Light.ttf");
 }
 
+.position-initial {
+  position: initial !important;
+}
+
 .font-slab {
   font-family: $font-slab;
 }
@@ -78,5 +83,4 @@ h6 {
 
 a {
   text-decoration: none;
-  font-weight: bold;
 }

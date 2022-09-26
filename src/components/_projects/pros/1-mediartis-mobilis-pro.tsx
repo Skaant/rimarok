@@ -6,7 +6,7 @@ import Project from "../../Project";
 function MediartisProject() {
   return (
     <Project
-      title="Mobilis Pro/ Mediartis"
+      title="Mobilis Pro / Mediartis"
       scope="full-stack"
       tags={["nest", "typescript", "jest", "e2e", "vue", "bootstrap"]}
       date="Juin 2021 - Août 2022"
@@ -37,7 +37,7 @@ function MediartisProject() {
             {
               link: "https://mobilispro.com/fr/",
               label: "Le site de Mobilis Pro",
-              color: COLORS.MIST,
+              color: COLORS.ABYSS,
             },
             {
               link: "https://mediartis.com/fr/",

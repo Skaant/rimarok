@@ -7,9 +7,16 @@ type TagsDateHeaderProps = {
   scope?: "full-stack" | "front-end";
   tags?: string[];
   className?: string;
+  badgesColor?: COLORS;
 };
 
-function TagsDateHeader({ date, scope, tags, className }: TagsDateHeaderProps) {
+function TagsDateHeader({
+  date,
+  scope,
+  tags,
+  className,
+  badgesColor = COLORS.FLOWER,
+}: TagsDateHeaderProps) {
   return (
     <p
       className={`card-text order-0 d-flex justify-content-sm-between align-items-end flex-sm-row flex-column text-start mb-2${
@@ -18,13 +25,15 @@ function TagsDateHeader({ date, scope, tags, className }: TagsDateHeaderProps) {
     >
       {
         <BadgesList
-          badges={[scope ? scope : "", ...(tags || [])].map((value, index) => ({
-            color: index ? COLORS.MIST : COLORS.FLOWER,
-            label: value,
-          }))}
+          badges={[...(scope ? [scope] : []), ...(tags || [])].map(
+            (value, index) => ({
+              color: index || !scope ? badgesColor : COLORS.ABYSS,
+              label: value,
+            })
+          )}
         />
       }
-      <span className="me-2">{date}</span>
+      <span className="ms-3">{date}</span>
     </p>
   );
 }

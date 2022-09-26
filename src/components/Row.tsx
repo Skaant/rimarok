@@ -21,7 +21,7 @@ function Row({
   id,
   header,
   tags,
-  backgroundColor,
+  backgroundColor = COLORS.LIGHT,
   paddingY,
   className,
   col = "col-12 col-sm-10 col-md-8 col-lg-6",
@@ -31,11 +31,9 @@ function Row({
   return (
     <div
       id={id}
-      className={`row ${
-        backgroundColor ? `bg-${backgroundColor}` : ""
-      } px-3 py-5${paddingY ? ` py-${paddingY}` : ""}${
-        className ? ` ${className}` : ""
-      }`}
+      className={`row bg-${backgroundColor} px-3 py-5${
+        paddingY ? ` py-${paddingY}` : ""
+      }${className ? ` ${className}` : ""}`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {tags ? (
@@ -43,8 +41,11 @@ function Row({
             badges={tags.map((value) => ({
               label: value,
               color:
-                backgroundColor && [COLORS.FLOWER].includes(backgroundColor)
-                  ? COLORS.WHITE
+                backgroundColor &&
+                [COLORS.FLOWER, COLORS.SUN, COLORS.LAGOON].includes(
+                  backgroundColor
+                )
+                  ? COLORS.LIGHT
                   : COLORS.FLOWER,
             }))}
             className={`d-block ${

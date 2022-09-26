@@ -2,6 +2,7 @@ import * as React from "react";
 import { ARTICLES_DATA } from "../data/articles";
 import TagsDateHeader from "./TagsDateHeader";
 import { Link } from "gatsby";
+import { COLORS } from "../data/colors";
 
 function ArticlesList() {
   return (
@@ -17,7 +18,11 @@ function ArticlesList() {
         .map(({ id, title, description, date, tags, disabled }, index) => {
           const linkContent = (
             <>
-              <TagsDateHeader date={date} tags={tags} />
+              <TagsDateHeader
+                date={date}
+                tags={tags}
+                badgesColor={COLORS.SUN}
+              />
               <h3>{title}</h3>
               {description ? (
                 <p>
@@ -31,7 +36,12 @@ function ArticlesList() {
             </>
           );
           return (
-            <li key={index} className="list-group-item list-unstyled my-5">
+            <li
+              key={index}
+              className={`list-group-item list-unstyled my-5 bg-light p-5 rounded text-${
+                disabled ? COLORS.MIST : COLORS.DARK
+              }`}
+            >
               {disabled ? (
                 linkContent
               ) : (
@@ -39,6 +49,7 @@ function ArticlesList() {
                   {linkContent}
                 </Link>
               )}
+              {!disabled && <Link to={id}>Lire l'article</Link>}
             </li>
           );
         })}

@@ -1,13 +1,14 @@
-
-if (window.location.pathname === '/prestation') {
-  const contactButtons = document.querySelectorAll("#contact .links-menu .btn");
-  const mailButton = contactButtons[1];
-  const phoneButton = contactButtons[2];
+if (
+  window.location.pathname === "/prestation" ||
+  window.location.pathname === "/mentions-legales"
+) {
+  const mailButton = document.getElementById("contact-mail");
+  const phoneButton = document.getElementById("contact-phone");
 
   [mailButton, phoneButton].forEach((btn) =>
-    btn.addEventListener("click", ev => {
-      if (btn.href = '#') {
-        ev.preventDefault()
+    btn.addEventListener("click", (ev) => {
+      if ((btn.href = "#")) {
+        ev.preventDefault();
         if (btn === mailButton) {
           btn.textContent = "romaric.ruga@mailo.fr";
           btn.href = "mailto:romaric.ruga@mailo.fr";

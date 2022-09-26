@@ -14,7 +14,7 @@ function BadgesList({ badges, className }: BadgesListProps) {
           <span
             key={index}
             className={`badge rounded-pill bg-${color} text-${
-              [COLORS.MIST, COLORS.WHITE].includes(color)
+              [COLORS.MIST, COLORS.LIGHT].includes(color)
                 ? COLORS.DARK
                 : COLORS.LIGHT
             } me-2`}
