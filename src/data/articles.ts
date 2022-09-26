@@ -86,4 +86,10 @@ export const ARTICLES_DATA: Article[] = [
       "son contenu.",
     disabled: true,
   },
+  {
+    id: "9-gatsby-notion-npm-module-statikon",
+    title: "Gatsby x Notion : je créé le module NPM statikon",
+    date: "26/09/2022",
+    tags: ["gatsby", "notion", "module npm", "statikon"],
+  },
 ];
