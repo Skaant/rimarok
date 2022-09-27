@@ -26,7 +26,7 @@ $selected-utilities-name:
   ("padding", true) ("padding-x", true) ("padding-y", true)
   ("padding-top", true) ("padding-bottom", true) ("padding-start", true)
   ("padding-end", true) // https://getbootstrap.com/docs/5.2/utilities/text/
-  ("text-align", true);
+  ("font-weight", true) ("text-align", true);
 
 $new-utilities: ();
 
