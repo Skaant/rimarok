@@ -6,6 +6,7 @@ import { ARTICLES_DATA } from "../../data/articles";
 import InternalLink from "../../components/InternalLink";
 import { PAGES } from "../../data/pages";
 import { COLORS } from "../../data/colors";
+import LinksMenu from "../../components/LinksMenu";
 
 const { title, description } = ARTICLES_DATA[7];
 
@@ -24,10 +25,10 @@ function Article9() {
             "J'externalise la logique et les composants de mon site pilote dans un module pour pouvoir l'importer sur mes autres sites."
           }
         />
-        <Row backgroundColor={COLORS.FLOWER}>
+        <Row backgroundColor={COLORS.FLOWER} paddingY={5} colClassName="mt-5">
           <>
             <p>
-              Wordpress est si utilisé car il associe :{" "}
+              Si Wordpress est aussi utilisé c'est qu'il associe :{" "}
               <b>facilité d'installation</b> et{" "}
               <b>capacité des non-informaticiens à accéder au back-end</b>.
             </p>
@@ -47,28 +48,49 @@ function Article9() {
             content: 'Mon module "statikon"',
             level: 2,
           }}
+          paddingY={5}
+          colClassName="mt-5"
         >
           <>
             <p>
               Dans le but d'
               <b>industrialiser la création de sites sur cette stack</b>, j'ai
               choisi d'<b>extraire des composants logiciels</b> de mon site
-              pilote.
+              pilote <b>dans un module externe</b>.
             </p>
+            <p>
+              Ainsi, j'espère disposer d'une{" "}
+              <b>base replicable pour de nombreux sites</b>.
+            </p>
+            <LinksMenu
+              links={[
+                {
+                  label: "Le projet GitHub",
+                  link: "https://github.com/Skaant/imrok-notion",
+                },
+                {
+                  label: "Le module NPM",
+                  link: "https://www.npmjs.com/package/statikon",
+                  color: COLORS.ABYSS,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
           header={{
-            content: "Motivation de la création du module",
+            content: "Génèse du module",
             level: 3,
+            className: "mb-4",
           }}
           backgroundColor={COLORS.SUN}
+          paddingY={5}
         >
           <>
             <p>
               Après la refonte de{" "}
               <InternalLink page={PAGES.ACCUEIL} altTitle="ce site" />, je me
-              suis attaqué à la <b>refonte</b> rapide (et non-exhaustive) de{" "}
+              suis attaqué rapidement (et de façon non-exhaustive) à{" "}
               <b>mon site créatif</b> : <a href="https://imrok.fr">IMROK.fr</a>.
             </p>
             <p>
@@ -77,16 +99,13 @@ function Article9() {
               <a href="https://eljie.fr">Eljie</a> <b>sur cette stack</b>.
             </p>
             <p>
-              J'ai donc réussi à extraire{" "}
-              <b>les composants, enum, template et type</b> du projet{" "}
-              <a href="https://github.com/Skaant/imrok-notion">
-                https://github.com/Skaant/imrok-notion
-              </a>{" "}
-              pour les mettre dans le{" "}
-              <a href="https://www.npmjs.com/package/statikon">
-                module NPM <b>statikon</b>
-              </a>
-              .
+              La conception du second met en relief les <b>motifs récurrents</b>
+              avec le premier.
+            </p>
+            <p>
+              Ainsi, j'ai pu extraire{" "}
+              <b>les composants, enum, template et type</b> du projet pour les
+              mettre dans le module NPM <b>statikon</b>.
             </p>
             <p>
               Je bute néanmoins sur l'import des helpers dans le fichier{" "}
@@ -103,6 +122,8 @@ function Article9() {
             content: "Quelle suite pour statikon ?",
             level: 2,
           }}
+          paddingY={5}
+          colClassName="mt-5"
         >
           <>
             <p>
