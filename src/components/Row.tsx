@@ -7,6 +7,7 @@ export type RowProps = {
   header?: {
     level: 1 | 2 | 3;
     content: string;
+    className?: string;
   };
   tags?: string[];
   backgroundColor?: COLORS;
@@ -58,11 +59,23 @@ function Row({
         )}
         {header &&
           (header.level === 1 ? (
-            <h1>{header.content}</h1>
+            <h1 className={header.className || ""}>{header.content}</h1>
           ) : header.level === 2 ? (
-            <h2 className={tags ? "mt-2 mb-4" : "my-4"}>{header.content}</h2>
+            <h2
+              className={`${header.className ? `${header.className} ` : ""}${
+                tags ? "mt-2 mb-4" : "my-4"
+              }`}
+            >
+              {header.content}
+            </h2>
           ) : (
-            <h3 className={tags ? "mt-2 mb-3" : "my-3"}>{header.content}</h3>
+            <h3
+              className={`${header.className ? `${header.className} ` : ""}${
+                tags ? "mt-2 mb-3" : "my-3"
+              }`}
+            >
+              {header.content}
+            </h3>
           ))}
         {children}
       </div>
