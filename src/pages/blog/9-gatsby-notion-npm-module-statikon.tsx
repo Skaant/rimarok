@@ -5,10 +5,11 @@ import Row from "../../components/Row";
 import { ARTICLES_DATA } from "../../data/articles";
 import InternalLink from "../../components/InternalLink";
 import { PAGES } from "../../data/pages";
+import { COLORS } from "../../data/colors";
 
 const { title, description } = ARTICLES_DATA[7];
 
-function Article8() {
+function Article9() {
   return (
     <Layout
       head={{
@@ -23,10 +24,10 @@ function Article8() {
             "J'externalise la logique et les composants de mon site pilote dans un module pour pouvoir l'importer sur mes autres sites."
           }
         />
-        <Row>
+        <Row backgroundColor={COLORS.FLOWER}>
           <>
             <p>
-              Wordpress est si utilisé car il associe :
+              Wordpress est si utilisé car il associe :{" "}
               <b>facilité d'installation</b> et{" "}
               <b>capacité des non-informaticiens à accéder au back-end</b>.
             </p>
@@ -51,7 +52,8 @@ function Article8() {
             <p>
               Dans le but d'
               <b>industrialiser la création de sites sur cette stack</b>, j'ai
-              choisi d'extraire des composants logiciels de mon site pilote.
+              choisi d'<b>extraire des composants logiciels</b> de mon site
+              pilote.
             </p>
           </>
         </Row>
@@ -60,25 +62,26 @@ function Article8() {
             content: "Motivation de la création du module",
             level: 3,
           }}
+          backgroundColor={COLORS.SUN}
         >
           <>
             <p>
               Après la refonte de{" "}
               <InternalLink page={PAGES.ACCUEIL} altTitle="ce site" />, je me
-              suis attaqué à la refonte rapide (et non-exhaustive) de mon site
-              créatif :<a href="https://imrok.fr">IMROK.fr</a>.
+              suis attaqué à la <b>refonte</b> rapide (et non-exhaustive) de{" "}
+              <b>mon site créatif</b> : <a href="https://imrok.fr">IMROK.fr</a>.
             </p>
             <p>
-              Dans la foulée, l'objectif serait de créer un site de type de blog
-              pour <a href="https://eljie.fr">Eljie</a>
-              sur cette stack.
+              <b>Dans la foulée</b>, l'objectif serait de{" "}
+              <b>créer un autre site</b> de type de blog pour{" "}
+              <a href="https://eljie.fr">Eljie</a> <b>sur cette stack</b>.
             </p>
             <p>
-              J'ai donc réussi à extrait{" "}
-              <b>les composants, enum, template et type</b> du projet
+              J'ai donc réussi à extraire{" "}
+              <b>les composants, enum, template et type</b> du projet{" "}
               <a href="https://github.com/Skaant/imrok-notion">
                 https://github.com/Skaant/imrok-notion
-              </a>
+              </a>{" "}
               pour les mettre dans le{" "}
               <a href="https://www.npmjs.com/package/statikon">
                 module NPM <b>statikon</b>
@@ -87,8 +90,11 @@ function Article8() {
             </p>
             <p>
               Je bute néanmoins sur l'import des helpers dans le fichier{" "}
-              <b>gatsby-node.ts</b> ("ReferenceError: Cannot access 'f' before
-              initialization").
+              <b>gatsby-node.ts</b>{" "}
+              <a href="https://stackoverflow.com/questions/73862726/gatsby-typescript-external-module-function-import-throws-referenceerror">
+                ("ReferenceError: Cannot access 'f' before initialization")
+              </a>
+              .
             </p>
           </>
         </Row>
@@ -100,15 +106,17 @@ function Article8() {
         >
           <>
             <p>
-              L'ambition pour ce module est d'augmenter la quantité de
-              composants et de réussir à exporter aussi les helpers.
+              L'ambition pour ce module est d'
+              <b>augmenter la quantité de composants</b> et de réussir aussi à{" "}
+              <b>exporter les helpers</b>.
             </p>
             <p>
-              Encore quelques blocs Notion doivent être ajouté à la
-              bibliothèque.
+              Encore <b>quelques composants TSX pour blocs Notion</b> doivent
+              être ajouté à la bibliothèque.
             </p>
             <p>
-              Des composants spéciaux tels que des listes de contenu spécifiques
+              Des composants spéciaux tels que des{" "}
+              <b>listes de contenu spécifiques</b>
               (texte, vidéos ...) pourraient être rapidement ajoutés.
             </p>
             <p>
@@ -122,4 +130,4 @@ function Article8() {
   );
 }
 
-export default Article8;
+export default Article9;
