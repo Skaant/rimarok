@@ -1,5 +1,5 @@
 import React from "react";
-import { ACCUEIL_SECTIONS } from "..";
+import { ACCUEIL_SECTIONS } from "../../templates/_pages/accueil.template";
 import RimarokProject from "../../components/_projects/persos/1-rimarok";
 import HighbsBokProject from "../../components/_projects/persos/2-highbs-bok";
 import ImrokProject from "../../components/_projects/persos/3-imrok";

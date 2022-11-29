@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.2",
     "bootstrap": "^5.2.0-beta1",
     "gatsby": "^4.15.2",
     "gatsby-plugin-react-helmet": "^5.15.0",
