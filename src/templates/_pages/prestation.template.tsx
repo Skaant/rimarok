@@ -1,5 +1,5 @@
 import React from "react";
-import { ACCUEIL_SECTIONS } from "..";
+import { ACCUEIL_SECTIONS } from "./accueil.template";
 import RimarokProject from "../../components/_projects/persos/1-rimarok";
 import HighbsBokProject from "../../components/_projects/persos/2-highbs-bok";
 import ImrokProject from "../../components/_projects/persos/3-imrok";
@@ -26,8 +26,10 @@ import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
 import getInternalLink from "../../helpers/getInternalLink";
 import Section from "../../types/Section";
-import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./ingenierie-web";
+import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.template";
 import getPageName from "../../helpers/getPageName";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.PRESTATION;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -69,12 +71,13 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function Prestation() {
+function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

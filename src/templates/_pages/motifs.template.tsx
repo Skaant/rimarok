@@ -8,13 +8,15 @@ import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
 import Section from "../../types/Section";
-import { PRESTATION_SECTIONS } from "../prestation";
+import { PRESTATION_SECTIONS } from "./prestation.template";
 import { COLORS } from "../../data/colors";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
 
-const MOTIFS_SECTIONS: { [key: string]: Section } = {
+export const MOTIFS_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
     id: "harmonie-du-code",
     title: "Trouver l'harmonie du code",
@@ -38,12 +40,14 @@ const MOTIFS_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function Motifs() {
+function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
+  const { motifs } = pageContext;
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader
@@ -228,7 +232,11 @@ function Motifs() {
               />{" "}
               :)
             </p>
-            <MotifsList />
+            <p className="mb-2">
+              <b>Compte des motifs répertoriés* : {motifs.length}.</b>
+            </p>
+            <p className="small">* Pas forcément détaillés.</p>
+            <MotifsList motifs={motifs} />
           </>
         </Row>
         <Row

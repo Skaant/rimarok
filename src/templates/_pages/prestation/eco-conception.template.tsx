@@ -1,14 +1,15 @@
 import React from "react";
-import PageHeader from "../../components/PageHeader";
-import Layout from "../../components/Layout";
-import Quote from "../../components/Quote";
-import Row from "../../components/Row";
-import { PAGES, PAGES_DATA } from "../../data/pages";
-import Section from "../../types/Section";
-import { COLORS } from "../../data/colors";
-import { Link } from "gatsby";
-import LinksMenu from "../../components/LinksMenu";
-import getArticleLink from "../../helpers/getArticleLink";
+import PageHeader from "../../../components/PageHeader";
+import Layout from "../../../components/Layout";
+import Quote from "../../../components/Quote";
+import Row from "../../../components/Row";
+import { PAGES, PAGES_DATA } from "../../../data/pages";
+import Section from "../../../types/Section";
+import { COLORS } from "../../../data/colors";
+import { Link, PageProps } from "gatsby";
+import LinksMenu from "../../../components/LinksMenu";
+import getArticleLink from "../../../helpers/getArticleLink";
+import { GlobalPageContext } from "../../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.PRESTATION_ECO_CONCEPTION;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -36,12 +37,15 @@ export const PRESTATION_ECO_CONCEPTION_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function EcoConception() {
+function EcoConception({
+  pageContext,
+}: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

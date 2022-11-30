@@ -1,15 +1,17 @@
 import React from "react";
-import { PRESTATION_SECTIONS } from ".";
-import PageHeader from "../../components/PageHeader";
-import Layout from "../../components/Layout";
-import LinksMenu from "../../components/LinksMenu";
-import Quote from "../../components/Quote";
-import Row from "../../components/Row";
-import { PAGES, PAGES_DATA } from "../../data/pages";
-import getInternalLink from "../../helpers/getInternalLink";
-import Section from "../../types/Section";
-import { COLORS } from "../../data/colors";
-import WEBSITE_DATA from "../../data/website";
+import { PRESTATION_SECTIONS } from "../prestation.template";
+import PageHeader from "../../../components/PageHeader";
+import Layout from "../../../components/Layout";
+import LinksMenu from "../../../components/LinksMenu";
+import Quote from "../../../components/Quote";
+import Row from "../../../components/Row";
+import { PAGES, PAGES_DATA } from "../../../data/pages";
+import getInternalLink from "../../../helpers/getInternalLink";
+import Section from "../../../types/Section";
+import { COLORS } from "../../../data/colors";
+import WEBSITE_DATA from "../../../data/website";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.PRESTATION_INGENIERIE_WEB;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -37,12 +39,15 @@ export const PRESTATION_INGENIERIE_WEB_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function IngenierieWeb() {
+function IngenierieWeb({
+  pageContext,
+}: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader
