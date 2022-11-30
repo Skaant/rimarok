@@ -24,7 +24,7 @@ function PageHeader({
   return (
     <Row
       id="full-screen-title"
-      col="col-12"
+      col="col-12 col-lg-10"
       colClassName="d-flex flex-column justify-content-center align-items-center text-center p-4"
       backgroundColor={backgroundColor}
       paddingY={paddingY || 0}
