@@ -25,7 +25,7 @@ function ArticlesList() {
               />
               <h3>{title}</h3>
               {description ? (
-                <p>
+                <p className="fw-normal mt-3">
                   {description.length > 150
                     ? description.substring(0, 150) + "..."
                     : description}
@@ -45,11 +45,18 @@ function ArticlesList() {
               {disabled ? (
                 linkContent
               ) : (
-                <Link to={id} style={{ color: "#212529" }}>
+                <Link to={id} className={`text-${COLORS.DARK}`}>
                   {linkContent}
                 </Link>
               )}
-              {!disabled && <Link to={id}>Lire l'article</Link>}
+              {!disabled && (
+                <Link
+                  to={id}
+                  className={`btn btn-${COLORS.FLOWER} text-light mt-4`}
+                >
+                  Lire l'article
+                </Link>
+              )}
             </li>
           );
         })}

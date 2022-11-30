@@ -35,7 +35,7 @@ export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
         <PageHeader
           title={title}
           subtitle="Réflexions et recherches sur le développement"
-          tableOfContents={{ contents: BLOG_SECTIONS }}
+          tableOfContents={{ contents: BLOG_SECTIONS, linkColor: COLORS.LIGHT }}
           backgroundColor={COLORS.LAGOON}
         />
         <Row

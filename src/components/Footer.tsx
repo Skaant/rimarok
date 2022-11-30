@@ -90,10 +90,10 @@ function Footer({
                           );
                       })
                       .slice(0, 5)
-                      .map(({ title }) => {
+                      .map(({ title, id }) => {
                         return (
                           <li className="py-1 pt-2 ps-3" key={index}>
-                            <Link className="text-white" to={title}>
+                            <Link className="text-white" to={`/blog/${id}`}>
                               {title}
                             </Link>
                           </li>

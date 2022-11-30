@@ -89,6 +89,10 @@ export const ARTICLES_DATA: Article[] = [
   {
     id: "9-gatsby-notion-npm-module-statikon",
     title: "Gatsby x Notion : je créé le module NPM statikon",
+    description:
+      "Dans la perspective de créer de nombreux sites " +
+      "statiques sur la stack Gatsby x Notion, j'ai pensé créer " +
+      "un module NPM pour contenir des composants et autres réutilisables.",
     date: "26/09/2022",
     tags: ["gatsby", "notion", "module npm", "statikon"],
   },
