@@ -20,6 +20,10 @@ jobs:
           node-version: "16"
           cache: "npm"
 
+      - run: touch .env.production
+      - run: echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" >> .env.production
+      - run: echo "MOTIFS_DATABASE_ID=${{ secrets.MOTIFS_DATABASE_ID }}" >> .env.production
+
       - run: npm i
       - run: npm run build
       - run: npm run build:apps
