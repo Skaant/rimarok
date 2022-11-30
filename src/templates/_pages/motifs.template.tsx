@@ -41,6 +41,7 @@ export const MOTIFS_SECTIONS: { [key: string]: Section } = {
 };
 
 function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
+  const { motifs } = pageContext;
   return (
     <Layout
       head={{
@@ -231,7 +232,9 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />{" "}
               :)
             </p>
-            <MotifsList />
+            <p>Compte des motifs répertoriés* : {motifs.length}.</p>
+            <p className="small">* Pas forcément détaillés.</p>
+            <MotifsList motifs={motifs} />
           </>
         </Row>
         <Row

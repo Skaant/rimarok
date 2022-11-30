@@ -9,6 +9,8 @@ import BadgesList from "../components/BadgesList";
 import { COLORS } from "../data/colors";
 import { ExtendedBlockObjectResponse, PureBlocksRenderer } from "statikon";
 import { GlobalPageContext } from "../types/GlobalPageContext";
+import { PAGES, PAGES_DATA } from "../data/pages";
+import { MOTIFS_SECTIONS } from "./_pages/motifs.template";
 
 export type MotifTemplateProps = GlobalPageContext & {
   motif: Omit<Motif, "related"> & {
@@ -25,7 +27,7 @@ function MotifTemplate({
   },
 }: PageProps<undefined, MotifTemplateProps>) {
   return (
-    <Layout head={{ title: `Le motif ${name}` }} {...globalPageContext}>
+    <Layout head={{ title: `Motif ${name}` }} {...globalPageContext}>
       <>
         <PageHeader
           title={name}
@@ -33,6 +35,21 @@ function MotifTemplate({
           paddingY={5}
           {...(summary ? { subtitle: summary } : {})}
         />
+        <Row paddingY={0}>
+          <>
+            <LinksMenu
+              links={[
+                {
+                  label: "Retour à la liste des motifs",
+                  link: `${PAGES_DATA[PAGES.MOTIFS].path}#${
+                    MOTIFS_SECTIONS["LISTE"].id
+                  }`,
+                  color: COLORS.LAGOON,
+                },
+              ]}
+            />
+          </>
+        </Row>
         {tags && tags.length ? (
           <Row
             header={{
