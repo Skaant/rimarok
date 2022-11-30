@@ -1,6 +1,7 @@
 import { Client } from "@notionhq/client";
 import type { GatsbyNode } from "gatsby";
 import path from "path";
+import { PAGES, PAGES_DATA } from "./src/data/pages";
 import { DatabasePage, getDatabase } from "./src/helpers/notion/getDatabase";
 import { motifFormatter } from "./src/helpers/notion/_page-formatters/motif.formatter";
 import { MotifTemplateProps } from "./src/templates/motif.template";
@@ -46,8 +47,49 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   };
 
   createPage<GlobalPageContext>({
-    path: "/accueil",
+    path: PAGES_DATA[PAGES.ACCUEIL].path,
     component: path.resolve("./src/templates/_pages/accueil.template.tsx"),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.PRESTATION].path,
+    component: path.resolve("./src/templates/_pages/prestation.template.tsx"),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+    component: path.resolve(
+      "./src/templates/_pages/prestation/ingenierie-web.template.tsx"
+    ),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+    component: path.resolve(
+      "./src/templates/_pages/prestation/eco-conception.template.tsx"
+    ),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.MOTIFS].path,
+    component: path.resolve("./src/templates/_pages/motifs.template.tsx"),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.BLOG].path,
+    component: path.resolve("./src/templates/_pages/blog.template.tsx"),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.STYLEGUIDE].path,
+    component: path.resolve("./src/templates/_pages/styleguide.template.tsx"),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: PAGES_DATA[PAGES.MENTIONS_LEGALES].path,
+    component: path.resolve(
+      "./src/templates/_pages/mentions-legales.template.tsx"
+    ),
     context: globalPageContext,
   });
 

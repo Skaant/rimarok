@@ -10,7 +10,7 @@ import LinksMenu, { LinksMenuItem } from "../../components/LinksMenu";
 import Row from "../../components/Row";
 import { COLORS } from "../../data/colors";
 import Section from "../../types/Section";
-import { PRESTATION_SECTIONS } from "../../pages/prestation";
+import { PRESTATION_SECTIONS } from "./prestation.template";
 import { Link, PageProps } from "gatsby";
 import getInternalLink from "../../helpers/getInternalLink";
 import InternalLink from "../../components/InternalLink";

@@ -6,6 +6,8 @@ import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import Section from "../../types/Section";
 import { COLORS } from "../../data/colors";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.BLOG;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -21,12 +23,13 @@ const BLOG_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function Blog() {
+export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

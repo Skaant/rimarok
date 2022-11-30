@@ -8,8 +8,10 @@ import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
 import WEBSITE_DATA from "../../data/website";
 import Section from "../../types/Section";
-import { PRESTATION_SECTIONS } from "../prestation";
+import { PRESTATION_SECTIONS } from "./prestation.template";
 import { COLORS } from "../../data/colors";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -38,12 +40,13 @@ export const MOTIFS_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function Motifs() {
+function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

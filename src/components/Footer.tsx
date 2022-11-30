@@ -6,9 +6,9 @@ import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
 import { ARTICLES_DATA } from "../data/articles";
 import getInternalLink from "../helpers/getInternalLink";
-import { PRESTATION_SECTIONS } from "../pages/prestation";
+import { PRESTATION_SECTIONS } from "../templates/_pages/prestation.template";
 import { GlobalPageContext } from "../types/GlobalPageContext";
-import { MOTIFS_SECTIONS } from "../pages/motifs";
+import { MOTIFS_SECTIONS } from "../templates/_pages/motifs.template";
 
 function Footer({
   motifs,
