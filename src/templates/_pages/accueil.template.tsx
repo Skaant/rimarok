@@ -11,11 +11,12 @@ import Row from "../../components/Row";
 import { COLORS } from "../../data/colors";
 import Section from "../../types/Section";
 import { PRESTATION_SECTIONS } from "../../pages/prestation";
-import { Link } from "gatsby";
+import { Link, PageProps } from "gatsby";
 import getInternalLink from "../../helpers/getInternalLink";
 import InternalLink from "../../components/InternalLink";
 import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
 import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -46,12 +47,13 @@ export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-const Accueil = () => {
+const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

@@ -1,19 +1,17 @@
 import { Client } from "@notionhq/client";
-import {
-  BlockObjectResponse,
-  PageObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { ExtendedBlockObjectResponse } from "statikon";
 import getBlocks from "./getBlocks";
+
+export type DatabasePage = PageObjectResponse & {
+  blocks: ExtendedBlockObjectResponse[];
+};
 
 export async function getDatabase(
   notion: Client,
   databaseId: string,
   params: object = {}
-): Promise<
-  (PageObjectResponse & {
-    blocks: BlockObjectResponse[];
-  })[]
-> {
+): Promise<DatabasePage[]> {
   const pages = (
     await notion.databases.query({
       database_id: databaseId,

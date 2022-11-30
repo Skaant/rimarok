@@ -7,20 +7,25 @@ import Row from "../components/Row";
 import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
 import { COLORS } from "../data/colors";
+import { ExtendedBlockObjectResponse, PureBlocksRenderer } from "statikon";
+import { GlobalPageContext } from "../types/GlobalPageContext";
 
-export type MotifTemplateProps = {
+export type MotifTemplateProps = GlobalPageContext & {
   motif: Omit<Motif, "related"> & {
     related?: Motif[];
   };
+  blocks?: ExtendedBlockObjectResponse[];
 };
 
 function MotifTemplate({
   pageContext: {
     motif: { name, summary, related, tags, synonyms },
+    blocks,
+    ...globalPageContext
   },
 }: PageProps<undefined, MotifTemplateProps>) {
   return (
-    <Layout head={{ title: `Le motif ${name}` }}>
+    <Layout head={{ title: `Le motif ${name}` }} {...globalPageContext}>
       <>
         <PageHeader
           title={name}
@@ -50,27 +55,6 @@ function MotifTemplate({
         ) : (
           ""
         )}
-        {related && related.length ? (
-          <Row
-            header={{
-              level: 2,
-              content: `Relations`,
-            }}
-            paddingY={2}
-          >
-            <>
-              <LinksMenu
-                links={related.map(({ name }) => ({
-                  label: name,
-                  link: "/motifs/" + name.toLowerCase().replaceAll(" ", "-"),
-                  color: COLORS.FLOWER,
-                }))}
-              />
-            </>
-          </Row>
-        ) : (
-          ""
-        )}
         {synonyms && synonyms.length ? (
           <Row
             header={{
@@ -89,6 +73,36 @@ function MotifTemplate({
                   }))}
                 />
               </div>
+            </>
+          </Row>
+        ) : (
+          ""
+        )}
+        <Row>
+          <>
+            {blocks && blocks.length ? (
+              <PureBlocksRenderer blocks={blocks} />
+            ) : (
+              ""
+            )}
+          </>
+        </Row>
+        {related && related.length ? (
+          <Row
+            header={{
+              level: 2,
+              content: `Relations`,
+            }}
+            paddingY={2}
+          >
+            <>
+              <LinksMenu
+                links={related.map(({ name, slug }) => ({
+                  label: name,
+                  link: "/motifs/" + slug,
+                  color: COLORS.FLOWER,
+                }))}
+              />
             </>
           </Row>
         ) : (

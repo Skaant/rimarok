@@ -14,6 +14,11 @@ export function motifFormatter(page: PageObjectResponse): Motif {
     ["Related motifs"]: related,
     Synonyms: synonyms,
   } = page.properties;
+  const _name =
+    name &&
+    name.type === "title" &&
+    richTextToString(name.title as TextRichTextItemResponse[]);
+  if (!_name) throw new Error(`Missing name on page ${page.id}`);
   const _synonyms =
     synonyms &&
     synonyms.type === "rich_text" &&
@@ -24,11 +29,8 @@ export function motifFormatter(page: PageObjectResponse): Motif {
   return {
     id: page.id,
     index: (index && index.type === "number" && index.number) || -1,
-    name:
-      (name &&
-        name.type === "title" &&
-        richTextToString(name.title as TextRichTextItemResponse[])) ||
-      "missing name ???",
+    name: _name,
+    slug: _name.toLowerCase().replaceAll(" ", "-"),
     ...(summary && summary.type === "rich_text"
       ? {
           summary: richTextToString(

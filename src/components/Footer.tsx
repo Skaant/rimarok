@@ -7,8 +7,13 @@ import LinksMenu from "./LinksMenu";
 import { ARTICLES_DATA } from "../data/articles";
 import getInternalLink from "../helpers/getInternalLink";
 import { PRESTATION_SECTIONS } from "../pages/prestation";
+import { GlobalPageContext } from "../types/GlobalPageContext";
+import { MOTIFS_SECTIONS } from "../pages/motifs";
 
-function Footer() {
+function Footer({
+  motifs,
+  footer: { motifs: footerMotifs },
+}: GlobalPageContext) {
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
       <div className="d-flex justify-content-center flex-md-row flex-column text-white">
@@ -44,7 +49,34 @@ function Footer() {
                       </Link>
                     </li>
                   </ul>
-                ) : path.includes("blog") ? (
+                ) : (
+                  ""
+                )}
+                {path.includes("motifs") ? (
+                  <ul className="list-unstyled mt-2 ps-3">
+                    {footerMotifs.map(({ name, slug }, index) => {
+                      return (
+                        <li className="py-1 pt-2 d-inline" key={index}>
+                          <Link className="text-white" to={`/motifs/${slug}`}>
+                            {name}
+                          </Link>
+                          {", "}
+                        </li>
+                      );
+                    })}{" "}
+                    <Link
+                      className="text-lagoon"
+                      to={`${PAGES_DATA[PAGES.MOTIFS].path}#${
+                        MOTIFS_SECTIONS["LISTE"].id
+                      }`}
+                    >
+                      ... et {motifs.length - 10} autres encore.
+                    </Link>
+                  </ul>
+                ) : (
+                  ""
+                )}
+                {path.includes("blog") ? (
                   <ul className="list-unstyled">
                     {ARTICLES_DATA.slice()
                       .filter(({ disabled }) => !disabled)

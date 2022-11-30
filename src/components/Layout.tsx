@@ -1,11 +1,12 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import WEBSITE_DATA from "../data/website";
+import { GlobalPageContext } from "../types/GlobalPageContext";
 import BackToTop from "./BackToTop";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-type LayoutProps = {
+type LayoutProps = GlobalPageContext & {
   head: {
     /**
      * Only the page title;
@@ -26,6 +27,7 @@ type LayoutProps = {
 function Layout({
   head: { title, description, noIndex },
   children,
+  ...globalPageContext
 }: LayoutProps) {
   return (
     <>
@@ -40,7 +42,7 @@ function Layout({
       <Navbar />
       <BackToTop />
       <div className="container-fluid px-0">{children}</div>
-      <Footer />
+      <Footer {...globalPageContext} />
     </>
   );
 }

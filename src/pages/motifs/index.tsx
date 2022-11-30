@@ -14,7 +14,7 @@ import { COLORS } from "../../data/colors";
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
 
-const MOTIFS_SECTIONS: { [key: string]: Section } = {
+export const MOTIFS_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
     id: "harmonie-du-code",
     title: "Trouver l'harmonie du code",
