@@ -39,7 +39,7 @@ function Layout({
         {noIndex && <meta name="robots" content="noindex" />}
         <script src="/script.js" defer={true}></script>
       </Helmet>
-      <Navbar />
+      <Navbar {...globalPageContext} />
       <BackToTop />
       <div className="container-fluid px-0">{children}</div>
       <Footer {...globalPageContext} />

@@ -232,7 +232,9 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />{" "}
               :)
             </p>
-            <p>Compte des motifs répertoriés* : {motifs.length}.</p>
+            <p className="mb-2">
+              <b>Compte des motifs répertoriés* : {motifs.length}.</b>
+            </p>
             <p className="small">* Pas forcément détaillés.</p>
             <MotifsList motifs={motifs} />
           </>
