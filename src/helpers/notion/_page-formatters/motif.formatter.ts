@@ -14,6 +14,13 @@ export function motifFormatter(page: PageObjectResponse): Motif {
     ["Related motifs"]: related,
     Synonyms: synonyms,
   } = page.properties;
+  const _synonyms =
+    synonyms &&
+    synonyms.type === "rich_text" &&
+    richTextToString(synonyms.rich_text as TextRichTextItemResponse[])
+      .split(",")
+      .filter((val) => val)
+      .map((val) => val.trim());
   return {
     id: page.id,
     index: (index && index.type === "number" && index.number) || -1,
@@ -39,11 +46,9 @@ export function motifFormatter(page: PageObjectResponse): Motif {
           related: related.relation.map(({ id }) => id),
         }
       : {}),
-    ...(synonyms && synonyms.type === "rich_text"
+    ...(_synonyms && _synonyms[0] !== ""
       ? {
-          synonyms: richTextToString(
-            synonyms.rich_text as TextRichTextItemResponse[]
-          ).split(", "),
+          synonyms: _synonyms,
         }
       : {}),
   };
