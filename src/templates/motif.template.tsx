@@ -28,7 +28,7 @@ function MotifTemplate({
           paddingY={5}
           {...(summary ? { subtitle: summary } : {})}
         />
-        {tags && tags.length && (
+        {tags && tags.length ? (
           <Row
             header={{
               level: 2,
@@ -47,8 +47,10 @@ function MotifTemplate({
               </div>
             </>
           </Row>
+        ) : (
+          ""
         )}
-        {related && related.length && (
+        {related && related.length ? (
           <Row
             header={{
               level: 2,
@@ -66,8 +68,10 @@ function MotifTemplate({
               />
             </>
           </Row>
+        ) : (
+          ""
         )}
-        {synonyms && synonyms.length && (
+        {synonyms && synonyms.length ? (
           <Row
             header={{
               level: 2,
@@ -87,6 +91,8 @@ function MotifTemplate({
               </div>
             </>
           </Row>
+        ) : (
+          ""
         )}
       </>
     </Layout>
