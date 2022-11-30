@@ -31,8 +31,8 @@ function Row({
   return (
     <div
       id={id}
-      className={`row bg-${backgroundColor} px-3 py-5${
-        paddingY ? ` py-${paddingY}` : ""
+      className={`row bg-${backgroundColor} px-3 ${
+        typeof paddingY === "number" ? ` py-${paddingY}` : "py-5"
       }${className ? ` ${className}` : ""}`}
     >
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>

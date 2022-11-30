@@ -8,7 +8,7 @@ import getBlocks from "./getBlocks";
 export async function getDatabase(
   notion: Client,
   databaseId: string,
-  params?: object
+  params: object = {}
 ): Promise<
   (PageObjectResponse & {
     blocks: BlockObjectResponse[];
@@ -17,7 +17,7 @@ export async function getDatabase(
   const pages = (
     await notion.databases.query({
       database_id: databaseId,
-      ...(params || {}),
+      ...params,
     })
   ).results as PageObjectResponse[];
 

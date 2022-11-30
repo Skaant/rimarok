@@ -4,9 +4,9 @@ import Row, { RowProps } from "./Row";
 import TableOfContents from "./TableOfContents";
 import { TableOfContentsProps } from "./TableOfContents";
 
-type PageHeaderProps = Pick<RowProps, "backgroundColor"> & {
+type PageHeaderProps = Pick<RowProps, "backgroundColor" | "paddingY"> & {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   titleSize?: "normal" | "big";
   linksMenu?: LinksMenuProps;
   tableOfContents?: TableOfContentsProps;
@@ -19,18 +19,19 @@ function PageHeader({
   titleSize = "normal",
   linksMenu,
   tableOfContents,
+  paddingY,
 }: PageHeaderProps) {
   return (
     <Row
       id="full-screen-title"
       col="col-12"
-      colClassName="min-vh-60 d-flex flex-column justify-content-center align-items-center text-center p-4"
+      colClassName="d-flex flex-column justify-content-center align-items-center text-center p-4"
       backgroundColor={backgroundColor}
-      paddingY={0}
+      paddingY={paddingY || 0}
     >
       <>
         <h1 className={titleSize}>{title}</h1>
-        <p className="sub-title">{subtitle}</p>
+        {subtitle && <p className="sub-title">{subtitle}</p>}
         {linksMenu && <LinksMenu size="lg" {...linksMenu} />}
         {tableOfContents && (
           <div
