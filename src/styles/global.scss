@@ -41,7 +41,6 @@
 @import "./components/row";
 @import "./components/quote";
 @import "./components/page-header";
-@import "./components/links-menu";
 @import "./components/badge";
 @import "./components/table-of-contents";
 @import "./fixes/btn";
@@ -83,4 +82,8 @@ h6 {
 
 a {
   text-decoration: none;
+}
+
+.navbar {
+  z-index: 3;
 }

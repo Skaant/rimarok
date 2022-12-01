@@ -17,14 +17,14 @@ export type LinksMenuProps = {
 
 function LinksMenu({ links, size }: LinksMenuProps) {
   return (
-    <div className={`links-menu my-${size === "sm" ? "1" : "4"}`}>
+    <div className={`my-${size === "sm" ? "1" : "4"}`}>
       <>
         {links.map(({ link, label, color = COLORS.FLOWER, id }, index) =>
           link.startsWith("/") ? (
             <Link
               to={link}
               key={index}
-              className={`btn btn-${color} mx-2 my-${
+              className={`btn btn-${color} rounded-pill mx-2 my-${
                 size === "sm" ? "1" : "2"
               }${size ? ` btn-${size}` : ""}`}
               role="button"
