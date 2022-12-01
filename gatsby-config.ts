@@ -8,7 +8,7 @@ dotenv.config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `RIMAROK.com`,
-    url: `https://rimarok.com`,
+    siteUrl: `https://rimarok.com`,
   },
   plugins: [
     "gatsby-plugin-sass",

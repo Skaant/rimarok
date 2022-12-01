@@ -81,6 +81,27 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     context: globalPageContext,
   });
   createPage<GlobalPageContext>({
+    path: `${PAGES_DATA[PAGES.BLOG].path}/1-motifs-js-publier-un-module-npm`,
+    component: path.resolve(
+      "./src/templates/_pages/blog/1-motifs-js-publier-un-module-npm.tsx"
+    ),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: `${PAGES_DATA[PAGES.BLOG].path}/8-refonte-site-contenu-gatsby`,
+    component: path.resolve(
+      "./src/templates/_pages/blog/8-refonte-site-contenu-gatsby.tsx"
+    ),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
+    path: `${PAGES_DATA[PAGES.BLOG].path}/9-gatsby-notion-npm-module-statikon`,
+    component: path.resolve(
+      "./src/templates/_pages/blog/9-gatsby-notion-npm-module-statikon.tsx"
+    ),
+    context: globalPageContext,
+  });
+  createPage<GlobalPageContext>({
     path: PAGES_DATA[PAGES.STYLEGUIDE].path,
     component: path.resolve("./src/templates/_pages/styleguide.template.tsx"),
     context: globalPageContext,

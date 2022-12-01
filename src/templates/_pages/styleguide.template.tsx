@@ -279,7 +279,7 @@ const Styleguide = ({
             </ul>
           </>
         </Row>
-        <Navbar className="position-initial" />
+        <Navbar className="position-initial" {...pageContext} />
         <Row
           id={STYLEGUIDE_SECTIONS.BACK_TO_TOP.id}
           header={{ content: STYLEGUIDE_SECTIONS.BACK_TO_TOP.title, level: 2 }}
@@ -566,7 +566,7 @@ const Styleguide = ({
               <b>liste des articles du site</b>.
             </p>
             <div style={{ maxHeight: "100vh", overflow: "scroll" }}>
-              <MotifsList />
+              <MotifsList motifs={pageContext.motifs} />
             </div>
           </>
         </Row>
