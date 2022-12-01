@@ -14,7 +14,6 @@ function Navbar({ motifs, className }: NavbarProps) {
       className={`navbar navbar-expand-lg position-fixed w-100 bg-light${
         className ? ` ${className}` : ""
       }`}
-      style={{ zIndex: 1 }}
     >
       <div className="container-fluid d-flex align-items-center px-3">
         <Link className="navbar-brand font-slab" to="/">

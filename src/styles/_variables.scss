@@ -3,19 +3,12 @@ $flower: rgb(226, 94, 60);
 $abyss: rgb(38, 81, 117);
 $sun: rgb(241, 132, 65);
 $mist: rgb(183, 209, 222);
-$lagoon: rgb(51, 188, 220);
+$lagoon: #20c997;
 $ground: rgb(226, 190, 176);
 // Bootstrap-based
 $light: #f8f9fa;
 // Bootstrap-based
 $dark: #212529;
-// Green olive ;)
-$greeve: #aeec42;
-$light_greeve: #c5f9b7;
-$light_mist: #d3f1ff;
-$light_sun: #fcebc3;
-$dark_greeve: #575a47;
-$rosam: #c64f53;
 // Not themed colors
 $grey: #888;
 
@@ -28,13 +21,6 @@ $theme-colors: (
   ground: $ground,
   light: $light,
   dark: $dark,
-  // 6 deprecated
-  greeve: $greeve,
-  light_greeve: $light_greeve,
-  light_mist: $light_mist,
-  light_sun: $light_sun,
-  dark_greeve: $dark_greeve,
-  rosam: $rosam,
 );
 
 // FONTS
