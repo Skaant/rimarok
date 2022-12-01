@@ -3,16 +3,128 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import Layout from "../components/Layout";
 import { Motif } from "../types/Motif";
+import Row from "../components/Row";
+import LinksMenu from "../components/LinksMenu";
+import BadgesList from "../components/BadgesList";
+import { COLORS } from "../data/colors";
+import { ExtendedBlockObjectResponse, PureBlocksRenderer } from "statikon";
+import { GlobalPageContext } from "../types/GlobalPageContext";
+import { PAGES, PAGES_DATA } from "../data/pages";
+import { MOTIFS_SECTIONS } from "./_pages/motifs.template";
 
-export type MotifTemplateProps = Pick<Motif, "name">;
+export type MotifTemplateProps = GlobalPageContext & {
+  motif: Omit<Motif, "related"> & {
+    related?: Motif[];
+  };
+  blocks?: ExtendedBlockObjectResponse[];
+};
 
 function MotifTemplate({
-  pageContext: { name },
+  pageContext: {
+    motif: { name, summary, related, tags, synonyms },
+    blocks,
+    ...globalPageContext
+  },
 }: PageProps<undefined, MotifTemplateProps>) {
   return (
-    <Layout head={{ title: `Le motif ${name}` }}>
+    <Layout head={{ title: `Motif ${name}` }} {...globalPageContext}>
       <>
-        <PageHeader title={name} subtitle={"Un motif en cours d'élaboration"} />
+        <PageHeader
+          title={name}
+          backgroundColor={COLORS.SUN}
+          paddingY={5}
+          {...(summary ? { subtitle: summary } : {})}
+        />
+        <Row paddingY={0}>
+          <>
+            <LinksMenu
+              links={[
+                {
+                  label: "Retour à la liste des motifs",
+                  link: `${PAGES_DATA[PAGES.MOTIFS].path}#${
+                    MOTIFS_SECTIONS["LISTE"].id
+                  }`,
+                  color: COLORS.LAGOON,
+                },
+              ]}
+            />
+          </>
+        </Row>
+        {tags && tags.length ? (
+          <Row
+            header={{
+              level: 2,
+              content: "Étiquettes",
+            }}
+            paddingY={2}
+          >
+            <>
+              <div>
+                <BadgesList
+                  badges={tags.map((tag) => ({
+                    label: tag,
+                    color: COLORS.ABYSS,
+                  }))}
+                />
+              </div>
+            </>
+          </Row>
+        ) : (
+          ""
+        )}
+        {synonyms && synonyms.length ? (
+          <Row
+            header={{
+              level: 2,
+              content: "Synonymes",
+            }}
+            paddingY={2}
+            className="pb-5"
+          >
+            <>
+              <div>
+                <BadgesList
+                  badges={synonyms.map((synonym) => ({
+                    label: synonym,
+                    color: COLORS.MIST,
+                  }))}
+                />
+              </div>
+            </>
+          </Row>
+        ) : (
+          ""
+        )}
+        <Row>
+          <>
+            {blocks && blocks.length ? (
+              <PureBlocksRenderer blocks={blocks} />
+            ) : (
+              ""
+            )}
+          </>
+        </Row>
+        {related && related.length ? (
+          <Row
+            header={{
+              level: 2,
+              content: `Relations`,
+            }}
+            paddingY={2}
+          >
+            <>
+              <LinksMenu
+                links={related.map(({ name, slug }) => ({
+                  label: name,
+                  link: "/motifs/" + slug,
+                  color: COLORS.FLOWER,
+                }))}
+              />
+            </>
+          </Row>
+        ) : (
+          ""
+        )}
       </>
     </Layout>
   );

@@ -1,10 +1,12 @@
 import React from "react";
-import PageHeader from "../components/PageHeader";
-import Layout from "../components/Layout";
-import Row from "../components/Row";
-import { PAGES, PAGES_DATA } from "../data/pages";
-import Section from "../types/Section";
-import { COLORS } from "../data/colors";
+import PageHeader from "../../components/PageHeader";
+import Layout from "../../components/Layout";
+import Row from "../../components/Row";
+import { PAGES, PAGES_DATA } from "../../data/pages";
+import Section from "../../types/Section";
+import { COLORS } from "../../data/colors";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const PAGE_ID = PAGES.MENTIONS_LEGALES;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -16,12 +18,15 @@ const MENTIONS_LEGALES_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function MentionsLegales() {
+function MentionsLegales({
+  pageContext,
+}: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

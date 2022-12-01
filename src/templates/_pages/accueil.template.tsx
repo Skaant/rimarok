@@ -1,21 +1,22 @@
 import * as React from "react";
-import PageHeader from "../components/PageHeader";
-import Layout from "../components/Layout";
-import "../styles/global.scss";
-import Quote from "../components/Quote";
-import { PAGES, PAGES_DATA } from "../data/pages";
-import WEBSITE_DATA from "../data/website";
-import Carousel from "../components/Carousel";
-import LinksMenu, { LinksMenuItem } from "../components/LinksMenu";
-import Row from "../components/Row";
-import { COLORS } from "../data/colors";
-import Section from "../types/Section";
-import { PRESTATION_SECTIONS } from "./prestation";
-import { Link } from "gatsby";
-import getInternalLink from "../helpers/getInternalLink";
-import InternalLink from "../components/InternalLink";
-import { PERSONAL_PROJECTS } from "../components/_projects/persos";
-import { PROFESSIONAL_PROJECTS } from "../components/_projects/pros";
+import PageHeader from "../../components/PageHeader";
+import Layout from "../../components/Layout";
+import "../../styles/global.scss";
+import Quote from "../../components/Quote";
+import { PAGES, PAGES_DATA } from "../../data/pages";
+import WEBSITE_DATA from "../../data/website";
+import Carousel from "../../components/Carousel";
+import LinksMenu, { LinksMenuItem } from "../../components/LinksMenu";
+import Row from "../../components/Row";
+import { COLORS } from "../../data/colors";
+import Section from "../../types/Section";
+import { PRESTATION_SECTIONS } from "./prestation.template";
+import { Link, PageProps } from "gatsby";
+import getInternalLink from "../../helpers/getInternalLink";
+import InternalLink from "../../components/InternalLink";
+import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
+import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
 const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
@@ -46,12 +47,13 @@ export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-const Accueil = () => {
+const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
   return (
     <Layout
       head={{
         title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader

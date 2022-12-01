@@ -1,25 +1,27 @@
 import * as React from "react";
-import Layout from "../components/Layout";
-import Quote from "../components/Quote";
-import TableOfContents from "../components/TableOfContents";
-import type Section from "../types/Section";
-import "../styles/global.scss";
-import Row from "../components/Row";
-import { COLORS } from "../data/colors";
-import PageHeader from "../components/PageHeader";
-import { Link } from "gatsby";
-import LinksMenu from "../components/LinksMenu";
-import BadgesList from "../components/BadgesList";
-import Project from "../components/Project";
-import BackToTop from "../components/BackToTop";
-import InternalLink from "../components/InternalLink";
-import Navbar from "../components/Navbar";
-import { PAGES } from "../data/pages";
-import Footer from "../components/Footer";
-import ArticlesList from "../components/ArticlesList";
-import MotifsList from "../components/MotifsList";
+import Layout from "../../components/Layout";
+import Quote from "../../components/Quote";
+import TableOfContents from "../../components/TableOfContents";
+import type Section from "../../types/Section";
+import "../../styles/global.scss";
+import Row from "../../components/Row";
+import { COLORS } from "../../data/colors";
+import PageHeader from "../../components/PageHeader";
+import { PageProps } from "gatsby";
+import LinksMenu from "../../components/LinksMenu";
+import BadgesList from "../../components/BadgesList";
+import Project from "../../components/Project";
+import BackToTop from "../../components/BackToTop";
+import InternalLink from "../../components/InternalLink";
+import Navbar from "../../components/Navbar";
+import { PAGES, PAGES_DATA } from "../../data/pages";
+import Footer from "../../components/Footer";
+import ArticlesList from "../../components/ArticlesList";
+import MotifsList from "../../components/MotifsList";
+import { GlobalPageContext } from "../../types/GlobalPageContext";
 
-const STYLEGUIDE_TITLE = "Styleguide";
+const PAGE_ID = PAGES.STYLEGUIDE;
+const { title } = PAGES_DATA[PAGE_ID];
 
 /**
  * @todo Carousel, ArticlesListItem*, TagsDateHeader,
@@ -105,16 +107,19 @@ const STYLEGUIDE_SECTIONS: { [section: string]: Section } = {
   },
 };
 
-const Styleguide = () => {
+const Styleguide = ({
+  pageContext,
+}: PageProps<undefined, GlobalPageContext>) => {
   return (
     <Layout
       head={{
-        title: STYLEGUIDE_TITLE,
+        title,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader
-          title={STYLEGUIDE_TITLE}
+          title={title}
           subtitle="Éléments de charte graphique et composants du site"
           backgroundColor={COLORS.LAGOON}
           tableOfContents={{ contents: STYLEGUIDE_SECTIONS }}
@@ -274,7 +279,7 @@ const Styleguide = () => {
             </ul>
           </>
         </Row>
-        <Navbar className="position-initial" />
+        <Navbar className="position-initial" {...pageContext} />
         <Row
           id={STYLEGUIDE_SECTIONS.BACK_TO_TOP.id}
           header={{ content: STYLEGUIDE_SECTIONS.BACK_TO_TOP.title, level: 2 }}
@@ -304,7 +309,7 @@ const Styleguide = () => {
             </p>
           </>
         </Row>
-        <Footer />
+        <Footer {...pageContext} />
         <Row
           id={STYLEGUIDE_SECTIONS.ROW.id}
           header={{ content: STYLEGUIDE_SECTIONS.ROW.title, level: 2 }}
@@ -561,7 +566,7 @@ const Styleguide = () => {
               <b>liste des articles du site</b>.
             </p>
             <div style={{ maxHeight: "100vh", overflow: "scroll" }}>
-              <MotifsList />
+              <MotifsList motifs={pageContext.motifs} />
             </div>
           </>
         </Row>
