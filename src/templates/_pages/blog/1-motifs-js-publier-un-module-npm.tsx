@@ -1,18 +1,21 @@
+import { PageProps } from "gatsby";
 import React from "react";
-import Layout from "../../components/Layout";
-import PageHeader from "../../components/PageHeader";
-import Row from "../../components/Row";
-import { ARTICLES_DATA } from "../../data/articles";
+import Layout from "../../../components/Layout";
+import PageHeader from "../../../components/PageHeader";
+import Row from "../../../components/Row";
+import { ARTICLES_DATA } from "../../../data/articles";
+import { GlobalPageContext } from "../../../types/GlobalPageContext";
 
 const { title, description } = ARTICLES_DATA[0];
 
-function Article1() {
+function Article1({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
         description,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader title={title} subtitle={""} />

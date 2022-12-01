@@ -1,22 +1,25 @@
 import React from "react";
-import PageHeader from "../../components/PageHeader";
-import Layout from "../../components/Layout";
-import Row from "../../components/Row";
-import { ARTICLES_DATA } from "../../data/articles";
-import InternalLink from "../../components/InternalLink";
-import { PAGES } from "../../data/pages";
-import { COLORS } from "../../data/colors";
-import LinksMenu from "../../components/LinksMenu";
+import PageHeader from "../../../components/PageHeader";
+import Layout from "../../../components/Layout";
+import Row from "../../../components/Row";
+import { ARTICLES_DATA } from "../../../data/articles";
+import InternalLink from "../../../components/InternalLink";
+import { PAGES } from "../../../data/pages";
+import { COLORS } from "../../../data/colors";
+import LinksMenu from "../../../components/LinksMenu";
+import { PageProps } from "gatsby";
+import { GlobalPageContext } from "../../../types/GlobalPageContext";
 
 const { title, description } = ARTICLES_DATA[7];
 
-function Article9() {
+function Article9({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
       head={{
         title,
         description,
       }}
+      {...pageContext}
     >
       <>
         <PageHeader
@@ -81,7 +84,6 @@ function Article9() {
           header={{
             content: "Génèse du module",
             level: 3,
-            className: "mb-4",
           }}
           backgroundColor={COLORS.SUN}
           paddingY={5}
