@@ -1,4 +1,5 @@
 import * as React from "react";
+import { COLORS } from "../data/colors";
 import LinksMenu, { LinksMenuProps } from "./LinksMenu";
 import Row, { RowProps } from "./Row";
 import TableOfContents from "./TableOfContents";
@@ -25,14 +26,15 @@ function PageHeader({
     <Row
       id="full-screen-title"
       col="col-12 col-lg-10"
-      colClassName="d-flex flex-column justify-content-center align-items-center text-center p-4"
+      colClassName="d-flex flex-column justify-content-center align-items-center p-4"
       backgroundColor={backgroundColor}
       paddingY={paddingY || 0}
     >
       <>
-        <h1 className={titleSize}>{title}</h1>
-        {subtitle && <p className="sub-title">{subtitle}</p>}
+        <h1 className={`${titleSize} text-center`}>{title}</h1>
+        {subtitle && <p className="sub-title text-center">{subtitle}</p>}
         {linksMenu && <LinksMenu size="lg" {...linksMenu} />}
+        {backgroundColor !== COLORS.LIGHT ? <img src="/small-stars.svg" /> : ""}
         {tableOfContents && (
           <div
             className="d-flex justify-content-start col-12 col-sm-10 col-md-8 col-lg-6"

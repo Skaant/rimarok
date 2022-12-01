@@ -56,6 +56,20 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
       {...pageContext}
     >
       <>
+        <div
+          className="d-flex justify-content-end bg-flower"
+          style={{
+            paddingTop: "6rem",
+            marginBottom: "-16vh",
+            maxHeight: "80vh",
+            paddingRight: "calc(-100px + 22vw)",
+          }}
+        >
+          <img
+            src="/rimarok.svg"
+            style={{ maxHeight: "100%", maxWidth: "100%" }}
+          />
+        </div>
         <PageHeader
           title={title}
           subtitle={WEBSITE_DATA.TITLE}
@@ -67,7 +81,6 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 ([key]) =>
                   ![
                     PAGES.ACCUEIL,
-                    PAGES.MOTIFS,
                     PAGES.STYLEGUIDE,
                     PAGES.MENTIONS_LEGALES,
                   ].includes(key as PAGES)
