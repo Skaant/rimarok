@@ -50,6 +50,20 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       {...pageContext}
     >
       <>
+        <div
+          className="d-flex justify-content-end"
+          style={{
+            paddingTop: "6rem",
+            marginBottom: "-16vh",
+            maxHeight: "80vh",
+            paddingRight: "calc(-100px + 22vw)",
+          }}
+        >
+          <img
+            src="/motifs-2.svg"
+            style={{ maxHeight: "100%", maxWidth: "100%" }}
+          />
+        </div>
         <PageHeader
           title={title}
           subtitle="Un langage de conception"
@@ -109,6 +123,10 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           tags={["répétition", "probleme récurrent", "solution générique"]}
         >
           <>
+            <p>
+              Avant de répondre à cette question, commençons par une première
+              citation, <b>et particularité des motifs</b> :
+            </p>
             <Quote
               displayHeading={5}
               legend={{
@@ -127,39 +145,37 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 </p>
               </>
             </Quote>
+            <ul>
+              <li>
+                Dans son sens courant, un motif est{" "}
+                <b>un ensemble de propriétés qui se répètent</b> (occurences)
+                dans un groupe d'individus.
+              </li>
+              <li>
+                Dans le dictionnaire, on lit également : ce qui pousse à agir,
+                ce qui justifie, <b>intention</b> ...
+              </li>
+              <li>
+                Christopher Alexander les définit comme{" "}
+                <b>un problème récurrent</b> et <b>la solution générique</b> à
+                mettre en oeuvre pour y répondre.
+              </li>
+              <li>
+                En informatique, un motif est <b>une structure</b> de fichiers,
+                instructions, données, propriétés qui effectivement{" "}
+                <b>répond à des problématiques récurrentes</b>.
+              </li>
+            </ul>
             <p>
-              Dans son sens courant, un motif est{" "}
-              <b>un ensemble de propriétés qui se répètent</b> (occurences) dans
-              un groupe d'individus.
+              Certains motifs sont relatifs à des langages de programmation,
+              d'autres à des frameworks mais{" "}
+              <b>la majorité des motifs sont transverses</b> (logiques et
+              métiers) .
             </p>
+            <br />
             <p>
-              Dans le dictionnaire, on lit également : ce qui pousse à agir, ce
-              qui justifie, <b>intention</b> ...
-            </p>
-            <p>
-              Christopher Alexander les définit comme{" "}
-              <b>un problème récurrent</b>
-              et <b>la solution générique</b> pour y remédier.
-            </p>
-            <p>
-              <b>Dans l'informatique,</b> un motif est{" "}
-              <b>
-                une structure de fichiers, instructions, données, propriétés
-              </b>{" "}
-              qui répond effectivement à des besoins répétitifs.
-            </p>
-            <p>
-              Certains sont relatifs à des langages de programmation, d'autres à
-              des frameworks mais <b>la majorité des motifs sont transverses</b>
-              .
-            </p>
-            <p>
-              <b>Attention</b> à ne pas trop remonter loin dans l'abstraction
-              car sinon
-              <b>
-                vous pourriez tomber des nus en tentant de résoudre l'équation
-              </b>{" "}
-              :
+              <b>Ne remontez pas trop loin dans l'abstraction</b> ou vous
+              pourriez perdre votre raison en tentant de résoudre l'équation :
             </p>
             <Quote displayHeading={3} backgroundColor={COLORS.SUN}>
               <p>Le motif motif est une instance de lui-même.</p>

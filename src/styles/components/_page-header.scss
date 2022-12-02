@@ -12,4 +12,8 @@
   .sub-title {
     @include font-size(32px);
   }
+  [src="/small-stars.svg"] {
+    max-height: 16vh;
+    margin-top: 8vh;
+  }
 }
