@@ -82,7 +82,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       <>
         <PageHeader
           title={title}
-          subtitle="La pièce manquante du puzzle"
+          subtitle="Développer, connecter, améliorer"
           backgroundColor={COLORS.LIGHT}
           linksMenu={{
             links: [
@@ -99,6 +99,37 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             linkColor: COLORS.DARK,
           }}
         />
+        <div className="position-relative w-100">
+          <img
+            src="/prestation-right.svg"
+            className="position-absolute"
+            alt=""
+            style={{
+              bottom: 0,
+              zIndex: 1,
+              maxHeight: "80vh",
+              right: "10vw",
+            }}
+          />
+        </div>
+        <div
+          className="position-relative"
+          style={{
+            maxWidth: "50vw",
+          }}
+        >
+          <img
+            src="/prestation-left.svg"
+            className="position-absolute"
+            alt=""
+            style={{
+              bottom: 0,
+              left: 0,
+              maxHeight: "calc(36vw + 36vh)",
+              zIndex: 1,
+            }}
+          />
+        </div>
         <Row
           id={PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.id}
           header={{
@@ -119,7 +150,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               : front, back et base de données.
             </p>
             <p>
-              Lors de mes missions, j'ai été amené à travailler dans des
+              Lors de mes missions, j'ai été amené à travailler sur des{" "}
               <b>ecosystèmes</b> et avec des <b>frameworks variés</b>.
             </p>
             <p>

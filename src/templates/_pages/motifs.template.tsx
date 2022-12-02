@@ -54,8 +54,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           className="d-flex justify-content-end"
           style={{
             paddingTop: "6rem",
-            marginBottom: "-16vh",
-            maxHeight: "80vh",
+            marginBottom: "-32vh",
+            maxHeight: "100vh",
             paddingRight: "calc(-100px + 22vw)",
           }}
         >
@@ -66,7 +66,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
         </div>
         <PageHeader
           title={title}
-          subtitle="Un langage de conception"
+          subtitle="Un langage pour la conception"
           tableOfContents={{ contents: MOTIFS_SECTIONS }}
           backgroundColor={COLORS.LIGHT}
         />
