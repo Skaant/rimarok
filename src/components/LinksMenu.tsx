@@ -36,7 +36,9 @@ function LinksMenu({ links, size }: LinksMenuProps) {
             <a
               href={link}
               key={index}
-              className={`btn btn-${color} m-2${size ? ` btn-${size}` : ""}`}
+              className={`btn btn-${color} rounded-pill m-2${
+                size ? ` btn-${size}` : ""
+              }`}
               role="button"
               target="_blank"
               {...(id ? { id } : {})}
