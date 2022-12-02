@@ -117,6 +117,9 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   motifs
     .filter(({ name }) => name)
     .forEach(({ related, ...motif }) => {
+      const _related = related
+        ?.map((id) => _motifsById[id])
+        .filter((motif) => motif);
       createPage<MotifTemplateProps>({
         path: "/motifs/" + motif.slug,
         component: path.resolve("./src/templates/motif.template.tsx"),
@@ -124,7 +127,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
           ...globalPageContext,
           motif: {
             ...motif,
-            related: related?.map((id) => _motifsById[id]),
+            ...(_related && _related.length ? { related: _related } : {}),
           },
           blocks: _motifPagesById[motif.id].blocks,
         },

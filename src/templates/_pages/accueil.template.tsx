@@ -280,7 +280,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                     PRESTATION_SECTIONS.CONTACT
                   ),
                   label: PRESTATION_SECTIONS.CONTACT.title,
-                  color: COLORS.GROUND,
+                  color: COLORS.LIGHT,
                 },
                 {
                   link: getInternalLink(
@@ -288,7 +288,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                     PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES
                   ),
                   label: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
-                  color: COLORS.GROUND,
+                  color: COLORS.LIGHT,
                 },
               ]}
             />

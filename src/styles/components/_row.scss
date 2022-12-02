@@ -15,4 +15,7 @@
       color: $mist;
     }
   }
+  > * {
+    z-index: 2;
+  }
 }
