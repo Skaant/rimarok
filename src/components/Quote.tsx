@@ -25,13 +25,26 @@ function Quote({
         [COLORS.MIST, COLORS.GROUND].includes(backgroundColor)
           ? COLORS.DARK
           : COLORS.LIGHT
-      } ${className ? ` ${className}` : ""}`}
+      } ${className ? ` ${className}` : ""} rounded-2 position-relative`}
     >
-      <div className={`display-${displayHeading} font-slab p-4`}>
+      <img
+        src="/glyph.svg"
+        className="position-absolute"
+        style={{
+          zIndex: 3,
+          left: "calc(-42px - 8vw)",
+          height: "calc(12vh + 12vw)",
+          top: "-42px",
+        }}
+      />
+      <div
+        className={`display-${displayHeading} font-slab px-4 py-5`}
+        style={{ zIndex: 4 }}
+      >
         {children}
       </div>
       {legend && (legend.source || legend.author) ? (
-        <p className="legend pe-4 pb-3">
+        <p className="px-4 pb-3 small">
           - {legend.source}
           {legend.source && legend.author ? "," : ""}
           {legend.author && <i className="ms-1">{legend.author}</i>}

@@ -1,20 +1,10 @@
 .blockquote {
-  width: 80%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-left: 25px;
-  @each $color in (abyss mist ground sun flower) {
-    &.bg-#{$color} {
-      box-shadow: -25px 0px 0px 0px rgba(map-get($theme-colors, $color), 0.5);
-    }
-  }
+  margin-right: 25px;
   &.bg-abyss {
     color: $light;
   }
-}
-
-.legend {
-  display: flex;
-  justify-content: right;
 }
