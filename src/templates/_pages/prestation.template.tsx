@@ -125,7 +125,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             style={{
               bottom: 0,
               left: 0,
-              maxHeight: "calc(36vw + 36vh)",
+              maxHeight: "calc(36vw + 24vh)",
               zIndex: 1,
             }}
           />
