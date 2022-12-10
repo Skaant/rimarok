@@ -12,12 +12,17 @@ export async function getDatabase(
   databaseId: string,
   params: object = {}
 ): Promise<DatabasePage[]> {
-  const pages = (
-    await notion.databases.query({
+  let res;
+  const pages: PageObjectResponse[] = [];
+
+  do {
+    res = await notion.databases.query({
       database_id: databaseId,
+      start_cursor: (res && res.next_cursor) || undefined,
       ...params,
-    })
-  ).results as PageObjectResponse[];
+    });
+    pages.push(...(res.results as PageObjectResponse[]));
+  } while (res.has_more);
 
   const _pages = await Promise.all(
     pages.map(async (page) => ({

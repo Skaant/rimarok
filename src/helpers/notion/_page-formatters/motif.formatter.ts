@@ -30,7 +30,7 @@ export function motifFormatter(page: PageObjectResponse): Motif {
     id: page.id,
     index: (index && index.type === "number" && index.number) || -1,
     name: _name,
-    slug: _name.toLowerCase().replaceAll(" ", "-"),
+    slug: _name.toLowerCase().replace(/\s/g, "-"),
     ...(summary && summary.type === "rich_text"
       ? {
           summary: richTextToString(
