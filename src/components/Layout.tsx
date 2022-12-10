@@ -38,6 +38,7 @@ function Layout({
         {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
         <script src="/script.js" defer={true}></script>
+        <link rel="icon" href="/glyph.svg" />
       </Helmet>
       <Navbar {...globalPageContext} />
       <BackToTop />
