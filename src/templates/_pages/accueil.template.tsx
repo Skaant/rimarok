@@ -132,7 +132,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 {
                   link: PAGES_DATA[PAGES.PRESTATION].path,
                   label: "Ma prestation",
-                  color: COLORS.ABYSS,
+                  color: COLORS.LAGOON,
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
