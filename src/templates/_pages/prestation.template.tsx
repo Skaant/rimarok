@@ -7,14 +7,14 @@ import TheExpansProject from "../../components/_projects/persos/4-the-expans";
 import MotifsJsProject from "../../components/_projects/persos/5-motifs-js";
 import PermaDataProject from "../../components/_projects/persos/6-perma-data";
 import PokeTeamProject from "../../components/_projects/persos/7-poke-team";
-import MediartisProject from "../../components/_projects/pros/1-mediartis-mobilis-pro";
-import CrestJazzProject from "../../components/_projects/pros/2-nounours-crest-jazz";
-import CasseDuSiecleProject from "../../components/_projects/pros/3-happy-teams-casse-du-siecle";
-import HygieProject from "../../components/_projects/pros/4-hygie";
-import OmerProject from "../../components/_projects/pros/5-urca-omer";
-import TalentsAffinityProject from "../../components/_projects/pros/6-fresh-pigments-talents-affinity";
-import CdietProject from "../../components/_projects/pros/7-winnov-cdiet";
-import DcbrainProject from "../../components/_projects/pros/8-dcbrain";
+import MediartisProject from "../../components/_projects/pros/8-mediartis-mobilis-pro";
+import CrestJazzProject from "../../components/_projects/pros/7-nounours-crest-jazz";
+import CasseDuSiecleProject from "../../components/_projects/pros/6-happy-teams-casse-du-siecle";
+import HygieProject from "../../components/_projects/pros/5-hygie";
+import OmerProject from "../../components/_projects/pros/4-urca-omer";
+import TalentsAffinityProject from "../../components/_projects/pros/3-fresh-pigments-talents-affinity";
+import CdietProject from "../../components/_projects/pros/2-winnov-cdiet";
+import DcbrainProject from "../../components/_projects/pros/1-dcbrain";
 import Carousel from "../../components/Carousel";
 import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
@@ -262,7 +262,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               et{" "}
               <InternalLink
                 page={PAGES.ACCUEIL}
-                section={ACCUEIL_SECTIONS.PROJETS_PERSONNELS}
+                section={ACCUEIL_SECTIONS.PROJETS_PERSOS}
                 altTitle="personnelle"
               />
               , c'est ma <b>curiosité</b> et ma <b>créativité</b> qui ont
