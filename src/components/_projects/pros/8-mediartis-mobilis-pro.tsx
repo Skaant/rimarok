@@ -9,11 +9,11 @@ function MediartisProject() {
       title="Mobilis Pro / Mediartis"
       scope="full-stack"
       tags={["nest", "typescript", "jest", "e2e", "vue", "bootstrap"]}
-      date="Juin 2021 - Août 2022"
+      date="Juin 2021 - Décembre 2022"
     >
       <>
         <p>
-          Presque un <b>an cumulé</b> de missions sur le{" "}
+          <b>Plus d'un an cumulé</b> de missions sur le{" "}
           <b>projet novateur Mediartis</b>, un des deux produits phares de
           l'entreprise Mobilis Pro.
         </p>
