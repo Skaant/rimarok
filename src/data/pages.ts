@@ -21,7 +21,8 @@ export const PAGES_DATA: { [page in PAGES]: PageData } = {
   ACCUEIL: {
     id: "accueil",
     path: "/",
-    title: "Construire un internet durable",
+    title:
+      "J'améliore vos sites et applicatifs web, dans une optique de sobriété numérique.",
   },
   PRESTATION: {
     id: "prestation",
