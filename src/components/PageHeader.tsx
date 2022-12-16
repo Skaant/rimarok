@@ -32,7 +32,9 @@ function PageHeader({
     >
       <>
         <h1 className={`${titleSize} text-center`}>{title}</h1>
-        {subtitle && <p className="sub-title text-center">{subtitle}</p>}
+        {subtitle && (
+          <h2 className="subtitle text-center font-rubik my-2">{subtitle}</h2>
+        )}
         {linksMenu && <LinksMenu size="lg" {...linksMenu} />}
         {backgroundColor !== COLORS.LIGHT ? <img src="/small-stars.svg" /> : ""}
         {tableOfContents && (

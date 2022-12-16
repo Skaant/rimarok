@@ -4,7 +4,6 @@ import Layout from "../../components/Layout";
 import "../../styles/global.scss";
 import Quote from "../../components/Quote";
 import { PAGES, PAGES_DATA } from "../../data/pages";
-import WEBSITE_DATA from "../../data/website";
 import Carousel from "../../components/Carousel";
 import LinksMenu, { LinksMenuItem } from "../../components/LinksMenu";
 import Row from "../../components/Row";
@@ -13,7 +12,6 @@ import Section from "../../types/Section";
 import { PRESTATION_SECTIONS } from "./prestation.template";
 import { Link, PageProps } from "gatsby";
 import getInternalLink from "../../helpers/getInternalLink";
-import InternalLink from "../../components/InternalLink";
 import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
 import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
@@ -22,12 +20,17 @@ const { title } = PAGES_DATA[PAGES.ACCUEIL];
 
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
-    id: "performances-et-economies",
-    title: "Performances et économies",
+    id: "developpement-web-full-stack-remote-grenoble-chambery-lyon",
+    title:
+      "Développement web full-stack remote, ou sur Grenoble, Chambéry, Lyon",
   },
-  INTRO_PAGE: {
-    id: "full-stack-js-ecologique",
-    title: "Full-stack JS écologique",
+  MOTIVATIONS: {
+    id: "motivations-performances-et-economies",
+    title: "Mes motivations : performances et économies",
+  },
+  STACK: {
+    id: "react-node-database-typescript-php-ecologogiques",
+    title: "React, Node, Database, TypeScript, PHP ... écologiques",
   },
   PROJETS_PROFESSIONNELS: {
     id: "projets-professionnels",
@@ -37,9 +40,9 @@ export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
     id: "le-code-une-philosophie",
     title: "Le code, une philosophie",
   },
-  PROJETS_PERSONNELS: {
-    id: "projets-personnels",
-    title: "Projets personnels",
+  PROJETS_PERSOS: {
+    id: "projets-persos",
+    title: "Projets persos",
   },
   COLLABORATION: {
     id: "vers-une-collaboration-future",
@@ -71,8 +74,10 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           />
         </div>
         <PageHeader
-          title={title}
-          subtitle={WEBSITE_DATA.TITLE}
+          title={
+            "Developpeur web TypeScript/JavaScript freelance et éco-conception"
+          }
+          subtitle={title}
           backgroundColor={COLORS.FLOWER}
           titleSize={"big"}
           linksMenu={{
@@ -103,50 +108,49 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           }}
         />
         <Row
-          header={{
-            level: 2,
-            content: "Accueil",
-          }}
-          tags={["développeur web", "indépendant", "à l'écoute"]}
-        >
-          <>
-            <p>
-              Bonjour, je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
-              <b>site professionnel</b> de <b>développeur web indépendant</b>.
-            </p>
-            <p>
-              Je suis curieux de{" "}
-              <b>découvrir de nouvelles équipes et environnements</b>.
-            </p>
-            <p>
-              Laissez-moi vous{" "}
-              <InternalLink
-                page={PAGES.PRESTATION}
-                altTitle={"présenter ma prestation"}
-              />{" "}
-              ainsi que{" "}
-              <b>
-                ma vision{" "}
-                <InternalLink
-                  page={PAGES.PRESTATION_INGENIERIE_WEB}
-                  altTitle="efficace"
-                />{" "}
-                et{" "}
-                <InternalLink
-                  page={PAGES.PRESTATION_ECO_CONCEPTION}
-                  altTitle="sobre"
-                />{" "}
-                de l'informatique
-              </b>
-              .
-            </p>
-          </>
-        </Row>
-        <Row
           id={ACCUEIL_SECTIONS.INTRO_SITE.id}
           header={{
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_SITE.title,
+          }}
+          tags={["dev web", "full-stack", "indépendant", "chartreuse"]}
+        >
+          <>
+            <p>
+              Salut ! Je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
+              <b>site professionnel</b> de <b>développeur web freelance</b>.
+            </p>
+            <p>
+              Je travaille en <b>renfort d'équipe</b> sur des{" "}
+              <b>projets applicatifs</b> de toutes tailles dans des <b>PME</b>,{" "}
+              <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
+              <b>auto-entrepreneurs</b>.
+            </p>
+            <p></p>
+            <LinksMenu
+              links={[
+                {
+                  link: PAGES_DATA[PAGES.PRESTATION].path,
+                  label: "Ma prestation",
+                  color: COLORS.LAGOON,
+                },
+                {
+                  link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
+                  label: "Mes motivations",
+                },
+                {
+                  link: `/#${ACCUEIL_SECTIONS.STACK.id}`,
+                  label: "Ma stack",
+                },
+              ]}
+            />
+          </>
+        </Row>
+        <Row
+          id={ACCUEIL_SECTIONS.MOTIVATIONS.id}
+          header={{
+            level: 2,
+            content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
           }}
           backgroundColor={COLORS.SUN}
           tags={["optimisation", "sobriété"]}
@@ -197,10 +201,10 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           </>
         </Row>
         <Row
-          id={ACCUEIL_SECTIONS.INTRO_PAGE.id}
+          id={ACCUEIL_SECTIONS.STACK.id}
           header={{
             level: 2,
-            content: ACCUEIL_SECTIONS.INTRO_PAGE.title,
+            content: ACCUEIL_SECTIONS.STACK.title,
           }}
           tags={["parcours", "green-it", "typescript", "react"]}
         >
@@ -347,10 +351,10 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           </>
         </Row>
         <Row
-          id={ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}
+          id={ACCUEIL_SECTIONS.PROJETS_PERSOS.id}
           header={{
             level: 2,
-            content: ACCUEIL_SECTIONS.PROJETS_PERSONNELS.title,
+            content: ACCUEIL_SECTIONS.PROJETS_PERSOS.title,
           }}
           backgroundColor={COLORS.SUN}
           tags={["expériences", "ludique", "pratique"]}
@@ -365,7 +369,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               <b>sobre et pratique</b> :
             </p>
             <Carousel
-              id={`${ACCUEIL_SECTIONS.PROJETS_PERSONNELS.id}_carousel`}
+              id={`${ACCUEIL_SECTIONS.PROJETS_PERSOS.id}_carousel`}
               children={PERSONAL_PROJECTS}
               controlsColor={COLORS.LIGHT}
             />

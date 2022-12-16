@@ -21,7 +21,7 @@ function Quote({
 }: QuoteProps) {
   return (
     <blockquote
-      className={`blockquote my-5 bg-${backgroundColor} text-${
+      className={`blockquote my-5 me-5 bg-${backgroundColor} text-${
         [COLORS.MIST, COLORS.GROUND].includes(backgroundColor)
           ? COLORS.DARK
           : COLORS.LIGHT

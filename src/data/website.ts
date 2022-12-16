@@ -1,5 +1,5 @@
 const WEBSITE_DATA = {
-  TITLE: "RIMAROK.com, ingénierie web et éco-conception",
+  TITLE: "RIMAROK.com, dev web TS/JS freelance & éco-conception",
   BRAND_NAME: "RIMAROK.com",
 
   CALENDLY_LINK: "https://calendly.com/rimarok/30min",
