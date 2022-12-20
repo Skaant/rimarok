@@ -50,14 +50,17 @@ function MotifTemplate({
           <Row
             header={{
               level: 2,
-              content: "Étiquettes",
+              content: "Lieux",
             }}
             paddingY={2}
           >
             <>
               <div>
-                <BadgesList
-                  badges={locations.map((location) => ({
+                <LinksMenu
+                  links={locations.map((location) => ({
+                    link: `/motifs/lieux/${location
+                      .replace(/[\s']/g, "-")
+                      .toLowerCase()}`,
                     label: location,
                     color: COLORS.ABYSS,
                   }))}

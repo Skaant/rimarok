@@ -1,9 +1,14 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { COLORS } from "../data/colors";
 import { Location } from "../types/Location";
 import { Motif } from "../types/Motif";
 
 export default function MotifsGame({ motifs }: { motifs: Motif[] }) {
+  window &&
+    useEffect(() => {
+      if (!window.localStorage.getItem(`motifs-entité-discovered`))
+        window.localStorage.setItem(`motifs-entité-discovered`, "true");
+    });
   const motifsWithDiscovered = useMemo(
     () =>
       window
@@ -66,7 +71,7 @@ export default function MotifsGame({ motifs }: { motifs: Motif[] }) {
                 } px-3 py-1${!discovered ? " opacity-50" : ""}`}
                 href={
                   discovered
-                    ? `/motifs/locations/${name
+                    ? `/motifs/lieux/${name
                         .replace(/[\s']/g, "-")
                         .toLowerCase()}`
                     : undefined
@@ -79,7 +84,7 @@ export default function MotifsGame({ motifs }: { motifs: Motif[] }) {
           </div>
         </div>
         <div className="col-12 col-md-8 p-4">
-          <h3>Motifs</h3>
+          <h3 className="m-4">Motifs</h3>
           <div
             className="d-flex align-items-start mt-4"
             style={{ flexWrap: "wrap" }}
@@ -95,7 +100,9 @@ export default function MotifsGame({ motifs }: { motifs: Motif[] }) {
                     : undefined
                 }
               >
-                {(index || -1) > 0 ? `${index} ` : ""}
+                {(index === undefined ? -1 : index) > -1
+                  ? `${index === 0 ? "0" : index} `
+                  : ""}
                 {discovered ? name : "???"}
               </a>
             ))}
