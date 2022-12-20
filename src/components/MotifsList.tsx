@@ -1,12 +1,10 @@
 import * as React from "react";
-import { MOTIFS } from "../data/motifs";
-import { Link } from "gatsby";
 import { Motif } from "../types/Motif";
 import { COLORS } from "../data/colors";
 import BadgesList from "./BadgesList";
 import LinksMenu from "./LinksMenu";
 
-type MotifsListProps = { motifs: Motif[] };
+export type MotifsListProps = { motifs: Motif[] };
 
 function MotifsList({ motifs }: MotifsListProps) {
   return (

@@ -4,7 +4,8 @@ export type Motif = {
   name: string;
   slug: string;
   summary?: string;
-  tags?: string[];
+  locations?: string[];
   related?: string[];
   synonyms?: string[];
+  discovered?: boolean;
 };
