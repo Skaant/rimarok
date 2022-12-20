@@ -58,6 +58,15 @@ function IngenierieWeb({
             linkColor: COLORS.LIGHT,
           }}
           backgroundColor={COLORS.LAGOON}
+          linksMenu={{
+            links: [
+              {
+                link: PAGES_DATA[PAGES.MOTIFS].path,
+                label: "Retour à ma prestation",
+                color: COLORS.LIGHT,
+              },
+            ],
+          }}
         />
         <Row
           id={PRESTATION_INGENIERIE_WEB_SECTIONS.INTRO_PAGE.id}

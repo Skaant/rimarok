@@ -56,6 +56,15 @@ function EcoConception({
             linkColor: COLORS.LIGHT,
           }}
           backgroundColor={COLORS.SUN}
+          linksMenu={{
+            links: [
+              {
+                link: PAGES_DATA[PAGES.MOTIFS].path,
+                label: "Retour à ma prestation",
+                color: COLORS.LIGHT,
+              },
+            ],
+          }}
         />
         <Row
           id={PRESTATION_ECO_CONCEPTION_SECTIONS.INTRO_PAGE.id}

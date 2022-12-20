@@ -2,7 +2,6 @@ import React from "react";
 import PageHeader from "../../components/PageHeader";
 import InternalLink from "../../components/InternalLink";
 import Layout from "../../components/Layout";
-import MotifsList from "../../components/MotifsList";
 import Quote from "../../components/Quote";
 import Row from "../../components/Row";
 import { PAGES, PAGES_DATA } from "../../data/pages";
@@ -12,6 +11,7 @@ import { PRESTATION_SECTIONS } from "./prestation.template";
 import { COLORS } from "../../data/colors";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import MotifsApp from "../../components/MotifsApp";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -252,9 +252,9 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>Compte des motifs répertoriés* : {motifs.length}.</b>
             </p>
             <p className="small">* Pas forcément détaillés.</p>
-            <MotifsList motifs={motifs} />
           </>
         </Row>
+        <MotifsApp motifs={motifs} />
         <Row
           id={MOTIFS_SECTIONS.CONTRIBUER.id}
           header={{

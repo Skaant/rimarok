@@ -21,7 +21,7 @@ export type MotifTemplateProps = GlobalPageContext & {
 
 function MotifTemplate({
   pageContext: {
-    motif: { name, summary, related, tags, synonyms },
+    motif: { name, summary, related, locations, synonyms },
     blocks,
     ...globalPageContext
   },
@@ -34,23 +34,19 @@ function MotifTemplate({
           backgroundColor={COLORS.SUN}
           paddingY={5}
           {...(summary ? { subtitle: summary } : {})}
+          linksMenu={{
+            links: [
+              {
+                label: "Retour à la liste des motifs",
+                link: `${PAGES_DATA[PAGES.MOTIFS].path}#${
+                  MOTIFS_SECTIONS["LISTE"].id
+                }`,
+                color: COLORS.ABYSS,
+              },
+            ],
+          }}
         />
-        <Row paddingY={0}>
-          <>
-            <LinksMenu
-              links={[
-                {
-                  label: "Retour à la liste des motifs",
-                  link: `${PAGES_DATA[PAGES.MOTIFS].path}#${
-                    MOTIFS_SECTIONS["LISTE"].id
-                  }`,
-                  color: COLORS.LAGOON,
-                },
-              ]}
-            />
-          </>
-        </Row>
-        {tags && tags.length ? (
+        {locations && locations.length ? (
           <Row
             header={{
               level: 2,
@@ -61,8 +57,8 @@ function MotifTemplate({
             <>
               <div>
                 <BadgesList
-                  badges={tags.map((tag) => ({
-                    label: tag,
+                  badges={locations.map((location) => ({
+                    label: location,
                     color: COLORS.ABYSS,
                   }))}
                 />
