@@ -16,6 +16,8 @@ export type RowProps = {
   col?: string;
   colClassName?: string;
   children: ReactElement;
+  /** Display stars SVG under title/subtitle */
+  stars?: true;
 };
 
 function Row({
@@ -28,6 +30,7 @@ function Row({
   col = "col-12 col-sm-10 col-md-8 col-lg-6",
   colClassName,
   children,
+  stars,
 }: RowProps) {
   return (
     <div
@@ -36,6 +39,12 @@ function Row({
         typeof paddingY === "number" ? ` py-${paddingY}` : "py-5"
       }${className ? ` ${className}` : ""}`}
     >
+      {stars && (
+        <img
+          src="/small-stars.svg"
+          style={{ width: "124px", marginBottom: "36px" }}
+        />
+      )}
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
         {tags ? (
           <BadgesList
