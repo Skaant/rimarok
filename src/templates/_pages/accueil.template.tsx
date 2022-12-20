@@ -124,23 +124,23 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Je travaille en <b>renfort d'équipe</b> sur des{" "}
               <b>projets applicatifs</b> de toutes tailles dans des <b>PME</b>,{" "}
               <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
-              <b>auto-entrepreneurs</b>.
+              <b>auto-entrepreneurs</b>, depuis <b>plus de 8 ans</b>.
             </p>
-            <p></p>
             <LinksMenu
               links={[
                 {
                   link: PAGES_DATA[PAGES.PRESTATION].path,
                   label: "Ma prestation",
-                  color: COLORS.LAGOON,
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
                   label: "Mes motivations",
+                  color: COLORS.ABYSS,
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.STACK.id}`,
                   label: "Ma stack",
+                  color: COLORS.ABYSS,
                 },
               ]}
             />
@@ -153,13 +153,13 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
           }}
           backgroundColor={COLORS.SUN}
-          tags={["optimisation", "sobriété"]}
+          tags={["éthique", "optimisation", "sobriété"]}
         >
           <>
             <Quote displayHeading={4}>
               <>
-                Internet devrait servir à résoudre des problèmes, tout en
-                minimisant ceux qu'il peut créer.
+                Internet doit servir à résoudre des problèmatiques en
+                minimisanter ceux qu'il peut créer.
               </>
             </Quote>
             <p>
@@ -180,20 +180,41 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Pourtant,{" "}
               <b>cette croissance pourrait et devrait être endiguée</b>.
             </p>
-            <p>
-              Les programmes conservent des <b>performances optimisées</b>, sans
-              être plus coûteux.
-            </p>
+            <LinksMenu
+              links={[
+                {
+                  label: "Plus sur l'éco-conception",
+                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+                  color: COLORS.MIST,
+                },
+              ]}
+            />
+          </>
+        </Row>
+        <Row
+          header={{
+            level: 3,
+            content: "Nouvelles fonctionnalités et refactoring optimisés",
+          }}
+          backgroundColor={COLORS.SUN}
+          className={"pt-0"}
+          stars={true}
+        >
+          <>
             <p>
               Mon intervention en ingénierie web permet d'
               <b>étendre le périmètre fonctionnel de vos applications</b>, tout
               en <b>limitant les "prises de poids" logicielles</b>.
             </p>
+            <p>
+              Les programmes conservent des <b>performances optimisées</b>, sans
+              être plus coûteux.
+            </p>
             <LinksMenu
               links={[
                 {
-                  label: "Découvrir ma prestation",
-                  link: PAGES_DATA[PAGES.PRESTATION].path,
+                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+                  label: "Plus sur l'ingénierie web",
                   color: COLORS.MIST,
                 },
               ]}
