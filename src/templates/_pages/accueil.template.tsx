@@ -15,44 +15,47 @@ import getInternalLink from "../../helpers/getInternalLink";
 import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
 import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import "../../styles/pages/accueil.scss";
 
-const { title } = PAGES_DATA[PAGES.ACCUEIL];
+const PAGE = PAGES.ACCUEIL;
+const { title } = PAGES_DATA[PAGE];
 
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
     id: "developpement-web-full-stack-remote-grenoble-chambery-lyon",
     title:
-      "Développement web full-stack remote, ou sur Grenoble, Chambéry, Lyon",
+      "Développement web full-stack remote (visites possibles sur Grenoble, Chambéry, Lyon)",
   },
   MOTIVATIONS: {
-    id: "motivations-performances-et-economies",
-    title: "Mes motivations : performances et économies",
+    id: "motivations-performances-economies-ecologie",
+    title: "Mes motivations : performances, économies, écologie",
   },
   STACK: {
-    id: "react-node-database-typescript-php-ecologogiques",
-    title: "React, Node, Database, TypeScript, PHP ... écologiques",
+    id: "ma-stack-typescript-react-node-database-php-ecologogiques",
+    title: "Ma stack : TypeScript, React, Node, Database,  PHP ... écologiques",
   },
   PROJETS_PROFESSIONNELS: {
-    id: "projets-professionnels",
-    title: "Projets profesionnels",
+    id: "projets-professionnels-startups-pme-solopreneurs",
+    title: "Projets profesionnels (startups, PME, solopreneurs ...)",
   },
   CODE_PHILOSOPHIE: {
-    id: "le-code-une-philosophie",
-    title: "Le code, une philosophie",
+    id: "le-code-un-langage-fait-de-motifs-de-conception",
+    title: "Le code, un langage fait de motifs de conception",
   },
   PROJETS_PERSOS: {
-    id: "projets-persos",
-    title: "Projets persos",
+    id: "projets-personnels-passion-experimentation",
+    title: "Projets personnels : passion, expérimentation",
   },
   COLLABORATION: {
-    id: "vers-une-collaboration-future",
-    title: "Vers une collaboration future",
+    id: "travailler-ensemble-vers-une-collaboration-future",
+    title: "Travailler ensemble : vers une collaboration future",
   },
 };
 
 const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
   return (
     <Layout
+      id={PAGES_DATA[PAGE].id}
       head={{
         title,
       }}
@@ -60,18 +63,10 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
     >
       <>
         <div
-          className="d-flex justify-content-end bg-flower"
-          style={{
-            paddingTop: "6rem",
-            marginBottom: "-16vh",
-            maxHeight: "80vh",
-            paddingRight: "calc(-100px + 22vw)",
-          }}
+          id="top-illustration"
+          className="position-absolute w-100 d-flex justify-content-center"
         >
-          <img
-            src="/rimarok.svg"
-            style={{ maxHeight: "100%", maxWidth: "100%" }}
-          />
+          <img src="/rimarok.svg" />
         </div>
         <PageHeader
           title={
@@ -126,11 +121,16 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
               <b>auto-entrepreneurs</b>, depuis <b>plus de 8 ans</b>.
             </p>
+            <p>
+              Vous <b>cherchez quelqu'un</b> pour donner un <b>coup de boost</b>{" "}
+              à vos
+              <b>applications</b> ou <b>sites internet</b> ?
+            </p>
             <LinksMenu
               links={[
                 {
                   link: PAGES_DATA[PAGES.PRESTATION].path,
-                  label: "Ma prestation",
+                  label: "Découvrez ma prestation",
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
@@ -153,13 +153,14 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
           }}
           backgroundColor={COLORS.SUN}
-          tags={["éthique", "optimisation", "sobriété"]}
+          tags={["optimisation", "expertise", "éthique", "sobriété"]}
         >
           <>
-            <Quote displayHeading={4}>
+            <Quote displayHeading={5}>
               <>
-                Internet doit servir à résoudre des problèmatiques en
-                minimisanter ceux qu'il peut créer.
+                Je veux utiliser Internet pour créer des solutions à des
+                problématiques de la vie courante, tout en réduisant notre
+                impact négatif sur la planète.
               </>
             </Quote>
             <p>
@@ -194,11 +195,12 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
         <Row
           header={{
             level: 3,
-            content: "Nouvelles fonctionnalités et refactoring optimisés",
+            content: "Nouvelles fonctionnalités et/ou refactoring optimisés",
           }}
           backgroundColor={COLORS.SUN}
           className={"pt-0"}
           stars={true}
+          collapsible={true}
         >
           <>
             <p>

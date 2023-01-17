@@ -1,0 +1,13 @@
+#accueil {
+  #top-illustration {
+    top: 10vh;
+    height: 50vh;
+    > img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  #page-header > div {
+    margin-top: 42vh;
+  }
+}
