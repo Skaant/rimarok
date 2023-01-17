@@ -21,7 +21,7 @@ export type MotifTemplateProps = GlobalPageContext & {
 
 function MotifTemplate({
   pageContext: {
-    motif: { name, summary, related, locations, synonyms },
+    motif: { name, summary, related, synonyms },
     blocks,
     ...globalPageContext
   },
@@ -46,31 +46,6 @@ function MotifTemplate({
             ],
           }}
         />
-        {locations && locations.length ? (
-          <Row
-            header={{
-              level: 2,
-              content: "Lieux",
-            }}
-            paddingY={2}
-          >
-            <>
-              <div>
-                <LinksMenu
-                  links={locations.map((location) => ({
-                    link: `/motifs/lieux/${location
-                      .replace(/[\s']/g, "-")
-                      .toLowerCase()}`,
-                    label: location,
-                    color: COLORS.ABYSS,
-                  }))}
-                />
-              </div>
-            </>
-          </Row>
-        ) : (
-          ""
-        )}
         {synonyms && synonyms.length ? (
           <Row
             header={{
