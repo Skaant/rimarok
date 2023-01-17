@@ -18,6 +18,7 @@ export type RowProps = {
   children: ReactElement;
   /** Display stars SVG under title/subtitle */
   stars?: true;
+  collapsible?: true;
 };
 
 function Row({
@@ -31,6 +32,7 @@ function Row({
   colClassName,
   children,
   stars,
+  collapsible,
 }: RowProps) {
   return (
     <div
@@ -39,13 +41,14 @@ function Row({
         typeof paddingY === "number" ? ` py-${paddingY}` : "py-5"
       }${className ? ` ${className}` : ""}`}
     >
-      {stars && (
-        <img
-          src="/small-stars.svg"
-          style={{ width: "124px", marginBottom: "36px" }}
-        />
-      )}
       <div className={`${col}${colClassName ? ` ${colClassName}` : ""}`}>
+        {stars && (
+          <img
+            src="/small-stars.svg"
+            className="w-100"
+            style={{ maxHeight: "124px", marginBottom: "36px" }}
+          />
+        )}
         {tags ? (
           <BadgesList
             badges={tags.map((value) => ({
@@ -81,12 +84,12 @@ function Row({
             <h3
               className={`${header.className ? `${header.className} ` : ""}${
                 tags ? "mt-2 mb-3" : "my-3"
-              }`}
+              }${collapsible ? " collapser" : ""}`}
             >
               {header.content}
             </h3>
           ))}
-        {children}
+        {collapsible ? <div className="collapse">{children}</div> : children}
       </div>
     </div>
   );

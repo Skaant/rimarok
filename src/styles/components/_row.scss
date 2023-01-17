@@ -18,4 +18,19 @@
   > * {
     z-index: 2;
   }
+  h3.collapser {
+    cursor: pointer;
+    &:after {
+      margin-left: 16px;
+    }
+    &.showing:after {
+      content: "-";
+    }
+    &:not(.showing) {
+      margin-bottom: 48px !important;
+      &:after {
+        content: "+";
+      }
+    }
+  }
 }

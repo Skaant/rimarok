@@ -1,0 +1,12 @@
+.btn {
+  box-shadow: 0 0 5px $abyss;
+  &:hover {
+    box-shadow: 0 0 8px $lagoon;
+  }
+}
+.btn-flower {
+  color: $light;
+  &:hover {
+    color: $light;
+  }
+}
