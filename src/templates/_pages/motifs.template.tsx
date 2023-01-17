@@ -11,19 +11,27 @@ import { PRESTATION_SECTIONS } from "./prestation.template";
 import { COLORS } from "../../data/colors";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
-import MotifsApp from "../../components/MotifsApp";
+import MotifsList from "../../components/MotifsList";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
 
 export const MOTIFS_SECTIONS: { [key: string]: Section } = {
-  INTRO_PAGE: {
+  WHAT_IS: {
+    id: "qu-est-ce-qu-un-motif-de-conception",
+    title: "Qu'est-ce qu'un motif de conception ?",
+  },
+  HISTORY: {
+    id: "un-petit-historique-des-motifs",
+    title: "Un petit historique des motifs",
+  },
+  MOT_MOTIF: {
+    id: "autres-reflexions-sur-le-sens-du-mot-motif",
+    title: "Autres réflexions sur le sens du mot motif",
+  },
+  HARMONY: {
     id: "harmonie-du-code",
     title: "Trouver l'harmonie du code",
-  },
-  WHAT_IS: {
-    id: "qu-est-ce-qu-un-motif",
-    title: "Qu'est-ce qu'un motif ?",
   },
   HOW_TO: {
     id: "comment-utiliser-un-motif",
@@ -65,67 +73,93 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           />
         </div>
         <PageHeader
-          title={title}
-          subtitle="Un langage pour la conception"
+          title={"Design patterns, motifs de conception logiciels"}
+          subtitle="Un langage pour créer des applications efficientes"
           tableOfContents={{ contents: MOTIFS_SECTIONS }}
           backgroundColor={COLORS.LIGHT}
         />
-        <Row
-          id={MOTIFS_SECTIONS.INTRO_PAGE.id}
-          header={{
-            level: 2,
-            content: MOTIFS_SECTIONS.INTRO_PAGE.title,
-          }}
-          backgroundColor={COLORS.LAGOON}
-          tags={["qualité", "langage", "vivant", "optimisation"]}
-        >
-          <>
-            <p>
-              Christopher Alexander publie à la fin des années 70{" "}
-              <b>trois livres fondateurs</b> d'architecture,{" "}
-              <b>
-                qui résonnent à la perfection pour le développement logiciel
-              </b>
-              .
-            </p>
-            <p>
-              Dans <b>The Timeless Way of Building</b>, il tente de décrire{" "}
-              <b>la qualité</b> qui rend <b>les systèmes vivants harmonieux</b>{" "}
-              : leur capacité à <b>former un langage de motifs</b> cohérent.
-            </p>
-            <p>
-              <b>A Pattern Language</b> est un recueil de problèmes/solutions
-              génériques pour les villes et les bâtiments, mais que le Gang des
-              4 transforma pour des{" "}
-              <b>problématiques cette fois liées à l'informatique</b> dans{" "}
-              <b>
-                Design Patterns: Elements of Reusable Object-Oriented Software
-              </b>
-              .
-            </p>
-            <p>
-              Avec cette vision abstraite, bâtir{" "}
-              <b>une application web fonctionnelle et efficiente</b> c'est :{" "}
-            </p>
-            <p>
-              Solidement <b>identifier les motifs</b> qui la compose et les{" "}
-              <b>imbriquer de façon harmonieuse</b> pour{" "}
-              <b>optimiser les flux de données</b>.
-            </p>
-          </>
-        </Row>
         <Row
           id={MOTIFS_SECTIONS.WHAT_IS.id}
           header={{
             level: 2,
             content: MOTIFS_SECTIONS.WHAT_IS.title,
           }}
-          tags={["répétition", "probleme récurrent", "solution générique"]}
+          tags={["problématique récurrente", "solution générique"]}
+          backgroundColor={COLORS.SUN}
         >
           <>
             <p>
-              Avant de répondre à cette question, commençons par une première
-              citation, <b>et particularité des motifs</b> :
+              Les <i>design patterns</i>, ou <b>motifs de conception</b>, sont
+              un <b>outil conceptuel très important</b> pour le développement
+              web et l'ingénierie logicielle.
+            </p>
+            <p>
+              Ils adressent chacun une <b>problématique récurrente</b> qui
+              apparaît lorsque l'on <b>développe des projets informatiques</b>.
+            </p>
+            <p>
+              Après une description de l'<b>occurence du problème</b>, pour
+              permettre son identification, une{" "}
+              <b>solution générique, et efficace,</b> est proposée.
+            </p>
+            <p>
+              C'est un <b>mode d'emploi</b>, qui{" "}
+              <b>donne des super-pouvoirs dans le code</b>,{" "}
+              <b>
+                utilisables dans n'importe quel environnement de développement
+              </b>
+              .
+            </p>
+          </>
+        </Row>
+        <Row
+          id={MOTIFS_SECTIONS.HISTORY.id}
+          header={{
+            content: MOTIFS_SECTIONS.HISTORY.title,
+            level: 3,
+          }}
+          backgroundColor={COLORS.SUN}
+          paddingY={0}
+          stars={true}
+          collapsible={true}
+        >
+          <>
+            <p>
+              Tout commence dans les années 70 avec Cristopher Alexander et ses
+              deux livres : <i>The Timeless Way of Building</i>
+              et <i>A pattern langage</i>.
+            </p>
+            <p>Il y propose les principes suivants :</p>
+            <ul>
+              <li>
+                Ce qui rend harmonieux un bâtiment c'est sa capacité à agréger
+                des motifs et à les faire interagir entre eux,
+              </li>
+              <li>
+                Ces motifs peuvent être décrits et identifiés, pour former un
+                langage qu'on peut apprendre à parler pour que les "bâtiments
+                fonctionnent".
+              </li>
+            </ul>
+            <p className="display-6 my-4">
+              Or, ces deux principes s'appliquent aussi très bien au{" "}
+              <b>développement logiciel</b> !
+            </p>
+            <p>
+              C'est ce que constatent et formalisent <b>le Gang des 4</b> dans
+              leur livre
+              <i>
+                Design Patterns: Elements of Reusable Object-Oriented Software
+              </i>
+              .
+            </p>
+            <p>
+              Depuis c'est une source d'inspiration intarissable pour de
+              nombreux développeurs,
+              <b>
+                mais je pense qu'avec les motifs ont peut/doit aller plus loin
+                ...
+              </b>
             </p>
             <Quote
               displayHeading={5}
@@ -133,18 +167,36 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 author: "Cristopher Alexander",
                 source: "A Pattern Language",
               }}
-              backgroundColor={COLORS.SUN}
+              backgroundColor={COLORS.LIGHT}
             >
               <>
                 <p>
                   Each pattern describes a problem which occurs over and over
                   again in our environment, and then describes the core of the
-                  solution to that problem, in such a way that you can use this
-                  solution a million times over, without ever doing it the same
-                  way twice.
+                  solution to that problem [...].
                 </p>
               </>
             </Quote>
+          </>
+        </Row>
+        <Row
+          id={MOTIFS_SECTIONS.MOT_MOTIF.id}
+          header={{
+            content: MOTIFS_SECTIONS.MOT_MOTIF.title,
+            level: 3,
+          }}
+          backgroundColor={COLORS.SUN}
+          paddingY={0}
+          collapsible={true}
+        >
+          <>
+            <p>
+              La raison pour laquelle je préfère utiliser le terme
+              <b>motifs de conception</b> plutôt que
+              <b>patrons de conception</b>, car je trouve toute l'etymologie
+              plus pertinente pour ce phénomène qui survient en permanence
+              pendant le développement.
+            </p>
             <ul>
               <li>
                 Dans son sens courant, un motif est{" "}
@@ -177,7 +229,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>Ne remontez pas trop loin dans l'abstraction</b> ou vous
               pourriez perdre votre raison en tentant de résoudre l'équation :
             </p>
-            <Quote displayHeading={3} backgroundColor={COLORS.SUN}>
+            <Quote displayHeading={3} backgroundColor={COLORS.LIGHT}>
               <p>Le motif motif est une instance de lui-même.</p>
             </Quote>
           </>
@@ -188,7 +240,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             level: 2,
             content: MOTIFS_SECTIONS.HOW_TO.title,
           }}
-          backgroundColor={COLORS.FLOWER}
+          backgroundColor={COLORS.LIGHT}
           tags={["implémentation", "contexte", "description"]}
         >
           <>
@@ -254,7 +306,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             <p className="small">* Pas forcément détaillés.</p>
           </>
         </Row>
-        <MotifsApp motifs={motifs} />
+        <MotifsList motifs={motifs} />
         <Row
           id={MOTIFS_SECTIONS.CONTRIBUER.id}
           header={{
