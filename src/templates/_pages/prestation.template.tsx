@@ -30,25 +30,26 @@ import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.
 import getPageName from "../../helpers/getPageName";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import "../../styles/pages/prestation.scss";
 
-const PAGE_ID = PAGES.PRESTATION;
-const { title } = PAGES_DATA[PAGE_ID];
+const PAGE = PAGES.PRESTATION;
+const { title } = PAGES_DATA[PAGE];
 
 export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   SAVOIR_FAIRE_ET_TECHNOLOGIES: {
-    id: "savoir-faire-et-technologies",
-    title: "Savoir-faire et technologies",
+    id: "savoir-faire-et-expertise-full-stack",
+    title: "Savoir-faire et expertise full-stack",
   },
   INTERVENTION: {
-    id: "intervention-ponctuelle-ou-longue-duree",
-    title: "Intervention ponctuelle ou longue durée",
+    id: "interventions-ponctuelles-ou-longue-duree",
+    title: "Interventions ponctuelles ou longue durée",
   },
   PERSONNALITE: {
-    id: "une-personnalite-d'abord",
-    title: "Une personnalité d'abord",
+    id: "un-humain-avant-tout",
+    title: "Un humain avant tout",
   },
   CONTACT: {
-    id: "contact",
+    id: "entre-en-contact",
     title: "Entrer en contact",
   },
   TARIF: {
@@ -56,8 +57,8 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Un tarif unique",
   },
   REALISATIONS: {
-    id: "realisations",
-    title: "Mes réalisations",
+    id: "toutes-mes-realisations",
+    title: "Toutes mes réalisations",
   },
   /** CTA contact */
   TRAVAILLER_ENSEMBLE: {
@@ -74,6 +75,7 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
 function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
+      id={PAGES_DATA[PAGE].id}
       head={{
         title,
       }}
@@ -81,8 +83,10 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     >
       <>
         <PageHeader
-          title={title}
-          subtitle="Développer, connecter, améliorer"
+          title={
+            "Ma compétence de développement web full-stack au service de vos projets"
+          }
+          subtitle="Étendre, connecter, améliorer, c'est mon métier"
           backgroundColor={COLORS.LIGHT}
           linksMenu={{
             links: [
@@ -91,7 +95,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             ].map((page, index) => ({
               link: getInternalLink(page),
               label: getPageName(page),
-              color: index ? COLORS.SUN : COLORS.LAGOON,
+              color: index ? COLORS.ABYSS : COLORS.SUN,
             })),
           }}
           tableOfContents={{
@@ -104,12 +108,6 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             src="/prestation-right.svg"
             className="position-absolute"
             alt=""
-            style={{
-              bottom: 0,
-              zIndex: 1,
-              maxHeight: "80vh",
-              right: "10vw",
-            }}
           />
         </div>
         <div
@@ -140,18 +138,32 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           tags={["expertise", "full-stack", "typescript", "react"]}
         >
           <>
-            <p>
-              Full-stack signifie être à l'aise sur{" "}
+            <p className="display-6">
+              Depuis 2016, je suis{" "}
+              <b>embauché pour compléter des équipes de développement</b> ou des{" "}
+              <b>petites entreprises</b> sur des{" "}
+              <b>projets de sites et applications web</b> variés.
+            </p>
+            <p>Durant toutes ces missions, j'ai été amené :</p>
+            <ul>
+              <li>
+                à travailler sur des <b>ecosystèmes</b> et avec des{" "}
+                <b>frameworks variés</b>,
+              </li>
+              <li>
+                à développer en conséquence une <b>vision globale</b> et une
+                grande <b>adaptabilité</b>.
+              </li>
+            </ul>
+            <p className="display-6">
+              Pour moi, <b>être développeur web</b> aujourd'hui nécessite d'être
+              à l'aise sur{" "}
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
                 section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
                 lowercase={true}
               />{" "}
               : front, back et base de données.
-            </p>
-            <p>
-              Lors de mes missions, j'ai été amené à travailler sur des{" "}
-              <b>ecosystèmes</b> et avec des <b>frameworks variés</b>.
             </p>
             <p>
               <b>
