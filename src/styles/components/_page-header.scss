@@ -1,4 +1,4 @@
-#full-screen-title {
+#page-header {
   min-height: 60vh;
   h1 {
     margin-top: 12vh;
@@ -15,5 +15,16 @@
   [src="/small-stars.svg"] {
     max-height: 16vh;
     margin-top: 8vh;
+  }
+  &:not(.bg-light) {
+    h1 {
+      text-shadow: 0 0 8px $abyss;
+    }
+    .subtitle {
+      text-shadow: 0 0 5px $abyss;
+    }
+    ul {
+      text-shadow: 0 0 5px $abyss;
+    }
   }
 }
