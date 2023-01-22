@@ -8,7 +8,7 @@ import { GlobalPageContext } from "../../../types/GlobalPageContext";
 import { PAGES, PAGES_DATA } from "../../../data/pages";
 import { COLORS } from "../../../data/colors";
 
-const { title, description } = ARTICLES_DATA[7];
+const { title, description, date } = ARTICLES_DATA[7];
 
 function Article8({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
@@ -22,7 +22,7 @@ function Article8({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       <>
         <PageHeader
           title={title}
-          subtitle={""}
+          subtitle={date}
           linksMenu={{
             links: [
               {
