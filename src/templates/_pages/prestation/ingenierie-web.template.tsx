@@ -52,7 +52,7 @@ function IngenierieWeb({
       <>
         <PageHeader
           title={title}
-          subtitle="Ce que signifie être full-stack"
+          subtitle="L'ingénierie logicielle au service de votre métier"
           tableOfContents={{
             contents: PRESTATION_INGENIERIE_WEB_SECTIONS,
             linkColor: COLORS.LIGHT,

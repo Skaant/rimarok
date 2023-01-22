@@ -16,6 +16,8 @@ import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
 import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
 import "../../styles/pages/accueil.scss";
+import InternalLink from "../../components/InternalLink";
+import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.template";
 
 const PAGE = PAGES.ACCUEIL;
 const { title } = PAGES_DATA[PAGE];
@@ -23,8 +25,7 @@ const { title } = PAGES_DATA[PAGE];
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
     id: "developpement-web-full-stack-remote-grenoble-chambery-lyon",
-    title:
-      "Développement web full-stack remote (visites possibles sur Grenoble, Chambéry, Lyon)",
+    title: "Développement web full-stack remote / Grenoble / Chambéry / Lyon",
   },
   MOTIVATIONS: {
     id: "motivations-performances-economies-ecologie",
@@ -233,15 +234,6 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
         >
           <>
             <p>
-              Diplomé d'un <b>Master MIAGE option énergie</b> en 2016, j'exerce
-              depuis l'activité de <b>développeur web en tant qu'indépendant</b>
-              .
-            </p>
-            <p>
-              C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
-              <b>Green-IT</b>.
-            </p>
-            <p>
               Spécialisé dans la <b>full-stack JavaScript</b>{" "}
               <i>
                 (TypeScript, Node, React, Express, Jest, Nest, Vue, Angular ...)
@@ -250,18 +242,32 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               <b>bonnes pratiques d'éco-conception logicielle</b>.
             </p>
             <p>
-              Au croisement de ces deux sujets apparaît une{" "}
-              <b>puissante efficience</b>, qui <b>accélère les applications</b>{" "}
-              et <b>réduit les dépenses</b> .
+              C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
+              <b>Green-IT</b>.
+            </p>
+            <p>
+              Diplomé d'un{" "}
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                section={PRESTATION_INGENIERIE_WEB_SECTIONS.UNIVERSITE}
+                altTitle="Master MIAGE option énergie"
+              />{" "}
+              en 2016, j'exerce depuis l'activité de{" "}
+              <b>développeur web en tant qu'indépendant</b>.
+            </p>
+            <p>
+              Au croisement de l'ingénierie et de l'éco-conception logicielles
+              apparaît une <b>puissante efficience</b>, qui{" "}
+              <b>accélère les applications</b> et <b>réduit les dépenses</b> .
             </p>
             <LinksMenu
               links={[
                 {
-                  label: "Expertise full-stack JavaScript",
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
                   link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
                 },
                 {
-                  label: "Bonnes pratiques d'éco-conception",
+                  label: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].title,
                   link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
                 },
               ]}
@@ -344,7 +350,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               flux, ses entités, ses <b>noeuds à résoudre</b>.
             </p>
             <p>
-              <b>Les motifs</b>, qui sont partout dans le code,
+              <b>Les motifs (patterns)</b>, qui sont partout dans le code,{" "}
               <b>interagissent ensemble en permanence</b> pour former un
               organisme <b>évolutif</b>.
             </p>

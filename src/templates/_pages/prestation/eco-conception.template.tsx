@@ -77,8 +77,14 @@ function EcoConception({
         >
           <>
             <Quote displayHeading={1} backgroundColor={COLORS.SUN}>
-              <p>- = +</p>
+              <>
+                <p>- = + ?</p>
+                <p>Moins égal plus !</p>
+              </>
             </Quote>
+            <p>
+              <i>On peut dire aussi :</i> <b>moins égal mieux</b>.
+            </p>
             <p>
               "Éco" c'est à la fois <b>économique et écologique</b>.
             </p>
@@ -88,9 +94,9 @@ function EcoConception({
             </p>
             <p>
               <b>Moins de fonctionnalités inutiles</b>, moins de bugs, moins de
-              coûts,
-              <b>plus d'efficience</b>, plus de satisfaction utilisateur, plus
-              de revenus.
+              coûts car <b>plus d'efficience</b> (résultat obtenu pour une
+              quantité d'énergie), plus de rapidité et plus de satisfaction
+              utilisateur, plus de revenus.
             </p>
             <p>
               L'éco-conception permet de{" "}
@@ -112,7 +118,7 @@ function EcoConception({
                 interrogation régulière de l'utilité de chacune des
                 fonctionnalités
               </b>{" "}
-              en fonction de leurs coûts.
+              par rapport à leurs coûts.
             </p>
           </>
         </Row>
@@ -168,17 +174,18 @@ function EcoConception({
               <b>chasse aux fonctionnalités superflues</b>.
             </p>
             <p>
-              Rien n'est moins cher et plus écologique que la
-              <b>fonctionnalité sans ROI</b> qu'on n'a pas développé.
+              Rien n'est moins cher et plus écologique que la{" "}
+              <b>à faible ROI</b> qu'on n'a pas développé.
             </p>
             <p>
               Le second axe de travail est{" "}
-              <b>l'inhibition des facteurs exponentiels</b>.
+              <b>l'inhibition des facteurs exponentiels</b> ( c'est à dire
+              éviter la multiplication de calculs ).
             </p>
             <p>
-              Le troisième axe est <b>la politique de gestion de données</b>, et
-              comment éviter de <b>remplir</b> ses (couteux et précieux){" "}
-              <b>espaces de stockage avec des déchets</b>.
+              Le troisième axe est <b>la politique de gestion de données</b> en
+              évitant de remplir de coûteux espaces de stockage avec des
+              déchets.
             </p>
             <p>
               En conclusion, le mieux c'est encore de{" "}
@@ -206,7 +213,7 @@ function EcoConception({
               <a href="https://greenit.fr/" target="_blank">
                 Green-IT
               </a>{" "}
-              présente des conseils activables pour <b>accélerer son site</b> et
+              présente des conseils activables pour <b>accélerer son site</b> et{" "}
               <b>réduire (entre autres) son empreinte carbone</b>.
             </p>
             <p>

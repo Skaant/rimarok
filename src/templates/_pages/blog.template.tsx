@@ -48,9 +48,8 @@ export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
         >
           <>
             <p>
-              Avec l'expérience viennent la <b>connaissance des obstacles</b> et
-              les
-              <b>leviers de réussite</b>.
+              Avec l'expérience viennent la{" "}
+              <b>connaissance des obstacles et des leviers de réussite</b>.
             </p>
             <p>
               Partager mes reflexions c'est un moyen de{" "}
