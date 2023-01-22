@@ -30,14 +30,14 @@ export const PAGES_DATA: { [page in PAGES]: PageData } = {
     title: "Développement web freelance",
   },
   PRESTATION_INGENIERIE_WEB: {
-    id: "ingenierie-logicielle",
-    path: "/prestation/ingenierie-logicielle",
-    title: "Ingénierie logicielle",
+    id: "expertise-fullstack-javascript",
+    path: "/prestation/expertise-fullstack-javascript",
+    title: "Expertise full-stack JavaScript",
   },
   PRESTATION_ECO_CONCEPTION: {
-    id: "eco-conception-logicielle",
-    path: "/prestation/eco-conception-logicielle",
-    title: "Éco-conception logicielle",
+    id: "eco-conception-logicielle-et-sobriete-numerique",
+    path: "/prestation/eco-conception-logicielle-et-sobriete-numerique",
+    title: "Éco-conception logicielle et sobriété numérique",
   },
   MOTIFS: {
     id: "motifs-de-conception",
