@@ -16,7 +16,7 @@ function TableOfContents({
   linkClassName,
 }: TableOfContentsProps) {
   return (
-    <ul className="table-of-contents">
+    <ul className="table-of-contents ps-0">
       {Object.values(contents).map(({ id, title, fontSlab }) => (
         <li>
           <Link
