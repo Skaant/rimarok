@@ -9,7 +9,7 @@ function MediartisProject() {
       title="Mobilis Pro / Mediartis"
       scope="full-stack"
       tags={["nest", "typescript", "jest", "e2e", "vue", "bootstrap"]}
-      date="Juin 2021 - Décembre 2022"
+      date="Juin 2021 - Janvier 2023"
     >
       <>
         <p>
