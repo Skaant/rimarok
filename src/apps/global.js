@@ -4,14 +4,19 @@ import "bootstrap/js/dist/carousel";
 import "./backToTop";
 import "./contactGuards";
 
-[...document.querySelectorAll('.collapser')]
-  .forEach(collapser => {
-    const target = collapser.parentElement.querySelector('.collapse')
-    collapser.addEventListener(
-      'click',
-      () => {
-        target.classList.toggle('show')
-        collapser.classList.toggle('showing')
-      }
-    )
-  })
+function initCollapses() {
+  [...document.querySelectorAll(".collapser")].forEach((collapser) => {
+    const target = collapser.parentElement.querySelector(".collapse");
+    collapser.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      target.classList.toggle("show");
+      collapser.classList.toggle("showing");
+    });
+  });
+}
+
+if (document.readyState === "complete") {
+  initCollapses();
+} else {
+  window.addEventListener("load", () => initCollapses());
+}
