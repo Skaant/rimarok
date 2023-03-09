@@ -147,7 +147,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             </p>
             <p>
               C'est ce que constatent et formalisent <b>le Gang des 4</b> dans
-              leur livre
+              leur livre{" "}
               <i>
                 Design Patterns: Elements of Reusable Object-Oriented Software
               </i>
@@ -191,8 +191,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
         >
           <>
             <p>
-              La raison pour laquelle je préfère utiliser le terme
-              <b>motifs de conception</b> plutôt que
+              La raison pour laquelle je préfère utiliser le terme{" "}
+              <b>motifs de conception</b> plutôt que{" "}
               <b>patrons de conception</b>, car je trouve toute l'etymologie
               plus pertinente pour ce phénomène qui survient en permanence
               pendant le développement.

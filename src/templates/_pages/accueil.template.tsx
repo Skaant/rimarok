@@ -124,8 +124,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             </p>
             <p>
               Vous <b>cherchez quelqu'un</b> pour donner un <b>coup de boost</b>{" "}
-              à vos
-              <b>applications</b> ou <b>sites internet</b> ?
+              à vos <b>applications</b> ou <b>sites internet</b> ?
             </p>
             <LinksMenu
               links={[
@@ -160,8 +159,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <Quote displayHeading={5}>
               <>
                 Je veux utiliser Internet pour créer des solutions à des
-                problématiques de la vie courante, tout en réduisant notre
-                impact négatif sur la planète.
+                problématiques de la vie courante, tout en réduisant ses impacts
+                négatif sur la planète.
               </>
             </Quote>
             <p>
@@ -175,12 +174,15 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 l'ajout de nouvelles fonctionnalités multiplie la consommation
                 de ressources
               </b>{" "}
-              (y compris humaines) au lieu de le réduire par{" "}
-              <b>généralisation et industrialisation.</b>
+              (y compris humaines).
             </p>
             <p>
               Pourtant,{" "}
               <b>cette croissance pourrait et devrait être endiguée</b>.
+            </p>
+            <p>
+              C'est tout l'enjeu de l'<b>éco-conception</b> et de la sobriété
+              numérique.
             </p>
             <LinksMenu
               links={[

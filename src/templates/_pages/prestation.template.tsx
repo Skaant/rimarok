@@ -83,10 +83,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     >
       <>
         <PageHeader
-          title={
-            "Ma compétence de développement web full-stack au service de vos projets"
-          }
-          subtitle="Étendre, connecter, améliorer, c'est mon métier"
+          title={"Mon expertise en développement web full-stack"}
+          subtitle="Étendre. Connecter. Améliorer."
           backgroundColor={COLORS.LIGHT}
           linksMenu={{
             links: [
