@@ -59,7 +59,7 @@ function EcoConception({
           linksMenu={{
             links: [
               {
-                link: PAGES_DATA[PAGES.MOTIFS].path,
+                link: PAGES_DATA[PAGES.PRESTATION].path,
                 label: "Retour à ma prestation",
                 color: COLORS.LIGHT,
               },

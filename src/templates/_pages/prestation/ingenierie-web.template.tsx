@@ -52,7 +52,7 @@ function IngenierieWeb({
       <>
         <PageHeader
           title={title}
-          subtitle="L'ingénierie logicielle au service de votre métier"
+          subtitle="L'ingénierie logicielle pour répondre à vos problématiques métier"
           tableOfContents={{
             contents: PRESTATION_INGENIERIE_WEB_SECTIONS,
             linkColor: COLORS.LIGHT,
@@ -61,7 +61,7 @@ function IngenierieWeb({
           linksMenu={{
             links: [
               {
-                link: PAGES_DATA[PAGES.MOTIFS].path,
+                link: PAGES_DATA[PAGES.PRESTATION].path,
                 label: "Retour à ma prestation",
                 color: COLORS.LIGHT,
               },
