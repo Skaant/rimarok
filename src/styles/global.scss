@@ -31,6 +31,7 @@
 @import "../../node_modules/bootstrap/scss/card";
 @import "../../node_modules/bootstrap/scss/carousel";
 @import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/tables";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 // @Skaant: first we import custom utilities overrides
@@ -46,10 +47,6 @@
 @import "./components/project";
 @import "./components/btn";
 
-body {
-  font-family: $font-rubik;
-}
-
 @font-face {
   font-family: $font-rubik;
   src: url("../static/fonts/Rubik-Regular.ttf");
@@ -59,13 +56,23 @@ body {
   font-family: $font-rubik;
 }
 
-@font-face {
-  font-family: $font-slab;
-  src: url("../static/fonts/RobotoSlab-Light.ttf");
+body {
+  font-family: $font-rubik;
 }
 
-.position-initial {
-  position: initial !important;
+@font-face {
+  font-family: $font-rubik-bold;
+  src: url("../static/fonts/Rubik-Bold.ttf");
+}
+
+b {
+  font-weight: initial !important;
+  font-family: $font-rubik-bold;
+}
+
+@font-face {
+  font-family: $font-slab;
+  src: url("../static/fonts/RobotoSlab-Black.ttf");
 }
 
 .font-slab {
@@ -83,8 +90,13 @@ h6 {
 
 a {
   text-decoration: none;
+  font-family: $font-rubik-bold;
 }
 
 .navbar {
   z-index: 5;
+}
+
+.position-initial {
+  position: initial !important;
 }
