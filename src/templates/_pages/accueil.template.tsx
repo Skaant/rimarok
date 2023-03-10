@@ -32,12 +32,13 @@ export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
     title: "Mes motivations : performances, économies, écologie",
   },
   STACK: {
-    id: "ma-stack-typescript-react-node-database-php-ecologogiques",
-    title: "Ma stack : TypeScript, React, Node, Database,  PHP ... écologiques",
+    id: "typescript-react-node-database-php-ecologogiques",
+    title: "TypeScript, React, Node, Database,  PHP ... écologiques",
   },
   PROJETS_PROFESSIONNELS: {
-    id: "projets-professionnels-startups-pme-solopreneurs",
-    title: "Projets profesionnels (startups, PME, solopreneurs ...)",
+    id: "projets-professionnels-startups-pme-solopreneurs-institutions-publiques",
+    title:
+      "Projets profesionnels (startups, PME, solopreneurs, institutions publiques)",
   },
   CODE_PHILOSOPHIE: {
     id: "le-code-un-langage-fait-de-motifs-de-conception",
@@ -116,11 +117,11 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Salut ! Je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
               <b>site professionnel</b> de <b>développeur web freelance</b>.
             </p>
-            <p>
+            <p className="display-6">
               Je travaille en <b>renfort d'équipe</b> sur des{" "}
               <b>projets applicatifs</b> de toutes tailles dans des <b>PME</b>,{" "}
               <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
-              <b>auto-entrepreneurs</b>, depuis <b>plus de 8 ans</b>.
+              <b>auto-entrepreneurs</b>, depuis <b>plus de 7 ans</b>.
             </p>
             <p>
               Vous <b>cherchez quelqu'un</b> pour donner un <b>coup de boost</b>{" "}
@@ -160,7 +161,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               <>
                 Je veux utiliser Internet pour créer des solutions à des
                 problématiques de la vie courante, tout en réduisant ses impacts
-                négatif sur la planète.
+                négatifs sur la planète.
               </>
             </Quote>
             <p>
@@ -176,9 +177,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               </b>{" "}
               (y compris humaines).
             </p>
-            <p>
-              Pourtant,{" "}
-              <b>cette croissance pourrait et devrait être endiguée</b>.
+            <p className="display-6">
+              Pourtant, <b>la croissance de ces coûts devrait être endiguée</b>.
             </p>
             <p>
               C'est tout l'enjeu de l'<b>éco-conception</b> et de la sobriété
@@ -257,7 +257,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               en 2016, j'exerce depuis l'activité de{" "}
               <b>développeur web en tant qu'indépendant</b>.
             </p>
-            <p>
+            <p className="display-6">
               Au croisement de l'ingénierie et de l'éco-conception logicielles
               apparaît une <b>puissante efficience</b>, qui{" "}
               <b>accélère les applications</b> et <b>réduit les dépenses</b> .
@@ -291,7 +291,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               C'est la <b>diversité des contextes</b> qui dirige ma carrière
               professionnelle.
             </p>
-            <p>
+            <p className="display-6">
               Mais le fil rouge est toujours les <b>technos JS et full-stack</b>
               .
             </p>
@@ -351,17 +351,18 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Pour moi, une application est <b>un ecosystème</b> : avec ses
               flux, ses entités, ses <b>noeuds à résoudre</b>.
             </p>
-            <p>
-              <b>Les motifs (patterns)</b>, qui sont partout dans le code,{" "}
-              <b>interagissent ensemble en permanence</b> pour former un
-              organisme <b>évolutif</b>.
+            <p className="display-6">
+              <b>Les motifs de conception (design patterns)</b>, qui sont
+              partout dans le code, <b>interagissent ensemble en permanence</b>{" "}
+              pour former un organisme <b>évolutif</b>.
             </p>
             <p>
               Une <b>bonne conception</b> devient alors juste un{" "}
               <i>langage de motifs</i> qui fonctionne.
             </p>
             <p>
-              J'aime avoir des <b>idées</b> autour du développement web.
+              J'aime aussi beaucoup{" "}
+              <b>réfléchir et me questionner autour du développement web</b>.
             </p>
             <p>
               En plus d'un portefeuille de compétences, j'apporte une{" "}
@@ -393,7 +394,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           <>
             <p>
               Je développe régulièrement des <b>outils web</b> pour{" "}
-              <b>répondre à des problématiques pratiques</b>.
+              <b>répondre à des problématiques concrètes</b> et{" "}
+              <b>découvrir de nouvelles technos</b>.
             </p>
             <p>
               Découvrez quelques POC, exemples édifiants de conception{" "}
@@ -407,7 +409,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <p>
               <b>Coder est un jeu.</b>
             </p>
-            <p>
+            <p className="display-6">
               Allons-nous <b>jouer ensemble</b> ?
             </p>
           </>
@@ -436,7 +438,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               J'aime les <b>projets qui ont du sens</b>, à la technique bien
               huilée et où ma <b>créativité</b> peut s'exprimer.
             </p>
-            <p>
+            <p className="display-6">
               Vous pourriez aimer mon <b>expertise</b> sur la stack JavaScript
               moderne, mon <b>esprit analytique</b> et ma <b>bonne humeur</b>.
             </p>

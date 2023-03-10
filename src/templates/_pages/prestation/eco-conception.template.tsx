@@ -78,13 +78,9 @@ function EcoConception({
           <>
             <Quote displayHeading={1} backgroundColor={COLORS.SUN}>
               <>
-                <p>- = + ?</p>
-                <p>Moins égal plus !</p>
+                <p>Moins égal mieux !</p>
               </>
             </Quote>
-            <p>
-              <i>On peut dire aussi :</i> <b>moins égal mieux</b>.
-            </p>
             <p>
               "Éco" c'est à la fois <b>économique et écologique</b>.
             </p>
@@ -106,10 +102,10 @@ function EcoConception({
               </b>
               .
             </p>
-            <p>
+            <p className="display-6">
               La démarche repose sur un ensemble de{" "}
               <a
-                href={`#${PRESTATION_ECO_CONCEPTION_SECTIONS.BONNES_PRATIQUES}`}
+                href={`#${PRESTATION_ECO_CONCEPTION_SECTIONS.BONNES_PRATIQUES.id}`}
               >
                 bonnes pratiques
               </a>
@@ -139,10 +135,10 @@ function EcoConception({
               Je pense que ce sont{" "}
               <b>deux axes qui peuvent soigner notre société</b>.
             </p>
-            <p>
+            <p className="display-6">
               À l'échelle du <b>développement web</b>, j'aspire à{" "}
-              <b>générer plus d'impacts positifs</b> que de pollution et de
-              violence.
+              <b>générer plus d'impacts positifs</b> que de pollution,
+              d'inégalités et de violence.
             </p>
             <p>
               L'éco-conception me permet d'
@@ -168,19 +164,20 @@ function EcoConception({
           ]}
         >
           <>
-            <p>
-              L'angle d'attaque majeur pour{" "}
-              <b>réduire les besoins et les coûts</b> d'une application est la{" "}
-              <b>chasse aux fonctionnalités superflues</b>.
+            <p className="display-6">
+              Pour <b>réduire les besoins et les coûts</b> d'une application est
+              la <b>chasse aux fonctionnalités superflues</b>.
             </p>
             <p>
-              Rien n'est moins cher et plus écologique que la{" "}
-              <b>à faible ROI</b> qu'on n'a pas développé.
+              <b>
+                Rien n'est moins cher et plus écologique que la fonctionnalité à
+                faible ROI qu'on n'a pas développé.
+              </b>
             </p>
             <p>
               Le second axe de travail est{" "}
-              <b>l'inhibition des facteurs exponentiels</b> ( c'est à dire
-              éviter la multiplication de calculs ).
+              <b>l'inhibition des facteurs exponentiels</b>,c'est à dire éviter
+              la multiplication de calculs.
             </p>
             <p>
               Le troisième axe est <b>la politique de gestion de données</b> en
@@ -188,8 +185,11 @@ function EcoConception({
               déchets.
             </p>
             <p>
-              En conclusion, le mieux c'est encore de{" "}
-              <b>développer uniquement ce dont les métiers ont besoin</b>.
+              En conclusion, le mieux c'est de{" "}
+              <b>
+                traiter et développer uniquement ce dont les métiers ont besoin
+              </b>
+              .
             </p>
           </>
         </Row>
@@ -216,7 +216,7 @@ function EcoConception({
               présente des conseils activables pour <b>accélerer son site</b> et{" "}
               <b>réduire (entre autres) son empreinte carbone</b>.
             </p>
-            <p>
+            <p className="display-6">
               J'ai eu l'occasion de <b>mettre en application</b> un certain
               nombre de ces bonnes pratiques{" "}
               <b>dans des contextes profesionnels</b> et personnels.
@@ -224,7 +224,7 @@ function EcoConception({
             <p>
               Il reste aujourd'hui relativement{" "}
               <b>
-                rdu de pouvoir mesurer avec exhaustivités les performances et
+                ardu de pouvoir mesurer avec exhaustivités les performances et
                 dépenses
               </b>{" "}
               holistiques d'une application.
@@ -254,23 +254,22 @@ function EcoConception({
           tags={["jamstack", "site statique", "gatsby", "minimalisme"]}
         >
           <>
-            <p>
+            <p className="display-6">
               <Link to="/">RIMAROK.com</Link> s'inscrit totalement dans la
               démarche <b>Jamstack</b>, une approche pragmatique de l'accès au
               contenu.
             </p>
             <p>
-              <b>Fichiers statiques</b> générés grâce au{" "}
-              <b>framework React Gatsby</b>, le site est{" "}
-              <b>construit et déployé automatiquement</b>, seulement lors d'un
-              merge sur la branche principale.
+              <b>Site statique</b> généré grâce au <b>framework React Gatsby</b>
+              , RIMAROK.com est <b>construit et déployé automatiquement</b>,
+              seulement lors d'un merge sur la branche principale.
             </p>
             <p>
               Je <b>réduis mes dépendences</b> (ex: build conditionnel de
               Bootstrap) et j'
               <b>évite les fichiers volumineux</b>.
             </p>
-            <p>
+            <p className="display-6">
               Extrêment <b>économique à requêter</b>, j'
               <b>optimise ainsi mes dépenses</b>.
             </p>

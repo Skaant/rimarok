@@ -153,7 +153,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 grande <b>adaptabilité</b>.
               </li>
             </ul>
-            <p className="display-6">
+            <p>
               Pour moi, <b>être développeur web</b> aujourd'hui nécessite d'être
               à l'aise sur{" "}
               <InternalLink
@@ -163,11 +163,9 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />{" "}
               : front, back et base de données.
             </p>
-            <p>
-              <b>
-                mon expertise se situe principalement sur les technos suivantes
-              </b>{" "}
-              :
+            <p className="display-6">
+              Aujourd'hui,{" "}
+              <b>mon expertise se focalise sur les technos suivantes</b> :
             </p>
             <ul>
               <li>
@@ -175,6 +173,9 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               </li>
               <li>
                 <b>React</b>,
+              </li>
+              <li>
+                <b>Gatsby</b>,
               </li>
               <li>
                 SCSS / <b>Bootstrap</b>,
@@ -185,21 +186,33 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 <b>GitHub</b>.
               </li>
             </ul>
-            <p>J'ai également une certaine expérience sur :</p>
+            <p>
+              J'ai également une <b>certaine expérience</b> sur :
+            </p>
             <ul>
               <li>Vue / Angular,</li>
               <li>Nest,</li>
               <li>PHP / Wordpress.</li>
             </ul>
             <p>
-              Tout ceci ne serait pas grand chose sans{" "}
-              <b>une compréhension profonde</b> de ce qu'est l'
+              Mais tout ceci ne serait pas grand chose sans{" "}
+              <b>une compréhension profonde</b> de ce qu'est la{" "}
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
+                altTitle="full-stack TypeScript"
                 lowercase={true}
               />
               .
             </p>
+            <LinksMenu
+              links={[
+                {
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
+                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+                  color: COLORS.LIGHT,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
@@ -222,13 +235,17 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               installer un script d'automatisation <b>m'intéressent aussi</b>.
             </p>
             <p>
-              <b>Le refactoring et les tests</b> m'attirent et j'aime{" "}
+              <b>Le refactoring et les tests</b> m'attirent car j'aime{" "}
               <b>améliorer les choses</b>.
             </p>
-            <p>
-              J'interviens en <b>100% télétravail</b>, jusqu'à{" "}
+            <p className="display-6">
+              J'interviens en <b>100% télétravail*</b>, jusqu'à{" "}
               <b>4 jours/semaine</b> sur des projets{" "}
               <b>front, back et full-stack JavaScript</b>.
+            </p>
+            <p className="small">
+              *Possibilité de déplacements <b>ponctuels et rémunérés</b> à
+              Grenoble, Chambéry et Lyon.
             </p>
             <p>
               En parallèle de mes compétences techniques, je suis amical et
@@ -258,12 +275,12 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           backgroundColor={COLORS.SUN}
         >
           <>
-            <p>
+            <p className="display-6">
               Je suis <b>un individu</b>, pas juste un portefeuille de
               compétences.
             </p>
             <p>
-              En plus de mes bientôt <b>huit années de pratique</b>{" "}
+              En plus de mes bientôt <b>huit années de pratiques</b>{" "}
               <InternalLink
                 page={PAGES.ACCUEIL}
                 section={ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS}
@@ -276,8 +293,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 altTitle="personnelle"
               />
               , c'est ma <b>curiosité</b> et ma <b>créativité</b> qui ont
-              faconnées mon <b>expertise</b>
-              dans le domaine du <b>développement web</b>.
+              dirigées mon <b>expertise dans le domaine du développement web</b>
+              .
             </p>
             <p>
               J'aime <b>questionner et comprendre</b>, aborder les
@@ -293,7 +310,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />
               .
             </p>
-            <p>
+            <p className="display-6">
               Enfin, c'est dans des <b>équipes bienveillantes et dynamiques</b>{" "}
               que je m'épanouis le plus.
             </p>
@@ -430,7 +447,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>processus qui m'accomplit</b> et qu'il <b>me connecte</b> aux
               autres.
             </p>
-            <p>
+            <p className="display-6">
               <b>Votre environnement est sain</b>, vous avez juste la bonne dose
               de stress, vous prenez des vacances et votre projet n'était pas à
               livrer hier ?
@@ -453,8 +470,11 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <>
             <p>
               Lorsque je <b>pratique longtemps</b> un sujet,{" "}
-              <b>des motifs apparaissent</b> et pratiquer devient{" "}
-              <i>un langage de motifs</i>.
+              <b>des motifs apparaissent</b>.
+            </p>
+            <p className="display-6">
+              Développer est devenu pour moi comme parler un{" "}
+              <b>langage de motifs</b>.
             </p>
             <p>
               <b>En codant, des idées</b>, activables ou juste philosophiques,{" "}

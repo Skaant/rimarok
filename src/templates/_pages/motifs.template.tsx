@@ -73,7 +73,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           />
         </div>
         <PageHeader
-          title={"Design patterns, motifs de conception logiciels"}
+          title={"Design patterns, motifs de conception logicielle"}
           subtitle="Un langage pour créer des applications efficientes"
           tableOfContents={{ contents: MOTIFS_SECTIONS }}
           backgroundColor={COLORS.LIGHT}
@@ -97,11 +97,27 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               Ils adressent chacun une <b>problématique récurrente</b> qui
               apparaît lorsque l'on <b>développe des projets informatiques</b>.
             </p>
-            <p>
-              Après une description de l'<b>occurence du problème</b>, pour
-              permettre son identification, une{" "}
-              <b>solution générique, et efficace,</b> est proposée.
+            <p className="display-6">
+              Dans le sens qui nous intéresse, un motif de conception consiste
+              en une <b>description du problème</b>, permettant de l'identifier,
+              une <b>solution générique et efficace</b> est présentée.
             </p>
+            <Quote
+              displayHeading={5}
+              legend={{
+                author: "Cristopher Alexander",
+                source: "A Pattern Language",
+              }}
+              backgroundColor={COLORS.LIGHT}
+            >
+              <>
+                <p>
+                  Each pattern describes a problem which occurs over and over
+                  again in our environment, and then describes the core of the
+                  solution to that problem [...].
+                </p>
+              </>
+            </Quote>
             <p>
               C'est un <b>mode d'emploi</b>, qui{" "}
               <b>donne des super-pouvoirs dans le code</b>,{" "}
@@ -120,63 +136,60 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           }}
           backgroundColor={COLORS.SUN}
           paddingY={0}
-          stars={true}
           collapsible={true}
         >
           <>
             <p>
-              Tout commence dans les années 70 avec Cristopher Alexander et ses
-              deux livres : <i>The Timeless Way of Building</i>
-              et <i>A pattern langage</i>.
+              Tout commence dans les années 70{" "}
+              <b>avec Cristopher Alexander et ses deux livres</b> :{" "}
+              <i>The Timeless Way of Building</i> et <i>A pattern langage</i>.
             </p>
             <p>Il y propose les principes suivants :</p>
             <ul>
               <li>
-                Ce qui rend harmonieux un bâtiment c'est sa capacité à agréger
-                des motifs et à les faire interagir entre eux,
+                <b>Ce qui rend harmonieux</b> un bâtiment c'est sa capacité à{" "}
+                <b>agréger des motifs et à les faire interagir entre eux</b>,
               </li>
               <li>
-                Ces motifs peuvent être décrits et identifiés, pour former un
-                langage qu'on peut apprendre à parler pour que les "bâtiments
-                fonctionnent".
+                Ces motifs peuvent être{" "}
+                <b>décrits et identifiés pour former un langage</b>, que l'on
+                peut apprendre à parler et qui{" "}
+                <b>fait que les "bâtiments fonctionnent"</b>.
               </li>
             </ul>
-            <p className="display-6 my-4">
+            <p className="display-6">
               Or, ces deux principes s'appliquent aussi très bien au{" "}
               <b>développement logiciel</b> !
             </p>
             <p>
-              C'est ce que constatent et formalisent <b>le Gang des 4</b> dans
-              leur livre{" "}
+              C'est ce que constatent et formalisent{" "}
+              <b>le Gang des 4 dans leur livre</b>{" "}
               <i>
                 Design Patterns: Elements of Reusable Object-Oriented Software
               </i>
               .
             </p>
             <p>
-              Depuis c'est une source d'inspiration intarissable pour de
-              nombreux développeurs,
+              Depuis c'est une{" "}
               <b>
-                mais je pense qu'avec les motifs ont peut/doit aller plus loin
-                ...
+                source d'inspiration intarissable pour de nombreux développeurs
               </b>
+              .
             </p>
-            <Quote
-              displayHeading={5}
-              legend={{
-                author: "Cristopher Alexander",
-                source: "A Pattern Language",
-              }}
-              backgroundColor={COLORS.LIGHT}
-            >
-              <>
-                <p>
-                  Each pattern describes a problem which occurs over and over
-                  again in our environment, and then describes the core of the
-                  solution to that problem [...].
-                </p>
-              </>
-            </Quote>
+            <p>
+              Mais je pense qu'<b>avec les motifs on peut</b> (on doit){" "}
+              <b>aller plus loin</b> ...
+            </p>
+            <p className="display-6">
+              Considérant que <b>tout est motif</b>, des concepts fondamentaux
+              du développement jusqu'à ceux des langages, des frameworks et
+              métiers,
+              <b>
+                une application doit être conçue en conscience du langage
+                qu'elle implémente
+              </b>
+              .
+            </p>
           </>
         </Row>
         <Row
@@ -188,45 +201,50 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           backgroundColor={COLORS.SUN}
           paddingY={0}
           collapsible={true}
+          stars={true}
         >
           <>
             <p>
               La raison pour laquelle je préfère utiliser le terme{" "}
               <b>motifs de conception</b> plutôt que{" "}
-              <b>patrons de conception</b>, car je trouve toute l'etymologie
-              plus pertinente pour ce phénomène qui survient en permanence
-              pendant le développement.
+              <b>patrons de conception</b> et que je trouve l'etymologie plus
+              pertinente.
             </p>
             <ul>
               <li>
                 Dans son sens courant, un motif est{" "}
                 <b>un ensemble de propriétés qui se répètent</b> (occurences)
-                dans un groupe d'individus.
+                dans un groupe d'individus (ex: motifs d'une frise, dans une
+                population d'individus, etc.),
               </li>
               <li>
                 Dans le dictionnaire, on lit également : ce qui pousse à agir,
-                ce qui justifie, <b>intention</b> ...
+                ce qui justifie, <b>intention</b>,
               </li>
               <li>
-                Christopher Alexander les définit comme{" "}
-                <b>un problème récurrent</b> et <b>la solution générique</b> à
-                mettre en oeuvre pour y répondre.
-              </li>
-              <li>
-                En informatique, un motif est <b>une structure</b> de fichiers,
-                instructions, données, propriétés qui effectivement{" "}
-                <b>répond à des problématiques récurrentes</b>.
+                Enfin, "patron" vient de la racine "pater"{" "}
+                <b>
+                  dont la masculinité ne peut pas nous laisser indifférent à
+                  l'époque à laquelle on vit
+                </b>
+                ,
               </li>
             </ul>
-            <p>
-              Certains motifs sont relatifs à des langages de programmation,
-              d'autres à des frameworks mais{" "}
-              <b>la majorité des motifs sont transverses</b> (logiques et
-              métiers) .
+            <p className="display-6">
+              Les motifs sont donc{" "}
+              <b>
+                tout ce qui se répète et se compose pour former un projet
+                informatique
+              </b>
+              .
             </p>
-            <br />
             <p>
-              <b>Ne remontez pas trop loin dans l'abstraction</b> ou vous
+              Du plus petit symbole de langage, jusqu'au composant le plus
+              complexe.
+            </p>
+            <p>
+              Mais attention,{" "}
+              <b>ne remontez pas trop loin dans l'abstraction</b> ou vous
               pourriez perdre votre raison en tentant de résoudre l'équation :
             </p>
             <Quote displayHeading={3} backgroundColor={COLORS.LIGHT}>
@@ -245,25 +263,25 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
         >
           <>
             <p>
-              <b>Un motif est une idée</b> et ne peut par conséquent être
-              utilisé directement dans le code.
+              <b>Un motif est une idée</b> et doit être implémenté avant d'être
+              utilisé dans le code.
             </p>
             <p>
-              L'<b>implémentation d'un motif dépend</b> du langage, du paradigme
-              et, en bonne partie, <b>des humains impliqués</b> dans le projet.
+              L'<b>implémentation d'un motif dépend</b> du langage, du
+              paradigme, du métier et, en pour partie,{" "}
+              <b>des humains impliqués</b> dans le projet.
             </p>
             <p>
-              <b>Dans A Pattern Language</b>, la solution générique proposée
+              Dans <i>A Pattern Language</i>, la solution générique proposée
               pour répondre à un problème peut{" "}
-              <b>être facilement materialisée en suivant la description</b> de
-              celui-ci.
+              <b>être materialisée en suivant la description</b> de celui-ci.
             </p>
             <p>
               La plupart des <b>motifs apparaissent tout seul</b> et il convient
               simplement de <b>les reconnaître</b> pour, éventuellement les
               corriger, mais surtout <b>les connecter</b>.
             </p>
-            <p>
+            <p className="display-6">
               La difficulté réside essentiellement là :{" "}
               <b>
                 assembler correctement toutes ces occurences de motifs pour
@@ -280,6 +298,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             content: MOTIFS_SECTIONS.LISTE.title,
           }}
           tags={["répertoire", "work in progress"]}
+          backgroundColor={COLORS.ABYSS}
         >
           <>
             <p>
@@ -291,7 +310,7 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>description</b>, le <b>problème</b> qu'ils adressent et la
               façon dont ils proposent d'<b>y répondre</b>.
             </p>
-            <p>
+            <p className="display-6">
               Cette liste est <b>forcément non-exhaustive</b>, et je vous incite
               fortement{" "}
               <InternalLink

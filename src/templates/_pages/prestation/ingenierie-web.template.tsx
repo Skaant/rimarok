@@ -81,7 +81,7 @@ function IngenierieWeb({
             <p>
               La vie est une myriade de flux en <b>constant mouvement</b>.
             </p>
-            <p>
+            <p className="display-6">
               <b>Construire dans cet environnement</b> en perpétuelle mutation
               nécessite <b>une grand agilité</b>.
             </p>
@@ -112,7 +112,10 @@ function IngenierieWeb({
               </>
             </Quote>
             <p>
-              En plus de <b>concepts fondamentaux de développement maîtrisés</b>
+              En plus de{" "}
+              <b>
+                concepts fondamentaux de développement parfaitement maîtrisés
+              </b>
               , j'apporte avec moi la puissance de l'
               <b>intégration et du déploiement continus</b> (CI/CD).
             </p>
@@ -153,9 +156,10 @@ function IngenierieWeb({
             <p>
               Enfin,{" "}
               <b>la (ou les) base(s) de données conserve(nt) en mémoire</b> le
-              coeur de toute application : <b>l'information</b>.
+              coeur de toute application et de tout métier :{" "}
+              <b>l'information</b>.
             </p>
-            <p>
+            <p className="display-6">
               <b>Généraliste expérimenté avec une vision critique</b>, je peux
               intervenir sur ces différents sujets lors de mes prestations.
             </p>
@@ -184,11 +188,9 @@ function IngenierieWeb({
           tags={["petites missions", "api", "gestion de fichiers", "plugins"]}
         >
           <>
-            <p>
-              Conjointement ou parallèllement au développement d'applications
-              web, je suis capable de{" "}
-              <b>créer des scripts pour automatiser des taches informatiques</b>
-              .
+            <p className="display-6">
+              Conjointement au développement d'applications web, je{" "}
+              <b>crée des scripts pour automatiser des taches informatiques</b>.
             </p>
             <p>
               De{" "}
@@ -204,7 +206,7 @@ function IngenierieWeb({
               .
             </p>
             <p>
-              L'intégration et le déploiement continu permet aussi ça :
+              L'intégration et le déploiement continu permet aussi ça :{" "}
               <b>répercuter immédiatement les changements</b> apportés pour
               suivre et
               <b>s'adapter à votre environnement</b>.
@@ -225,8 +227,7 @@ function IngenierieWeb({
             <p>
               Vous connaissez sans doute le terme de <b>design pattern</b>, mais
               savez-vous <b>de qui s'est inspiré le gang des 4</b> pour élaborer
-              leur
-              <b>recueil de motifs de conception</b> ?
+              leur <b>recueil de motifs de conception</b> ?
             </p>
             <p>
               J'ai étudié les motifs tels que décrits dans l'ouvrage{" "}
@@ -234,13 +235,12 @@ function IngenierieWeb({
               <b>une révélation m'a frappé</b> :
             </p>
             <Quote displayHeading={3} backgroundColor={COLORS.MIST}>
-              <p>Tout, tout est motif !</p>
+              <p>Tout est motif !</p>
             </Quote>
-            <p>
+            <p className="display-6">
               À force de coder, les <b>applications</b> deviennent des{" "}
-              <b>flux de données</b>
-              qui, au gré des problématiques métiers, <b>s'agrégent</b>{" "}
-              durablement ou non en formant
+              <b>flux de données</b> qui, au gré des problématiques métiers,{" "}
+              <b>s'agrégent</b> durablement ou non en formant
               <b>toujours les mêmes motifs</b>.
             </p>
             <p>
@@ -282,8 +282,8 @@ function IngenierieWeb({
               de Grenoble.
             </p>
             <p>
-              Durant cette formation en 5 ans, nous avons acquis une{" "}
-              <b>importante première expérience professionnelle</b> : deux
+              Durant cette formation en 5 ans, j'ai acquis une{" "}
+              <b>importante première expérience professionnelle</b> avec deux
               stages de 3 mois et un an d'alternance.
             </p>
             <p>
@@ -295,9 +295,10 @@ function IngenierieWeb({
               <b>fondements théoriques de l'informatique</b> et travaille sur de
               nombreux <b>projets pratiques</b>.
             </p>
-            <p>
+            <p className="display-6">
               Une <b>base solide</b> depuis laquelle j'ai pu prendre{" "}
-              <b>mon envol comme développeur web indépendant</b>.
+              <b>mon envol comme développeur web indépendant</b> dès la fin de
+              mes études.
             </p>
             <LinksMenu
               links={[
