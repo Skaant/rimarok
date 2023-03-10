@@ -28,7 +28,7 @@ function Quote({
       } ${className ? ` ${className}` : ""} rounded-2 position-relative`}
     >
       <img src="/glyph.svg" className="position-absolute" style={{}} />
-      <div className={`display-${displayHeading} font-slab px-4 py-5`}>
+      <div className={`display-${displayHeading} font-slab px-4 pt-5 pb-4`}>
         {children}
       </div>
       {legend && (legend.source || legend.author) ? (
