@@ -31,11 +31,11 @@ function Navbar({ motifs, className }: NavbarProps) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-lg-0 w-100 justify-content-end">
+          <ul className="navbar-nav me-auto mb-lg-0 w-100 justify-content-end py-2 py-lg-0">
             {[PAGES_DATA.PRESTATION, PAGES_DATA.MOTIFS, PAGES_DATA.BLOG].map(
               ({ id, title, path }, index) => {
                 return (
-                  <li className="nav-item">
+                  <li className="nav-item py-2 py-lg-0">
                     <Link
                       key={index}
                       className={`nav-link${"" /** @todo active */}`}
