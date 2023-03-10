@@ -22,25 +22,13 @@ function Quote({
   return (
     <blockquote
       className={`blockquote my-5 me-5 bg-${backgroundColor} text-${
-        [COLORS.MIST, COLORS.GROUND].includes(backgroundColor)
+        [COLORS.LIGHT, COLORS.MIST, COLORS.GROUND].includes(backgroundColor)
           ? COLORS.DARK
           : COLORS.LIGHT
       } ${className ? ` ${className}` : ""} rounded-2 position-relative`}
     >
-      <img
-        src="/glyph.svg"
-        className="position-absolute"
-        style={{
-          zIndex: 3,
-          left: "calc(-42px - 8vw)",
-          height: "calc(12vh + 12vw)",
-          top: "-42px",
-        }}
-      />
-      <div
-        className={`display-${displayHeading} font-slab px-4 py-5`}
-        style={{ zIndex: 4 }}
-      >
+      <img src="/glyph.svg" className="position-absolute" style={{}} />
+      <div className={`display-${displayHeading} font-slab px-4 pt-5 pb-4`}>
         {children}
       </div>
       {legend && (legend.source || legend.author) ? (

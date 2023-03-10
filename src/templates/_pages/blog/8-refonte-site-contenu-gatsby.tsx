@@ -5,8 +5,10 @@ import Row from "../../../components/Row";
 import { ARTICLES_DATA } from "../../../data/articles";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../../types/GlobalPageContext";
+import { PAGES, PAGES_DATA } from "../../../data/pages";
+import { COLORS } from "../../../data/colors";
 
-const { title, description } = ARTICLES_DATA[7];
+const { title, description, date } = ARTICLES_DATA[7];
 
 function Article8({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
@@ -18,7 +20,19 @@ function Article8({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       {...pageContext}
     >
       <>
-        <PageHeader title={title} subtitle={""} />
+        <PageHeader
+          title={title}
+          subtitle={date}
+          linksMenu={{
+            links: [
+              {
+                label: "Retour au blog",
+                link: PAGES_DATA[PAGES.BLOG].path,
+                color: COLORS.ABYSS,
+              },
+            ],
+          }}
+        />
       </>
     </Layout>
   );

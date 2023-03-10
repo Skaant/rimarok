@@ -6,25 +6,28 @@ import BackToTop from "./BackToTop";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-type LayoutProps = GlobalPageContext & {
-  head: {
-    /**
-     * Only the page title;
-     *  site title will be added for a final shape of
-     *  `{title} - {WEBSITE_DATA.TITLE}`.
-     */
-    title: string;
-    description?: string;
-    /**
-     * If set, includes
-     *  `<meta name="robots" content="noindex" />`.
-     */
-    noIndex?: true;
+type LayoutProps = {
+  id?: string;
+} & GlobalPageContext & {
+    head: {
+      /**
+       * Only the page title;
+       *  site title will be added for a final shape of
+       *  `{title} - {WEBSITE_DATA.TITLE}`.
+       */
+      title: string;
+      description?: string;
+      /**
+       * If set, includes
+       *  `<meta name="robots" content="noindex" />`.
+       */
+      noIndex?: true;
+    };
+    children: ReactElement;
   };
-  children: ReactElement;
-};
 
 function Layout({
+  id,
   head: { title, description, noIndex },
   children,
   ...globalPageContext
@@ -42,7 +45,9 @@ function Layout({
       </Helmet>
       <Navbar {...globalPageContext} />
       <BackToTop />
-      <div className="container-fluid px-0">{children}</div>
+      <div id={id} className="container-fluid px-0">
+        {children}
+      </div>
       <Footer {...globalPageContext} />
     </>
   );

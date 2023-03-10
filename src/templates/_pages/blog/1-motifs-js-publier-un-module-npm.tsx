@@ -4,9 +4,11 @@ import Layout from "../../../components/Layout";
 import PageHeader from "../../../components/PageHeader";
 import Row from "../../../components/Row";
 import { ARTICLES_DATA } from "../../../data/articles";
+import { COLORS } from "../../../data/colors";
+import { PAGES, PAGES_DATA } from "../../../data/pages";
 import { GlobalPageContext } from "../../../types/GlobalPageContext";
 
-const { title, description } = ARTICLES_DATA[0];
+const { title, description, date } = ARTICLES_DATA[0];
 
 function Article1({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
@@ -18,7 +20,19 @@ function Article1({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       {...pageContext}
     >
       <>
-        <PageHeader title={title} subtitle={""} />
+        <PageHeader
+          title={title}
+          subtitle={date}
+          linksMenu={{
+            links: [
+              {
+                label: "Retour au blog",
+                link: PAGES_DATA[PAGES.BLOG].path,
+                color: COLORS.ABYSS,
+              },
+            ],
+          }}
+        />
         <Row>
           <>
             <p>L'abstraction est l'une des compétence-clé du programmeur.</p>

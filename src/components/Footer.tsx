@@ -19,7 +19,10 @@ function Footer({
       <div className="d-flex justify-content-center flex-md-row flex-column text-white">
         <ul className="list-unstyled p-5 col-sm-12 col-md-6 col-xl-4">
           {[
-            PAGES_DATA.ACCUEIL,
+            {
+              ...PAGES_DATA.ACCUEIL,
+              title: "Accueil",
+            },
             PAGES_DATA.PRESTATION,
             PAGES_DATA.MOTIFS,
             PAGES_DATA.BLOG,
@@ -30,11 +33,11 @@ function Footer({
                 <Link className="text-white pb-2" to={path}>
                   {title}
                 </Link>
-                {path.includes("prestation") ? (
+                {path.includes("developpement") ? (
                   <ul className="list-unstyled">
                     <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white"
+                        className="text-white font-rubik"
                         to={PAGES_DATA.PRESTATION_INGENIERIE_WEB.path}
                       >
                         {PAGES_DATA.PRESTATION_INGENIERIE_WEB.title}
@@ -42,7 +45,7 @@ function Footer({
                     </li>
                     <li className="py-1 pt-2 ps-3" key={index}>
                       <Link
-                        className="text-white"
+                        className="text-white font-rubik"
                         to={PAGES_DATA.PRESTATION_ECO_CONCEPTION.path}
                       >
                         {PAGES_DATA.PRESTATION_ECO_CONCEPTION.title}
@@ -57,7 +60,10 @@ function Footer({
                     {footerMotifs.map(({ name, slug }, index) => {
                       return (
                         <li className="py-1 pt-2 d-inline" key={index}>
-                          <Link className="text-white" to={`/motifs/${slug}`}>
+                          <Link
+                            className="text-white font-rubik"
+                            to={`/motifs/${slug}`}
+                          >
                             {name}
                           </Link>
                           {", "}
@@ -93,7 +99,10 @@ function Footer({
                       .map(({ title, id }) => {
                         return (
                           <li className="py-1 pt-2 ps-3" key={index}>
-                            <Link className="text-white" to={`/blog/${id}`}>
+                            <Link
+                              className="text-white font-rubik"
+                              to={`/blog/${id}`}
+                            >
                               {title}
                             </Link>
                           </li>

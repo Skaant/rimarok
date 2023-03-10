@@ -15,44 +15,49 @@ import getInternalLink from "../../helpers/getInternalLink";
 import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
 import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import "../../styles/pages/accueil.scss";
+import InternalLink from "../../components/InternalLink";
+import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.template";
 
-const { title } = PAGES_DATA[PAGES.ACCUEIL];
+const PAGE = PAGES.ACCUEIL;
+const { title } = PAGES_DATA[PAGE];
 
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
     id: "developpement-web-full-stack-remote-grenoble-chambery-lyon",
-    title:
-      "Développement web full-stack remote, ou sur Grenoble, Chambéry, Lyon",
+    title: "Développement web full-stack remote / Grenoble / Chambéry / Lyon",
   },
   MOTIVATIONS: {
-    id: "motivations-performances-et-economies",
-    title: "Mes motivations : performances et économies",
+    id: "motivations-performances-economies-ecologie",
+    title: "Mes motivations : performances, économies, écologie",
   },
   STACK: {
-    id: "react-node-database-typescript-php-ecologogiques",
-    title: "React, Node, Database, TypeScript, PHP ... écologiques",
+    id: "typescript-react-node-database-php-ecologogiques",
+    title: "TypeScript, React, Node, Database,  PHP ... écologiques",
   },
   PROJETS_PROFESSIONNELS: {
-    id: "projets-professionnels",
-    title: "Projets profesionnels",
+    id: "projets-professionnels-startups-pme-solopreneurs-institutions-publiques",
+    title:
+      "Projets profesionnels (startups, PME, solopreneurs, institutions publiques)",
   },
   CODE_PHILOSOPHIE: {
-    id: "le-code-une-philosophie",
-    title: "Le code, une philosophie",
+    id: "le-code-un-langage-fait-de-motifs-de-conception",
+    title: "Le code, un langage fait de motifs de conception",
   },
   PROJETS_PERSOS: {
-    id: "projets-persos",
-    title: "Projets persos",
+    id: "projets-personnels-passion-experimentation",
+    title: "Projets personnels : passion, expérimentation",
   },
   COLLABORATION: {
-    id: "vers-une-collaboration-future",
-    title: "Vers une collaboration future",
+    id: "travailler-ensemble-vers-une-collaboration-future",
+    title: "Travailler ensemble : vers une collaboration future",
   },
 };
 
 const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
   return (
     <Layout
+      id={PAGES_DATA[PAGE].id}
       head={{
         title,
       }}
@@ -60,18 +65,10 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
     >
       <>
         <div
-          className="d-flex justify-content-end bg-flower"
-          style={{
-            paddingTop: "6rem",
-            marginBottom: "-16vh",
-            maxHeight: "80vh",
-            paddingRight: "calc(-100px + 22vw)",
-          }}
+          id="top-illustration"
+          className="position-absolute w-100 d-flex justify-content-center"
         >
-          <img
-            src="/rimarok.svg"
-            style={{ maxHeight: "100%", maxWidth: "100%" }}
-          />
+          <img src="/rimarok.svg" />
         </div>
         <PageHeader
           title={
@@ -120,27 +117,31 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Salut ! Je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
               <b>site professionnel</b> de <b>développeur web freelance</b>.
             </p>
-            <p>
+            <p className="display-6">
               Je travaille en <b>renfort d'équipe</b> sur des{" "}
               <b>projets applicatifs</b> de toutes tailles dans des <b>PME</b>,{" "}
               <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
-              <b>auto-entrepreneurs</b>.
+              <b>auto-entrepreneurs</b>, depuis <b>plus de 7 ans</b>.
             </p>
-            <p></p>
+            <p>
+              Vous <b>cherchez quelqu'un</b> pour donner un <b>coup de boost</b>{" "}
+              à vos <b>applications</b> ou <b>sites internet</b> ?
+            </p>
             <LinksMenu
               links={[
                 {
                   link: PAGES_DATA[PAGES.PRESTATION].path,
-                  label: "Ma prestation",
-                  color: COLORS.LAGOON,
+                  label: "Découvrez ma prestation",
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
                   label: "Mes motivations",
+                  color: COLORS.ABYSS,
                 },
                 {
                   link: `/#${ACCUEIL_SECTIONS.STACK.id}`,
                   label: "Ma stack",
+                  color: COLORS.ABYSS,
                 },
               ]}
             />
@@ -153,13 +154,14 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
           }}
           backgroundColor={COLORS.SUN}
-          tags={["optimisation", "sobriété"]}
+          tags={["optimisation", "expertise", "éthique", "sobriété"]}
         >
           <>
-            <Quote displayHeading={4}>
+            <Quote displayHeading={5}>
               <>
-                Internet devrait servir à résoudre des problèmes, tout en
-                minimisant ceux qu'il peut créer.
+                Je veux utiliser Internet pour créer des solutions à des
+                problématiques de la vie courante, tout en réduisant ses impacts
+                négatifs sur la planète.
               </>
             </Quote>
             <p>
@@ -173,27 +175,51 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 l'ajout de nouvelles fonctionnalités multiplie la consommation
                 de ressources
               </b>{" "}
-              (y compris humaines) au lieu de le réduire par{" "}
-              <b>généralisation et industrialisation.</b>
+              (y compris humaines).
+            </p>
+            <p className="display-6">
+              Pourtant, <b>la croissance de ces coûts devrait être endiguée</b>.
             </p>
             <p>
-              Pourtant,{" "}
-              <b>cette croissance pourrait et devrait être endiguée</b>.
+              C'est tout l'enjeu de l'<b>éco-conception</b> et de la sobriété
+              numérique.
             </p>
-            <p>
-              Les programmes conservent des <b>performances optimisées</b>, sans
-              être plus coûteux.
-            </p>
+            <LinksMenu
+              links={[
+                {
+                  label: "Plus sur l'éco-conception",
+                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+                  color: COLORS.MIST,
+                },
+              ]}
+            />
+          </>
+        </Row>
+        <Row
+          header={{
+            level: 3,
+            content: "Nouvelles fonctionnalités et/ou refactoring optimisés",
+          }}
+          backgroundColor={COLORS.SUN}
+          className={"pt-0"}
+          stars={true}
+          collapsible={true}
+        >
+          <>
             <p>
               Mon intervention en ingénierie web permet d'
               <b>étendre le périmètre fonctionnel de vos applications</b>, tout
               en <b>limitant les "prises de poids" logicielles</b>.
             </p>
+            <p>
+              Les programmes conservent des <b>performances optimisées</b>, sans
+              être plus coûteux.
+            </p>
             <LinksMenu
               links={[
                 {
-                  label: "Découvrir ma prestation",
-                  link: PAGES_DATA[PAGES.PRESTATION].path,
+                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+                  label: "Plus sur l'ingénierie web",
                   color: COLORS.MIST,
                 },
               ]}
@@ -210,15 +236,6 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
         >
           <>
             <p>
-              Diplomé d'un <b>Master MIAGE option énergie</b> en 2016, j'exerce
-              depuis l'activité de <b>développeur web en tant qu'indépendant</b>
-              .
-            </p>
-            <p>
-              C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
-              <b>Green-IT</b>.
-            </p>
-            <p>
               Spécialisé dans la <b>full-stack JavaScript</b>{" "}
               <i>
                 (TypeScript, Node, React, Express, Jest, Nest, Vue, Angular ...)
@@ -227,18 +244,32 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               <b>bonnes pratiques d'éco-conception logicielle</b>.
             </p>
             <p>
-              Au croisement de ces deux sujets apparaît une{" "}
-              <b>puissante efficience</b>, qui <b>accélère les applications</b>{" "}
-              et <b>réduit les dépenses</b> .
+              C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
+              <b>Green-IT</b>.
+            </p>
+            <p>
+              Diplomé d'un{" "}
+              <InternalLink
+                page={PAGES.PRESTATION_INGENIERIE_WEB}
+                section={PRESTATION_INGENIERIE_WEB_SECTIONS.UNIVERSITE}
+                altTitle="Master MIAGE option énergie"
+              />{" "}
+              en 2016, j'exerce depuis l'activité de{" "}
+              <b>développeur web en tant qu'indépendant</b>.
+            </p>
+            <p className="display-6">
+              Au croisement de l'ingénierie et de l'éco-conception logicielles
+              apparaît une <b>puissante efficience</b>, qui{" "}
+              <b>accélère les applications</b> et <b>réduit les dépenses</b> .
             </p>
             <LinksMenu
               links={[
                 {
-                  label: "Expertise full-stack JavaScript",
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
                   link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
                 },
                 {
-                  label: "Bonnes pratiques d'éco-conception",
+                  label: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].title,
                   link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
                 },
               ]}
@@ -260,7 +291,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               C'est la <b>diversité des contextes</b> qui dirige ma carrière
               professionnelle.
             </p>
-            <p>
+            <p className="display-6">
               Mais le fil rouge est toujours les <b>technos JS et full-stack</b>
               .
             </p>
@@ -320,17 +351,18 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               Pour moi, une application est <b>un ecosystème</b> : avec ses
               flux, ses entités, ses <b>noeuds à résoudre</b>.
             </p>
-            <p>
-              <b>Les motifs</b>, qui sont partout dans le code,
-              <b>interagissent ensemble en permanence</b> pour former un
-              organisme <b>évolutif</b>.
+            <p className="display-6">
+              <b>Les motifs de conception (design patterns)</b>, qui sont
+              partout dans le code, <b>interagissent ensemble en permanence</b>{" "}
+              pour former un organisme <b>évolutif</b>.
             </p>
             <p>
               Une <b>bonne conception</b> devient alors juste un{" "}
               <i>langage de motifs</i> qui fonctionne.
             </p>
             <p>
-              J'aime avoir des <b>idées</b> autour du développement web.
+              J'aime aussi beaucoup{" "}
+              <b>réfléchir et me questionner autour du développement web</b>.
             </p>
             <p>
               En plus d'un portefeuille de compétences, j'apporte une{" "}
@@ -362,7 +394,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           <>
             <p>
               Je développe régulièrement des <b>outils web</b> pour{" "}
-              <b>répondre à des problématiques pratiques</b>.
+              <b>répondre à des problématiques concrètes</b> et{" "}
+              <b>découvrir de nouvelles technos</b>.
             </p>
             <p>
               Découvrez quelques POC, exemples édifiants de conception{" "}
@@ -376,7 +409,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <p>
               <b>Coder est un jeu.</b>
             </p>
-            <p>
+            <p className="display-6">
               Allons-nous <b>jouer ensemble</b> ?
             </p>
           </>
@@ -405,7 +438,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               J'aime les <b>projets qui ont du sens</b>, à la technique bien
               huilée et où ma <b>créativité</b> peut s'exprimer.
             </p>
-            <p>
+            <p className="display-6">
               Vous pourriez aimer mon <b>expertise</b> sur la stack JavaScript
               moderne, mon <b>esprit analytique</b> et ma <b>bonne humeur</b>.
             </p>

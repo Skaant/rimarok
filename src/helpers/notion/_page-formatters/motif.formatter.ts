@@ -10,10 +10,11 @@ export function motifFormatter(page: PageObjectResponse): Motif {
     Index: index,
     Nom: name,
     Summary: summary,
-    Tags: tags,
+    ["Lieux"]: locations,
     ["Related motifs"]: related,
     Synonyms: synonyms,
   } = page.properties;
+  const _index = index && index.type === "number" && index.number;
   const _name =
     name &&
     name.type === "title" &&
@@ -28,7 +29,7 @@ export function motifFormatter(page: PageObjectResponse): Motif {
       .map((val) => val.trim());
   return {
     id: page.id,
-    index: (index && index.type === "number" && index.number) || -1,
+    index: _index === null || _index === false ? -1 : _index,
     name: _name,
     slug: _name.toLowerCase().replace(/\s/g, "-"),
     ...(summary && summary.type === "rich_text"
@@ -38,9 +39,9 @@ export function motifFormatter(page: PageObjectResponse): Motif {
           ),
         }
       : {}),
-    ...(tags && tags.type === "multi_select"
+    ...(locations && locations.type === "multi_select"
       ? {
-          tags: tags.multi_select.map(({ name }) => name),
+          locations: locations.multi_select.map(({ name }) => name),
         }
       : {}),
     ...(related && related.type === "relation"

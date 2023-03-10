@@ -3,8 +3,18 @@
   justify-content: space-between;
   flex-direction: column;
   margin-left: 25px;
-
+  box-shadow: 0 0 5px $abyss;
   &.bg-abyss {
     color: $light;
+  }
+  div,
+  p {
+    z-index: 4;
+  }
+  img {
+    z-index: 3;
+    left: calc(-42px - 8vw);
+    height: calc(12vh + 12vw);
+    top: -42px;
   }
 }

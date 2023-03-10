@@ -17,9 +17,10 @@ function BackToTop({
       type="button"
       className={`top-button btn rounded-circle border-0 ${
         isFixed
-          ? "position-fixed d-none m-5 bottom-0 end-0"
+          ? "position-fixed d-none m-3 m-lg-5 bottom-0 end-0"
           : "position-relative d-block"
-      }  px-3 py-2 bg-${backgroundColor} text-${textColor}`}
+      } px-3 py-2 bg-${backgroundColor} text-${textColor}`}
+      style={{ zIndex: 5 }}
     >
       ↑
     </button>

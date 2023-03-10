@@ -21,9 +21,9 @@ $selected-utilities-name:
   ("shadow", true) // https://getbootstrap.com/docs/5.2/utilities/sizing/
   ("width", true) ("height", true) ("viewport-height", true)
   // https://getbootstrap.com/docs/5.2/utilities/spacing/
-  ("margin", true) ("margin-x", true) ("margin-y", true) ("margin-top", true)
+  ("margin", false) ("margin-x", true) ("margin-y", true) ("margin-top", true)
   ("margin-end", true) ("margin-bottom", true) ("margin-start", true)
-  ("padding", true) ("padding-x", true) ("padding-y", true)
+  ("padding", true) ("padding-x", true) ("padding-y", false)
   ("padding-top", true) ("padding-bottom", true) ("padding-start", true)
   ("padding-end", true) // https://getbootstrap.com/docs/5.2/utilities/text/
   ("font-weight", true) ("text-align", true);

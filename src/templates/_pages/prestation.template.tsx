@@ -30,25 +30,26 @@ import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.
 import getPageName from "../../helpers/getPageName";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import "../../styles/pages/prestation.scss";
 
-const PAGE_ID = PAGES.PRESTATION;
-const { title } = PAGES_DATA[PAGE_ID];
+const PAGE = PAGES.PRESTATION;
+const { title } = PAGES_DATA[PAGE];
 
 export const PRESTATION_SECTIONS: { [key: string]: Section } = {
   SAVOIR_FAIRE_ET_TECHNOLOGIES: {
-    id: "savoir-faire-et-technologies",
-    title: "Savoir-faire et technologies",
+    id: "savoir-faire-et-expertise-full-stack",
+    title: "Savoir-faire et expertise full-stack",
   },
   INTERVENTION: {
-    id: "intervention-ponctuelle-ou-longue-duree",
-    title: "Intervention ponctuelle ou longue durée",
+    id: "interventions-ponctuelles-ou-longue-duree",
+    title: "Interventions ponctuelles ou longue durée",
   },
   PERSONNALITE: {
-    id: "une-personnalite-d'abord",
-    title: "Une personnalité d'abord",
+    id: "un-humain-avant-tout",
+    title: "Un humain avant tout",
   },
   CONTACT: {
-    id: "contact",
+    id: "entre-en-contact",
     title: "Entrer en contact",
   },
   TARIF: {
@@ -56,8 +57,8 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Un tarif unique",
   },
   REALISATIONS: {
-    id: "realisations",
-    title: "Mes réalisations",
+    id: "toutes-mes-realisations",
+    title: "Toutes mes réalisations",
   },
   /** CTA contact */
   TRAVAILLER_ENSEMBLE: {
@@ -74,6 +75,7 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
 function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
   return (
     <Layout
+      id={PAGES_DATA[PAGE].id}
       head={{
         title,
       }}
@@ -81,8 +83,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     >
       <>
         <PageHeader
-          title={title}
-          subtitle="Développer, connecter, améliorer"
+          title={"Mon expertise en développement web full-stack"}
+          subtitle="Étendre. Connecter. Améliorer."
           backgroundColor={COLORS.LIGHT}
           linksMenu={{
             links: [
@@ -91,7 +93,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             ].map((page, index) => ({
               link: getInternalLink(page),
               label: getPageName(page),
-              color: index ? COLORS.SUN : COLORS.LAGOON,
+              color: index ? COLORS.ABYSS : COLORS.SUN,
             })),
           }}
           tableOfContents={{
@@ -104,12 +106,6 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             src="/prestation-right.svg"
             className="position-absolute"
             alt=""
-            style={{
-              bottom: 0,
-              zIndex: 1,
-              maxHeight: "80vh",
-              right: "10vw",
-            }}
           />
         </div>
         <div
@@ -140,8 +136,26 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           tags={["expertise", "full-stack", "typescript", "react"]}
         >
           <>
+            <p className="display-6">
+              Depuis 2016, je suis{" "}
+              <b>embauché pour compléter des équipes de développement</b> ou des{" "}
+              <b>petites entreprises</b> sur des{" "}
+              <b>projets de sites et applications web</b> variés.
+            </p>
+            <p>Durant toutes ces missions, j'ai été amené :</p>
+            <ul>
+              <li>
+                à travailler sur des <b>ecosystèmes</b> et avec des{" "}
+                <b>frameworks variés</b>,
+              </li>
+              <li>
+                à développer en conséquence une <b>vision globale</b> et une
+                grande <b>adaptabilité</b>.
+              </li>
+            </ul>
             <p>
-              Full-stack signifie être à l'aise sur{" "}
+              Pour moi, <b>être développeur web</b> aujourd'hui nécessite d'être
+              à l'aise sur{" "}
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
                 section={PRESTATION_INGENIERIE_WEB_SECTIONS.FULL_STACK}
@@ -149,15 +163,9 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />{" "}
               : front, back et base de données.
             </p>
-            <p>
-              Lors de mes missions, j'ai été amené à travailler sur des{" "}
-              <b>ecosystèmes</b> et avec des <b>frameworks variés</b>.
-            </p>
-            <p>
-              <b>
-                mon expertise se situe principalement sur les technos suivantes
-              </b>{" "}
-              :
+            <p className="display-6">
+              Aujourd'hui,{" "}
+              <b>mon expertise se focalise sur les technos suivantes</b> :
             </p>
             <ul>
               <li>
@@ -165,6 +173,9 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               </li>
               <li>
                 <b>React</b>,
+              </li>
+              <li>
+                <b>Gatsby</b>,
               </li>
               <li>
                 SCSS / <b>Bootstrap</b>,
@@ -175,21 +186,33 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 <b>GitHub</b>.
               </li>
             </ul>
-            <p>J'ai également une certaine expérience sur :</p>
+            <p>
+              J'ai également une <b>certaine expérience</b> sur :
+            </p>
             <ul>
               <li>Vue / Angular,</li>
               <li>Nest,</li>
               <li>PHP / Wordpress.</li>
             </ul>
             <p>
-              Tout ceci ne serait pas grand chose sans{" "}
-              <b>une compréhension profonde</b> de ce qu'est l'
+              Mais tout ceci ne serait pas grand chose sans{" "}
+              <b>une compréhension profonde</b> de ce qu'est la{" "}
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
+                altTitle="full-stack TypeScript"
                 lowercase={true}
               />
               .
             </p>
+            <LinksMenu
+              links={[
+                {
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
+                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
+                  color: COLORS.LIGHT,
+                },
+              ]}
+            />
           </>
         </Row>
         <Row
@@ -212,13 +235,17 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               installer un script d'automatisation <b>m'intéressent aussi</b>.
             </p>
             <p>
-              <b>Le refactoring et les tests</b> m'attirent et j'aime{" "}
+              <b>Le refactoring et les tests</b> m'attirent car j'aime{" "}
               <b>améliorer les choses</b>.
             </p>
-            <p>
-              J'interviens en <b>100% télétravail</b>, jusqu'à{" "}
+            <p className="display-6">
+              J'interviens en <b>100% télétravail*</b>, jusqu'à{" "}
               <b>4 jours/semaine</b> sur des projets{" "}
               <b>front, back et full-stack JavaScript</b>.
+            </p>
+            <p className="small">
+              *Possibilité de déplacements <b>ponctuels et rémunérés</b> à
+              Grenoble, Chambéry et Lyon.
             </p>
             <p>
               En parallèle de mes compétences techniques, je suis amical et
@@ -248,12 +275,12 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           backgroundColor={COLORS.SUN}
         >
           <>
-            <p>
+            <p className="display-6">
               Je suis <b>un individu</b>, pas juste un portefeuille de
               compétences.
             </p>
             <p>
-              En plus de mes bientôt <b>huit années de pratique</b>{" "}
+              En plus de mes bientôt <b>huit années de pratiques</b>{" "}
               <InternalLink
                 page={PAGES.ACCUEIL}
                 section={ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS}
@@ -266,8 +293,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
                 altTitle="personnelle"
               />
               , c'est ma <b>curiosité</b> et ma <b>créativité</b> qui ont
-              faconnées mon <b>expertise</b>
-              dans le domaine du <b>développement web</b>.
+              dirigées mon <b>expertise dans le domaine du développement web</b>
+              .
             </p>
             <p>
               J'aime <b>questionner et comprendre</b>, aborder les
@@ -283,7 +310,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               />
               .
             </p>
-            <p>
+            <p className="display-6">
               Enfin, c'est dans des <b>équipes bienveillantes et dynamiques</b>{" "}
               que je m'épanouis le plus.
             </p>
@@ -420,7 +447,7 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>processus qui m'accomplit</b> et qu'il <b>me connecte</b> aux
               autres.
             </p>
-            <p>
+            <p className="display-6">
               <b>Votre environnement est sain</b>, vous avez juste la bonne dose
               de stress, vous prenez des vacances et votre projet n'était pas à
               livrer hier ?
@@ -443,8 +470,11 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <>
             <p>
               Lorsque je <b>pratique longtemps</b> un sujet,{" "}
-              <b>des motifs apparaissent</b> et pratiquer devient{" "}
-              <i>un langage de motifs</i>.
+              <b>des motifs apparaissent</b>.
+            </p>
+            <p className="display-6">
+              Développer est devenu pour moi comme parler un{" "}
+              <b>langage de motifs</b>.
             </p>
             <p>
               <b>En codant, des idées</b>, activables ou juste philosophiques,{" "}

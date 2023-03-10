@@ -5,7 +5,10 @@ import Row, { RowProps } from "./Row";
 import TableOfContents from "./TableOfContents";
 import { TableOfContentsProps } from "./TableOfContents";
 
-type PageHeaderProps = Pick<RowProps, "backgroundColor" | "paddingY"> & {
+type PageHeaderProps = Pick<
+  RowProps,
+  "backgroundColor" | "paddingY" | "colClassName"
+> & {
   title: string;
   subtitle?: string;
   titleSize?: "normal" | "big";
@@ -21,12 +24,15 @@ function PageHeader({
   linksMenu,
   tableOfContents,
   paddingY,
+  colClassName,
 }: PageHeaderProps) {
   return (
     <Row
-      id="full-screen-title"
-      col="col-12 col-lg-10"
-      colClassName="d-flex flex-column justify-content-center align-items-center p-4"
+      id="page-header"
+      col="col-12 col-lg-10 col-xl-6"
+      colClassName={`${
+        colClassName ? `${colClassName} ` : ""
+      }d-flex flex-column justify-content-center align-items-center p-4`}
       backgroundColor={backgroundColor}
       paddingY={paddingY || 0}
     >
@@ -39,7 +45,7 @@ function PageHeader({
         {backgroundColor !== COLORS.LIGHT ? <img src="/small-stars.svg" /> : ""}
         {tableOfContents && (
           <div
-            className="d-flex justify-content-start col-12 col-sm-10 col-md-8 col-lg-6"
+            className="d-flex justify-content-start"
             style={{ marginTop: "8vh" }}
           >
             <TableOfContents {...tableOfContents} />

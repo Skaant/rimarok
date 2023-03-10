@@ -4,6 +4,7 @@ import path from "path";
 import { PAGES, PAGES_DATA } from "./src/data/pages";
 import { DatabasePage, getDatabase } from "./src/helpers/notion/getDatabase";
 import { motifFormatter } from "./src/helpers/notion/_page-formatters/motif.formatter";
+import { LocationTemplateProps } from "./src/templates/location.template";
 import { MotifTemplateProps } from "./src/templates/motif.template";
 import { GlobalPageContext } from "./src/types/GlobalPageContext";
 import { Motif } from "./src/types/Motif";
@@ -133,4 +134,34 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
         },
       });
     });
+
+  const locationsProps = Object.values(
+    motifs
+      .filter(({ locations }) => locations)
+      .reduce((acc, motif) => {
+        motif.locations?.forEach((location) => {
+          if (!acc[location]) {
+            acc[location] = {
+              location,
+              locationMotifs: [motif],
+            };
+          } else {
+            acc[location].locationMotifs.push(motif);
+          }
+        });
+        return acc;
+      }, {} as { [key: string]: Pick<LocationTemplateProps, "location" | "locationMotifs"> })
+  );
+
+  locationsProps.forEach(({ location, locationMotifs }) => {
+    createPage<LocationTemplateProps>({
+      path: `/motifs/lieux/${location.replace(/[\s']/g, "-")}`,
+      component: path.resolve("./src/templates/location.template.tsx"),
+      context: {
+        ...globalPageContext,
+        location,
+        locationMotifs,
+      },
+    });
+  });
 };
