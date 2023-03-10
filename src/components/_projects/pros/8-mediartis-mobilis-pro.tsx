@@ -9,7 +9,7 @@ function MediartisProject() {
       title="Mobilis Pro / Mediartis"
       scope="full-stack"
       tags={["nest", "typescript", "jest", "e2e", "vue", "bootstrap"]}
-      date="Juin 2021 - Janvier 2023"
+      date="Juin 2021 - Février 2023"
     >
       <>
         <p>
@@ -17,9 +17,9 @@ function MediartisProject() {
           <b>projet novateur Mediartis</b>, un des deux produits phares de
           l'entreprise Mobilis Pro.
         </p>
-        <p>
+        <p className="display-6">
           J'interviens pour <b>étendre les fonctionnalités</b> du produit, sous
-          un angle <b>totalement full-stack</b> (Nest TS / Vue) :
+          un angle <b>totalement full-stack</b> (Nest TS / Vue / Jest) :
         </p>
         <ul>
           <li>

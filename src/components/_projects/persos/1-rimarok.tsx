@@ -19,21 +19,28 @@ function RimarokProject() {
       date="Octobre 2020 - aujourd'hui"
     >
       <>
-        <p>Mon site professionnel de développement web.</p>
         <p>
-          J'ai migré le site depuis mon framework (motifs-js) vers Gatsby en
-          Juin 2022.
+          Mon <b>site professionnel</b> de développement web.
         </p>
         <p>
-          Pour m'aider à traiter rapidement ces points, j'ai fait appel à Tim
-          Jeanmart, développeur web junior.
+          J'ai migré le site depuis{" "}
+          <a href="https://github.com/Skaant/motifs-js">
+            mon framework (motifs-js)
+          </a>{" "}
+          vers Gatsby en Juin 2022.
+        </p>
+        <p>
+          Pour m'aider à <b>mener ce projet plus rapidement</b> et pour{" "}
+          <b>expérimenter mes compétences de management</b>, j'ai fait appel à
+          Tim Jeanmart, développeur web junior.
         </p>
         <p>
           Challengeant conceptuellement, le projet est assez simple
-          techniquement : c'est le deuxième site et demi que je passe sur
-          Gatsby, et au moins le dixième que je branche en déploiement continu.
+          techniquement : c'est <b>le deuxième site que je passe sur Gatsby</b>,
+          et au moins{" "}
+          <b>la dixième application que je branche en déploiement continu</b>.
         </p>
-        <p>
+        <p className="display-6">
           Cette migration me permet d'insister sur mon attachement à la sobriété
           et à la réflexion.
         </p>
