@@ -60,6 +60,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
       id={PAGES_DATA[PAGE].id}
       head={{
         title,
+        description:
+          "Développeur web indépendant depuis 7 ans, je suis spécialisé dans la full-stack JS/TS et PHP, avec une sensibilité à l'éco-conception. J'interviens auprès de petites entreprises, start-ups et institutions pour compléter leurs équipes et accéler leurs projets.",
       }}
       {...pageContext}
     >

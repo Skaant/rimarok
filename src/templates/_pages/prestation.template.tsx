@@ -78,6 +78,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       id={PAGES_DATA[PAGE].id}
       head={{
         title,
+        description:
+          "Je travaille en régie pour les gros projets applicatifs, ou au forfait pour de très courtes missions. Mon expertise est la full-stack et mes technos de prédilection sont TypeScript, React, Node et Gatsby. Toutefois, ma plus grande force est mon adaptabilité.",
       }}
       {...pageContext}
     >

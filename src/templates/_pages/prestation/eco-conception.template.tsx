@@ -44,6 +44,8 @@ function EcoConception({
     <Layout
       head={{
         title,
+        description:
+          "Le numérique n'est pas exempt d'impact matériel. En implémentant les bonnes pratiques d'éco-conception logicielle, telles que formalisées par le collectif Green-IT, vos applicatifs peuvent limiter leur impact négatif sur l'environnement.",
       }}
       {...pageContext}
     >

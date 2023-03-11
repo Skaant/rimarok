@@ -28,6 +28,8 @@ export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     <Layout
       head={{
         title,
+        description:
+          "Plus qu'un métier, le développement web est une véritable passion pour moi. Intéressé par le renouvellement permanent de l'éco-système, je partage ici mes découvertes et mes expériementations.",
       }}
       {...pageContext}
     >

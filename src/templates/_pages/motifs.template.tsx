@@ -54,6 +54,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     <Layout
       head={{
         title,
+        description:
+          "Les design patterns font partie de l'horizon de l'ingénierie logicielle depuis plusieurs décennies. Mais je pense que la liste de ces motifs de conception, peut-être actualisée et grandement allongée pour former le fameux pattern language dont parle Cristopher Alexander.",
       }}
       {...pageContext}
     >
