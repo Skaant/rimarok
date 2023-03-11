@@ -27,7 +27,13 @@ function Quote({
           : COLORS.LIGHT
       } ${className ? ` ${className}` : ""} rounded-2 position-relative`}
     >
-      <img src="/glyph.svg" className="position-absolute" style={{}} />
+      <img
+        src="/glyph.svg"
+        className="position-absolute"
+        style={{}}
+        alt="Le logo de RIMAROK.com, un glyphe symbolisant le passage et le formattage des idées, utilisé pour illustrer une citation."
+        loading="lazy"
+      />
       <div className={`display-${displayHeading} font-slab px-4 pt-5 pb-4`}>
         {children}
       </div>

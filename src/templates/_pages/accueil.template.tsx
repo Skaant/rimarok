@@ -68,7 +68,11 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           id="top-illustration"
           className="position-absolute w-100 d-flex justify-content-center"
         >
-          <img src="/rimarok.svg" />
+          <img
+            src="/rimarok.svg"
+            alt="L'illustration de la page d'accueil représente un morceau d'espace étoilé d'où jailli le logo du site, symbolisant le passage et le formattage des idées, sur un soleil rouge."
+            loading="lazy"
+          />
         </div>
         <PageHeader
           title={

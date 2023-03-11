@@ -70,6 +70,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/motifs-2.svg"
             style={{ maxHeight: "100%", maxWidth: "100%" }}
+            alt="L'illustration de la page motifs de conception, des formes symboliques et répétitives, représentant les multiples occurences d'un caractère qui définissent un motif."
+            loading="lazy"
           />
         </div>
         <PageHeader

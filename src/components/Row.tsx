@@ -47,6 +47,8 @@ function Row({
             src="/small-stars.svg"
             className="w-100"
             style={{ maxHeight: "124px", marginBottom: "36px" }}
+            alt="Une constellation d'étoiles utilisée comme séparateur de sections, pour un effet cosmétique."
+            loading="lazy"
           />
         )}
         {tags ? (

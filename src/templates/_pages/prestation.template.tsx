@@ -105,7 +105,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/prestation-right.svg"
             className="position-absolute"
-            alt=""
+            alt="L'élément de droite de l'illustration de la page développement web freelance, des personnages en train de donner forme à un programme symbolisé par des formes fluides et abstraites."
+            loading="lazy"
           />
         </div>
         <div
@@ -117,7 +118,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/prestation-left.svg"
             className="position-absolute"
-            alt=""
+            alt="L'élément de gauche de l'illustration de la page développement web freelance, un personnage manipulant un tableau de bord symbolisé par un soleil à plusieurs options."
+            loading="lazy"
             style={{
               bottom: 0,
               left: 0,
