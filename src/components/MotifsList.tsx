@@ -9,7 +9,7 @@ function MotifsList({ motifs }: MotifsListProps) {
   return (
     <Row
       backgroundColor={COLORS.ABYSS}
-      colClassName={`p-2 rounded-1 bg-${COLORS.LIGHT}`}
+      colClassName={`p-2 rounded-1 bg-${COLORS.LIGHT} table-responsive`}
     >
       <table className="table table-striped">
         <thead>
@@ -23,7 +23,8 @@ function MotifsList({ motifs }: MotifsListProps) {
             .reverse()
             .sort(
               ({ index: a }, { index: b }) =>
-                (a && a > -1 ? a : 1000) - (b && b > -1 ? b : 1000)
+                (typeof a === "number" && a > -1 ? a : 1000) -
+                (typeof b === "number" && b > -1 ? b : 1000)
             )
             .map(({ name, slug, summary, synonyms }) => {
               return (
