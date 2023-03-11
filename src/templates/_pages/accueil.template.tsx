@@ -78,7 +78,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
         </div>
         <PageHeader
           title={
-            "Developpeur web TypeScript/JavaScript freelance et éco-conception"
+            "Developpeur web JavaScript-TypeScript freelance et éco-conception"
           }
           subtitle={title}
           backgroundColor={COLORS.FLOWER}
