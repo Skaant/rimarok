@@ -5,6 +5,12 @@
       color: $light;
     }
   }
+  &.bg-abyss {
+    p a,
+    li a {
+      color: $sun;
+    }
+  }
   @each $color in (flower) {
     &.bg-#{$color} p a,
     &.bg-#{$color} li a {
