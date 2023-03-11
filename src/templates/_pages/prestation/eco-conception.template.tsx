@@ -28,8 +28,12 @@ export const PRESTATION_ECO_CONCEPTION_SECTIONS: { [key: string]: Section } = {
     title: "Axes de travail vers la sobriété",
   },
   BONNES_PRATIQUES: {
-    id: "bonnes-pratiques",
-    title: "Bonnes pratiques",
+    id: "introduction-bonnes-pratiques",
+    title: "Introduction aux bonnes pratiques",
+  },
+  REFERENTIELS: {
+    id: "referentiels-outils-eco-conception",
+    title: "Référentiels et outils pour l'éco-conception",
   },
   EXEMPLE_SITE: {
     id: "l-exemple-de-ce-site",
@@ -202,7 +206,12 @@ function EcoConception({
             content: PRESTATION_ECO_CONCEPTION_SECTIONS.BONNES_PRATIQUES.title,
           }}
           backgroundColor={COLORS.LAGOON}
-          tags={["pratiques", "empreinte environnementale", "métriques"]}
+          tags={[
+            "pratiques",
+            "empreinte environnementale",
+            "métriques",
+            "référentiels",
+          ]}
         >
           <>
             <p>
@@ -213,10 +222,22 @@ function EcoConception({
               </a>{" "}
               du collectif{" "}
               <a href="https://greenit.fr/" target="_blank">
-                Green-IT
+                Green-IT.fr
               </a>{" "}
               présente des conseils activables pour <b>accélerer son site</b> et{" "}
               <b>réduire (entre autres) son empreinte carbone</b>.
+            </p>
+            <p>
+              Ce <b>référentiel </b>, ainsi que{" "}
+              <b>celui élaboré par le gouvernement</b>, sont disponible en ligne
+              comme listé
+              <a
+                href={"#" + PRESTATION_ECO_CONCEPTION_SECTIONS.REFERENTIELS.id}
+              >
+                {" "}
+                dans la section ci-dessous
+              </a>
+              .
             </p>
             <p className="display-6">
               J'ai eu l'occasion de <b>mettre en application</b> un certain
@@ -244,6 +265,62 @@ function EcoConception({
               On peut citer : la <b>bande-passante</b> utilisée, le nombre de{" "}
               <b>requêtes</b>, l'<b>usage du CPU</b> front et back ou encore l'
               <b>espace de stockage</b> alloué.
+            </p>
+          </>
+        </Row>
+        <Row
+          id={PRESTATION_ECO_CONCEPTION_SECTIONS.REFERENTIELS.id}
+          header={{
+            content: PRESTATION_ECO_CONCEPTION_SECTIONS.REFERENTIELS.title,
+            level: 3,
+          }}
+          backgroundColor={COLORS.LAGOON}
+          paddingY={0}
+          collapsible={true}
+          stars={true}
+        >
+          <>
+            <p className="display-6">
+              Preuves d'une <b>prise de conscience</b> des enjeux du numérique
+              responsable, et d'une <b>volonté de passage à l'action</b>, listes
+              de bonnes pratiques et outils ont vu le jour ces dernières années.
+            </p>
+            <p>
+              Les <b>deux principaux référentiels</b> sur lesquels je base{" "}
+              <b>mon travail vers la sobriété numérique</b> sont :
+            </p>
+            <ul>
+              <li>
+                <a href="https://github.com/cnumr/best-practices">
+                  Les 115 bonnes pratiques du collectif Green-IT.fr
+                </a>
+                , disponible en ligne sur le{" "}
+                <b>
+                  répertoire GitHub du Collectif Conception Numérique
+                  Responsable
+                </b>
+                ,
+              </li>
+              <li>
+                <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">
+                  Le référentiel général d'écoconception de services numériques
+                  (RGESN)
+                </a>
+                , mis à disposition par la{" "}
+                <b>mission interministérielle du numérique responsable</b>{" "}
+                depuis 29 novembre 2022.
+              </li>
+            </ul>
+            <p className="display-6">
+              <b>L'éco-index</b>, outil d'
+              <b>analyse des performances écologiques du front-end</b>, se
+              décline en une{" "}
+              <a href="https://www.ecoindex.fr/">application web</a> et un
+              plugin pour navigateur.{" "}
+              <a href="https://www.greenit.fr/2023/03/07/ecoindex-mise-a-jour-majeur-de-la-boite-a-outils/">
+                Plus d'infos ici
+              </a>
+              .
             </p>
           </>
         </Row>
