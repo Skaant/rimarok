@@ -11,12 +11,6 @@
       color: $sun;
     }
   }
-  @each $color in (flower) {
-    &.bg-#{$color} p a,
-    &.bg-#{$color} li a {
-      color: $mist;
-    }
-  }
   > * {
     z-index: 2;
   }
