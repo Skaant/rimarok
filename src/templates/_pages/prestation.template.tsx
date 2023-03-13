@@ -53,8 +53,8 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Entrer en contact",
   },
   TARIF: {
-    id: "un-tarif-unique",
-    title: "Un tarif unique",
+    id: "mon-tarif",
+    title: "Mon tarif",
   },
   REALISATIONS: {
     id: "toutes-mes-realisations",
@@ -336,11 +336,17 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
           backgroundColor={COLORS.LIGHT}
-          tags={["mission", "rémunération"]}
+          tags={["mission", "rémunération", "dégressif"]}
         >
           <>
-            <p>Une prestation, un tarif :</p>
-            <p className="display-1">420€/jour HT</p>
+            <p>
+              Au premier Janvier 2023, je <b>facture mon intervention</b> :
+            </p>
+            <p className="display-1">470€/jour HT</p>
+            <p>
+              Pour des <b>missions m'occupant plus de 10 jours/mois</b>, mon
+              tarif passe à <b>420€/jour HT</b>.
+            </p>
           </>
         </Row>
         <Row
