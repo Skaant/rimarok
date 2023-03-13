@@ -14,7 +14,7 @@ const { title } = PAGES_DATA[PAGE_ID];
 const MENTIONS_LEGALES_SECTIONS: { [key: string]: Section } = {
   MENTIONS_OBLIGATOIRES_SITE: {
     id: "mentions-obligatoires-site",
-    title: "Mentions obligatiures du site",
+    title: "Mentions obligatoires du site",
   },
 };
 
@@ -33,6 +33,7 @@ function MentionsLegales({
           title={title}
           subtitle="Réflexions et recherches sur le développement"
           tableOfContents={{ contents: MENTIONS_LEGALES_SECTIONS }}
+          backgroundColor={COLORS.LIGHT}
         />
         <Row
           id={MENTIONS_LEGALES_SECTIONS.MENTIONS_OBLIGATOIRES_SITE.id}
@@ -44,9 +45,10 @@ function MentionsLegales({
           tags={["motivation", "partage", "gestion des connaissances"]}
         >
           <>
-            <p className="small mb-5">
+            <p className="display-6">
+              Référentiel :{" "}
               <a href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228">
-                Quelles sont les mentions obligatoires sur le site internet d'un
+                quelles sont les mentions obligatoires sur le site internet d'un
                 professionnel ? (service-public.fr)
               </a>
             </p>
