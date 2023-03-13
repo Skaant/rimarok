@@ -49,7 +49,7 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Un humain avant tout",
   },
   CONTACT: {
-    id: "entre-en-contact",
+    id: "entrer-en-contact",
     title: "Entrer en contact",
   },
   TARIF: {
