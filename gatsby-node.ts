@@ -134,34 +134,4 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
         },
       });
     });
-
-  const locationsProps = Object.values(
-    motifs
-      .filter(({ locations }) => locations)
-      .reduce((acc, motif) => {
-        motif.locations?.forEach((location) => {
-          if (!acc[location]) {
-            acc[location] = {
-              location,
-              locationMotifs: [motif],
-            };
-          } else {
-            acc[location].locationMotifs.push(motif);
-          }
-        });
-        return acc;
-      }, {} as { [key: string]: Pick<LocationTemplateProps, "location" | "locationMotifs"> })
-  );
-
-  locationsProps.forEach(({ location, locationMotifs }) => {
-    createPage<LocationTemplateProps>({
-      path: `/motifs/lieux/${location.replace(/[\s']/g, "-")}`,
-      component: path.resolve("./src/templates/location.template.tsx"),
-      context: {
-        ...globalPageContext,
-        location,
-        locationMotifs,
-      },
-    });
-  });
 };
