@@ -25,13 +25,14 @@ function MentionsLegales({
     <Layout
       head={{
         title,
+        noIndex: true,
       }}
       {...pageContext}
     >
       <>
         <PageHeader
           title={title}
-          subtitle="Réflexions et recherches sur le développement"
+          subtitle="Données administratives"
           tableOfContents={{ contents: MENTIONS_LEGALES_SECTIONS }}
           backgroundColor={COLORS.LIGHT}
         />
