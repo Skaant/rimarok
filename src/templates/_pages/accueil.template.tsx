@@ -60,6 +60,8 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
       id={PAGES_DATA[PAGE].id}
       head={{
         title,
+        description:
+          "Développeur web indépendant depuis 7 ans, je suis spécialisé dans la full-stack JS/TS et PHP, avec une sensibilité à l'éco-conception. J'interviens auprès de petites entreprises, start-ups et institutions pour compléter leurs équipes et accéler leurs projets.",
       }}
       {...pageContext}
     >
@@ -68,11 +70,15 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           id="top-illustration"
           className="position-absolute w-100 d-flex justify-content-center"
         >
-          <img src="/rimarok.svg" />
+          <img
+            src="/rimarok.svg"
+            alt="L'illustration de la page d'accueil représente un morceau d'espace étoilé d'où jailli le logo du site, symbolisant le passage et le formattage des idées, sur un soleil rouge."
+            loading="lazy"
+          />
         </div>
         <PageHeader
           title={
-            "Developpeur web TypeScript/JavaScript freelance et éco-conception"
+            "Developpeur web JavaScript-TypeScript freelance et éco-conception"
           }
           subtitle={title}
           backgroundColor={COLORS.FLOWER}

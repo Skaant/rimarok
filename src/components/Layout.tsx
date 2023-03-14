@@ -34,7 +34,11 @@ function Layout({
 }: LayoutProps) {
   return (
     <>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: "fr",
+        }}
+      >
         <title>
           {title} - {WEBSITE_DATA.TITLE}
         </title>

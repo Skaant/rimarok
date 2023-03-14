@@ -49,12 +49,12 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     title: "Un humain avant tout",
   },
   CONTACT: {
-    id: "entre-en-contact",
+    id: "entrer-en-contact",
     title: "Entrer en contact",
   },
   TARIF: {
-    id: "un-tarif-unique",
-    title: "Un tarif unique",
+    id: "mon-tarif",
+    title: "Mon tarif",
   },
   REALISATIONS: {
     id: "toutes-mes-realisations",
@@ -78,6 +78,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
       id={PAGES_DATA[PAGE].id}
       head={{
         title,
+        description:
+          "Je travaille en régie pour les gros projets applicatifs, ou au forfait pour de très courtes missions. Mon expertise est la full-stack et mes technos de prédilection sont TypeScript, React, Node et Gatsby. Toutefois, ma plus grande force est mon adaptabilité.",
       }}
       {...pageContext}
     >
@@ -105,7 +107,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/prestation-right.svg"
             className="position-absolute"
-            alt=""
+            alt="L'élément de droite de l'illustration de la page développement web freelance, des personnages en train de donner forme à un programme symbolisé par des formes fluides et abstraites."
+            loading="lazy"
           />
         </div>
         <div
@@ -117,7 +120,8 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/prestation-left.svg"
             className="position-absolute"
-            alt=""
+            alt="L'élément de gauche de l'illustration de la page développement web freelance, un personnage manipulant un tableau de bord symbolisé par un soleil à plusieurs options."
+            loading="lazy"
             style={{
               bottom: 0,
               left: 0,
@@ -332,11 +336,17 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
             content: PRESTATION_SECTIONS.TARIF.title,
           }}
           backgroundColor={COLORS.LIGHT}
-          tags={["mission", "rémunération"]}
+          tags={["mission", "rémunération", "dégressif"]}
         >
           <>
-            <p>Une prestation, un tarif :</p>
-            <p className="display-1">420€/jour HT</p>
+            <p>
+              Au premier Janvier 2023, je <b>facture mon intervention</b> :
+            </p>
+            <p className="display-1">470€/jour HT</p>
+            <p>
+              Pour des <b>missions m'occupant plus de 10 jours/mois</b>, mon
+              tarif passe à <b>420€/jour HT</b>.
+            </p>
           </>
         </Row>
         <Row

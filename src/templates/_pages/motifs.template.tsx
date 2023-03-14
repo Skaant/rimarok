@@ -54,6 +54,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
     <Layout
       head={{
         title,
+        description:
+          "Les design patterns font partie de l'horizon de l'ingénierie logicielle depuis plusieurs décennies. Mais je pense que la liste de ces motifs de conception, peut-être actualisée et grandement allongée pour former le fameux pattern language dont parle Cristopher Alexander.",
       }}
       {...pageContext}
     >
@@ -70,6 +72,8 @@ function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           <img
             src="/motifs-2.svg"
             style={{ maxHeight: "100%", maxWidth: "100%" }}
+            alt="L'illustration de la page motifs de conception, des formes symboliques et répétitives, représentant les multiples occurences d'un caractère qui définissent un motif."
+            loading="lazy"
           />
         </div>
         <PageHeader

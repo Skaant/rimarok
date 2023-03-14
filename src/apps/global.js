@@ -1,22 +1,18 @@
 import "bootstrap/js/src/collapse";
 import "bootstrap/js/dist/dropdown";
 import "bootstrap/js/dist/carousel";
-import "./backToTop";
-import "./contactGuards";
+import { backToTop } from "./backToTop";
+import { enableCollapses } from "./enableCollapses";
+import { contactGuards } from "./contactGuards";
 
-function initCollapses() {
-  [...document.querySelectorAll(".collapser")].forEach((collapser) => {
-    const target = collapser.parentElement.querySelector(".collapse");
-    collapser.addEventListener("click", (ev) => {
-      ev.stopPropagation();
-      target.classList.toggle("show");
-      collapser.classList.toggle("showing");
-    });
-  });
+function init() {
+  backToTop();
+  enableCollapses();
+  contactGuards();
 }
 
 if (document.readyState === "complete") {
-  initCollapses();
+  init();
 } else {
-  window.addEventListener("load", () => initCollapses());
+  window.addEventListener("load", () => init());
 }

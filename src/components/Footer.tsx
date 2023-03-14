@@ -70,14 +70,16 @@ function Footer({
                         </li>
                       );
                     })}{" "}
-                    <Link
-                      className="text-lagoon"
-                      to={`${PAGES_DATA[PAGES.MOTIFS].path}#${
-                        MOTIFS_SECTIONS["LISTE"].id
-                      }`}
-                    >
-                      ... et {motifs.length - 10} autres encore.
-                    </Link>
+                    <li>
+                      <Link
+                        className="text-lagoon"
+                        to={`${PAGES_DATA[PAGES.MOTIFS].path}#${
+                          MOTIFS_SECTIONS["LISTE"].id
+                        }`}
+                      >
+                        ... et {motifs.length - 10} autres encore.
+                      </Link>
+                    </li>
                   </ul>
                 ) : (
                   ""
@@ -129,23 +131,23 @@ function Footer({
             </a>
             .
           </li>
-          <LinksMenu
-            links={[
-              {
-                link: getInternalLink(
-                  PAGES.PRESTATION,
-                  PRESTATION_SECTIONS.CONTACT
-                ),
-                label: "Contact",
-              },
-              {
-                link: PAGES_DATA.MENTIONS_LEGALES.path,
-                label: PAGES_DATA.MENTIONS_LEGALES.title,
-                color: COLORS.LAGOON,
-              },
-            ]}
-          />
         </ul>
+        <LinksMenu
+          links={[
+            {
+              link: getInternalLink(
+                PAGES.PRESTATION,
+                PRESTATION_SECTIONS.CONTACT
+              ),
+              label: "Contact",
+            },
+            {
+              link: PAGES_DATA.MENTIONS_LEGALES.path,
+              label: PAGES_DATA.MENTIONS_LEGALES.title,
+              color: COLORS.LAGOON,
+            },
+          ]}
+        />
       </div>
     </footer>
   );

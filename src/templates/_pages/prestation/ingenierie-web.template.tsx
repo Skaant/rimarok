@@ -46,6 +46,8 @@ function IngenierieWeb({
     <Layout
       head={{
         title,
+        description:
+          "Détenteur d'un Master en Informatique Appliquées à la Gestion d'Entreprise depuis 2016, je continue à me former sur de nouveaux frameworks et paradigmes de développement. Mes connaissances théoriques et mon expérience me permettent de comprendre aisément vos problématiques métiers.",
       }}
       {...pageContext}
     >

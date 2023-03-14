@@ -12,7 +12,12 @@ type ProjectProps = {
 function Project({ title, scope, tags, date, children }: ProjectProps) {
   return (
     <div className="card project mx-2">
-      <img src="/mist.svg" className="w-50 mt-5 ms-5 mb-5 position-absolute" />
+      <img
+        src="/mist.svg"
+        className="w-50 mt-5 ms-5 mb-5 position-absolute"
+        alt="Un petit nuage de brume avec quelques étoiles, sous le titre du projet, pour un effet cosmétique."
+        loading="lazy"
+      />
       <div className="card-body d-flex flex-column text-start">
         <h3 className="card-title order-1 mb-4">{title}</h3>
         <TagsDateHeader
