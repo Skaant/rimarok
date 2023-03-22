@@ -5,10 +5,15 @@ import { backToTop } from "./backToTop";
 import { enableCollapses } from "./enableCollapses";
 import { contactGuards } from "./contactGuards";
 
+let inited = false;
+
 function init() {
-  backToTop();
-  enableCollapses();
-  contactGuards();
+  if (!inited) {
+    backToTop();
+    enableCollapses();
+    contactGuards();
+    inited = true;
+  }
 }
 
 if (document.readyState === "complete") {
