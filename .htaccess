@@ -3,7 +3,7 @@ RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://rimarok.com/$1 [L,R=301]
 RewriteRule ^(.*)$/ https://rimarok.com/$1 [L,R=301]
 
-Redirect 301 "/prestation" "/developpement-web-freelance"
-Redirect 301 "/ingenierie-web" "/expertise-fullstack-javascript"
-Redirect 301 "/eco-conception" "/eco-conception-logicielle-et-sobriete-numerique"
+RedirectMatch 301 "/prestation?$" "/developpement-web-freelance"
+RedirectMatch 301 "/ingenierie-web?$" "/expertise-fullstack-javascript"
+RedirectMatch 301 "/eco-conception?$" "/eco-conception-logicielle-et-sobriete-numerique"
 RedirectMatch 301 "/motifs?$" "/motifs-de-conception"
