@@ -322,6 +322,29 @@ function EcoConception({
               </a>
               .
             </p>
+            <p>
+              Enfin, bien que plus éloigné du développement en tant que tel,
+              j'ai aussi envie de partager{" "}
+              <b>deux autres documents de référence sur le design soutenable</b>{" "}
+              :
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.ibm.com/design/practices/design-for-sustainability/">
+                  IBM Design for sustainability
+                </a>
+                , présentant les valeurs qui dirigent la démarche de
+                "durabilité" ainsi qu'une{" "}
+                <b>très appréciable checklist de bonnes pratiques</b>,
+              </li>
+              <li>
+                <a href="https://sustainablewebdesign.org/">
+                  Sustainable web design
+                </a>
+                , un site regroupant axes de travail et réflexions sur le{" "}
+                <b>calcul des émissions</b> du numérique.
+              </li>
+            </ul>
           </>
         </Row>
         <Row
