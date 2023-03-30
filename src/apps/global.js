@@ -5,14 +5,16 @@ import { backToTop } from "./backToTop";
 import { enableCollapses } from "./enableCollapses";
 import { contactGuards } from "./contactGuards";
 
-let inited = false;
+let inited = document.getElementsByTagName("body")[0].getAttribute("inited");
 
 function init() {
   if (!inited) {
     backToTop();
     enableCollapses();
     contactGuards();
-    inited = true;
+    inited = document
+      .getElementsByTagName("body")[0]
+      .setAttribute("inited", true);
   }
 }
 
