@@ -4,15 +4,14 @@ import { PAGES, PAGES_DATA } from "../data/pages";
 import { Link } from "gatsby";
 import WEBSITE_DATA from "../data/website";
 import LinksMenu from "./LinksMenu";
-import { ARTICLES_DATA } from "../data/articles";
 import getInternalLink from "../helpers/getInternalLink";
 import { PRESTATION_SECTIONS } from "../templates/_pages/prestation.template";
 import { GlobalPageContext } from "../types/GlobalPageContext";
-import { MOTIFS_SECTIONS } from "../templates/_pages/motifs.template";
 
 function Footer({
-  motifs,
-  footer: { motifs: footerMotifs },
+  firstMotifsLink,
+  motifsLength,
+  lastArticlesLink,
 }: GlobalPageContext) {
   return (
     <footer className={`bg-${COLORS.ABYSS}`}>
@@ -32,6 +31,7 @@ function Footer({
               <li className="py-1" key={index}>
                 <Link className="text-white pb-2" to={path}>
                   {title}
+                  {path.includes("motifs") ? ` (${motifsLength})` : ""}
                 </Link>
                 {path.includes("developpement") ? (
                   <ul className="list-unstyled">
@@ -57,59 +57,30 @@ function Footer({
                 )}
                 {path.includes("motifs") ? (
                   <ul className="list-unstyled mt-2 ps-3">
-                    {footerMotifs.map(({ name, slug }, index) => {
+                    {firstMotifsLink.map(({ label, url }) => {
                       return (
-                        <li className="py-1 pt-2 d-inline" key={index}>
-                          <Link
-                            className="text-white font-rubik"
-                            to={`/motifs/${slug}`}
-                          >
-                            {name}
+                        <li className="py-1 pt-2" key={url}>
+                          <Link className="text-white font-rubik" to={url}>
+                            {label}
                           </Link>
-                          {", "}
                         </li>
                       );
                     })}{" "}
-                    <li>
-                      <Link
-                        className="text-lagoon"
-                        to={`${PAGES_DATA[PAGES.MOTIFS].path}#${
-                          MOTIFS_SECTIONS["LISTE"].id
-                        }`}
-                      >
-                        ... et {motifs.length - 10} autres encore.
-                      </Link>
-                    </li>
                   </ul>
                 ) : (
                   ""
                 )}
                 {path.includes("blog") ? (
                   <ul className="list-unstyled">
-                    {ARTICLES_DATA.slice()
-                      .filter(({ disabled }) => !disabled)
-                      .sort((article1, article2) => {
-                        return article2.date
-                          .split("/")
-                          .reverse()
-                          .join("")
-                          .localeCompare(
-                            article1.date.split("/").reverse().join("")
-                          );
-                      })
-                      .slice(0, 5)
-                      .map(({ title, id }) => {
-                        return (
-                          <li className="py-1 pt-2 ps-3" key={index}>
-                            <Link
-                              className="text-white font-rubik"
-                              to={`/blog/${id}`}
-                            >
-                              {title}
-                            </Link>
-                          </li>
-                        );
-                      })}
+                    {lastArticlesLink.map(({ label, url }) => {
+                      return (
+                        <li className="py-1 pt-2 ps-3" key={url}>
+                          <Link className="text-white font-rubik" to={url}>
+                            {label}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 ) : (
                   ""

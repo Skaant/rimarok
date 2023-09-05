@@ -1,8 +1,9 @@
 export type Article = {
-  id: string;
-  date: string;
+  index: number;
   title: string;
-  tags: string[];
+  slug: string;
   description?: string;
-  disabled?: true;
+  tags?: string[];
+  createdAt?: string;
+  publishedAt?: string;
 };

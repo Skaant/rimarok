@@ -1,6 +1,6 @@
 {
   "name": "rimarok.com",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "private": true,
   "description": "rimarok.com",
   "author": "Rimarok",
@@ -24,11 +24,11 @@
     "gatsby-plugin-react-helmet": "^6.5.0",
     "gatsby-plugin-sass": "^6.5.0",
     "gatsby-plugin-sitemap": "^6.5.0",
+    "nebula-atoms": "^1.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.52.2",
-    "statikon": "^0.1.12"
+    "sass": "^1.52.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",

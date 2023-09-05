@@ -23,6 +23,7 @@ type LayoutProps = {
        */
       noIndex?: true;
     };
+    containerType?: "container" | "container-fluid";
     children: ReactElement;
   };
 
@@ -40,7 +41,7 @@ function Layout({
         }}
       >
         <title>
-          {title} - {WEBSITE_DATA.TITLE}
+          {title} | {WEBSITE_DATA.TITLE}
         </title>
         {description && <meta name="description" content={description} />}
         {noIndex && <meta name="robots" content="noindex" />}
