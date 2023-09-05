@@ -546,7 +546,7 @@ const Styleguide = ({
               <b>liste des articles du site</b>.
             </p>
             <div style={{ maxHeight: "100vh", overflow: "scroll" }}>
-              <ArticlesList />
+              <ArticlesList links={[]} />
             </div>
           </>
         </Row>
@@ -566,7 +566,7 @@ const Styleguide = ({
               <b>liste des articles du site</b>.
             </p>
             <div style={{ maxHeight: "100vh", overflow: "scroll" }}>
-              <MotifsList motifs={pageContext.motifs} />
+              <MotifsList motifs={[]} />
             </div>
           </>
         </Row>
