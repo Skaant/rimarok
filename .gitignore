@@ -4,3 +4,5 @@ cache/
 public
 src/gatsby-types.d.ts
 .env.*
+static/*.png
+static/*.jpg

@@ -25,12 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Checkout nebula-genesis
-        uses: actions/checkout@v3
-        with:
-          repository: abstract-core/nebula-genesis
-          path: nebula-genesis
-
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
@@ -51,19 +45,16 @@ jobs:
 
       - name: Download and cache Notion data
         run: |
-          cd ./nebula-genesis
-          npm i
-          npx tsc
-          node index.js \
+          node node_modules/nebula-genesis/build/index.js \
             NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} \
             DATABASE_ID=${{ secrets.MOTIFS_DATABASE_ID }} \
-            SITE_FOLDER_PATH=.. \
+            SITE_FOLDER_PATH=. \
             CACHE_FOLDER_NAME=motifs \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
-          node index.js \
+          node node_modules/nebula-genesis/build/index.js \
             NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} \
             DATABASE_ID=${{ secrets.ARTICLES_DATABASE_ID }} \
-            SITE_FOLDER_PATH=.. \
+            SITE_FOLDER_PATH=. \
             CACHE_FOLDER_NAME=articles \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
 
