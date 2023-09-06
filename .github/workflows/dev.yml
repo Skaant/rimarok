@@ -43,6 +43,9 @@ jobs:
           key: notion-files-cache
           path: ./static
 
+      - name: Install dependencies
+        run: npm i
+
       - name: Download and cache Notion data
         run: |
           node node_modules/nebula-genesis/build/index.js \
