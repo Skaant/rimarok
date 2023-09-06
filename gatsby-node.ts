@@ -18,6 +18,7 @@ import { ContentTemplateContext } from "./src/templates/content.template";
 import { COLORS } from "./src/data/colors";
 import { BlogTemplateContext } from "./src/templates/_pages/blog.template";
 import { articleFormatter } from "./src/helpers/articleFormatter";
+import { MotifsTemplateContext } from "./src/templates/_pages/motifs.template";
 
 export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   const { createPage } = actions;
@@ -137,10 +138,13 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     ),
     context: globalPageContext,
   });
-  createPage<GlobalPageContext>({
+  createPage<MotifsTemplateContext>({
     path: PAGES_DATA[PAGES.MOTIFS].path,
     component: path.resolve("./src/templates/_pages/motifs.template.tsx"),
-    context: globalPageContext,
+    context: {
+      motifs: _motifs,
+      ...globalPageContext,
+    },
   });
   createPage<BlogTemplateContext>({
     path: PAGES_DATA[PAGES.BLOG].path,

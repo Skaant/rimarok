@@ -12,6 +12,7 @@ import { COLORS } from "../../data/colors";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
 import MotifsList from "../../components/MotifsList";
+import { Motif } from "../../types/Motif";
 
 const PAGE_ID = PAGES.MOTIFS;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -48,7 +49,11 @@ export const MOTIFS_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-function Motifs({ pageContext }: PageProps<undefined, GlobalPageContext>) {
+export type MotifsTemplateContext = GlobalPageContext & {
+  motifs: Motif[];
+};
+
+function Motifs({ pageContext }: PageProps<undefined, MotifsTemplateContext>) {
   const { motifs } = pageContext;
   return (
     <Layout
