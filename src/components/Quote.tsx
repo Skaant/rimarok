@@ -34,7 +34,7 @@ function Quote({
         alt="Le logo de RIMAROK.com, un glyphe symbolisant le passage et le formattage des idées, utilisé pour illustrer une citation."
         loading="lazy"
       />
-      <div className={`display-${displayHeading} font-slab px-4 pt-5 pb-4`}>
+      <div className={`display-${displayHeading} font-slab px-4 py-4`}>
         {children}
       </div>
       {legend && (legend.source || legend.author) ? (

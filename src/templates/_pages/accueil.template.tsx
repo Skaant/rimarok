@@ -4,16 +4,13 @@ import Layout from "../../components/Layout";
 import "../../styles/global.scss";
 import Quote from "../../components/Quote";
 import { PAGES, PAGES_DATA } from "../../data/pages";
-import Carousel from "../../components/Carousel";
-import LinksMenu, { LinksMenuItem } from "../../components/LinksMenu";
+import LinksMenu from "../../components/LinksMenu";
 import Row from "../../components/Row";
 import { COLORS } from "../../data/colors";
 import Section from "../../types/Section";
 import { PRESTATION_SECTIONS } from "./prestation.template";
-import { Link, PageProps } from "gatsby";
+import { PageProps } from "gatsby";
 import getInternalLink from "../../helpers/getInternalLink";
-import { PERSONAL_PROJECTS } from "../../components/_projects/persos";
-import { PROFESSIONAL_PROJECTS } from "../../components/_projects/pros";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
 import "../../styles/pages/accueil.scss";
 import InternalLink from "../../components/InternalLink";
@@ -24,29 +21,20 @@ const { title } = PAGES_DATA[PAGE];
 
 export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
   INTRO_SITE: {
-    id: "developpement-web-full-stack-remote-grenoble-chambery-lyon",
-    title: "Développement web full-stack remote / Grenoble / Chambéry / Lyon",
-  },
-  MOTIVATIONS: {
-    id: "motivations-performances-economies-ecologie",
-    title: "Mes motivations : performances, économies, écologie",
+    id: "mon-fonctionnement",
+    title: "Mon fonctionnement",
   },
   STACK: {
-    id: "typescript-react-node-database-php-ecologogiques",
-    title: "TypeScript, React, Node, Database,  PHP ... écologiques",
+    id: "un-expert-de-la-full-stack-javascript",
+    title: "Un expert de la full-stack JavaScript",
   },
-  PROJETS_PROFESSIONNELS: {
-    id: "projets-professionnels-startups-pme-solopreneurs-institutions-publiques",
-    title:
-      "Projets profesionnels (startups, PME, solopreneurs, institutions publiques)",
+  MOTIVATIONS: {
+    id: "les-benefices-de-l-eco-conception-web",
+    title: "Les bénéfices de l'éco-conception web",
   },
   CODE_PHILOSOPHIE: {
-    id: "le-code-un-langage-fait-de-motifs-de-conception",
-    title: "Le code, un langage fait de motifs de conception",
-  },
-  PROJETS_PERSOS: {
-    id: "projets-personnels-passion-experimentation",
-    title: "Projets personnels : passion, expérimentation",
+    id: "design-patterns-une-comprehension-globale-du-code",
+    title: "Design patterns : une compréhension globale du code",
   },
   COLLABORATION: {
     id: "travailler-ensemble-vers-une-collaboration-future",
@@ -77,37 +65,18 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           />
         </div>
         <PageHeader
-          title={
-            "Developpeur web JavaScript-TypeScript freelance et éco-conception"
-          }
+          title={"Developpeur web freelance et éco-conception"}
           subtitle={title}
           backgroundColor={COLORS.FLOWER}
           titleSize={"big"}
           linksMenu={{
-            links: Object.entries(PAGES_DATA)
-              .filter(
-                ([key]) =>
-                  ![
-                    PAGES.ACCUEIL,
-                    PAGES.STYLEGUIDE,
-                    PAGES.MENTIONS_LEGALES,
-                  ].includes(key as PAGES)
-              )
-              .map<LinksMenuItem>(([key, { path, title }]) => ({
-                link: path,
-                label: title,
-                color: [
-                  PAGES.PRESTATION_INGENIERIE_WEB,
-                  PAGES.PRESTATION_ECO_CONCEPTION,
-                ].includes(key as PAGES)
-                  ? COLORS.LIGHT
-                  : COLORS.ABYSS,
-              })),
-          }}
-          tableOfContents={{
-            contents: ACCUEIL_SECTIONS,
-            color: COLORS.ABYSS,
-            linkColor: COLORS.LIGHT,
+            links: [
+              {
+                label: "Allons-y !",
+                link: `#${ACCUEIL_SECTIONS.INTRO_SITE.id}`,
+                color: COLORS.ABYSS,
+              },
+            ],
           }}
         />
         <Row
@@ -116,116 +85,31 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             level: 2,
             content: ACCUEIL_SECTIONS.INTRO_SITE.title,
           }}
-          tags={["dev web", "full-stack", "indépendant", "chartreuse"]}
         >
           <>
             <p>
-              Salut ! Je m'appelle <b>Romaric Ruga</b> et vous êtes sur mon{" "}
-              <b>site professionnel</b> de <b>développeur web freelance</b>.
-            </p>
-            <p className="display-6">
-              Je travaille en <b>renfort d'équipe</b> sur des{" "}
-              <b>projets applicatifs</b> de toutes tailles dans des <b>PME</b>,{" "}
-              <b>startups</b>, <b>collectivités</b> et/ou avec des{" "}
-              <b>auto-entrepreneurs</b>, depuis <b>plus de 7 ans</b>.
+              Salut, je m'appelle Romaric Ruga et vous êtes sur mon site
+              professionnel de développeur web full-stack freelance.
             </p>
             <p>
-              Vous <b>cherchez quelqu'un</b> pour donner un <b>coup de boost</b>{" "}
-              à vos <b>applications</b> ou <b>sites internet</b> ?
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: PAGES_DATA[PAGES.PRESTATION].path,
-                  label: "Découvrez ma prestation",
-                },
-                {
-                  link: `/#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
-                  label: "Mes motivations",
-                  color: COLORS.ABYSS,
-                },
-                {
-                  link: `/#${ACCUEIL_SECTIONS.STACK.id}`,
-                  label: "Ma stack",
-                  color: COLORS.ABYSS,
-                },
-              ]}
-            />
-          </>
-        </Row>
-        <Row
-          id={ACCUEIL_SECTIONS.MOTIVATIONS.id}
-          header={{
-            level: 2,
-            content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
-          }}
-          backgroundColor={COLORS.SUN}
-          tags={["optimisation", "expertise", "éthique", "sobriété"]}
-        >
-          <>
-            <Quote displayHeading={5}>
-              <>
-                Je veux utiliser Internet pour créer des solutions à des
-                problématiques de la vie courante, tout en réduisant ses impacts
-                négatifs sur la planète.
-              </>
-            </Quote>
-            <p>
-              Les usages de l'informatique créent des{" "}
-              <b>besoins exponentiels</b> en infrastructure matérielle et en
-              puissance de calcul.
-            </p>
-            <p>
-              Même au sein d'un projet applicatif,{" "}
+              <b>Je travaille en renfort d'équipe</b> sur des projets
+              applicatifs de toutes tailles dans des PME, startups,
+              collectivités et/ou avec des auto-entrepreneurs, depuis plus de 7
+              ans.{" "}
               <b>
-                l'ajout de nouvelles fonctionnalités multiplie la consommation
-                de ressources
-              </b>{" "}
-              (y compris humaines).
-            </p>
-            <p className="display-6">
-              Pourtant, <b>la croissance de ces coûts devrait être endiguée</b>.
+                J'exerce mon activité en remote, ou ponctuellement sur les
+                villes de Grenoble, Chambéry, Voiron ou Lyon.
+              </b>
             </p>
             <p>
-              C'est tout l'enjeu de l'<b>éco-conception</b> et de la sobriété
-              numérique.
+              Vous cherchez quelqu'un pour donner un coup de boost à vos
+              applications ou sites internet ?
             </p>
             <LinksMenu
               links={[
                 {
-                  label: "Plus sur l'éco-conception",
-                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
-                  color: COLORS.MIST,
-                },
-              ]}
-            />
-          </>
-        </Row>
-        <Row
-          header={{
-            level: 3,
-            content: "Nouvelles fonctionnalités et/ou refactoring optimisés",
-          }}
-          backgroundColor={COLORS.SUN}
-          className={"pt-0"}
-          stars={true}
-          collapsible={true}
-        >
-          <>
-            <p>
-              Mon intervention en ingénierie web permet d'
-              <b>étendre le périmètre fonctionnel de vos applications</b>, tout
-              en <b>limitant les "prises de poids" logicielles</b>.
-            </p>
-            <p>
-              Les programmes conservent des <b>performances optimisées</b>, sans
-              être plus coûteux.
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
-                  label: "Plus sur l'ingénierie web",
+                  link: `#${ACCUEIL_SECTIONS.STACK.id}`,
+                  label: "Découvrir mon expertise",
                   color: COLORS.MIST,
                 },
               ]}
@@ -238,98 +122,93 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             level: 2,
             content: ACCUEIL_SECTIONS.STACK.title,
           }}
-          tags={["parcours", "green-it", "typescript", "react"]}
+          backgroundColor={COLORS.MIST}
         >
           <>
             <p>
-              Spécialisé dans la <b>full-stack JavaScript</b>{" "}
-              <i>
-                (TypeScript, Node, React, Express, Jest, Nest, Vue, Angular ...)
-              </i>
-              , je mets également en oeuvre des{" "}
-              <b>bonnes pratiques d'éco-conception logicielle</b>.
+              Je suis spécialisé dans les technologies JavaScript : TypeScript,
+              Node, React, Express, Jest, Nest, Vue, Svelte. Je mets également
+              en oeuvre des bonnes pratiques d'éco-conception logicielle.
             </p>
             <p>
               C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
-              <b>Green-IT</b>.
-            </p>
-            <p>
-              Diplomé d'un{" "}
+              <b>Green-IT</b>. Diplomé d'un{" "}
               <InternalLink
                 page={PAGES.PRESTATION_INGENIERIE_WEB}
                 section={PRESTATION_INGENIERIE_WEB_SECTIONS.UNIVERSITE}
                 altTitle="Master MIAGE option énergie"
               />{" "}
-              en 2016, j'exerce depuis l'activité de{" "}
-              <b>développeur web en tant qu'indépendant</b>.
+              en 2016, j'exerce depuis l'activité de développeur web en tant
+              qu'indépendant.
             </p>
-            <p className="display-6">
-              Au croisement de l'ingénierie et de l'éco-conception logicielles
-              apparaît une <b>puissante efficience</b>, qui{" "}
-              <b>accélère les applications</b> et <b>réduit les dépenses</b> .
+          </>
+        </Row>
+        <Row
+          header={{
+            level: 3,
+            content: "Ajouter ou améliorer des fonctionnalités",
+          }}
+          backgroundColor={COLORS.MIST}
+          className={"pt-0"}
+          stars={true}
+        >
+          <>
+            <p>
+              Mon intervention en ingénierie web permet d'étendre le périmètre
+              fonctionnel de vos applications, tout en limitant les "prises de
+              poids" logicielles.
+            </p>
+            <p>
+              Les programmes conservent des performances optimisées, sans être
+              plus coûteux.
             </p>
             <LinksMenu
               links={[
                 {
-                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
                   link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
-                },
-                {
-                  label: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].title,
-                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
+                  color: COLORS.FLOWER,
                 },
               ]}
             />
           </>
         </Row>
         <Row
-          id={ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}
+          id={ACCUEIL_SECTIONS.MOTIVATIONS.id}
           header={{
             level: 2,
-            content: ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.title,
+            content: ACCUEIL_SECTIONS.MOTIVATIONS.title,
           }}
-          backgroundColor={COLORS.LAGOON}
-          colClassName="text-white"
-          tags={["expériences", "mission-type", "stacks", "votre projet"]}
+          backgroundColor={COLORS.SUN}
         >
           <>
+            <Quote displayHeading={6}>
+              <>
+                Créer des solutions à des problématiques de la vie courante,
+                tout en réduisant les impacts négatifs d'internet pour la
+                planète.
+              </>
+            </Quote>
             <p>
-              C'est la <b>diversité des contextes</b> qui dirige ma carrière
-              professionnelle.
-            </p>
-            <p className="display-6">
-              Mais le fil rouge est toujours les <b>technos JS et full-stack</b>
-              .
+              Les usages de l'informatique créent des besoins exponentiels en
+              infrastructure matérielle et en puissance de calcul. Même au sein
+              d'un projet applicatif, l'ajout de nouvelles fonctionnalités
+              multiplie la consommation de ressources.{" "}
+              <b>
+                Pourtant, la croissance de ces coûts (financiers, énergétiques
+                et humains) devrait être endiguée.
+              </b>
             </p>
             <p>
-              Retrouvez ci-dessous une sélection de mes expériences les plus
-              pertinentes :
-            </p>
-            <Carousel
-              id={`${ACCUEIL_SECTIONS.PROJETS_PROFESSIONNELS.id}_carousel`}
-              controlsColor={COLORS.LIGHT}
-              children={PROFESSIONAL_PROJECTS}
-            />
-            <p>
-              Peut-etre que <b>mon prochain projet est le vôtre</b> ?
+              C'est tout l'enjeu de l'éco-conception et de la sobriété
+              numérique.
             </p>
             <LinksMenu
               links={[
                 {
-                  link: getInternalLink(
-                    PAGES.PRESTATION,
-                    PRESTATION_SECTIONS.CONTACT
-                  ),
-                  label: PRESTATION_SECTIONS.CONTACT.title,
-                  color: COLORS.LIGHT,
-                },
-                {
-                  link: getInternalLink(
-                    PAGES.PRESTATION,
-                    PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES
-                  ),
-                  label: PRESTATION_SECTIONS.SAVOIR_FAIRE_ET_TECHNOLOGIES.title,
-                  color: COLORS.LIGHT,
+                  label: "Éco-concevoir mon projet",
+                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
+                  color: COLORS.MIST,
                 },
               ]}
             />
@@ -341,38 +220,23 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             level: 2,
             content: ACCUEIL_SECTIONS.CODE_PHILOSOPHIE.title,
           }}
-          tags={["meta", "motifs", "fluidité"]}
         >
           <>
-            <Quote
-              displayHeading={4}
-              children={
-                <p>
-                  Le code, ce n'est pas que du code : c'est un organisme vivant.
-                </p>
-              }
-              backgroundColor={COLORS.SUN}
-            />
             <p>
-              Pour moi, une application est <b>un ecosystème</b> : avec ses
-              flux, ses entités, ses <b>noeuds à résoudre</b>.
-            </p>
-            <p className="display-6">
-              <b>Les motifs de conception (design patterns)</b>, qui sont
-              partout dans le code, <b>interagissent ensemble en permanence</b>{" "}
-              pour former un organisme <b>évolutif</b>.
+              <b>
+                Le code ce n'est pas que du code, c'est un organisme vivant.
+              </b>
             </p>
             <p>
-              Une <b>bonne conception</b> devient alors juste un{" "}
-              <i>langage de motifs</i> qui fonctionne.
+              Pour moi, une application est un ecosystème : avec ses flux, ses
+              entités, ses noeuds à résoudre. Les motifs de conception (design
+              patterns), qui sont partout dans le code, interagissent ensemble
+              en permanence pour former un organisme évolutif.
             </p>
             <p>
-              J'aime aussi beaucoup{" "}
-              <b>réfléchir et me questionner autour du développement web</b>.
-            </p>
-            <p>
-              En plus d'un portefeuille de compétences, j'apporte une{" "}
-              <b>vision méta du code</b>.
+              Une <b>bonne conception</b> devient alors juste un langage de
+              motifs qui fonctionne. Ainsi, en plus d'un portefeuille de
+              compétences, j'apporte une <b>vision méta du code</b>.
             </p>
             <LinksMenu
               links={[
@@ -389,83 +253,43 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           </>
         </Row>
         <Row
-          id={ACCUEIL_SECTIONS.PROJETS_PERSOS.id}
-          header={{
-            level: 2,
-            content: ACCUEIL_SECTIONS.PROJETS_PERSOS.title,
-          }}
-          backgroundColor={COLORS.SUN}
-          tags={["expériences", "ludique", "pratique"]}
-        >
-          <>
-            <p>
-              Je développe régulièrement des <b>outils web</b> pour{" "}
-              <b>répondre à des problématiques concrètes</b> et{" "}
-              <b>découvrir de nouvelles technos</b>.
-            </p>
-            <p>
-              Découvrez quelques POC, exemples édifiants de conception{" "}
-              <b>sobre et pratique</b> :
-            </p>
-            <Carousel
-              id={`${ACCUEIL_SECTIONS.PROJETS_PERSOS.id}_carousel`}
-              children={PERSONAL_PROJECTS}
-              controlsColor={COLORS.LIGHT}
-            />
-            <p>
-              <b>Coder est un jeu.</b>
-            </p>
-            <p className="display-6">
-              Allons-nous <b>jouer ensemble</b> ?
-            </p>
-          </>
-        </Row>
-        <Row
           id={ACCUEIL_SECTIONS.COLLABORATION.id}
           header={{
             level: 2,
             content: ACCUEIL_SECTIONS.COLLABORATION.title,
           }}
-          backgroundColor={COLORS.LIGHT}
-          tags={["votre projet", "contact", "équipe"]}
+          backgroundColor={COLORS.LAGOON}
         >
           <>
             <p>
-              <Link
-                to={`${PAGES_DATA[PAGES.PRESTATION].path}#${
-                  PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id
-                }`}
-              >
-                Sommes-nous faits pour collaborer
-              </Link>{" "}
-              ?
+              PME, start-ups, pôle applicatif ... le développement de votre
+              application web a besoin d'un coup de pouce courte, moyenne ou
+              longue durée ? Votre environnement est sain, vous avez juste la
+              bonne dose de stress, vous prenez des vacances et votre projet
+              n'était pas à livrer hier ?
             </p>
             <p>
-              J'aime les <b>projets qui ont du sens</b>, à la technique bien
-              huilée et où ma <b>créativité</b> peut s'exprimer.
-            </p>
-            <p className="display-6">
-              Vous pourriez aimer mon <b>expertise</b> sur la stack JavaScript
-              moderne, mon <b>esprit analytique</b> et ma <b>bonne humeur</b>.
-            </p>
-            <p>
-              PME, start-ups, pôle applicatif ...{" "}
               <b>
-                le développement de votre application web a besoin d'un coup de
-                pouce
+                Vous pourriez apprécier mon expertise sur la stack JavaScript
+                moderne, mon esprit analytique et ma bonne humeur.
               </b>{" "}
-              courte, moyenne ou longue durée ?
+              J'aime les projets qui ont du sens, à la technique bien huilée et
+              où ma créativité technique peut s'exprimer. Une de mes grandes
+              forces est de questionner, aborder les problématiques autrement et
+              trouver des solutions plus simples.
             </p>
+            <p>Au premier Janvier 2023, je facture mon intervention :</p>
+            <p className="display-2">470€/jour HT</p>
+            <p>
+              <b>
+                Pour des missions m'occupant plus de 10 jours/mois, mon tarif
+                passe à 420€/jour HT.
+              </b>
+            </p>
+            <p>J'interviens jusqu'à :</p>
+            <p className="display-5">4 jours/semaine.</p>
             <LinksMenu
               links={[
-                {
-                  link: getInternalLink(
-                    PAGES.PRESTATION,
-                    PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE
-                  ),
-                  label: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
-                  color: COLORS.FLOWER,
-                },
                 {
                   link: getInternalLink(
                     PAGES.PRESTATION,

@@ -28,6 +28,7 @@ function LinksMenu({ links, size }: LinksMenuProps) {
                 size === "sm" ? "1" : "2"
               }${size ? ` btn-${size}` : ""}`}
               role="button"
+              target="_blank"
               {...(id ? { id } : {})}
             >
               {label}
@@ -40,7 +41,6 @@ function LinksMenu({ links, size }: LinksMenuProps) {
                 size ? ` btn-${size}` : ""
               }`}
               role="button"
-              target="_blank"
               {...(id ? { id } : {})}
             >
               {label}
