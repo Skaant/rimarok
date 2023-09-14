@@ -6,6 +6,7 @@ type BadgesListProps = {
   className?: string;
 };
 
+/** @deprecated */
 function BadgesList({ badges, className }: BadgesListProps) {
   return (
     <span className={className || ""}>

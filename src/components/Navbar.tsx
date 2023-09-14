@@ -16,10 +16,10 @@ function Navbar({ motifsLength, className }: NavbarProps) {
       }`}
     >
       <div className="container-fluid d-flex align-items-center px-3">
-        <Link className="navbar-brand font-slab" to="/">
+        <Link className="navbar-brand font-slab text-abyss" to="/">
           {WEBSITE_DATA.BRAND_NAME}
         </Link>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -36,11 +36,7 @@ function Navbar({ motifsLength, className }: NavbarProps) {
               ({ title, path }, index) => {
                 return (
                   <li className="nav-item py-2 py-lg-0">
-                    <Link
-                      key={index}
-                      className={`nav-link${"" /** @todo active */}`}
-                      to={path}
-                    >
+                    <Link key={index} className="nav-link" to={path}>
                       {title}
                       {path.includes("motifs") ? ` (${motifsLength})` : ""}
                     </Link>
@@ -49,7 +45,7 @@ function Navbar({ motifsLength, className }: NavbarProps) {
               }
             )}
           </ul>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

@@ -13,6 +13,7 @@ type PageHeaderProps = Pick<
   subtitle?: string;
   titleSize?: "normal" | "big";
   linksMenu?: LinksMenuProps;
+  /** @deprecated */
   tableOfContents?: TableOfContentsProps;
 };
 

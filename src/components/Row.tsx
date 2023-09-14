@@ -9,6 +9,7 @@ export type RowProps = {
     content: string;
     className?: string;
   };
+  /** @deprecated */
   tags?: string[];
   backgroundColor?: COLORS;
   paddingY?: 0 | 2 | 3 | 5;

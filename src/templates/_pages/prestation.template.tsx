@@ -48,10 +48,6 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     id: "un-humain-avant-tout",
     title: "Un humain avant tout",
   },
-  CONTACT: {
-    id: "entrer-en-contact",
-    title: "Entrer en contact",
-  },
   TARIF: {
     id: "mon-tarif",
     title: "Mon tarif",
@@ -347,48 +343,6 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               Pour des <b>missions m'occupant plus de 10 jours/mois</b>, mon
               tarif passe à <b>420€/jour HT</b>.
             </p>
-          </>
-        </Row>
-        <Row
-          id={PRESTATION_SECTIONS.CONTACT.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.CONTACT.title,
-          }}
-          backgroundColor={COLORS.FLOWER}
-          tags={["calendly", "mail", "sms", "linkedin"]}
-        >
-          <>
-            <p>
-              Pour <b>discuter ensemble</b>, je vous propose{" "}
-              <b>plusieurs solutions</b> :
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: WEBSITE_DATA.CALENDLY_LINK,
-                  label: "Prendre un premier RDV sur Calendly",
-                  color: COLORS.ABYSS,
-                },
-                {
-                  link: "#",
-                  label: "M'envoyer un mail sympa",
-                  color: COLORS.ABYSS,
-                  id: "contact-mail",
-                },
-                {
-                  link: "#",
-                  label: "Un petit SMS pour vous présenter",
-                  color: COLORS.ABYSS,
-                  id: "contact-phone",
-                },
-                {
-                  link: WEBSITE_DATA.LINKEDIN_LINK,
-                  label: "Un message sur Lik'dine",
-                  color: COLORS.ABYSS,
-                },
-              ]}
-            />
           </>
         </Row>
         <Row

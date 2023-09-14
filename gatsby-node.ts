@@ -29,9 +29,10 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
    * 1. PAGE [& CONTENTS] RETRIEVING
    */
 
-  const articlesCache = JSON.parse(
-    await readFile("./cache/articles/pages.json", "utf-8")
-  ) as PageObjectResponse[];
+  const articlesCache = ([] ||
+    JSON.parse(
+      await readFile("./cache/articles/pages.json", "utf-8")
+    )) as PageObjectResponse[];
 
   const articlesPageAndBlocks = await Promise.all(
     articlesCache.map(
@@ -59,9 +60,10 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       } as { index: number } & Link)
   );
 
-  const motifsCache = JSON.parse(
-    await readFile("./cache/motifs/pages.json", "utf-8")
-  ) as PageObjectResponse[];
+  const motifsCache = ([] ||
+    JSON.parse(
+      await readFile("./cache/motifs/pages.json", "utf-8")
+    )) as PageObjectResponse[];
 
   const motifs = await Promise.all(
     motifsCache.map(
@@ -119,7 +121,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     component: path.resolve("./src/templates/_pages/accueil.template.tsx"),
     context: globalPageContext,
   });
-  createPage<GlobalPageContext>({
+  /* createPage<GlobalPageContext>({
     path: PAGES_DATA[PAGES.PRESTATION].path,
     component: path.resolve("./src/templates/_pages/prestation.template.tsx"),
     context: globalPageContext,
@@ -158,7 +160,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     path: PAGES_DATA[PAGES.STYLEGUIDE].path,
     component: path.resolve("./src/templates/_pages/styleguide.template.tsx"),
     context: globalPageContext,
-  });
+  }); */
   createPage<GlobalPageContext>({
     path: PAGES_DATA[PAGES.MENTIONS_LEGALES].path,
     component: path.resolve(
@@ -167,7 +169,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     context: globalPageContext,
   });
 
-  motifsPageAndBlocks
+  /* motifsPageAndBlocks
     .filter(({ motif: { name } }) => name)
     .forEach(({ motif }) => {
       const related = motif.related
@@ -220,5 +222,5 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
         } as ContentTemplateContext,
       });
     }
-  );
+  ); */
 };

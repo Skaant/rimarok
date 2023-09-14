@@ -15,6 +15,7 @@ import { GlobalPageContext } from "../../types/GlobalPageContext";
 import "../../styles/pages/accueil.scss";
 import InternalLink from "../../components/InternalLink";
 import { PRESTATION_INGENIERIE_WEB_SECTIONS } from "./prestation/ingenierie-web.template";
+import WEBSITE_DATA from "../../data/website";
 
 const PAGE = PAGES.ACCUEIL;
 const { title } = PAGES_DATA[PAGE];
@@ -37,8 +38,12 @@ export const ACCUEIL_SECTIONS: { [key: string]: Section } = {
     title: "Design patterns : une compréhension globale du code",
   },
   COLLABORATION: {
-    id: "travailler-ensemble-vers-une-collaboration-future",
-    title: "Travailler ensemble : vers une collaboration future",
+    id: "travailler-ensemble",
+    title: "Travailler ensemble",
+  },
+  CONTACT: {
+    id: "entrer-en-contact",
+    title: "Entrer en contact",
   },
 };
 
@@ -72,7 +77,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
           linksMenu={{
             links: [
               {
-                label: "Allons-y !",
+                label: "Suivez-moi !",
                 link: `#${ACCUEIL_SECTIONS.INTRO_SITE.id}`,
                 color: COLORS.ABYSS,
               },
@@ -109,7 +114,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               links={[
                 {
                   link: `#${ACCUEIL_SECTIONS.STACK.id}`,
-                  label: "Découvrir mon expertise",
+                  label: "Découvrir mon expertise full-stack",
                   color: COLORS.MIST,
                 },
               ]}
@@ -126,19 +131,16 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
         >
           <>
             <p>
-              Je suis spécialisé dans les technologies JavaScript : TypeScript,
-              Node, React, Express, Jest, Nest, Vue, Svelte. Je mets également
-              en oeuvre des bonnes pratiques d'éco-conception logicielle.
+              Je suis spécialisé dans les technologies <b>JavaScript et PHP</b>{" "}
+              : TypeScript, Node, React, Express, Jest, Nest, Vue, Svelte,
+              WordPress. <b>Du front, du back, de la base de données.</b> Je
+              mets également en oeuvre des bonnes pratiques d'éco-conception
+              logicielle.
             </p>
             <p>
               C'est pendant mes études que j'ai été sensibilisé au sujet du{" "}
-              <b>Green-IT</b>. Diplomé d'un{" "}
-              <InternalLink
-                page={PAGES.PRESTATION_INGENIERIE_WEB}
-                section={PRESTATION_INGENIERIE_WEB_SECTIONS.UNIVERSITE}
-                altTitle="Master MIAGE option énergie"
-              />{" "}
-              en 2016, j'exerce depuis l'activité de développeur web en tant
+              <b>Green-IT</b>. Diplomé d'un Master MIAGE option énergie en 2016,
+              j'exerce depuis l'activité de développeur web en tant
               qu'indépendant.
             </p>
           </>
@@ -165,9 +167,9 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <LinksMenu
               links={[
                 {
-                  link: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].path,
-                  label: PAGES_DATA[PAGES.PRESTATION_INGENIERIE_WEB].title,
-                  color: COLORS.FLOWER,
+                  link: `#${ACCUEIL_SECTIONS.MOTIVATIONS.id}`,
+                  label: "Qu'est-ce que l'éco-conception ?",
+                  color: COLORS.SUN,
                 },
               ]}
             />
@@ -201,14 +203,15 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             </p>
             <p>
               C'est tout l'enjeu de l'éco-conception et de la sobriété
-              numérique.
+              numérique. Ceci serait impossible sans une bonne compréhension des
+              motifs de conception logicielle.
             </p>
             <LinksMenu
               links={[
                 {
-                  label: "Éco-concevoir mon projet",
-                  link: PAGES_DATA[PAGES.PRESTATION_ECO_CONCEPTION].path,
-                  color: COLORS.MIST,
+                  label: "À propos des design patterns",
+                  link: `#${ACCUEIL_SECTIONS.CODE_PHILOSOPHIE.id}`,
+                  color: COLORS.LIGHT,
                 },
               ]}
             />
@@ -241,12 +244,9 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <LinksMenu
               links={[
                 {
-                  link: PAGES_DATA[PAGES.MOTIFS].path,
-                  label: "Plus sur les motifs de conceptions",
-                },
-                {
-                  link: PAGES_DATA[PAGES.BLOG].path,
-                  label: "Vers mon blog",
+                  link: `#${ACCUEIL_SECTIONS.COLLABORATION.id}`,
+                  label: "Pouvons-nous travailler ensemble ?",
+                  color: COLORS.LAGOON,
                 },
               ]}
             />
@@ -291,12 +291,50 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
             <LinksMenu
               links={[
                 {
-                  link: getInternalLink(
-                    PAGES.PRESTATION,
-                    PRESTATION_SECTIONS.CONTACT
-                  ),
-                  label: PRESTATION_SECTIONS.CONTACT.title,
+                  link: `#${ACCUEIL_SECTIONS.CONTACT.id}`,
+                  label: "On peut discuter",
                   color: COLORS.FLOWER,
+                },
+              ]}
+            />
+          </>
+        </Row>
+        <Row
+          id={ACCUEIL_SECTIONS.CONTACT.id}
+          header={{
+            level: 2,
+            content: ACCUEIL_SECTIONS.CONTACT.title,
+          }}
+          backgroundColor={COLORS.FLOWER}
+        >
+          <>
+            <p>
+              Pour <b>discuter ensemble</b>, je vous propose{" "}
+              <b>plusieurs solutions</b> :
+            </p>
+            <LinksMenu
+              links={[
+                {
+                  link: "#",
+                  label: "M'envoyer un mail sympa",
+                  color: COLORS.ABYSS,
+                  id: "contact-mail",
+                },
+                {
+                  link: "#",
+                  label: "Un petit SMS pour vous présenter",
+                  color: COLORS.ABYSS,
+                  id: "contact-phone",
+                },
+                {
+                  link: WEBSITE_DATA.LINKEDIN_LINK,
+                  label: "Un message sur Lik'dine",
+                  color: COLORS.ABYSS,
+                },
+                {
+                  link: WEBSITE_DATA.CALENDLY_LINK,
+                  label: "Prendre un premier RDV sur Calendly",
+                  color: COLORS.ABYSS,
                 },
               ]}
             />

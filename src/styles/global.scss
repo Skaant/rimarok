@@ -101,6 +101,26 @@ a {
   z-index: 5;
 }
 
+footer img {
+  height: 100px;
+}
+
 .position-initial {
   position: initial !important;
+}
+
+#toolbar {
+  z-index: 4;
+  > .my-4 {
+    margin: 0 12px 0 0 !important;
+    > .my-2 {
+      margin: 0 !important;
+      box-shadow: 0 0 5px $light;
+    }
+  }
+  > button {
+    height: 36px;
+    width: 36px;
+    box-shadow: 0 0 5px $light;
+  }
 }

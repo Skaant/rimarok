@@ -4,11 +4,13 @@ import "bootstrap/js/dist/carousel";
 import { backToTop } from "./backToTop";
 import { enableCollapses } from "./enableCollapses";
 import { contactGuards } from "./contactGuards";
+import { toolbarDisplay } from "./toolbarDisplay";
 
 let inited = document.getElementsByTagName("body")[0].getAttribute("inited");
 
 function init() {
   if (!inited) {
+    toolbarDisplay()
     backToTop();
     enableCollapses();
     contactGuards();
