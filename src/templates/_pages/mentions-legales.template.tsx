@@ -7,6 +7,7 @@ import Section from "../../types/Section";
 import { COLORS } from "../../data/colors";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import LinksMenu from "../../components/LinksMenu";
 
 const PAGE_ID = PAGES.MENTIONS_LEGALES;
 const { title } = PAGES_DATA[PAGE_ID];
@@ -30,12 +31,7 @@ function MentionsLegales({
       {...pageContext}
     >
       <>
-        <PageHeader
-          title={title}
-          subtitle="Données administratives"
-          tableOfContents={{ contents: MENTIONS_LEGALES_SECTIONS }}
-          backgroundColor={COLORS.LIGHT}
-        />
+        <PageHeader title={title} backgroundColor={COLORS.LIGHT} />
         <Row
           id={MENTIONS_LEGALES_SECTIONS.MENTIONS_OBLIGATOIRES_SITE.id}
           header={{
@@ -43,7 +39,6 @@ function MentionsLegales({
             content: MENTIONS_LEGALES_SECTIONS.MENTIONS_OBLIGATOIRES_SITE.title,
           }}
           backgroundColor={COLORS.FLOWER}
-          tags={["motivation", "partage", "gestion des connaissances"]}
         >
           <>
             <p className="display-6">
@@ -65,15 +60,29 @@ function MentionsLegales({
               <dd>822 765 764 00029</dd>
               <dt>Numéro de téléphone</dt>
               <dd>
-                <a id="contact-phone" href="#">
-                  Cliquez pour dévoiler
-                </a>
+                <LinksMenu
+                  links={[
+                    {
+                      link: "#",
+                      label: "Cliquez pour afficher le numéro",
+                      color: COLORS.ABYSS,
+                      id: "contact-phone",
+                    },
+                  ]}
+                />
               </dd>
               <dt>Adresse de courrier électronique</dt>
               <dd>
-                <a id="contact-mail" href="#">
-                  Cliquez pour dévoiler
-                </a>
+                <LinksMenu
+                  links={[
+                    {
+                      link: "#",
+                      label: "Cliquez pour afficher l'adresse",
+                      color: COLORS.ABYSS,
+                      id: "contact-mail",
+                    },
+                  ]}
+                />
               </dd>
               <dt>Numéro d'identification à la TVA</dt>
               <dd>FR 93822765764</dd>
