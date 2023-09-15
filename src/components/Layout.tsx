@@ -59,7 +59,7 @@ function Layout({
           links={[
             {
               label: "Me contacter",
-              link: `#${ACCUEIL_SECTIONS.CONTACT.id}`,
+              link: `/#${ACCUEIL_SECTIONS.CONTACT.id}`,
             },
           ]}
         />
