@@ -66,6 +66,9 @@ jobs:
           npm i --force
           npx gatsby build
 
+      - name: Build JS
+        run: npm run build:apps
+
       - name: FTP prod environment
         uses: sebastianpopp/ftp-action@releases/v2
         with:
