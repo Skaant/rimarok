@@ -4,6 +4,7 @@ export enum COLORS {
   SUN = "sun",
   MIST = "mist",
   LAGOON = "lagoon",
+  DATA = "data",
   GROUND = "ground",
   LIGHT = "light",
   DARK = "dark",

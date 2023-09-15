@@ -1,13 +1,14 @@
 #accueil {
   #top-illustration {
     top: 10vh;
-    height: 50vh;
+    height: 42vh;
+    padding-top: 60px;
     > img {
       max-height: 100%;
       max-width: 100%;
     }
   }
   #page-header > div {
-    margin-top: 42vh;
+    margin-top: 36vh;
   }
 }

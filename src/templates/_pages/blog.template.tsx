@@ -8,9 +8,14 @@ import Section from "../../types/Section";
 import { COLORS } from "../../data/colors";
 import { PageProps } from "gatsby";
 import { GlobalPageContext } from "../../types/GlobalPageContext";
+import { Link } from "nebula-atoms";
 
 const PAGE_ID = PAGES.BLOG;
 const { title } = PAGES_DATA[PAGE_ID];
+
+export type BlogTemplateContext = GlobalPageContext & {
+  links: Link[];
+};
 
 const BLOG_SECTIONS: { [key: string]: Section } = {
   INTRO_PAGE: {
@@ -23,7 +28,9 @@ const BLOG_SECTIONS: { [key: string]: Section } = {
   },
 };
 
-export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
+export function Blog({
+  pageContext: { links, ...pageContext },
+}: PageProps<undefined, BlogTemplateContext>) {
   return (
     <Layout
       head={{
@@ -87,7 +94,7 @@ export function Blog({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               <b>attendent d'être transféré</b> depuis mon ancien site
               jusqu'ici.
             </p>
-            <ArticlesList />
+            <ArticlesList links={links} />
           </>
         </Row>
       </>

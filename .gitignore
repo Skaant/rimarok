@@ -1,5 +1,9 @@
 node_modules/
 .cache/
+cache/
 public
 src/gatsby-types.d.ts
 .env.*
+static/*.png
+static/*.jpg
+routines.sh

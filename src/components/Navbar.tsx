@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import { PAGES, PAGES_DATA } from "../data/pages";
+import { PAGES_DATA } from "../data/pages";
 import WEBSITE_DATA from "../data/website";
 import { GlobalPageContext } from "../types/GlobalPageContext";
 
@@ -8,7 +8,7 @@ type NavbarProps = GlobalPageContext & {
   className?: string;
 };
 
-function Navbar({ motifs, className }: NavbarProps) {
+function Navbar({ motifsLength, className }: NavbarProps) {
   return (
     <nav
       className={`navbar navbar-expand-lg position-fixed w-100 bg-light${
@@ -16,10 +16,10 @@ function Navbar({ motifs, className }: NavbarProps) {
       }`}
     >
       <div className="container-fluid d-flex align-items-center px-3">
-        <Link className="navbar-brand font-slab" to="/">
+        <Link className="navbar-brand font-slab text-abyss" to="/">
           {WEBSITE_DATA.BRAND_NAME}
         </Link>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -33,25 +33,19 @@ function Navbar({ motifs, className }: NavbarProps) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-lg-0 w-100 justify-content-end py-2 py-lg-0">
             {[PAGES_DATA.PRESTATION, PAGES_DATA.MOTIFS, PAGES_DATA.BLOG].map(
-              ({ id, title, path }, index) => {
+              ({ title, path }, index) => {
                 return (
                   <li className="nav-item py-2 py-lg-0">
-                    <Link
-                      key={index}
-                      className={`nav-link${"" /** @todo active */}`}
-                      to={path}
-                    >
+                    <Link key={index} className="nav-link" to={path}>
                       {title}
-                      {id === PAGES.MOTIFS.toLowerCase()
-                        ? ` (${motifs.length})`
-                        : ""}
+                      {path.includes("motifs") ? ` (${motifsLength})` : ""}
                     </Link>
                   </li>
                 );
               }
             )}
           </ul>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

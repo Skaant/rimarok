@@ -1,11 +1,9 @@
-import {
-  PageObjectResponse,
-  TextRichTextItemResponse,
-} from "@notionhq/client/build/src/api-endpoints";
-import { Motif } from "../../../types/Motif";
-import richTextToString from "../richTextToString";
+import { TextRichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import { PageAndBlocks } from "nebula-atoms";
+import { Motif } from "../types/Motif";
+import richTextToString from "./richTextToString";
 
-export function motifFormatter(page: PageObjectResponse): Motif {
+export function motifFormatter({ page }: PageAndBlocks): Motif {
   const {
     Index: index,
     Nom: name,

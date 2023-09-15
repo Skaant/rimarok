@@ -7,5 +7,4 @@ export type Motif = {
   locations?: string[];
   related?: string[];
   synonyms?: string[];
-  discovered?: boolean;
 };

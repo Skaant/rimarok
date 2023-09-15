@@ -1,8 +1,7 @@
-import { Motif } from "./Motif";
+import { Link } from "nebula-atoms";
 
 export type GlobalPageContext = {
-  motifs: Motif[];
-  footer: {
-    motifs: Motif[];
-  };
+  firstMotifsLink: Link[];
+  motifsLength: number;
+  lastArticlesLink: Link[];
 };

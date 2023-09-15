@@ -7,16 +7,17 @@ import Row from "../components/Row";
 import LinksMenu from "../components/LinksMenu";
 import BadgesList from "../components/BadgesList";
 import { COLORS } from "../data/colors";
-import { ExtendedBlockObjectResponse, PureBlocksRenderer } from "statikon";
+import { buildExtendedBlocks, BlockSwitch } from "nebula-atoms";
 import { GlobalPageContext } from "../types/GlobalPageContext";
 import { PAGES, PAGES_DATA } from "../data/pages";
 import { MOTIFS_SECTIONS } from "./_pages/motifs.template";
+import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 export type MotifTemplateProps = GlobalPageContext & {
   motif: Omit<Motif, "related"> & {
     related?: Motif[];
   };
-  blocks?: ExtendedBlockObjectResponse[];
+  blocks: BlockObjectResponse[];
 };
 
 function MotifTemplate({
@@ -26,6 +27,7 @@ function MotifTemplate({
     ...globalPageContext
   },
 }: PageProps<undefined, MotifTemplateProps>) {
+  const _blocks = buildExtendedBlocks(blocks);
   return (
     <Layout head={{ title: `Motif ${name}` }} {...globalPageContext}>
       <>
@@ -71,11 +73,9 @@ function MotifTemplate({
         )}
         <Row>
           <>
-            {blocks && blocks.length ? (
-              <PureBlocksRenderer blocks={blocks} />
-            ) : (
-              ""
-            )}
+            {_blocks.map((block) => (
+              <BlockSwitch key={block.id} block={block} contents={[]} />
+            ))}
           </>
         </Row>
         {related && related.length ? (

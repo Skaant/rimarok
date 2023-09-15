@@ -48,10 +48,6 @@ export const PRESTATION_SECTIONS: { [key: string]: Section } = {
     id: "un-humain-avant-tout",
     title: "Un humain avant tout",
   },
-  CONTACT: {
-    id: "entrer-en-contact",
-    title: "Entrer en contact",
-  },
   TARIF: {
     id: "mon-tarif",
     title: "Mon tarif",
@@ -350,48 +346,6 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
           </>
         </Row>
         <Row
-          id={PRESTATION_SECTIONS.CONTACT.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.CONTACT.title,
-          }}
-          backgroundColor={COLORS.FLOWER}
-          tags={["calendly", "mail", "sms", "linkedin"]}
-        >
-          <>
-            <p>
-              Pour <b>discuter ensemble</b>, je vous propose{" "}
-              <b>plusieurs solutions</b> :
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: WEBSITE_DATA.CALENDLY_LINK,
-                  label: "Prendre un premier RDV sur Calendly",
-                  color: COLORS.ABYSS,
-                },
-                {
-                  link: "#",
-                  label: "M'envoyer un mail sympa",
-                  color: COLORS.ABYSS,
-                  id: "contact-mail",
-                },
-                {
-                  link: "#",
-                  label: "Un petit SMS pour vous présenter",
-                  color: COLORS.ABYSS,
-                  id: "contact-phone",
-                },
-                {
-                  link: WEBSITE_DATA.LINKEDIN_LINK,
-                  label: "Un message sur Lik'dine",
-                  color: COLORS.ABYSS,
-                },
-              ]}
-            />
-          </>
-        </Row>
-        <Row
           id={PRESTATION_SECTIONS.REALISATIONS.id}
           header={{
             level: 2,
@@ -437,73 +391,6 @@ function Prestation({ pageContext }: PageProps<undefined, GlobalPageContext>) {
               </a>
               .
             </p>
-          </>
-        </Row>
-        <Row
-          id={PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.TRAVAILLER_ENSEMBLE.title,
-          }}
-          backgroundColor={COLORS.LAGOON}
-          tags={["votre environnement", "compatibilité"]}
-        >
-          <>
-            <p>
-              Je ne suis <b>pas</b> un défonce-man.
-            </p>
-            <p>
-              J'aime <b>le travail</b> en cela qu'il est un{" "}
-              <b>processus qui m'accomplit</b> et qu'il <b>me connecte</b> aux
-              autres.
-            </p>
-            <p className="display-6">
-              <b>Votre environnement est sain</b>, vous avez juste la bonne dose
-              de stress, vous prenez des vacances et votre projet n'était pas à
-              livrer hier ?
-            </p>
-            <p>
-              <b>Je souhaite déjà vous connaître</b> et savoir comment nous
-              pourrions <b>collaborer</b> :)
-            </p>
-          </>
-        </Row>
-        <Row
-          id={PRESTATION_SECTIONS.ALLER_PLUS_LOIN.id}
-          header={{
-            level: 2,
-            content: PRESTATION_SECTIONS.ALLER_PLUS_LOIN.title,
-          }}
-          backgroundColor={COLORS.LIGHT}
-          tags={["meta", "motifs", "blog"]}
-        >
-          <>
-            <p>
-              Lorsque je <b>pratique longtemps</b> un sujet,{" "}
-              <b>des motifs apparaissent</b>.
-            </p>
-            <p className="display-6">
-              Développer est devenu pour moi comme parler un{" "}
-              <b>langage de motifs</b>.
-            </p>
-            <p>
-              <b>En codant, des idées</b>, activables ou juste philosophiques,{" "}
-              <b>me viennent</b> et j'apprécie les <b>partager</b>.
-            </p>
-            <LinksMenu
-              links={[
-                {
-                  link: PAGES_DATA[PAGES.MOTIFS].path,
-                  label: "En apprendre plus sur les motifs",
-                  color: COLORS.FLOWER,
-                },
-                {
-                  link: PAGES_DATA[PAGES.BLOG].path,
-                  label: "Consulter les articles du blog",
-                  color: COLORS.FLOWER,
-                },
-              ]}
-            />
           </>
         </Row>
       </>
