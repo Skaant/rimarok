@@ -273,9 +273,9 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 Vous pourriez apprécier mon expertise sur la stack JavaScript
                 moderne, mon esprit analytique et ma bonne humeur.
               </b>{" "}
-              J'aime les projets qui ont du sens, à la technique bien huilée et
-              où ma créativité technique peut s'exprimer. Une de mes grandes
-              forces est de questionner, aborder les problématiques autrement et
+              J'aime les projets qui ont du sens, à la technique bien huilée où
+              ma créativité technique peut s'exprimer. Une de mes grandes forces
+              est de questionner, aborder les problématiques autrement et
               trouver des solutions plus simples.
             </p>
             <p>Au premier Janvier 2023, je facture mon intervention :</p>
@@ -292,7 +292,7 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
               links={[
                 {
                   link: `#${ACCUEIL_SECTIONS.CONTACT.id}`,
-                  label: "On peut discuter",
+                  label: "Ça vous dit d'échanger ?",
                   color: COLORS.FLOWER,
                 },
               ]}
@@ -329,11 +329,6 @@ const Accueil = ({ pageContext }: PageProps<undefined, GlobalPageContext>) => {
                 {
                   link: WEBSITE_DATA.LINKEDIN_LINK,
                   label: "Un message sur Lik'dine",
-                  color: COLORS.ABYSS,
-                },
-                {
-                  link: WEBSITE_DATA.CALENDLY_LINK,
-                  label: "Prendre un premier RDV sur Calendly",
                   color: COLORS.ABYSS,
                 },
               ]}
